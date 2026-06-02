@@ -7,181 +7,123 @@ function useReveal() {
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
     const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target) }
-      }),
-      { threshold: 0.12 }
+      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target) } }),
+      { threshold: 0.08 }
     )
-    els.forEach((el) => obs.observe(el))
+    els.forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
 }
 
 const studies = [
   {
-    tag: 'Care Sector M&A',
+    tag: 'Care M&A',
     region: 'South East England',
-    size: 'Undisclosed',
-    headline: 'Owner-managed care group — confidential exit',
-    situation: 'A founder who had operated a care group for 18 years was approaching retirement. He had spoken to two regional brokers but was uncomfortable with their approach — both wanted to market the business openly. He wanted to sell quietly, to the right buyer, without staff or residents finding out prematurely.',
-    action: 'Nathan introduced the business to a shortlist of three qualified buyers within two weeks. One buyer was identified off-market from Prosaria\'s existing relationships. No public listing. No information memorandum circulated beyond qualified parties.',
-    outcome: 'Heads of terms agreed within 11 weeks of first conversation. Full exit completed. Seller retained for a short transition period by mutual agreement.',
-    timeframe: '4 months to completion',
-    quote: 'I did not want a process. I wanted a result. That is what I got.',
+    headline: 'Long-established care business — quiet exit',
+    context: 'The owner had run the business for nearly two decades. He was ready to move on but did not want a public sale process. Previous brokers had pushed for open marketing. That was not going to work for him.',
+    outcome: 'A shortlist of qualified buyers was assembled through existing relationships. No public listing. No broad circulation of information. Heads of terms were agreed within eleven weeks and the deal completed.',
+    result: 'Full exit. Seller transitioned out on agreed terms.',
+    timeframe: '4 months',
   },
   {
     tag: 'Digital Infrastructure',
     region: 'UK',
-    size: 'Balance sheet uplift: six figures',
-    headline: 'Legacy IPv4 blocks identified and monetised for a telecoms group',
-    situation: 'A mid-sized telecoms business had accumulated IPv4 address blocks over a decade of acquisitions. Nobody in the business was actively managing them. They appeared on the balance sheet at nominal value. The finance director had no idea they could be sold or leased.',
-    action: 'Prosaria conducted an asset audit of the business\'s RIPE holdings. Identified a significant volume of underutilised address space. Prepared a simple monetisation proposal and introduced a qualified buyer.',
-    outcome: 'Surplus IPv4 blocks placed with a network operator. Material balance-sheet uplift realised. Process took six weeks from audit to completion.',
+    headline: 'Unused network address space turned into a balance sheet asset',
+    context: 'A business that had grown through acquisitions was sitting on IPv4 address blocks it had never reviewed. They appeared at nominal value on the balance sheet. Nobody in the business knew there was a secondary market for them.',
+    outcome: 'An audit of the holdings identified significant underutilised address space. A qualified buyer was found and the transaction was completed.',
+    result: 'Material balance sheet uplift. Six weeks from audit to completion.',
     timeframe: '6 weeks',
-    quote: 'We had no idea these were worth anything. Nathan found the value and got it done.',
   },
   {
     tag: 'Working Capital',
     region: 'UK',
-    size: 'Facility: £400k',
-    headline: 'SME manufacturer — invoice finance facility restructured',
-    situation: 'A manufacturing business with strong order flow was using an invoice finance facility from a high-street bank. The facility was expensive, the service was poor, and the advance rate did not reflect the quality of their debtor book. They had tried to renegotiate but the bank was not interested.',
-    action: 'Nathan reviewed the debtor book and current facility terms. Prepared a clear picture of the business for specialist lenders. Introduced two alternative providers who were actively looking for this profile of client.',
-    outcome: 'New facility agreed at a materially better advance rate and lower cost. Monthly saving on fees was significant. Transition took three weeks.',
+    headline: 'Manufacturing business — invoice finance facility improved',
+    context: 'Strong order book, reliable customers, but an invoice finance facility that had not been reviewed in years. The advance rate was low and the cost was high relative to what was available in the market.',
+    outcome: 'The debtor book was reviewed and a clear picture prepared for alternative lenders. Two specialist providers were introduced. A better facility was agreed within three weeks.',
+    result: 'Lower cost, better advance rate, same-day drawdown on invoices.',
     timeframe: '3 weeks',
-    quote: null,
   },
   {
-    tag: 'Care Sector M&A',
+    tag: 'Care M&A',
     region: 'Midlands',
-    size: 'Undisclosed',
-    headline: 'Domiciliary care business — buyer introduced pre-market',
-    situation: 'A regional care group was looking to expand its domiciliary care footprint in the Midlands. They did not want to wait for businesses to come to market through brokers. They wanted introductions to owners who might be open to a conversation but had not yet committed to a sale.',
-    action: 'Prosaria mapped domiciliary care operators in the target geography and conducted direct outreach on behalf of the buyer. Three owners were identified who were open to a confidential conversation. Two proceeded to a structured discussion.',
-    outcome: 'One acquisition completed. The other is ongoing. Total timeline from initial mandate to first completion was under six months.',
-    timeframe: '6 months',
-    quote: null,
+    headline: 'Care group expansion — acquisitions sourced before market',
+    context: 'A growing care operator wanted to add domiciliary care capacity in a specific region. They did not want to compete in open auction processes or pay broker premiums on marketed businesses.',
+    outcome: 'Target operators in the geography were mapped and direct conversations opened with owners who had not committed to any process. Several were open to a confidential discussion.',
+    result: 'One acquisition completed. A second remains in discussion.',
+    timeframe: 'Ongoing',
   },
   {
     tag: 'Digital Infrastructure',
-    region: 'UK & Europe',
-    size: 'Contract value: undisclosed',
-    headline: 'Multi-site business — connectivity renegotiated via GTT',
-    situation: 'A professional services firm with 14 UK offices and three European locations was three months from contract renewal on its WAN. The incumbent provider had quoted a modest reduction. The IT director suspected they were significantly overpaying but lacked the market knowledge to negotiate effectively.',
-    action: 'Prosaria benchmarked the current contract against current market pricing. Introduced GTT as an alternative provider. Managed the RFP process and supported the IT director through supplier conversations.',
-    outcome: 'New connectivity contract agreed at substantially better terms. Improved SLAs and a modern SD-WAN solution included. Incumbent re-quoted but could not match.',
+    region: 'UK',
+    headline: 'Multi-site business — connectivity costs reduced at renewal',
+    context: 'A business with offices across the UK was approaching contract renewal. The incumbent had offered a small reduction. There was a reasonable suspicion that better terms were available.',
+    outcome: 'Current contract benchmarked against market pricing. An alternative provider was introduced. The renewal was renegotiated with materially better commercial terms and improved service levels.',
+    result: 'Better contract. Incumbent matched in part but could not compete on full terms.',
     timeframe: '8 weeks',
-    quote: 'Having someone who actually understands the market made the difference.',
   },
   {
     tag: 'Working Capital',
     region: 'UK',
-    size: 'Facility: £250k',
-    headline: 'Recruitment business — first invoice finance facility',
-    situation: 'A fast-growing recruitment business was funding its entire payroll from its own cash reserves while waiting for client invoices to be paid. It was profitable on paper but perpetually cash-short. The founders had never used invoice finance and did not know where to start.',
-    action: 'Nathan explained the options clearly — selective invoice finance versus whole-book facilities. Identified two lenders with specific experience in the recruitment sector. Packaged the introduction with a clear summary of the debtor book.',
-    outcome: 'First invoice finance facility agreed within two weeks of initial conversation. Founders could draw against invoices same day. Cash flow problem resolved.',
+    headline: 'Fast-growing business — first invoice finance facility in place',
+    context: 'A business growing quickly was funding operations from its own cash while waiting on client payments. Profitable on paper but cash-constrained in practice. The founders had not used invoice finance before and were not sure where to start.',
+    outcome: 'Options were explained clearly. Two lenders with relevant sector experience were introduced. A facility was agreed and operational within two weeks of the first conversation.',
+    result: 'Cash flow constraint resolved. Business able to take on larger contracts.',
     timeframe: '2 weeks',
-    quote: 'We went from stressed about payroll to comfortable overnight.',
   },
 ]
 
 const tagColours: Record<string, string> = {
-  'Care Sector M&A':        'text-blue-400',
-  'Digital Infrastructure': 'text-[#8cb4c9]',
-  'Working Capital':        'text-[#9cb88c]',
+  'Care M&A': 'text-blue-400',
+  'Digital Infrastructure': 'text-blue-300',
+  'Working Capital': 'text-blue-200',
 }
 
 export default function CaseStudiesPage() {
   useReveal()
-
   return (
     <>
-      {/* ── HERO ──────────────────────────────────────────── */}
-      <section className="relative bg-[#050d1a] pt-40 pb-24 lg:pt-52 lg:pb-32 relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(to right, #c9a96e 1px, transparent 1px), linear-gradient(to bottom, #c9a96e 1px, transparent 1px)`,
-            backgroundSize: '80px 80px',
-          }}
-        />
+      <section className="bg-[#050d1a] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage:`linear-gradient(to right,#3b82f6 1px,transparent 1px),linear-gradient(to bottom,#3b82f6 1px,transparent 1px)`,backgroundSize:'80px 80px'}} />
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
-          <p className="eyebrow mb-6">Case studies</p>
-          <h1 className="font-serif text-display-xl text-[#f0ede8] max-w-[20ch] leading-tight mb-8">
-            Anonymised. Outcome-led. Exactly what happened.
+          <p className="eyebrow mb-6">Deal observations</p>
+          <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
+            A selection of situations we have been involved in.
           </h1>
-          <p className="text-body-lg text-[#94a3b8] max-w-[50ch]">
-            No names. No embellishment. Just what the situation was, what Prosaria did, and what the result was.
+          <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
+            All anonymised. Outcomes as they happened. No names, no embellishment.
           </p>
         </div>
       </section>
 
-      {/* ── FILTER STRIP ──────────────────────────────────── */}
-      <section className="bg-[#0a0a0a] border-b border-white/5 py-4">
-        <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-wrap gap-6">
-          {['All', 'Care Sector M&A', 'Digital Infrastructure', 'Working Capital'].map((f) => (
-            <button
-              key={f}
-              className="text-label text-[#94a3b8] hover:text-blue-400 transition-colors duration-200 uppercase tracking-widest"
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* ── CASE STUDY CARDS ──────────────────────────────── */}
-      <section className="py-section bg-[#050d1a]">
+      <section className="py-24 bg-[#050d1a]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {studies.map((cs, i) => (
-              <div
-                key={cs.headline}
-                className={`bg-[#0a1628] border border-blue-500/10 p-10 flex flex-col reveal reveal-delay-${(i % 2) + 1}`}
-              >
-                {/* Header */}
+              <div key={cs.headline}
+                className={`border border-blue-500/10 bg-[#0a1628] p-8 lg:p-10 flex flex-col reveal reveal-delay-${(i % 2) + 1} hover:border-blue-500/20 transition-all duration-300`}>
                 <div className="flex flex-wrap items-center gap-3 mb-6">
                   <span className={`eyebrow ${tagColours[cs.tag] || 'text-blue-400'}`}>{cs.tag}</span>
-                  <span className="text-stone-200">·</span>
+                  <span className="text-blue-500/20">·</span>
                   <span className="text-label text-[#475569]">{cs.region}</span>
-                  {cs.size && (
-                    <>
-                      <span className="text-stone-200">·</span>
-                      <span className="text-label text-[#475569]">{cs.size}</span>
-                    </>
-                  )}
                 </div>
-
                 <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-6 leading-snug">{cs.headline}</h3>
-
-                {/* Three-part breakdown */}
-                <div className="space-y-5 flex-1">
+                <div className="space-y-4 flex-1">
                   <div>
-                    <p className="text-label text-[#475569] mb-2">Situation</p>
-                    <p className="text-body-sm text-[#94a3b8]">{cs.situation}</p>
+                    <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Situation</p>
+                    <p className="text-body-sm text-[#94a3b8]">{cs.context}</p>
                   </div>
                   <div>
-                    <p className="text-label text-[#475569] mb-2">What Prosaria did</p>
-                    <p className="text-body-sm text-[#94a3b8]">{cs.action}</p>
-                  </div>
-                  <div>
-                    <p className="text-label text-[#475569] mb-2">Outcome</p>
+                    <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">What happened</p>
                     <p className="text-body-sm text-[#94a3b8]">{cs.outcome}</p>
                   </div>
+                  <div>
+                    <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Result</p>
+                    <p className="text-body-sm text-[#f0f4ff]">{cs.result}</p>
+                  </div>
                 </div>
-
-                {/* Quote */}
-                {cs.quote && (
-                  <blockquote className="mt-6 border-l-2 border-[#c9a96e] pl-5 py-1">
-                    <p className="font-serif text-[1.05rem] italic text-[#f0f4ff]">&ldquo;{cs.quote}&rdquo;</p>
-                  </blockquote>
-                )}
-
-                {/* Footer */}
-                <div className="mt-6 pt-5 border-t border-blue-500/10 flex justify-between items-center">
-                  <span className="text-label text-[#475569]">Timeframe</span>
-                  <span className="text-label text-blue-400 font-medium">{cs.timeframe}</span>
+                <div className="mt-6 pt-5 border-t border-blue-500/8 flex justify-between items-center">
+                  <span className="text-label text-[#334155] uppercase tracking-widest">Timeframe</span>
+                  <span className="text-label text-blue-400">{cs.timeframe}</span>
                 </div>
               </div>
             ))}
@@ -189,16 +131,15 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────── */}
-      <section className="relative bg-[#050d1a] py-section-sm">
+      <section className="light-section py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
-            <h2 className="font-serif text-display-md text-[#f0ede8] max-w-[32ch]">
-              Your situation is probably different to every one of these. That is fine. Talk to Nathan.
+            <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#050d1a'}}>
+              Every situation is different. If yours is worth a conversation, we will tell you.
             </h2>
           </div>
           <Link href="/contact" className="btn-primary reveal reveal-delay-1 flex-shrink-0">
-            Start a conversation
+            Get in touch
           </Link>
         </div>
       </section>
