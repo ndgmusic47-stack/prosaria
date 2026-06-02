@@ -22,26 +22,26 @@ const lines = [
   {
     num: '01',
     title: 'Digital Infrastructure',
-    body: 'Overpaying on connectivity? Sitting on network assets you have never reviewed? We identify where value is being left on the table and get a better outcome in place.',
+    body: 'Many businesses are sitting on IPv4 address blocks they have never looked at. We help identify what is there and connect you with the right buyer or broker.',
     href: '/work#digital',
     magnet: '/digital-audit',
-    magnetLabel: 'Free infrastructure audit →',
+    magnetLabel: 'Free IPv4 audit',
   },
   {
     num: '02',
     title: 'Working Capital',
-    body: 'Invoices going out on 60 or 90 day terms while you cover costs every month? Invoice finance releases that cash. We find the right facility and get it in place quickly.',
+    body: 'Invoices going out on 60 or 90 day terms while you cover costs every month? We help identify the right invoice finance facility and get it in place.',
     href: '/work#capital',
     magnet: '/capital-assessment',
-    magnetLabel: 'See how much you could release →',
+    magnetLabel: 'See how much you could release',
   },
   {
     num: '03',
     title: 'Care Sector M&A',
-    body: 'Care business owners thinking about what comes next. Buyers looking for acquisitions before they hit the market. We work quietly on both sides.',
+    body: 'Care business owners thinking about what comes next. Buyers looking for acquisitions before they reach the open market. We work quietly on both sides.',
     href: '/work#care',
     magnet: '/care-snapshot',
-    magnetLabel: 'Check your exit readiness →',
+    magnetLabel: 'Check your exit readiness',
   },
 ]
 
@@ -49,22 +49,22 @@ const caseStudies = [
   {
     tag: 'Care M&A',
     region: 'South East England',
-    headline: 'Long-established care business — quiet exit',
+    headline: 'Long-established care business quiet exit',
     outcome: 'Heads of terms in 11 weeks. Full exit completed off-market.',
     timeframe: '4 months',
   },
   {
     tag: 'Digital Infrastructure',
     region: 'UK',
-    headline: 'Unused network assets turned into a balance sheet gain',
-    outcome: 'IPv4 holdings reviewed, surplus identified, buyer introduced. Deal done.',
+    headline: 'Unused IPv4 holdings turned into a balance sheet gain',
+    outcome: 'Address blocks reviewed, surplus identified, buyer introduced. Deal completed.',
     timeframe: '6 weeks',
   },
   {
     tag: 'Working Capital',
     region: 'UK',
-    headline: 'Manufacturing business — better facility in three weeks',
-    outcome: 'Existing facility was underperforming. Better terms sourced and agreed.',
+    headline: 'Manufacturing business moved to a better facility',
+    outcome: 'Existing invoice finance was underperforming. Better terms sourced and agreed.',
     timeframe: '3 weeks',
   },
 ]
@@ -74,10 +74,9 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO — video-ready, image fallback */}
+      {/* HERO with video */}
       <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0">
-          {/* Drop hero.mp4 into /public and this video tag activates automatically */}
           <video
             autoPlay muted loop playsInline
             poster="/hero-bg.jpg"
@@ -85,8 +84,8 @@ export default function HomePage() {
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
-          <Image src="/hero-bg.jpg" alt="" fill className="object-cover object-center -z-10" priority />
-          <div className="absolute inset-0 bg-[#050d1a]/78" />
+          <Image src="/hero-bg.jpg" alt="" fill className="object-cover object-center" priority style={{zIndex:-1}} />
+          <div className="absolute inset-0 bg-[#050d1a]/80" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_50%,rgba(29,78,216,0.18)_0%,transparent_60%)]" />
           <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#050d1a] to-transparent" />
         </div>
@@ -94,18 +93,17 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-site mx-auto px-6 lg:px-10 w-full pt-36">
           <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
-            Prosaria Partners — London
+            Prosaria Partners London
           </p>
           <h1
-            className="font-serif text-display-2xl text-[#f0f4ff] max-w-[14ch] leading-none mb-8 opacity-0 animate-fade-up"
+            className="font-serif text-display-2xl text-[#f0f4ff] max-w-[16ch] leading-none mb-8 opacity-0 animate-fade-up"
             style={{animationDelay:'0.2s',animationFillMode:'forwards',textShadow:'0 0 60px rgba(59,130,246,0.25)'}}>
-            We find deals<br />
-            <span className="italic text-blue-400">others don&apos;t.</span>
+            We help opportunities<br />
+            <span className="italic text-blue-400">take shape.</span>
           </h1>
           <p className="font-sans text-body-lg text-[#94a3b8] max-w-[42ch] mb-12 opacity-0 animate-fade-up"
             style={{animationDelay:'0.35s',animationFillMode:'forwards'}}>
-            Independent deal origination across digital infrastructure,
-            working capital and care sector M&amp;A.
+            Independent deal origination across digital infrastructure, working capital and care sector M&A.
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
@@ -115,10 +113,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
             {[
-              { v:'3',        l:'Sectors' },
-              { v:'London',   l:'Based' },
-              { v:'Off-market', l:'How we work' },
-              { v:'GTT Partner', l:'Authorised' },
+              { v:'3',         l:'Sectors' },
+              { v:'London',    l:'Based' },
+              { v:'Off-market',l:'How we work' },
+              { v:'Direct',    l:'Always' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
@@ -131,33 +129,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CREDIBILITY STRIP */}
+      {/* CONTACT STRIP */}
       <section className="bg-[#020810] border-y border-blue-500/8 py-4">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-wrap items-center gap-6 lg:gap-12">
-          <span className="eyebrow text-blue-500/30">Contact</span>
-          <a href="tel:02030267906" className="flex items-center gap-2 text-sm text-[#334155] hover:text-blue-400 transition-colors">
+          <a href="tel:02030267906" className="flex items-center gap-2 text-sm text-[#475569] hover:text-blue-400 transition-colors">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
             020 3026 7906
           </a>
-          <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#334155] hover:text-blue-400 transition-colors">
+          <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#475569] hover:text-blue-400 transition-colors">
             <div className="w-1.5 h-1.5 rounded-full bg-[#1e3a5f] flex-shrink-0" />
             hello@prosaria.co.uk
           </a>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#1e3a5f] flex-shrink-0" />
-            <span className="text-sm text-[#2d4060]">GTT Authorised Partner</span>
-          </div>
+          <span className="text-sm text-[#2d4060]">66 Paul Street, London EC2A 4NA</span>
         </div>
       </section>
 
       {/* WHAT WE DO */}
       <section className="py-32 bg-[#050d1a] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/4 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/4 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-16 reveal">
             <p className="eyebrow mb-4">What we do</p>
             <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">
-              Three markets. A small team. No unnecessary steps.
+              Three areas. A direct approach. No unnecessary steps.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
@@ -184,17 +178,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT — light section, Nathan present but not worshipped */}
+      {/* ABOUT */}
       <section className="light-section py-32 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
             <div className="reveal order-2 lg:order-1">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src="/nathan.jpg"
-                  alt="Nathan Powell — Prosaria Partners"
+                  alt="Nathan Powell, Prosaria Partners"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width:1024px) 100vw, 50vw"
@@ -206,19 +198,18 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-
             <div className="order-1 lg:order-2">
               <div className="line-accent mb-8 reveal" style={{background:'#1d4ed8'}} />
               <p className="eyebrow mb-5 reveal" style={{color:'#1d4ed8'}}>The business</p>
               <h2 className="font-serif text-display-lg mb-8 reveal reveal-delay-1" style={{color:'#050d1a'}}>
-                Prosaria is a small team that operates in markets where relationships and timing matter more than size.
+                A small team that works in markets where timing and relationships matter most.
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  We work across digital infrastructure, working capital and care sector M&amp;A. The deals we are involved in are typically off-market, relationship-driven and time-sensitive. That suits a lean operation better than a large one.
+                  Prosaria works across digital infrastructure, working capital and care sector M&A. The deals we are close to tend to be off-market and time-sensitive. That suits a lean operation better than a large one.
                 </p>
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Nathan Powell founded Prosaria and leads the origination. The businesses and people we work with deal directly with someone who is close to the market and invested in the outcome.
+                  Nathan Powell founded Prosaria and leads the origination work. The people and businesses we work with deal directly with someone who is close to the market and invested in the outcome.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
@@ -235,12 +226,12 @@ export default function HomePage() {
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
             <div className="reveal">
-              <p className="eyebrow mb-4">Deal observations</p>
+              <p className="eyebrow mb-4">Case studies</p>
               <h2 className="font-serif text-display-md text-[#f0f4ff]">
-                A selection of situations<br />we have been involved in.
+                Deals across all three areas.<br />All anonymised.
               </h2>
             </div>
-            <Link href="/case-studies" className="btn-outline reveal">All observations</Link>
+            <Link href="/case-studies" className="btn-outline reveal">View all</Link>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs, i) => (
@@ -269,28 +260,46 @@ export default function HomePage() {
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Free tools</p>
             <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#050d1a'}}>
-              Not sure where you stand? Start here.
+              Get a clear picture before you commit to anything.
             </h2>
-            <p className="text-body-md mt-4 max-w-[44ch]" style={{color:'#1e3a5f'}}>
-              Three short assessments. Two minutes each. Every submission is reviewed personally before any response.
+            <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#1e3a5f'}}>
+              Three short tools. You get a straight answer immediately. We follow up personally on every submission.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title:'Care exit readiness', desc:'Understand where your care business stands today and what a buyer would focus on.', href:'/care-snapshot', tag:'Care M&A' },
-              { title:'Infrastructure audit', desc:'Find out if you are overpaying on connectivity or holding digital assets you have not reviewed.', href:'/digital-audit', tag:'Digital' },
-              { title:'Working capital check', desc:'See how much cash is tied up in your invoices and what releasing it looks like in practice.', href:'/capital-assessment', tag:'Working Capital' },
+              {
+                title: 'Care exit readiness',
+                desc: 'Answer 6 questions. Get an instant readiness score with a clear breakdown of where you stand and what a buyer would focus on.',
+                href: '/care-snapshot',
+                tag: 'Care M&A',
+                value: 'Instant score + breakdown',
+              },
+              {
+                title: 'IPv4 opportunity check',
+                desc: 'Answer 5 questions about your network. Find out if you are likely sitting on address blocks with real market value.',
+                href: '/digital-audit',
+                tag: 'Digital Infrastructure',
+                value: 'Instant assessment',
+              },
+              {
+                title: 'Working capital estimate',
+                desc: 'Answer 4 questions. Get an immediate estimate of how much cash could be released from your invoices and what it would cost.',
+                href: '/capital-assessment',
+                tag: 'Working Capital',
+                value: 'Instant cash estimate',
+              },
             ].map((m, i) => (
               <div key={m.title}
                 className={`bg-white border border-blue-100 p-8 flex flex-col reveal reveal-delay-${i+1} hover:border-blue-300 hover:shadow-md transition-all duration-300`}>
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-label text-blue-700 border border-blue-200 bg-blue-50 px-3 py-1">{m.tag}</span>
-                  <span className="text-label text-[#94a3b8]">2 min</span>
+                  <span className="text-label text-green-600 font-medium">{m.value}</span>
                 </div>
                 <h3 className="font-serif text-display-sm mb-4" style={{color:'#050d1a'}}>{m.title}</h3>
                 <p className="text-body-sm flex-1 mb-8" style={{color:'#1e3a5f'}}>{m.desc}</p>
                 <Link href={m.href} className="btn-primary w-full justify-center">
-                  Start free →
+                  Start free
                 </Link>
               </div>
             ))}
@@ -298,7 +307,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* FINAL CTA */}
       <section className="py-24 bg-[#050d1a] border-t border-blue-500/8 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(29,78,216,0.07)_0%,transparent_70%)]" />
         <div className="relative max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">

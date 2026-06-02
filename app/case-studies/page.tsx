@@ -19,7 +19,7 @@ const studies = [
   {
     tag: 'Care M&A',
     region: 'South East England',
-    headline: 'Long-established care business — quiet exit',
+    headline: 'Long-established care business quiet exit',
     context: 'The owner had run the business for nearly two decades. He was ready to move on but did not want a public sale process. Previous brokers had pushed for open marketing. That was not going to work for him.',
     outcome: 'A shortlist of qualified buyers was assembled through existing relationships. No public listing. No broad circulation of information. Heads of terms were agreed within eleven weeks and the deal completed.',
     result: 'Full exit. Seller transitioned out on agreed terms.',
@@ -37,7 +37,7 @@ const studies = [
   {
     tag: 'Working Capital',
     region: 'UK',
-    headline: 'Manufacturing business — invoice finance facility improved',
+    headline: 'Manufacturing business invoice finance facility improved',
     context: 'Strong order book, reliable customers, but an invoice finance facility that had not been reviewed in years. The advance rate was low and the cost was high relative to what was available in the market.',
     outcome: 'The debtor book was reviewed and a clear picture prepared for alternative lenders. Two specialist providers were introduced. A better facility was agreed within three weeks.',
     result: 'Lower cost, better advance rate, same-day drawdown on invoices.',
@@ -46,7 +46,7 @@ const studies = [
   {
     tag: 'Care M&A',
     region: 'Midlands',
-    headline: 'Care group expansion — acquisitions sourced before market',
+    headline: 'Care group expansion acquisitions sourced before market',
     context: 'A growing care operator wanted to add domiciliary care capacity in a specific region. They did not want to compete in open auction processes or pay broker premiums on marketed businesses.',
     outcome: 'Target operators in the geography were mapped and direct conversations opened with owners who had not committed to any process. Several were open to a confidential discussion.',
     result: 'One acquisition completed. A second remains in discussion.',
@@ -55,7 +55,7 @@ const studies = [
   {
     tag: 'Digital Infrastructure',
     region: 'UK',
-    headline: 'Multi-site business — connectivity costs reduced at renewal',
+    headline: 'Multi-site business connectivity costs reduced at renewal',
     context: 'A business with offices across the UK was approaching contract renewal. The incumbent had offered a small reduction. There was a reasonable suspicion that better terms were available.',
     outcome: 'Current contract benchmarked against market pricing. An alternative provider was introduced. The renewal was renegotiated with materially better commercial terms and improved service levels.',
     result: 'Better contract. Incumbent matched in part but could not compete on full terms.',
@@ -64,7 +64,7 @@ const studies = [
   {
     tag: 'Working Capital',
     region: 'UK',
-    headline: 'Fast-growing business — first invoice finance facility in place',
+    headline: 'Fast-growing business first invoice finance facility in place',
     context: 'A business growing quickly was funding operations from its own cash while waiting on client payments. Profitable on paper but cash-constrained in practice. The founders had not used invoice finance before and were not sure where to start.',
     outcome: 'Options were explained clearly. Two lenders with relevant sector experience were introduced. A facility was agreed and operational within two weeks of the first conversation.',
     result: 'Cash flow constraint resolved. Business able to take on larger contracts.',
@@ -87,10 +87,10 @@ export default function CaseStudiesPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">Deal observations</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            A selection of situations we have been involved in.
+            Case studies across all three areas of the business.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            All anonymised. Outcomes as they happened. No names, no embellishment.
+            All anonymised. No client names. Outcomes as they were.
           </p>
         </div>
       </section>

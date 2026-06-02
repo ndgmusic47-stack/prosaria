@@ -18,7 +18,7 @@ function useReveal() {
 
 const values = [
   { num:'01', title:'Direct by default', body:'The businesses we work with deal with the same person throughout. No handoffs, no account managers, no layers.' },
-  { num:'02', title:'Origination first', body:'We find deals before they are on the market. That means outbound effort, sector knowledge and relationships — not waiting for inbounds.' },
+  { num:'02', title:'Origination first', body:'We find deals before they are on the market. That means outbound effort, sector knowledge and relationships not waiting for inbounds.' },
   { num:'03', title:'Lean by design', body:'A small operation moves faster. Decisions happen quickly and the people involved are close to what matters.' },
   { num:'04', title:'Straight about fit', body:'If a situation is not the right fit, or the timing is off, we say so. No drawn-out processes that go nowhere.' },
 ]
@@ -35,7 +35,7 @@ export default function AboutPage() {
             A small team. A direct approach.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            Prosaria operates lean by choice. The deals we work on benefit from a close, direct relationship — not a large firm with many layers between you and the person doing the work.
+            Prosaria operates lean by choice. The deals we work on benefit from a close, direct relationship not a large firm with many layers between you and the person doing the work.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function AboutPage() {
 
             <div className="reveal">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <Image src="/nathan.jpg" alt="Nathan Powell — Prosaria Partners" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 50vw" />
+                <Image src="/nathan.jpg" alt="Nathan Powell Prosaria Partners" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
                 <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#050d1a]/85 to-transparent">
                   <p className="font-serif text-base text-white">Nathan Powell</p>
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 <h2 className="font-serif text-display-md mb-6" style={{color:'#050d1a'}}>Nathan Powell</h2>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    Nathan founded Prosaria and leads the origination work across all three practice areas. His background is in deal sourcing — identifying opportunities before they are formally in market, qualifying both sides and managing the process to a conclusion.
+                    Nathan founded Prosaria and leads the origination work across all three practice areas. His background is in deal sourcing identifying opportunities before they are formally in market, qualifying both sides and managing the process to a conclusion.
                   </p>
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
                     The businesses Prosaria works with get a direct line to the person running the process. That is a deliberate choice, not a constraint.
