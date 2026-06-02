@@ -106,7 +106,7 @@ export default function ContactPage() {
                     {path.action}
                   </Link>
                   <a
-                    href="mailto:nathan@prosaria.co.uk"
+                    href="mailto:hello@prosaria.co.uk"
                     className="block text-center text-label text-[#94a3b8] hover:text-blue-400 transition-colors duration-200 py-2"
                   >
                     {path.secondary}
@@ -180,16 +180,16 @@ export default function ContactPage() {
                 <div>
                   <p className="text-label text-[#475569] mb-2">Email</p>
                   <a
-                    href="mailto:nathan@prosaria.co.uk"
+                    href="mailto:hello@prosaria.co.uk"
                     className="font-serif text-display-sm text-[#f0f4ff] hover:text-blue-400 transition-colors duration-200"
                   >
-                    nathan@prosaria.co.uk
+                    hello@prosaria.co.uk
                   </a>
                 </div>
                 <div>
                   <p className="text-label text-[#475569] mb-2">LinkedIn</p>
                   <a
-                    href="https://linkedin.com/in/nathanpowell"
+                    href="https://linkedin.com/in/mrpowell22/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-serif text-display-sm text-[#f0f4ff] hover:text-blue-400 transition-colors duration-200"

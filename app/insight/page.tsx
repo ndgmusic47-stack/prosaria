@@ -107,7 +107,7 @@ export default function InsightPage() {
             </p>
           </div>
           <a
-            href="https://linkedin.com/in/nathanpowell"
+            href="https://linkedin.com/in/mrpowell22/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline flex-shrink-0"

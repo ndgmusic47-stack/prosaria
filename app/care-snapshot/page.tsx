@@ -190,7 +190,7 @@ export default function CareSnapshotPage() {
           <div className="bg-[#0f0f0f] p-10">
             <p className="font-serif text-display-sm text-[#f0ede8] mb-6">{band.cta}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:nathan@prosaria.co.uk" className="btn-primary">
+              <a href="mailto:hello@prosaria.co.uk" className="btn-primary">
                 Email Nathan directly
               </a>
               <Link href="/contact" className="btn-outline">

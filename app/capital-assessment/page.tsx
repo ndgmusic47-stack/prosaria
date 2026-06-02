@@ -162,7 +162,7 @@ export default function CapitalAssessmentPage() {
               Want Nathan to look at this properly?
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:nathan@prosaria.co.uk" className="btn-primary">
+              <a href="mailto:hello@prosaria.co.uk" className="btn-primary">
                 Email Nathan directly
               </a>
               <Link href="/contact" className="btn-outline">
