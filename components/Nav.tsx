@@ -33,12 +33,12 @@ export default function Nav() {
         <div className="max-w-site mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-4 group">
             <Image
               src="/logo.png"
               alt="Prosaria Partners"
-              width={44}
-              height={44}
+              width={52}
+              height={52}
               className="object-contain"
             />
             <span className="hidden sm:block font-serif text-[1rem] text-[#f0f4ff] tracking-wide group-hover:text-blue-400 transition-colors duration-200">

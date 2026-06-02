@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import HeroVideo from '@/components/HeroVideo'
 
 function useReveal() {
   useEffect(() => {
@@ -76,27 +77,15 @@ export default function HomePage() {
     <>
       {/* HERO with video */}
       <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <video
-            autoPlay muted loop playsInline
-            poster="/hero-bg.jpg"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          >
-            <source src="/hero.mp4" type="video/mp4" />
-          </video>
-          <Image src="/hero-bg.jpg" alt="" fill className="object-cover object-center" priority style={{zIndex:-1}} />
-          <div className="absolute inset-0 bg-[#050d1a]/80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_50%,rgba(29,78,216,0.18)_0%,transparent_60%)]" />
-          <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#050d1a] to-transparent" />
-        </div>
-        <div className="scanlines absolute inset-0 opacity-20 pointer-events-none" />
+        <HeroVideo />
+        <div className="scanlines absolute inset-0 opacity-20 pointer-events-none" style={{zIndex:3}} />
 
         <div className="relative z-10 max-w-site mx-auto px-6 lg:px-10 w-full pt-36">
           <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
             Prosaria Partners London
           </p>
           <h1
-            className="font-serif text-display-2xl text-[#f0f4ff] max-w-[16ch] leading-none mb-8 opacity-0 animate-fade-up"
+            className="font-serif font-serif text-[clamp(3rem,9vw,7rem)] leading-none tracking-tight text-[#f0f4ff] max-w-[16ch] leading-none mb-8 opacity-0 animate-fade-up"
             style={{animationDelay:'0.2s',animationFillMode:'forwards',textShadow:'0 0 60px rgba(59,130,246,0.25)'}}>
             We help opportunities<br />
             <span className="italic text-blue-400">take shape.</span>
@@ -145,7 +134,7 @@ export default function HomePage() {
       </section>
 
       {/* WHAT WE DO */}
-      <section className="py-32 bg-[#050d1a] relative overflow-hidden">
+      <section className="py-40 bg-[#050d1a] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/4 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-16 reveal">
@@ -222,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* CASE STUDIES */}
-      <section className="py-32 bg-[#020810]">
+      <section className="py-40 bg-[#020810]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
             <div className="reveal">
@@ -236,7 +225,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs, i) => (
               <div key={cs.headline}
-                className={`border border-blue-500/10 bg-[#0a1628] p-8 flex flex-col reveal reveal-delay-${i+1} hover:border-blue-500/20 transition-all duration-300`}>
+                className={`border border-blue-500/10 bg-[#0a1628] p-8 flex flex-col case-card reveal reveal-delay-${i+1} hover:border-blue-500/20 transition-all duration-300`}>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="eyebrow text-blue-400">{cs.tag}</span>
                   <span className="text-blue-500/20">·</span>
@@ -255,7 +244,7 @@ export default function HomePage() {
       </section>
 
       {/* LEAD MAGNETS */}
-      <section className="light-section py-32">
+      <section className="light-section py-40">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Free tools</p>
