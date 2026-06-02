@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import HeroVideo from '@/components/HeroVideo'
+
 
 function useReveal() {
   useEffect(() => {
@@ -77,10 +77,21 @@ export default function HomePage() {
     <>
       {/* HERO with video */}
       <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
-        <HeroVideo />
-        <div className="scanlines absolute inset-0 opacity-20 pointer-events-none" style={{zIndex:3}} />
+        {/* Video background */}
+        <video
+          autoPlay muted loop playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{zIndex:0}}
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-[#050d1a]/75" style={{zIndex:1}} />
+        <div className="absolute inset-0" style={{zIndex:1,background:'radial-gradient(ellipse at 40% 50%, rgba(29,78,216,0.18) 0%, transparent 60%)'}} />
+        <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#050d1a] to-transparent" style={{zIndex:1}} />
+        <div className="scanlines absolute inset-0 opacity-20 pointer-events-none" style={{zIndex:2}} />
 
-        <div className="relative z-10 max-w-site mx-auto px-6 lg:px-10 w-full pt-36">
+        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:3}}>
           <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
             Prosaria Partners London
           </p>
