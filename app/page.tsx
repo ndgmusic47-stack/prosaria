@@ -86,10 +86,10 @@ export default function HomePage() {
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         {/* Overlays */}
-        <div className="absolute inset-0 bg-[#050d1a]/75" style={{zIndex:1}} />
-        <div className="absolute inset-0" style={{zIndex:1,background:'radial-gradient(ellipse at 40% 50%, rgba(29,78,216,0.18) 0%, transparent 60%)'}} />
+        <div className="absolute inset-0 bg-[#050d1a]/20" style={{zIndex:1}} />
+        
         <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#050d1a] to-transparent" style={{zIndex:1}} />
-        <div className="scanlines absolute inset-0 opacity-20 pointer-events-none" style={{zIndex:2}} />
+        
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:3}}>
           <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
