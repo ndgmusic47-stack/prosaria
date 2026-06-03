@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import HeroVideo from '@/components/HeroVideo'
 
 

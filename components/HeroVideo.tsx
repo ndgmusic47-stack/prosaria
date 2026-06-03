@@ -8,44 +8,35 @@ export default function HeroVideo() {
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
-    // Required sequence for iOS Safari autoplay
     v.setAttribute('playsinline', '')
     v.setAttribute('webkit-playsinline', '')
     v.muted = true
     v.volume = 0
-    v.load()
+    // Do NOT call v.load() — it resets and breaks iOS
     const play = () => { v.play().catch(() => {}) }
     if (v.readyState >= 2) {
       play()
     } else {
-      v.addEventListener('loadeddata', play, { once: true })
+      v.addEventListener('loadedmetadata', play, { once: true })
       v.addEventListener('canplay', play, { once: true })
     }
   }, [])
 
   return (
     <div className="absolute inset-0" style={{zIndex:0}}>
-
-      {/* Navy base — instant, no flash */}
       <div className="absolute inset-0 bg-[#050d1a]" />
-
-      {/* Video — plays on all devices including iOS */}
       <video
         ref={videoRef}
         muted
         loop
         playsInline
         autoPlay
-        preload="auto"
-        x-webkit-airplay="deny"
-        disablePictureInPicture
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
         style={{pointerEvents:'none'}}
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
-
-      {/* Overlay — light so video pops, text stays readable */}
       <div
         className="absolute inset-0"
         style={{
@@ -58,7 +49,6 @@ export default function HeroVideo() {
           )`
         }}
       />
-
     </div>
   )
 }
