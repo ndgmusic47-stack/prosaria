@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import HeroVideo from '@/components/HeroVideo'
 
 
 function useReveal() {
@@ -98,7 +99,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#050d1a] to-transparent" style={{zIndex:1}} />
         
 
-        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:3}}>
+        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
           <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
             Prosaria Partners London
           </p>
@@ -120,10 +121,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
             {[
-              { v:'3',         l:'Sectors' },
-              { v:'London',    l:'Based' },
-              { v:'Off-market',l:'How we work' },
-              { v:'Direct',    l:'Always' },
+              { v:'£40m+',      l:'Deals supported' },
+              { v:'3',          l:'Specialist sectors' },
+              { v:'100%',       l:'Off-market origination' },
+              { v:'8+',         l:'Countries' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
