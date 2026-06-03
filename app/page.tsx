@@ -81,17 +81,17 @@ export default function HomePage() {
         <HeroVideo />
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
-          <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
+          <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{color:'#ffffff',animationDelay:'0.1s',animationFillMode:'forwards'}}>
             Prosaria Partners
           </p>
           <h1
-            className="font-serif text-[clamp(2.8rem,8vw,6.5rem)] leading-none tracking-tight text-white max-w-[16ch] mb-8 opacity-0 animate-fade-up"
-            style={{animationDelay:'0.2s',animationFillMode:'forwards',textShadow:'0 0 60px rgba(59,130,246,0.25)'}}>
+            className="font-serif text-[clamp(2.8rem,8vw,6.5rem)] leading-none tracking-tight max-w-[16ch] mb-8 opacity-0 animate-fade-up"
+            style={{animationDelay:'0.2s',animationFillMode:'forwards',color:'#ffffff',textShadow:'2px 2px 20px rgba(0,0,0,0.8)'}}>
             We help opportunities<br />
             <span className="italic text-blue-400">take shape.</span>
           </h1>
-          <p className="font-sans text-body-lg text-[#cbd5e1] max-w-[42ch] mb-12 opacity-0 animate-fade-up"
-            style={{animationDelay:'0.35s',animationFillMode:'forwards'}}>
+          <p className="font-sans text-body-lg max-w-[42ch] mb-12 opacity-0 animate-fade-up"
+            style={{animationDelay:'0.35s',animationFillMode:'forwards',color:'#e2e8f0'}}>
             Independent deal origination across digital infrastructure, working capital and care sector M&A.
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
@@ -109,9 +109,9 @@ export default function HomePage() {
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
-                <p className="font-serif text-display-md text-white leading-none mb-1"
+                <p className="font-serif text-display-md leading-none mb-1" style={{color:'#ffffff'}}
                   style={{textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
-                <p className="text-label text-[#94a3b8] uppercase tracking-widest">{s.l}</p>
+                <p className="text-label uppercase tracking-widest" style={{color:'#cbd5e1'}}>{s.l}</p>
               </div>
             ))}
           </div>

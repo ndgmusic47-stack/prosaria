@@ -14,39 +14,36 @@ export default function HeroVideo() {
 
   return (
     <div className="absolute inset-0" style={{zIndex:0}}>
-
-      {/* Navy base — shows instantly, no flash */}
+      {/* Navy base — instant load, no flash */}
       <div className="absolute inset-0 bg-[#050d1a]" />
 
-      {/* Video — no poster, JS-triggered play for mobile */}
+      {/* Video — faststart encoded, plays on mobile */}
       <video
         ref={videoRef}
         muted
         loop
         playsInline
         autoPlay
-        preload="none"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
         style={{pointerEvents:'none'}}
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Overlay — dark top for text, opens mid, dark base */}
+      {/* Minimal overlay — just enough to read text, video stays vivid */}
       <div
         className="absolute inset-0"
         style={{
           background: `linear-gradient(
             180deg,
-            rgba(5,13,26,0.85) 0%,
-            rgba(5,13,26,0.85) 25%,
-            rgba(5,13,26,0.20) 55%,
-            rgba(5,13,26,0.70) 80%,
-            rgba(5,13,26,0.98) 100%
+            rgba(5,13,26,0.55) 0%,
+            rgba(5,13,26,0.10) 45%,
+            rgba(5,13,26,0.10) 60%,
+            rgba(5,13,26,0.90) 100%
           )`
         }}
       />
-
     </div>
   )
 }
