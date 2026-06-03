@@ -93,8 +93,8 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
-            <Link href="/contact" className="btn-primary">Get in touch</Link>
-            <Link href="/work" className="btn-outline">See what we do</Link>
+            <Link href="/work" className="btn-primary">See what we do</Link>
+            <Link href="/contact" className="btn-outline">Get in touch</Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
@@ -307,8 +307,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 reveal reveal-delay-1 flex-shrink-0">
-            <Link href="/contact" className="btn-primary">Get in touch</Link>
-            <Link href="/work" className="btn-outline">See what we do</Link>
+            <Link href="/work" className="btn-primary">See what we do</Link>
+            <Link href="/contact" className="btn-outline">Get in touch</Link>
           </div>
         </div>
       </section>
