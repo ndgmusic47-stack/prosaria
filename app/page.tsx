@@ -109,8 +109,7 @@ export default function HomePage() {
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
-                <p className="font-serif text-display-md leading-none mb-1" style={{color:'#ffffff'}}
-                  style={{textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
+                <p className="font-serif text-display-md leading-none mb-1" style={{color:'#ffffff',textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
                 <p className="text-label uppercase tracking-widest" style={{color:'#cbd5e1'}}>{s.l}</p>
               </div>
             ))}
