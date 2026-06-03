@@ -83,9 +83,7 @@ function getScoreBand(score: number) {
   }
 }
 
-function buildEmailBody(name: string, email: string, answers: Record<string,string>, score: number, band: string) {
-  return `IPv4 Opportunity Check%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${email}%0D%0AScore: ${score}/8 - ${band}%0D%0A%0D%0AIPv4 holdings: ${answers.ipv4 || ''}%0D%0ABusiness age: ${answers.age || ''}%0D%0ALast review: ${answers.review || ''}%0D%0AAcquisitions: ${answers.acquisition || ''}`
-}
+
 
 export default function DigitalAuditPage() {
   const [step, setStep]           = useState(0)
@@ -113,13 +111,18 @@ export default function DigitalAuditPage() {
     setTimeout(() => setStep(step + 1), 250)
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!name.trim() || !email.trim()) return
-    setSubmitted(true)
     const score = calcScore()
     const band  = getScoreBand(score).label
-    const body  = buildEmailBody(name, email, answers, score, band)
-    window.location.href = `mailto:hello@prosaria.co.uk?subject=IPv4 check: ${encodeURIComponent(name)} - ${band}&body=${body}`
+    try {
+      await fetch('/api/submit-digital', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, score, band, ...answers }),
+      })
+    } catch {}
+    setSubmitted(true)
   }
 
   if (submitted) {

@@ -81,11 +81,8 @@ export default function HomePage() {
         <HeroVideo />
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
-          <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{color:'#ffffff',animationDelay:'0.1s',animationFillMode:'forwards'}}>
-            Prosaria Partners
-          </p>
-          <h1
-            className="font-serif text-[clamp(2.8rem,8vw,6.5rem)] leading-none tracking-tight max-w-[16ch] mb-8 opacity-0 animate-fade-up"
+<h1
+            className="font-serif text-[clamp(2.8rem,8vw,6.5rem)] leading-[0.95] tracking-[-0.03em] max-w-[16ch] mb-8 opacity-0 animate-fade-up"
             style={{animationDelay:'0.2s',animationFillMode:'forwards',color:'#ffffff',textShadow:'2px 2px 20px rgba(0,0,0,0.8)'}}>
             We help opportunities<br />
             <span className="italic text-blue-400">take shape.</span>
@@ -96,8 +93,8 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
-            <Link href="/work" className="btn-primary">See what we do</Link>
-            <Link href="/contact" className="btn-outline">Get in touch</Link>
+            <Link href="/contact" className="btn-primary">Get in touch</Link>
+            <Link href="/work" className="btn-outline">See what we do</Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">

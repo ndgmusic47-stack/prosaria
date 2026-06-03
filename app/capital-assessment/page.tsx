@@ -66,9 +66,7 @@ function calcReleasable(turnoverValue: string, termsValue: string): string | nul
   return `£${n}`
 }
 
-function buildEmailBody(name: string, email: string, answers: Record<string,string>, releasable: string | null) {
-  return `Working Capital Assessment%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${email}%0D%0AEstimated releasable: ${releasable || 'Not calculated'}%0D%0A%0D%0ATurnover: ${answers.turnover || ''}%0D%0ATerms: ${answers.terms || ''}%0D%0AFacility: ${answers.facility || ''}%0D%0ASector: ${answers.sector || ''}`
-}
+
 
 export default function CapitalAssessmentPage() {
   const [step, setStep]           = useState(0)
@@ -85,12 +83,17 @@ export default function CapitalAssessmentPage() {
     setTimeout(() => setStep(step + 1), 250)
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!name.trim() || !email.trim()) return
-    setSubmitted(true)
     const releasable = calcReleasable(answers.turnover, answers.terms)
-    const body = buildEmailBody(name, email, answers, releasable)
-    window.location.href = `mailto:hello@prosaria.co.uk?subject=Capital assessment: ${encodeURIComponent(name)} - ${releasable || 'review needed'}&body=${body}`
+    try {
+      await fetch('/api/submit-capital', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, releasable, ...answers }),
+      })
+    } catch {}
+    setSubmitted(true)
   }
 
   if (submitted) {

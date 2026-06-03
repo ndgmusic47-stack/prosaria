@@ -100,9 +100,7 @@ function getScoreBand(score: number) {
   }
 }
 
-function buildEmailBody(name: string, email: string, answers: Record<string,string>, score: number, band: string) {
-  return `Care Exit Readiness Snapshot%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${email}%0D%0AScore: ${score}/11 - ${band}%0D%0A%0D%0ARevenue: ${answers.revenue || ''}%0D%0ASize: ${answers.size || ''}%0D%0AOccupancy: ${answers.occupancy || ''}%0D%0AManager: ${answers.manager || ''}%0D%0ACQC: ${answers.cqc || ''}%0D%0ATimeframe: ${answers.timeframe || ''}`
-}
+
 
 export default function CareSnapshotPage() {
   const [step, setStep]           = useState(0)
@@ -138,14 +136,19 @@ export default function CareSnapshotPage() {
     setStep(step + 1)
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!name.trim() || !email.trim()) return
-    setSubmitted(true)
-    // Trigger mailto so Prosaria always gets notified
     const score = calcScore()
     const band  = getScoreBand(score).label
-    const body  = buildEmailBody(name, email, answers, score, band)
-    window.location.href = `mailto:hello@prosaria.co.uk?subject=Care snapshot: ${encodeURIComponent(name)} - Score ${score}/11&body=${body}`
+    // Notify Prosaria silently — no redirect
+    try {
+      await fetch('/api/submit-care', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, score, band, ...answers }),
+      })
+    } catch {}
+    setSubmitted(true)
   }
 
   if (submitted) {
