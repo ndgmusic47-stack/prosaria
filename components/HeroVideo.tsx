@@ -1,71 +1,35 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isIOS, setIsIOS] = useState(false)
-  const [videoLoaded, setVideoLoaded] = useState(false)
 
   useEffect(() => {
-    // Detect iOS — Safari blocks background video autoplay
-    const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream
-    setIsIOS(ios)
-
-    if (!ios) {
-      const v = videoRef.current
-      if (!v) return
-      v.muted = true
-      const playPromise = v.play()
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {})
-      }
+    const v = videoRef.current
+    if (!v) return
+    // Required sequence for iOS Safari autoplay
+    v.setAttribute('playsinline', '')
+    v.setAttribute('webkit-playsinline', '')
+    v.muted = true
+    v.volume = 0
+    v.load()
+    const play = () => { v.play().catch(() => {}) }
+    if (v.readyState >= 2) {
+      play()
+    } else {
+      v.addEventListener('loadeddata', play, { once: true })
+      v.addEventListener('canplay', play, { once: true })
     }
   }, [])
 
-  const overlay = (
-    <div
-      className="absolute inset-0"
-      style={{
-        zIndex: 2,
-        background: `linear-gradient(
-          180deg,
-          rgba(5,13,26,0.55) 0%,
-          rgba(5,13,26,0.10) 45%,
-          rgba(5,13,26,0.10) 60%,
-          rgba(5,13,26,0.92) 100%
-        )`
-      }}
-    />
-  )
-
-  // iOS — static image background, looks identical
-  if (isIOS) {
-    return (
-      <div className="absolute inset-0" style={{zIndex:0}}>
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{backgroundImage:'url(/hero-bg.jpg)'}}
-        />
-        {overlay}
-      </div>
-    )
-  }
-
-  // All other devices — video
   return (
     <div className="absolute inset-0" style={{zIndex:0}}>
-      {/* Navy base — no flash while video loads */}
-      <div className="absolute inset-0 bg-[#050d1a]" style={{zIndex:0}} />
 
-      {/* Static image shows until video is ready */}
-      {!videoLoaded && (
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{backgroundImage:'url(/hero-bg.jpg)',zIndex:1}}
-        />
-      )}
+      {/* Navy base — instant, no flash */}
+      <div className="absolute inset-0 bg-[#050d1a]" />
 
+      {/* Video — plays on all devices including iOS */}
       <video
         ref={videoRef}
         muted
@@ -73,14 +37,28 @@ export default function HeroVideo() {
         playsInline
         autoPlay
         preload="auto"
-        onCanPlay={() => setVideoLoaded(true)}
+        x-webkit-airplay="deny"
+        disablePictureInPicture
         className="absolute inset-0 w-full h-full object-cover"
-        style={{zIndex:1, pointerEvents:'none', opacity: videoLoaded ? 1 : 0, transition:'opacity 0.5s ease'}}
+        style={{pointerEvents:'none'}}
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      {overlay}
+      {/* Overlay — light so video pops, text stays readable */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:`linear-gradient(
+            180deg,
+            rgba(5,13,26,0.55) 0%,
+            rgba(5,13,26,0.08) 40%,
+            rgba(5,13,26,0.08) 60%,
+            rgba(5,13,26,0.92) 100%
+          )`
+        }}
+      />
+
     </div>
   )
 }
