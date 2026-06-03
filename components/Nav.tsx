@@ -51,7 +51,7 @@ export default function Nav() {
             {links.map(({ href, label }) => (
               <Link key={href} href={href}
                 className={`font-sans text-[0.78rem] tracking-[0.06em] uppercase transition-colors duration-200 ${
-                  pathname === href ? 'text-blue-400' : 'text-silver-dim hover:text-[#f0f4ff]'
+                  pathname === href ? 'text-blue-400' : 'text-[#94a3b8] hover:text-[#f0f4ff]'
                 }`}>
                 {label}
               </Link>

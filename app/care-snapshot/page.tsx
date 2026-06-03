@@ -8,10 +8,10 @@ const questions = [
     id: 'revenue',
     question: 'What is the approximate annual revenue of your care business?',
     options: [
-      { label:'Under £500k',  value:'under-500k', score:0 },
-      { label:'£500k to £1m', value:'500k-1m',    score:1 },
-      { label:'£1m to £3m',   value:'1m-3m',      score:2 },
-      { label:'Over £3m',     value:'over-3m',     score:2 },
+      { label:'Under £500k',   value:'under-500k', score:0 },
+      { label:'£500k to £1m',  value:'500k-1m',    score:1 },
+      { label:'£1m to £3m',    value:'1m-3m',      score:2 },
+      { label:'Over £3m',      value:'over-3m',     score:2 },
     ],
   },
   {
@@ -56,8 +56,8 @@ const questions = [
     options: [
       { label:'Under 12 months', value:'under-12m', score:0 },
       { label:'1 to 2 years',    value:'1-2y',      score:1 },
-      { label:'2 to 5 years',    value:'2-5y',       score:2 },
-      { label:'Just exploring',  value:'exploring',  score:2 },
+      { label:'2 to 5 years',    value:'2-5y',      score:2 },
+      { label:'Just exploring',  value:'exploring', score:2 },
     ],
   },
   {
@@ -74,7 +74,7 @@ function getScoreBand(score: number) {
     summary: 'Your business has real potential but a buyer would flag a few things today. The good news is there is time to address them.',
     points: [
       'Occupancy and CQC rating are the first two things any buyer looks at. Improving either one moves your valuation meaningfully.',
-      'Starting a quiet conversation now, even at this stage, gives you options rather than taking them away.',
+      'Starting a quiet conversation now, even at this stage, gives you options rather than removing them.',
       'We can give you a clear picture of what buyers in your sector are actually focused on.',
     ],
   }
@@ -85,19 +85,23 @@ function getScoreBand(score: number) {
     points: [
       'Buyers pay more for stability. A registered manager in post, consistent occupancy and a clean CQC record all move the price.',
       'Your timeframe gives you room to prepare properly rather than rushing into a process.',
-      'The off-market route is likely the right one for a business like yours. Quiet, direct and with the right buyer.',
+      'The off-market route is likely the right one for a business like yours.',
     ],
   }
   return {
     label: 'Exit ready',
     colour: 'text-blue-200',
-    summary: 'Your business is in strong shape. If a sale is on your radar, there is no reason to wait to have a conversation.',
+    summary: 'Your business is in strong shape. If a sale is on your radar, there is no reason to wait.',
     points: [
       'Buyers are active in your size range right now. Demand is real.',
       'You do not need a public process. The right buyer does not need to see you on a broker list.',
       'We can make introductions to qualified buyers who are actively looking, without any open process.',
     ],
   }
+}
+
+function buildEmailBody(name: string, email: string, answers: Record<string,string>, score: number, band: string) {
+  return `Care Exit Readiness Snapshot%0D%0A%0D%0AName: ${encodeURIComponent(name)}%0D%0AEmail: ${email}%0D%0AScore: ${score}/11 - ${band}%0D%0A%0D%0ARevenue: ${answers.revenue || ''}%0D%0ASize: ${answers.size || ''}%0D%0AOccupancy: ${answers.occupancy || ''}%0D%0AManager: ${answers.manager || ''}%0D%0ACQC: ${answers.cqc || ''}%0D%0ATimeframe: ${answers.timeframe || ''}`
 }
 
 export default function CareSnapshotPage() {
@@ -107,7 +111,6 @@ export default function CareSnapshotPage() {
   const [name, setName]           = useState('')
   const [email, setEmail]         = useState('')
   const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading]     = useState(false)
 
   const q        = questions[step]
   const progress = (step / questions.length) * 100
@@ -116,8 +119,7 @@ export default function CareSnapshotPage() {
     let score = 0
     questions.forEach(q => {
       if (q.options) {
-        const ans = answers[q.id]
-        const opt = q.options.find(o => o.value === ans)
+        const opt = q.options.find(o => o.value === answers[q.id])
         if (opt) score += opt.score
       }
     })
@@ -136,20 +138,14 @@ export default function CareSnapshotPage() {
     setStep(step + 1)
   }
 
-  async function handleSubmit() {
+  function handleSubmit() {
     if (!name.trim() || !email.trim()) return
-    setLoading(true)
-    const score = calcScore()
-    const band  = getScoreBand(score)
-    try {
-      await fetch('/api/submit-care', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, score, band: band.label, ...answers }),
-      })
-    } catch {}
     setSubmitted(true)
-    setLoading(false)
+    // Trigger mailto so Prosaria always gets notified
+    const score = calcScore()
+    const band  = getScoreBand(score).label
+    const body  = buildEmailBody(name, email, answers, score, band)
+    window.location.href = `mailto:hello@prosaria.co.uk?subject=Care snapshot: ${encodeURIComponent(name)} - Score ${score}/11&body=${body}`
   }
 
   if (submitted) {
@@ -158,7 +154,7 @@ export default function CareSnapshotPage() {
     return (
       <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
         <div className="max-w-[680px] mx-auto px-6">
-          <Link href="/work#care" className="eyebrow text-[#475569] hover:text-blue-400 transition-colors mb-8 block">
+          <Link href="/work#care" className="eyebrow text-[#94a3b8] hover:text-blue-400 transition-colors mb-8 block">
             Back to care M&A
           </Link>
           <p className="eyebrow text-blue-400 mb-6">Your exit readiness result</p>
@@ -166,7 +162,7 @@ export default function CareSnapshotPage() {
           <div className="bg-[#0a1628] border border-blue-500/10 p-10 mb-8">
             <div className="flex items-end gap-4 mb-4">
               <span className={`font-serif text-[4rem] leading-none ${band.colour}`}>{score}</span>
-              <span className="font-serif text-[2rem] text-[#334155] leading-none mb-2">/ 11</span>
+              <span className="font-serif text-[2rem] text-[#94a3b8] leading-none mb-2">/ 11</span>
             </div>
             <p className={`font-serif text-display-sm mb-3 ${band.colour}`}>{band.label}</p>
             <p className="text-body-sm text-[#94a3b8]">{band.summary}</p>
@@ -182,10 +178,10 @@ export default function CareSnapshotPage() {
           </div>
 
           <div className="bg-[#0a1628] border border-blue-500/10 p-8">
-            <p className="font-serif text-display-sm text-[#f0f4ff] mb-3">Want to talk through what this means?</p>
-            <p className="text-body-sm text-[#94a3b8] mb-6">We have your results. We will follow up within one business day.</p>
+            <p className="font-serif text-display-sm text-[#f0f4ff] mb-3">Want to talk this through?</p>
+            <p className="text-body-sm text-[#94a3b8] mb-6">Get in touch directly and we will pick up from your results.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:hello@prosaria.co.uk" className="btn-primary">Email us directly</a>
+              <a href="mailto:hello@prosaria.co.uk" className="btn-primary">Email us</a>
               <a href="tel:02030267906" className="btn-outline">020 3026 7906</a>
             </div>
           </div>
@@ -197,21 +193,17 @@ export default function CareSnapshotPage() {
   return (
     <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
       <div className="max-w-[680px] mx-auto px-6">
-        <Link href="/work#care" className="eyebrow text-[#475569] hover:text-blue-400 transition-colors mb-8 block">
+        <Link href="/work#care" className="eyebrow text-[#94a3b8] hover:text-blue-400 transition-colors mb-8 block">
           Back to care M&A
         </Link>
         <p className="eyebrow text-blue-400 mb-3">Care exit readiness</p>
-        <h1 className="font-serif text-display-lg text-[#f0f4ff] mb-3">
-          Where does your care business stand?
-        </h1>
-        <p className="text-body-sm text-[#94a3b8] mb-10">
-          6 questions. Instant score. We follow up on every submission personally.
-        </p>
+        <h1 className="font-serif text-display-lg text-[#f0f4ff] mb-3">Where does your care business stand?</h1>
+        <p className="text-body-sm text-[#94a3b8] mb-10">6 questions. Instant score. No obligation.</p>
 
         <div className="w-full h-0.5 bg-[#0a1628] mb-10">
           <div className="h-full bg-blue-500 transition-all duration-500" style={{width:`${progress}%`}} />
         </div>
-        <p className="text-label text-[#334155] mb-8">{step + 1} of {questions.length}</p>
+        <p className="text-label text-[#94a3b8] mb-8">{step + 1} of {questions.length}</p>
 
         <div key={step} className="animate-fade-in" style={{animationDuration:'0.3s'}}>
           <h2 className="font-serif text-display-md text-[#f0f4ff] mb-8">{q.question}</h2>
@@ -222,8 +214,8 @@ export default function CareSnapshotPage() {
                 <button key={opt.value} onClick={() => handleOption(opt.value)}
                   className={`w-full text-left px-6 py-4 border text-body-sm transition-all duration-150 ${
                     answers[q.id] === opt.value
-                      ? 'border-blue-400 bg-blue-500/8 text-[#f0f4ff]'
-                      : 'border-blue-500/10 bg-[#0a1628] text-[#94a3b8] hover:border-blue-500/30'
+                      ? 'border-blue-400 bg-blue-500/10 text-[#f0f4ff]'
+                      : 'border-blue-500/15 bg-[#0a1628] text-[#94a3b8] hover:border-blue-400/50 hover:text-[#f0f4ff]'
                   }`}>
                   {opt.label}
                 </button>
@@ -235,7 +227,7 @@ export default function CareSnapshotPage() {
             <div className="space-y-4">
               <input type="text" value={textVal} onChange={e => setTextVal(e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && handleText()}
-                className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors"
+                className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]"
                 placeholder={q.placeholder} autoFocus />
               <button onClick={handleText} className="btn-primary">Continue</button>
             </div>
@@ -244,23 +236,21 @@ export default function CareSnapshotPage() {
           {q.type === 'contact' && (
             <div className="space-y-5">
               <div>
-                <label className="text-label text-[#475569] block mb-2">Your name</label>
+                <label className="text-label text-[#94a3b8] block mb-2">Your name</label>
                 <input type="text" value={name} onChange={e => setName(e.target.value)}
-                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors"
+                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]"
                   placeholder="First and last name" />
               </div>
               <div>
-                <label className="text-label text-[#475569] block mb-2">Email address</label>
+                <label className="text-label text-[#94a3b8] block mb-2">Email address</label>
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors"
+                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]"
                   placeholder="your@email.com" />
               </div>
-              <p className="text-label text-[#334155]">
-                Your result shows immediately. We also receive it and will follow up within one business day.
-              </p>
-              <button onClick={handleSubmit} disabled={loading || !name.trim() || !email.trim()}
-                className="btn-primary disabled:opacity-40">
-                {loading ? 'One moment...' : 'See my result'}
+              <p className="text-label text-[#94a3b8]">Your score is shown instantly. Your details are sent to Prosaria.</p>
+              <button onClick={handleSubmit} disabled={!name.trim() || !email.trim()}
+                className="btn-primary disabled:opacity-40 w-full justify-center">
+                See my score
               </button>
             </div>
           )}

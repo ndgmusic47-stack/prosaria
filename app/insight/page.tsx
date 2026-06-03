@@ -34,7 +34,7 @@ export default function InsightPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10">
           {posts.length === 0 ? (
             <div className="text-center py-24">
-              <p className="font-serif text-display-sm text-[#334155]">More coming soon.</p>
+              <p className="font-serif text-display-sm text-[#64748b]">More coming soon.</p>
             </div>
           ) : (
             <div className="divide-y divide-blue-500/8">

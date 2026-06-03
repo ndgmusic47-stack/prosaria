@@ -4,9 +4,14 @@ import { useEffect } from 'react'
 
 export default function CursorEffect() {
   useEffect(() => {
+    // Only run on desktop — hide on touch devices
+    if (window.matchMedia('(pointer: coarse)').matches) return
+
     const dot  = document.getElementById('cursor-dot')
     const ring = document.getElementById('cursor-ring')
     if (!dot || !ring) return
+    dot.style.display  = 'block'
+    ring.style.display = 'block'
 
     let mouseX = 0, mouseY = 0
     let ringX  = 0, ringY  = 0

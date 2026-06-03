@@ -104,25 +104,25 @@ export default function CaseStudiesPage() {
                 <div className="flex flex-wrap items-center gap-3 mb-6">
                   <span className={`eyebrow ${tagColours[cs.tag] || 'text-blue-400'}`}>{cs.tag}</span>
                   <span className="text-blue-500/20">·</span>
-                  <span className="text-label text-[#475569]">{cs.region}</span>
+                  <span className="text-label text-[#94a3b8]">{cs.region}</span>
                 </div>
                 <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-6 leading-snug">{cs.headline}</h3>
                 <div className="space-y-4 flex-1">
                   <div>
-                    <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Situation</p>
+                    <p className="text-label text-[#64748b] mb-2 uppercase tracking-widest">Situation</p>
                     <p className="text-body-sm text-[#94a3b8]">{cs.context}</p>
                   </div>
                   <div>
-                    <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">What happened</p>
+                    <p className="text-label text-[#64748b] mb-2 uppercase tracking-widest">What happened</p>
                     <p className="text-body-sm text-[#94a3b8]">{cs.outcome}</p>
                   </div>
                   <div>
-                    <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Result</p>
+                    <p className="text-label text-[#64748b] mb-2 uppercase tracking-widest">Result</p>
                     <p className="text-body-sm text-[#f0f4ff]">{cs.result}</p>
                   </div>
                 </div>
                 <div className="mt-6 pt-5 border-t border-blue-500/8 flex justify-between items-center">
-                  <span className="text-label text-[#334155] uppercase tracking-widest">Timeframe</span>
+                  <span className="text-label text-[#64748b] uppercase tracking-widest">Timeframe</span>
                   <span className="text-label text-blue-400">{cs.timeframe}</span>
                 </div>
               </div>

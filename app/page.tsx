@@ -77,11 +77,18 @@ export default function HomePage() {
     <>
       {/* HERO with video */}
       <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
-        {/* Video background */}
+        {/* Video background — mobile compatible */}
         <video
-          autoPlay muted loop playsInline
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          poster="/hero-bg.jpg"
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{zIndex:0}}
+          style={{zIndex:0,pointerEvents:'none'}}
+          x-webkit-airplay="deny"
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
@@ -122,7 +129,7 @@ export default function HomePage() {
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
                 <p className="font-serif text-display-md text-blue-400 leading-none mb-1"
                   style={{textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
-                <p className="text-label text-[#475569] uppercase tracking-widest">{s.l}</p>
+                <p className="text-label text-[#94a3b8] uppercase tracking-widest">{s.l}</p>
               </div>
             ))}
           </div>
@@ -132,15 +139,15 @@ export default function HomePage() {
       {/* CONTACT STRIP */}
       <section className="bg-[#020810] border-y border-blue-500/8 py-4">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-wrap items-center gap-6 lg:gap-12">
-          <a href="tel:02030267906" className="flex items-center gap-2 text-sm text-[#475569] hover:text-blue-400 transition-colors">
+          <a href="tel:02030267906" className="flex items-center gap-2 text-sm text-[#94a3b8] hover:text-blue-400 transition-colors">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
             020 3026 7906
           </a>
-          <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#475569] hover:text-blue-400 transition-colors">
+          <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#94a3b8] hover:text-blue-400 transition-colors">
             <div className="w-1.5 h-1.5 rounded-full bg-[#1e3a5f] flex-shrink-0" />
             hello@prosaria.co.uk
           </a>
-          <span className="text-sm text-[#2d4060]">66 Paul Street, London EC2A 4NA</span>
+          <span className="text-sm text-[#94a3b8]">66 Paul Street, London EC2A 4NA</span>
         </div>
       </section>
 
@@ -165,7 +172,7 @@ export default function HomePage() {
                 <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-5">{line.title}</h3>
                 <p className="text-body-sm text-[#94a3b8] leading-relaxed flex-1 mb-8">{line.body}</p>
                 <div className="mt-auto pt-6 border-t border-blue-500/8 space-y-3">
-                  <Link href={line.href} className="text-label text-[#475569] hover:text-[#94a3b8] transition-colors uppercase tracking-widest block">
+                  <Link href={line.href} className="text-label text-[#94a3b8] hover:text-[#94a3b8] transition-colors uppercase tracking-widest block">
                     Learn more
                   </Link>
                   <Link href={line.magnet} className="block w-full text-center btn-primary text-[0.75rem] py-3">
@@ -240,12 +247,12 @@ export default function HomePage() {
                 <div className="flex items-center gap-3 mb-6">
                   <span className="eyebrow text-blue-400">{cs.tag}</span>
                   <span className="text-blue-500/20">·</span>
-                  <span className="text-label text-[#475569]">{cs.region}</span>
+                  <span className="text-label text-[#94a3b8]">{cs.region}</span>
                 </div>
                 <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-4 leading-snug">{cs.headline}</h3>
                 <p className="text-body-sm text-[#94a3b8] flex-1 mb-6">{cs.outcome}</p>
                 <div className="pt-5 border-t border-blue-500/8 flex justify-between">
-                  <span className="text-label text-[#475569]">Timeframe</span>
+                  <span className="text-label text-[#94a3b8]">Timeframe</span>
                   <span className="text-label text-blue-400">{cs.timeframe}</span>
                 </div>
               </div>
@@ -315,9 +322,9 @@ export default function HomePage() {
             <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[28ch]">
               Got a deal, an asset or a situation worth a conversation?
             </h2>
-            <p className="text-body-md text-[#475569] mt-3">
+            <p className="text-body-md text-[#94a3b8] mt-3">
               <a href="tel:02030267906" className="hover:text-blue-400 transition-colors">020 3026 7906</a>
-              <span className="mx-3 text-[#1e3a5f]">·</span>
+              <span className="mx-3 text-[#94a3b8]">·</span>
               <a href="mailto:hello@prosaria.co.uk" className="hover:text-blue-400 transition-colors">hello@prosaria.co.uk</a>
             </p>
           </div>

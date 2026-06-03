@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-[#020810] border-t border-blue-500/8 text-[#475569]">
+    <footer className="bg-[#020810] border-t border-blue-500/8 text-[#94a3b8]">
       <div className="max-w-site mx-auto px-6 lg:px-10 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
@@ -23,7 +23,7 @@ export default function Footer() {
               <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
                 <span className="text-blue-500/40 text-xs">E</span> hello@prosaria.co.uk
               </a>
-              <p className="flex items-start gap-2 text-[#334155]">
+              <p className="flex items-start gap-2 text-[#64748b]">
                 <span className="text-blue-500/40 text-xs mt-0.5">A</span>
                 <span>66 Paul Street, London, EC2A 4NA</span>
               </p>
@@ -65,9 +65,9 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-blue-500/8 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-[#1e3a5f]">
+        <div className="border-t border-blue-500/8 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-[#94a3b8]">
           <p>© {year} South Thames Trading Company Limited trading as Prosaria Partners. Registered in England &amp; Wales. 66 Paul Street, London EC2A 4NA.</p>
-          <Link href="/privacy" className="hover:text-[#475569] transition-colors">Privacy policy</Link>
+          <Link href="/privacy" className="hover:text-[#94a3b8] transition-colors">Privacy policy</Link>
         </div>
       </div>
     </footer>

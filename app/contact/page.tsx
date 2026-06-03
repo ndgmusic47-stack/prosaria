@@ -95,7 +95,7 @@ export default function ContactPage() {
                     { label:'Email', key:'email', type:'email', placeholder:'your@email.com' },
                   ].map(field => (
                     <div key={field.key}>
-                      <label className="text-label text-[#475569] block mb-2">{field.label}</label>
+                      <label className="text-label text-[#94a3b8] block mb-2">{field.label}</label>
                       <input
                         type={field.type}
                         required
@@ -107,7 +107,7 @@ export default function ContactPage() {
                     </div>
                   ))}
                   <div>
-                    <label className="text-label text-[#475569] block mb-2">What is this about?</label>
+                    <label className="text-label text-[#94a3b8] block mb-2">What is this about?</label>
                     <textarea
                       required rows={5}
                       value={form.message}
@@ -127,29 +127,29 @@ export default function ContactPage() {
               <p className="eyebrow mb-6">Direct contact</p>
               <div className="space-y-8">
                 <div>
-                  <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Phone</p>
+                  <p className="text-label text-[#64748b] mb-2 uppercase tracking-widest">Phone</p>
                   <a href="tel:02030267906" className="font-serif text-display-sm text-[#f0f4ff] hover:text-blue-400 transition-colors">
                     020 3026 7906
                   </a>
                 </div>
                 <div>
-                  <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Email</p>
+                  <p className="text-label text-[#64748b] mb-2 uppercase tracking-widest">Email</p>
                   <a href="mailto:hello@prosaria.co.uk" className="font-serif text-display-sm text-[#f0f4ff] hover:text-blue-400 transition-colors">
                     hello@prosaria.co.uk
                   </a>
                 </div>
                 <div>
-                  <p className="text-label text-[#334155] mb-2 uppercase tracking-widest">Address</p>
+                  <p className="text-label text-[#64748b] mb-2 uppercase tracking-widest">Address</p>
                   <p className="text-body-sm text-[#94a3b8]">66 Paul Street<br />London EC2A 4NA</p>
                 </div>
                 <div className="pt-6 border-t border-blue-500/8">
-                  <p className="text-label text-[#334155] mb-3 uppercase tracking-widest">Response time</p>
+                  <p className="text-label text-[#64748b] mb-3 uppercase tracking-widest">Response time</p>
                   <p className="text-body-sm text-[#94a3b8]">
                     We respond to every serious enquiry personally, usually within one business day.
                   </p>
                 </div>
                 <div>
-                  <p className="text-label text-[#334155] mb-3 uppercase tracking-widest">Registered business</p>
+                  <p className="text-label text-[#64748b] mb-3 uppercase tracking-widest">Registered business</p>
                   <p className="text-body-sm text-[#94a3b8]">
                     South Thames Trading Company Limited<br />
                     Trading as Prosaria Partners<br />
