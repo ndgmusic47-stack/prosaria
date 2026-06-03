@@ -76,40 +76,21 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO with video */}
+      {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
-        {/* Video background — mobile compatible */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          disablePictureInPicture
-          poster="/hero-bg.jpg"
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{zIndex:0,pointerEvents:'none'}}
-          x-webkit-airplay="deny"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-[#050d1a]/20" style={{zIndex:1}} />
-        
-        <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-[#050d1a] to-transparent" style={{zIndex:1}} />
-        
+        <HeroVideo />
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
           <p className="eyebrow mb-6 opacity-0 animate-fade-in" style={{animationDelay:'0.1s',animationFillMode:'forwards'}}>
-            Prosaria Partners London
+            Prosaria Partners
           </p>
           <h1
-            className="font-serif font-serif text-[clamp(3rem,9vw,7rem)] leading-none tracking-tight text-[#f0f4ff] max-w-[16ch] leading-none mb-8 opacity-0 animate-fade-up"
+            className="font-serif text-[clamp(2.8rem,8vw,6.5rem)] leading-none tracking-tight text-white max-w-[16ch] mb-8 opacity-0 animate-fade-up"
             style={{animationDelay:'0.2s',animationFillMode:'forwards',textShadow:'0 0 60px rgba(59,130,246,0.25)'}}>
             We help opportunities<br />
             <span className="italic text-blue-400">take shape.</span>
           </h1>
-          <p className="font-sans text-body-lg text-[#94a3b8] max-w-[42ch] mb-12 opacity-0 animate-fade-up"
+          <p className="font-sans text-body-lg text-[#cbd5e1] max-w-[42ch] mb-12 opacity-0 animate-fade-up"
             style={{animationDelay:'0.35s',animationFillMode:'forwards'}}>
             Independent deal origination across digital infrastructure, working capital and care sector M&A.
           </p>
@@ -121,14 +102,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
             {[
-              { v:'£40m+',      l:'Deals supported' },
-              { v:'3',          l:'Specialist sectors' },
-              { v:'100%',       l:'Off-market origination' },
-              { v:'8+',         l:'Countries' },
+              { v:'3',          l:'Sectors' },
+              { v:'London',     l:'Based' },
+              { v:'Off-market', l:'How we work' },
+              { v:'Direct',     l:'Always' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
-                <p className="font-serif text-display-md text-blue-400 leading-none mb-1"
+                <p className="font-serif text-display-md text-white leading-none mb-1"
                   style={{textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
                 <p className="text-label text-[#94a3b8] uppercase tracking-widest">{s.l}</p>
               </div>
