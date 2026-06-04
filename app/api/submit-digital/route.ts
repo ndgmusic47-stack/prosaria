@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json()
+    const { name, email, score, band, ipv4, age, review, acquisition } = data
     const RESEND_KEY = process.env.RESEND_API_KEY
 
     if (RESEND_KEY) {
@@ -10,25 +11,37 @@ export async function POST(req: NextRequest) {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          from: 'Prosaria Website <noreply@prosaria.co.uk>',
+          from: 'Prosaria Website <onboarding@resend.dev>',
           to: ['hello@prosaria.co.uk'],
-          subject: `IPv4 audit: ${data.name}`,
+          reply_to: email,
+          subject: `IPv4 check: ${name} — ${band}`,
           html: `
             <h2>IPv4 Opportunity Check</h2>
-            <p><strong>Name:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>IPv4 holdings:</strong> ${data.ipv4}</p>
-            <p><strong>Sites:</strong> ${data.sites}</p>
-            <p><strong>Connectivity spend:</strong> ${data.spend}</p>
-            <p><strong>Dark fibre/unused capacity:</strong> ${data.darkfibre}</p>
-            <p><strong>Last contract review:</strong> ${data.renewal}</p>
+            <table style="border-collapse:collapse;width:100%">
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Name</td><td style="padding:8px;border:1px solid #ddd">${name}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Email</td><td style="padding:8px;border:1px solid #ddd">${email}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Result</td><td style="padding:8px;border:1px solid #ddd">${score}/8 — ${band}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">IPv4 holdings</td><td style="padding:8px;border:1px solid #ddd">${ipv4 || '-'}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Business age</td><td style="padding:8px;border:1px solid #ddd">${age || '-'}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Last reviewed</td><td style="padding:8px;border:1px solid #ddd">${review || '-'}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Acquisitions</td><td style="padding:8px;border:1px solid #ddd">${acquisition || '-'}</td></tr>
+            </table>
           `,
-          reply_to: data.email,
         }),
       })
     } else {
-      console.log('Digital audit submission:', data)
+      await fetch('https://formsubmit.co/ajax/hello@prosaria.co.uk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `IPv4 check: ${name} — ${band}`,
+          name, email, result: `${score}/8 — ${band}`,
+          ipv4: ipv4 || '-', age: age || '-',
+          review: review || '-', acquisition: acquisition || '-',
+        }),
+      })
     }
+
     return NextResponse.json({ ok: true })
   } catch (err) {
     console.error(err)
