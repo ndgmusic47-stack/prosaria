@@ -81,15 +81,48 @@ export default function HomePage() {
         <HeroVideo />
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
-<h1
-            className="font-serif text-[clamp(2.8rem,8vw,6.5rem)] leading-[0.95] tracking-[-0.03em] max-w-[16ch] mb-8 opacity-0 animate-fade-up"
-            style={{animationDelay:'0.2s',animationFillMode:'forwards',color:'#ffffff',textShadow:'2px 2px 20px rgba(0,0,0,0.8)'}}>
-            We help opportunities<br />
-            <span className="italic text-blue-400">take shape.</span>
+          <p className="opacity-0 animate-fade-in" style={{
+            fontFamily:'var(--font-sans)',
+            fontSize:'0.72rem',
+            fontWeight:600,
+            letterSpacing:'0.22em',
+            textTransform:'uppercase',
+            color:'#93c5fd',
+            marginBottom:'1.25rem',
+            textShadow:'0 1px 10px rgba(0,0,0,0.9)',
+            animationDelay:'0.1s',
+            animationFillMode:'forwards',
+          }}>
+            Prosaria Partners
+          </p>
+          <h1 className="opacity-0 animate-fade-up" style={{
+            fontFamily:'var(--font-serif)',
+            fontSize:'clamp(3.2rem,10vw,7.5rem)',
+            lineHeight:'0.92',
+            letterSpacing:'-0.04em',
+            color:'#ffffff',
+            maxWidth:'12ch',
+            marginBottom:'1.5rem',
+            textShadow:'0 2px 40px rgba(0,0,0,0.95)',
+            fontWeight:400,
+            animationDelay:'0.2s',
+            animationFillMode:'forwards',
+          }}>
+            Private market<br/>
+            <em style={{color:'#93c5fd',fontStyle:'italic'}}>deal origination.</em>
           </h1>
-          <p className="font-sans text-body-lg max-w-[42ch] mb-12 opacity-0 animate-fade-up"
-            style={{animationDelay:'0.35s',animationFillMode:'forwards',color:'#e2e8f0'}}>
-            Independent deal origination across digital infrastructure, working capital and care sector M&A.
+          <p className="opacity-0 animate-fade-up" style={{
+            fontFamily:'var(--font-sans)',
+            fontSize:'1.05rem',
+            lineHeight:'1.65',
+            color:'#e2e8f0',
+            maxWidth:'44ch',
+            marginBottom:'3rem',
+            textShadow:'0 1px 15px rgba(0,0,0,0.95)',
+            animationDelay:'0.35s',
+            animationFillMode:'forwards',
+          }}>
+            We help opportunities take shape across digital infrastructure, working capital and care sector M&amp;A.
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
