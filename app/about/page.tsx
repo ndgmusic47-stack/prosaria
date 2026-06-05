@@ -17,10 +17,10 @@ function useReveal() {
 }
 
 const values = [
-  { num:'01', title:'Direct by default', body:'The businesses we work with deal with the same person throughout. No handoffs, no account managers, no layers.' },
+  { num:'01', title:'Direct by default', body:'You deal with the same person from start to finish. No passing you around.' },
   { num:'02', title:'Origination first', body:'We find deals before they are on the market. That means outbound effort, sector knowledge and relationships not waiting for inbounds.' },
-  { num:'03', title:'Lean by design', body:'A small operation moves faster. Decisions happen quickly and the people involved are close to what matters.' },
-  { num:'04', title:'Straight about fit', body:'If a situation is not the right fit, or the timing is off, we say so. No drawn-out processes that go nowhere.' },
+  { num:'03', title:'Lean by design', body:'Being small means we move faster and make decisions without layers of approval.' },
+  { num:'04', title:'Straight about fit', body:'If something is not the right fit we will tell you. We do not drag things out.' },
 ]
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">The team</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            A small team. A direct approach.
+            A small team. A simple approach.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
             Prosaria operates lean by choice. The deals we work on benefit from a close, direct relationship not a large firm with many layers between you and the person doing the work.
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     Nathan founded Prosaria and leads the origination work across all three practice areas. His background is in deal sourcing identifying opportunities before they are formally in market, qualifying both sides and managing the process to a conclusion.
                   </p>
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    The businesses Prosaria works with get a direct line to the person running the process. That is a deliberate choice, not a constraint.
+                    When you work with Prosaria, you deal with Nathan directly. That is how it is set up.
                   </p>
                 </div>
               </div>
@@ -79,10 +79,10 @@ export default function AboutPage() {
                 <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Why lean works here</p>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    The deals Prosaria is involved in tend to be time-sensitive, relationship-dependent and off-market. A large firm with a long internal process is not always the right fit for that kind of work.
+                    Most of what we do is off-market and time-sensitive. A small team makes faster decisions and stays closer to what matters.
                   </p>
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    A small operation that moves quickly, speaks plainly and has a direct stake in the outcome tends to work better. That is the model.
+                    We move quickly, speak plainly and have a real interest in getting the deal done.
                   </p>
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
               <div className="reveal reveal-delay-2">
                 <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>How we charge</p>
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Fees are success-based wherever possible. We are invested in the outcome, not the process.
+                  We charge on success wherever we can. If the deal does not happen, we do not get paid.
                 </p>
               </div>
 

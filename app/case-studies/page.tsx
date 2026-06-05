@@ -90,7 +90,7 @@ export default function CaseStudiesPage() {
             Case studies across all three areas of the business.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            All anonymised. No client names. Outcomes as they were.
+            All anonymised. No client names. Outcomes as they happened.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#050d1a'}}>
-              Every situation is different. If yours is worth a conversation, we will tell you.
+              Every deal is different. Get in touch and we will tell you honestly if we can help.
             </h2>
           </div>
           <Link href="/contact" className="btn-primary reveal reveal-delay-1 flex-shrink-0">

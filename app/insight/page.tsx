@@ -22,10 +22,10 @@ export default function InsightPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">Insight</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[22ch] leading-tight mb-6">
-            Observations from the markets we operate in.
+            What is happening in the markets we work in.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            Published when there is something worth saying. No fixed schedule.
+            We write when there is something worth sharing. No set schedule.
           </p>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function InsightPage() {
           <div>
             <p className="eyebrow mb-3" style={{color:'#1d4ed8'}}>Follow on LinkedIn</p>
             <p className="font-serif text-display-sm max-w-[36ch]" style={{color:'#050d1a'}}>
-              Shorter observations and market notes that do not always make it here.
+              We also post shorter updates on LinkedIn.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 flex-shrink-0">

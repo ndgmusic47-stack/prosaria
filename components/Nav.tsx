@@ -37,9 +37,9 @@ export default function Nav() {
             <Image
               src="/logo.png"
               alt="Prosaria Partners"
-              width={52}
-              height={52}
-              className="object-contain"
+              width={56}
+              height={56}
+              className="object-contain brightness-110"
             />
             <span className="hidden sm:block font-serif text-[1rem] text-[#f0f4ff] tracking-wide group-hover:text-blue-400 transition-colors duration-200">
               Prosaria Partners

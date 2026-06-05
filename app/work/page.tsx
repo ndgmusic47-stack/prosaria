@@ -20,10 +20,10 @@ const lines = [
     id: 'digital',
     num: '01',
     title: 'Digital Infrastructure',
-    subtitle: 'IPv4 address space and network assets.',
-    intro: `Many businesses are holding IPv4 address blocks they acquired years ago and have never reviewed. These blocks have real market value. A secondary market exists and transactions happen regularly through established processes.
+    subtitle: 'Internet address blocks that may have real value.',
+    intro: `Some businesses own internet address blocks — called IPv4 addresses — and do not realise they are worth money. A market exists for buying and selling them. We help businesses find out what they hold and connect them with the right buyer.
 
-We work with businesses to identify what they hold, understand what it might be worth, and connect them with the right counterparty to sell or lease unused address space. We work with a specialist broker in this area and handle the process end to end.`,
+We work with a specialist broker in this area. We identify what you hold, give you a clear view of what it could be worth, and handle the process.`,
     whoFor: [
       'Businesses that have grown through acquisition and may have inherited IP address allocations',
       'Technology and telecoms companies with legacy RIPE or ARIN holdings',
@@ -43,10 +43,10 @@ We work with businesses to identify what they hold, understand what it might be 
     id: 'capital',
     num: '02',
     title: 'Working Capital',
-    subtitle: 'Invoice finance for businesses that need cash to move faster than their payment terms allow.',
-    intro: `Invoice finance is a straightforward tool that many businesses either do not use or are using badly. If you are invoicing customers on 30, 60 or 90 day terms and covering costs in the meantime from your own cash, there is a gap. Invoice finance closes it.
+    subtitle: 'Release cash tied up in unpaid invoices.',
+    intro: `If your customers take 30, 60 or 90 days to pay, you are covering costs from your own cash in the meantime. Invoice finance lets you draw against unpaid invoices straight away. It closes the gap.
 
-We help identify the right facility for your business and get it in place. We work with specialist lenders across a range of sectors and can usually move quickly.`,
+We find the right lender for your business and get the facility in place. We work with specialist lenders across most sectors.`,
     whoFor: [
       'Businesses invoicing on 30 day terms or longer with consistent customer payment',
       'Owner-managed firms that want working capital without giving up equity',
@@ -66,10 +66,10 @@ We help identify the right facility for your business and get it in place. We wo
     id: 'care',
     num: '03',
     title: 'Care Sector M&A',
-    subtitle: 'Acquisitions and exits across care businesses of all types.',
-    intro: `We work with care business owners who are thinking about selling and with buyers looking for acquisitions before they reach the open market. This covers care homes, domiciliary care, supported living, day care and other care businesses that are not technology companies.
+    subtitle: 'Buying and selling care businesses, handled quietly.',
+    intro: `We work with care business owners who want to sell and with buyers who want to acquire before businesses hit the open market. This covers care homes, domiciliary care, supported living, day care and most other care businesses.
 
-The best transactions in this space happen quietly. Owners do not want their businesses publicly marketed. Buyers do not want to compete in open processes. We operate off-market on both sides.`,
+The best deals in this sector happen quietly. Owners do not want their staff finding out before a deal is done. Buyers do not want to compete in open auctions. We work off-market on both sides.`,
     whoFor: [
       'Care business owners considering exit at any stage of readiness',
       'Founders planning succession over the next one to five years',
@@ -96,10 +96,10 @@ export default function WorkPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            Three areas where we can help.
+            Three areas. Clear process. Real results.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            Digital infrastructure, working capital and care sector M&A. Each one is different. The approach is the same find the right path and get it done.
+            We work in digital infrastructure, working capital and care sector M&A. Each area is different but the approach is the same — find the right path and get it done.
           </p>
         </div>
       </section>
@@ -169,7 +169,7 @@ export default function WorkPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[32ch]">
-              Not sure where to start? Get in touch and we will point you in the right direction.
+              Not sure which area applies to you? Get in touch and we will tell you.
             </h2>
           </div>
           <Link href="/contact" className="btn-primary reveal reveal-delay-1 flex-shrink-0">

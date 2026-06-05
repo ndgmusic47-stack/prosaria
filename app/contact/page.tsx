@@ -51,7 +51,7 @@ export default function ContactPage() {
             Start a conversation.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[44ch]">
-            Use the tools below to get an immediate answer, or send a message directly.
+            Use one of the tools below or send us a message. We respond to everything personally.
           </p>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function ContactPage() {
           <div className="mb-12 reveal">
             <p className="eyebrow mb-4">Quick start</p>
             <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[28ch]">
-              Pick the area that fits your situation.
+              Pick the area that matches what you need.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px mb-20" style={{background:'rgba(59,130,246,0.06)'}}>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 <div className="pt-6 border-t border-blue-500/8">
                   <p className="text-label text-[#64748b] mb-3 uppercase tracking-widest">Response time</p>
                   <p className="text-body-sm text-[#94a3b8]">
-                    We respond to every serious enquiry personally, usually within one business day.
+                    We respond to every enquiry personally, usually the same day.
                   </p>
                 </div>
                 <div>

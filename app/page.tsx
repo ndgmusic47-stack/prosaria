@@ -24,7 +24,7 @@ const lines = [
   {
     num: '01',
     title: 'Digital Infrastructure',
-    body: 'Many businesses are sitting on IPv4 address blocks they have never looked at. We help identify what is there and connect you with the right buyer or broker.',
+    body: 'Some businesses own internet address blocks and do not know they have value. We find out what you hold and connect you with a buyer if there is something worth acting on.',
     href: '/work#digital',
     magnet: '/digital-audit',
     magnetLabel: 'Free IPv4 audit',
@@ -32,7 +32,7 @@ const lines = [
   {
     num: '02',
     title: 'Working Capital',
-    body: 'Invoices going out on 60 or 90 day terms while you cover costs every month? We help identify the right invoice finance facility and get it in place.',
+    body: 'If your customers pay on 60 or 90 day terms, cash gets tied up. Invoice finance releases it. We find the right lender and get it set up.',
     href: '/work#capital',
     magnet: '/capital-assessment',
     magnetLabel: 'See how much you could release',
@@ -40,7 +40,7 @@ const lines = [
   {
     num: '03',
     title: 'Care Sector M&A',
-    body: 'Care business owners thinking about what comes next. Buyers looking for acquisitions before they reach the open market. We work quietly on both sides.',
+    body: 'We work with care business owners who are thinking about selling, and with buyers looking for businesses before they are publicly listed. Both sides, handled quietly.',
     href: '/work#care',
     magnet: '/care-snapshot',
     magnetLabel: 'Check your exit readiness',
@@ -84,8 +84,8 @@ export default function HomePage() {
           <p className="opacity-0 animate-fade-in" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'0.72rem',
-            fontWeight:600,
-            letterSpacing:'0.22em',
+            fontWeight:700,
+            letterSpacing:'0.18em',
             textTransform:'uppercase',
             color:'#93c5fd',
             marginBottom:'1.25rem',
@@ -155,10 +155,13 @@ export default function HomePage() {
             020 3026 7906
           </a>
           <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#94a3b8] hover:text-blue-400 transition-colors">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#1e3a5f] flex-shrink-0" />
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
             hello@prosaria.co.uk
           </a>
-          <span className="text-sm text-[#94a3b8]">66 Paul Street, London EC2A 4NA</span>
+          <span className="flex items-center gap-2 text-sm text-[#94a3b8]">
+            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+            66 Paul Street, London EC2A 4NA
+          </span>
         </div>
       </section>
 
@@ -169,7 +172,7 @@ export default function HomePage() {
           <div className="mb-16 reveal">
             <p className="eyebrow mb-4">What we do</p>
             <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">
-              Three areas. A direct approach. No unnecessary steps.
+              Three areas. Clear process. No unnecessary steps.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
@@ -227,7 +230,7 @@ export default function HomePage() {
                   Prosaria works across digital infrastructure, working capital and care sector M&A. The deals we are close to tend to be off-market and time-sensitive. That suits a lean operation better than a large one.
                 </p>
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Nathan Powell founded Prosaria and leads the origination work. The people and businesses we work with deal directly with someone who is close to the market and invested in the outcome.
+                  Nathan Powell started Prosaria and runs the day-to-day work. When you contact us, you speak to the person doing the work.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
@@ -246,7 +249,7 @@ export default function HomePage() {
             <div className="reveal">
               <p className="eyebrow mb-4">Case studies</p>
               <h2 className="font-serif text-display-md text-[#f0f4ff]">
-                Deals across all three areas.<br />All anonymised.
+                Examples of deals we have worked on.<br />All anonymised.
               </h2>
             </div>
             <Link href="/case-studies" className="btn-outline reveal">View all</Link>
@@ -278,31 +281,31 @@ export default function HomePage() {
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Free tools</p>
             <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#050d1a'}}>
-              Get a clear picture before you commit to anything.
+              Find out where you stand in under two minutes.
             </h2>
             <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#1e3a5f'}}>
-              Three short tools. You get a straight answer immediately. We follow up personally on every submission.
+              Pick the tool that fits your situation. Answer a few questions and get a result straight away. We review every submission.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 title: 'Care exit readiness',
-                desc: 'Answer 6 questions. Get an instant readiness score with a clear breakdown of where you stand and what a buyer would focus on.',
+                desc: 'Answer 6 questions about your care business. Get a score and a clear summary of where you stand today.',
                 href: '/care-snapshot',
                 tag: 'Care M&A',
                 value: 'Instant score + breakdown',
               },
               {
                 title: 'IPv4 opportunity check',
-                desc: 'Answer 5 questions about your network. Find out if you are likely sitting on address blocks with real market value.',
+                desc: 'Answer 4 questions. Find out if your business is likely holding internet address space worth money.',
                 href: '/digital-audit',
                 tag: 'Digital Infrastructure',
                 value: 'Instant assessment',
               },
               {
                 title: 'Working capital estimate',
-                desc: 'Answer 4 questions. Get an immediate estimate of how much cash could be released from your invoices and what it would cost.',
+                desc: 'Answer 4 questions. See how much cash could be freed up from your unpaid invoices.',
                 href: '/capital-assessment',
                 tag: 'Working Capital',
                 value: 'Instant cash estimate',
@@ -331,7 +334,7 @@ export default function HomePage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[28ch]">
-              Got a deal, an asset or a situation worth a conversation?
+              Have something worth talking about?
             </h2>
             <p className="text-body-md text-[#94a3b8] mt-3">
               <a href="tel:02030267906" className="hover:text-blue-400 transition-colors">020 3026 7906</a>
