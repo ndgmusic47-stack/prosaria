@@ -20,20 +20,21 @@ const lines = [
     id: 'digital',
     num: '01',
     title: 'Digital Infrastructure',
-    subtitle: 'Internet address blocks that may have real value.',
+    subtitle: 'Sourcing and placing IPv4 address space.',
     intro: `Some businesses own internet address blocks — called IPv4 addresses — and do not realise they are worth money. A market exists for buying and selling them. We help businesses find out what they hold and connect them with the right buyer.
 
 We work with a specialist broker in this area. We identify what you hold, give you a clear view of what it could be worth, and handle the process.`,
     whoFor: [
-      'Businesses that have grown through acquisition and may have inherited IP address allocations',
-      'Technology and telecoms companies with legacy RIPE or ARIN holdings',
-      'Organisations that were allocated address blocks in the early days of the internet',
-      'Finance and IT teams who want to understand whether there is value on the balance sheet',
+      'Organisations looking to acquire IPv4 address space',
+      'Holders of IPv4 address space exploring a sale',
+      'Network operators',
+      'Internet infrastructure businesses',
+      'Technology companies with IPv4 requirements',
     ],
     steps: [
-      { s:'01', label:'Review', desc:'We look at what you hold through the relevant registry. Takes minutes.' },
-      { s:'02', label:'Value', desc:'We give you an honest view of what the market looks like for your specific blocks.' },
-      { s:'03', label:'Connect', desc:'If there is value to realise, we make the right introduction and support the process.' },
+      { s:'01', label:'Source', desc:'We work with specialist partners to identify available IPv4 address space.' },
+      { s:'02', label:'Qualify', desc:'We assess whether there is a genuine fit between buyer and seller requirements.' },
+      { s:'03', label:'Connect', desc:'We make introductions and support discussions between relevant parties.' },
     ],
     magnet: '/digital-audit',
     magnetLabel: 'Start with a free IPv4 check',
@@ -46,7 +47,7 @@ We work with a specialist broker in this area. We identify what you hold, give y
     subtitle: 'Release cash tied up in unpaid invoices.',
     intro: `If your customers take 30, 60 or 90 days to pay, you are covering costs from your own cash in the meantime. Invoice finance lets you draw against unpaid invoices straight away. It closes the gap.
 
-We find the right lender for your business and get the facility in place. We work with specialist lenders across most sectors.`,
+We work with a small number of specialist funding partners. After understanding the requirement, we introduce suitable businesses to the relevant lender.`,
     whoFor: [
       'Businesses invoicing on 30 day terms or longer with consistent customer payment',
       'Owner-managed firms that want working capital without giving up equity',
@@ -54,9 +55,9 @@ We find the right lender for your business and get the facility in place. We wor
       'Growing businesses that need cash to fulfil larger contracts',
     ],
     steps: [
-      { s:'01', label:'Understand', desc:'We look at your invoice profile, customers and current position.' },
-      { s:'02', label:'Match', desc:'We identify lenders who are a genuine fit for your sector and size.' },
-      { s:'03', label:'Place', desc:'We make the introduction properly and stay involved until the facility is agreed.' },
+      { s:'01', label:'Qualify', desc:'We understand your situation and check whether there is a likely fit with our lending partners.' },
+      { s:'02', label:'Introduce', desc:'Where there is a fit, we introduce you to the relevant lender.' },
+      { s:'03', label:'Support', desc:'We stay involved and help move things forward where we can.' },
     ],
     magnet: '/capital-assessment',
     magnetLabel: 'Get a free working capital estimate',

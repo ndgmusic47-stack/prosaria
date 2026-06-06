@@ -24,7 +24,7 @@ const lines = [
   {
     num: '01',
     title: 'Digital Infrastructure',
-    body: 'Some businesses own internet address blocks and do not know they have value. We find out what you hold and connect you with a buyer if there is something worth acting on.',
+    body: 'We work with specialist partners to source and place IPv4 address space. Our role is to connect buyers and sellers where there is a genuine commercial fit.',
     href: '/work#digital',
     magnet: '/digital-audit',
     magnetLabel: 'Free IPv4 audit',
@@ -81,36 +81,35 @@ export default function HomePage() {
         <HeroVideo />
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
-          <p className="opacity-0 animate-fade-in" style={{
-            fontFamily:'var(--font-sans)',
-            fontSize:'0.72rem',
-            fontWeight:700,
-            letterSpacing:'0.18em',
-            textTransform:'uppercase',
-            color:'#93c5fd',
-            marginBottom:'1.25rem',
-            textShadow:'0 1px 10px rgba(0,0,0,0.9)',
+          <h1 className="opacity-0 animate-fade-up" style={{
+            fontFamily:'var(--font-serif)',
+            fontSize:'clamp(3.5rem,11vw,8rem)',
+            lineHeight:'0.9',
+            letterSpacing:'-0.04em',
+            color:'#ffffff',
+            maxWidth:'14ch',
+            marginBottom:'1rem',
+            textShadow:'0 2px 40px rgba(0,0,0,0.95)',
+            fontWeight:400,
             animationDelay:'0.1s',
             animationFillMode:'forwards',
           }}>
             Prosaria Partners
-          </p>
-          <h1 className="opacity-0 animate-fade-up" style={{
-            fontFamily:'var(--font-serif)',
-            fontSize:'clamp(3.2rem,10vw,7.5rem)',
-            lineHeight:'0.92',
-            letterSpacing:'-0.04em',
-            color:'#ffffff',
-            maxWidth:'12ch',
+          </h1>
+          <p className="opacity-0 animate-fade-up" style={{
+            fontFamily:'var(--font-sans)',
+            fontSize:'clamp(0.9rem,2vw,1.1rem)',
+            fontWeight:600,
+            letterSpacing:'0.16em',
+            textTransform:'uppercase',
+            color:'#93c5fd',
             marginBottom:'1.5rem',
-            textShadow:'0 2px 40px rgba(0,0,0,0.95)',
-            fontWeight:400,
-            animationDelay:'0.2s',
+            textShadow:'0 1px 10px rgba(0,0,0,0.9)',
+            animationDelay:'0.25s',
             animationFillMode:'forwards',
           }}>
-            Private market<br/>
-            <em style={{color:'#93c5fd',fontStyle:'italic'}}>deal origination.</em>
-          </h1>
+            Private Markets Origination
+          </p>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'1.05rem',
@@ -132,15 +131,15 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
             {[
-              { v:'3',          l:'Sectors' },
-              { v:'London',     l:'Based' },
-              { v:'Off-market', l:'How we work' },
-              { v:'Direct',     l:'Always' },
+              { v:'Off Market',       l:'Directly sourced opportunities' },
+              { v:'Direct Access',    l:'Owners, buyers and capital' },
+              { v:'Focused',          l:'Care, Digital and Working Capital' },
+              { v:'Relationship Led', l:'Built through conversations' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
-                <p className="font-serif text-display-md leading-none mb-1" style={{color:'#ffffff',textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
-                <p className="text-label uppercase tracking-widest" style={{color:'#cbd5e1'}}>{s.l}</p>
+                <p className="font-serif text-display-sm leading-tight mb-1" style={{color:'#ffffff',textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
+                <p className="text-label uppercase tracking-widest" style={{color:'#93c5fd'}}>{s.l}</p>
               </div>
             ))}
           </div>
@@ -247,12 +246,12 @@ export default function HomePage() {
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
             <div className="reveal">
-              <p className="eyebrow mb-4">Case studies</p>
+              <p className="eyebrow mb-4">Market observations</p>
               <h2 className="font-serif text-display-md text-[#f0f4ff]">
-                Examples of deals we have worked on.<br />All anonymised.
+                Opportunities and situations<br />we are seeing in the market.
               </h2>
             </div>
-            <Link href="/case-studies" className="btn-outline reveal">View all</Link>
+            <Link href="/case-studies" className="btn-outline reveal">See more</Link>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs, i) => (

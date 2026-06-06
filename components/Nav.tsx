@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/about',        label: 'About' },
+  { href: '/about',        label: 'Meet the team' },
   { href: '/work',         label: 'What we do' },
   { href: '/case-studies', label: 'Case studies' },
   { href: '/insight',      label: 'Insight' },

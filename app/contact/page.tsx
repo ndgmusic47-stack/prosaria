@@ -31,13 +31,19 @@ export default function ContactPage() {
     e.preventDefault()
     setLoading(true)
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-    } catch {}
-    setSent(true)
+      if (res.ok) {
+        setSent(true)
+      } else {
+        alert('Something went wrong. Please email us directly at hello@prosaria.co.uk')
+      }
+    } catch {
+      alert('Something went wrong. Please email us directly at hello@prosaria.co.uk')
+    }
     setLoading(false)
   }
 

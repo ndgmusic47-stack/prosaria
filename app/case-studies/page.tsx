@@ -85,12 +85,12 @@ export default function CaseStudiesPage() {
       <section className="bg-[#050d1a] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage:`linear-gradient(to right,#3b82f6 1px,transparent 1px),linear-gradient(to bottom,#3b82f6 1px,transparent 1px)`,backgroundSize:'80px 80px'}} />
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
-          <p className="eyebrow mb-6">Deal observations</p>
+          <p className="eyebrow mb-6">Market observations</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            Case studies across all three areas of the business.
+            Market observations across our three areas.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            All anonymised. No client names. Outcomes as they happened.
+            Examples of the types of situations and opportunities we work with.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#050d1a'}}>
-              Every deal is different. Get in touch and we will tell you honestly if we can help.
+              Every situation is different. Get in touch and we will tell you if we can help.
             </h2>
           </div>
           <Link href="/contact" className="btn-primary reveal reveal-delay-1 flex-shrink-0">

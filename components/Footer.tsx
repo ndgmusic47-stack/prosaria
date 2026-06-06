@@ -34,7 +34,7 @@ export default function Footer() {
             <p className="eyebrow text-blue-500/30 mb-5">Navigate</p>
             <nav className="flex flex-col gap-3">
               {[
-                {href:'/about',label:'About Nathan'},
+                {href:'/about',label:'Meet the team'},
                 {href:'/work',label:'What we do'},
                 {href:'/case-studies',label:'Case studies'},
                 {href:'/insight',label:'Insight'},
