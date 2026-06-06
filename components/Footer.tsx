@@ -36,7 +36,7 @@ export default function Footer() {
               {[
                 {href:'/about',label:'Meet the team'},
                 {href:'/work',label:'What we do'},
-                {href:'/case-studies',label:'Case studies'},
+                {href:'/case-studies',label:'What we work on'},
                 {href:'/insight',label:'Insight'},
                 {href:'/contact',label:'Work with us'},
               ].map(({href,label})=>(

@@ -7,31 +7,41 @@ export async function POST(req: NextRequest) {
 
     const key = process.env.WEB3FORMS_KEY
 
-    if (key) {
-      await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          access_key: key,
-          subject: `New lead — Care snapshot: ${name} (${score}/11 — ${band})`,
-          from_name: 'Prosaria Website',
-          replyto: email,
-          name,
-          email,
-          score: `${score}/11 — ${band}`,
-          revenue: revenue || '-',
-          size: size || '-',
-          occupancy: occupancy || '-',
-          registered_manager: manager || '-',
-          cqc_rating: cqc || '-',
-          exit_timeframe: timeframe || '-',
-        }),
-      })
+    if (!key) {
+      console.error('CRITICAL: WEB3FORMS_KEY not set — care snapshot notification failed for:', email)
+      return NextResponse.json({ ok: true }) // Still show user their result
+    }
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: key,
+        subject: `New lead — Care snapshot: ${name} (${score}/11 — ${band})`,
+        from_name: 'Prosaria Website',
+        replyto: email,
+        name,
+        email,
+        score: `${score}/11 — ${band}`,
+        revenue: revenue || '-',
+        beds_or_service_users: size || '-',
+        occupancy: occupancy || '-',
+        registered_manager: manager || '-',
+        cqc_rating: cqc || '-',
+        exit_timeframe: timeframe || '-',
+      }),
+    })
+
+    const result = await res.json()
+    if (!res.ok) {
+      console.error('Web3Forms error on care snapshot:', JSON.stringify(result))
+    } else {
+      console.log('Care snapshot notification sent:', name, email, `score: ${score}/11`)
     }
 
     return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error(err)
-    return NextResponse.json({ ok: false }, { status: 500 })
+    console.error('Care snapshot exception:', err)
+    return NextResponse.json({ ok: true }) // Always show user their result
   }
 }
