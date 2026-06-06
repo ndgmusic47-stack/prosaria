@@ -21,23 +21,23 @@ const lines = [
     num: '01',
     title: 'Digital Infrastructure',
     subtitle: 'Sourcing and placing IPv4 address space.',
-    intro: `Some businesses own internet address blocks — called IPv4 addresses — and do not realise they are worth money. A market exists for buying and selling them. We help businesses find out what they hold and connect them with the right buyer.
+    intro: `We work with specialist partners to originate and support digital infrastructure opportunities. Our focus is IPv4 address space, where we help connect buyers and sellers through our partner network.
 
-We work with a specialist broker in this area. We identify what you hold, give you a clear view of what it could be worth, and handle the process.`,
+We are not offering free audits. We work with parties where there is a clear requirement and a realistic path to a transaction.`,
     whoFor: [
       'Organisations looking to acquire IPv4 address space',
-      'Holders of IPv4 address space exploring a sale',
-      'Network operators',
+      'Network operators with IPv4 requirements',
       'Internet infrastructure businesses',
-      'Technology companies with IPv4 requirements',
+      'Technology companies needing address space',
+      'Holders of IPv4 address space who want to explore options',
     ],
     steps: [
       { s:'01', label:'Source', desc:'We work with specialist partners to identify available IPv4 address space.' },
       { s:'02', label:'Qualify', desc:'We assess whether there is a genuine fit between buyer and seller requirements.' },
       { s:'03', label:'Connect', desc:'We make introductions and support discussions between relevant parties.' },
     ],
-    magnet: '/digital-audit',
-    magnetLabel: 'Start with a free IPv4 check',
+    magnet: '/contact',
+    magnetLabel: 'Get in touch about digital infrastructure',
     note: null,
   },
   {
@@ -70,7 +70,7 @@ We work with a small number of specialist funding partners. After understanding 
     subtitle: 'Buying and selling care businesses, handled quietly.',
     intro: `We work with care business owners who want to sell and with buyers who want to acquire before businesses hit the open market. This covers care homes, domiciliary care, supported living, day care and most other care businesses.
 
-The best deals in this sector happen quietly. Owners do not want their staff finding out before a deal is done. Buyers do not want to compete in open auctions. We work off-market on both sides.`,
+The best deals in this sector happen quietly. Owners do not want their staff finding out before a deal is done. Buyers do not want to compete in open auctions. We work off market on both sides.`,
     whoFor: [
       'Care business owners considering exit at any stage of readiness',
       'Founders planning succession over the next one to five years',
@@ -78,7 +78,7 @@ The best deals in this sector happen quietly. Owners do not want their staff fin
       'Operators looking for bolt-on acquisitions in specific regions',
     ],
     steps: [
-      { s:'01', label:'Source', desc:'We identify opportunities before they are in market. Off-market is the starting point.' },
+      { s:'01', label:'Source', desc:'We identify opportunities before they are in market. Off market is the starting point.' },
       { s:'02', label:'Qualify', desc:'We assess properly before making introductions. No wasted time on either side.' },
       { s:'03', label:'Complete', desc:'We stay close through heads of terms and support both sides to the end.' },
     ],
@@ -100,7 +100,7 @@ export default function WorkPage() {
             Three areas. Clear process.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            We work in digital infrastructure, working capital and care sector M&A. Each area is different but the approach is the same — find the right path and get it done.
+            We work in digital infrastructure, working capital and care sector M&A. Each area is different but the approach is the same find the right path and get it done.
           </p>
         </div>
       </section>

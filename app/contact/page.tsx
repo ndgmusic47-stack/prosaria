@@ -17,7 +17,7 @@ function useReveal() {
 
 const paths = [
   { num:'01', title:'Care sector M&A', desc:'You own or operate a care business and are thinking about what comes next. Or you are a buyer looking for acquisitions.', action:'Check exit readiness', href:'/care-snapshot' },
-  { num:'02', title:'Digital infrastructure', desc:'You want to find out whether your organisation has IPv4 address space worth exploring.', action:'Start with a free IPv4 check', href:'/digital-audit' },
+  { num:'02', title:'Digital infrastructure', desc:'You are looking to acquire IPv4 address space, or you hold address space and want to explore options through our partner network.', action:'Tell us about your requirement', href:'/digital-audit' },
   { num:'03', title:'Working capital', desc:'Your invoices are going out on long payment terms and you want to understand what releasing that cash looks like.', action:'Get a working capital estimate', href:'/capital-assessment' },
 ]
 

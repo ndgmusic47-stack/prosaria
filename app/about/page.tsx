@@ -95,7 +95,7 @@ export default function AboutPage() {
                 <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Why lean works here</p>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    Most of what we do is off-market and time-sensitive. A small team makes faster decisions and stays closer to what matters.
+                    Most of what we do is off market and time sensitive. A small team makes faster decisions and stays closer to what matters.
                   </p>
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
                     We move quickly, speak plainly and have a real interest in getting the deal done.

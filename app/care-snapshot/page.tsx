@@ -85,7 +85,7 @@ function getScoreBand(score: number) {
     points: [
       'Buyers pay more for stability. A registered manager in post, consistent occupancy and a clean CQC record all move the price.',
       'Your timeframe gives you room to prepare properly rather than rushing into a process.',
-      'The off-market route is likely the right one for a business like yours.',
+      'The off market route is likely the right one for a business like yours.',
     ],
   }
   return {
@@ -140,7 +140,7 @@ export default function CareSnapshotPage() {
     if (!name.trim() || !email.trim()) return
     const score = calcScore()
     const band  = getScoreBand(score).label
-    // Notify Prosaria silently — no redirect
+    // Notify Prosaria silently no redirect
     try {
       await fetch('/api/submit-care', {
         method: 'POST',

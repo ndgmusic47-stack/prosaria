@@ -27,7 +27,7 @@ const lines = [
     body: 'We work with specialist partners to source and place IPv4 address space. Our role is to connect buyers and sellers where there is a genuine commercial fit.',
     href: '/work#digital',
     magnet: '/digital-audit',
-    magnetLabel: 'Free IPv4 audit',
+    magnetLabel: 'Digital infrastructure',
   },
   {
     num: '02',
@@ -58,8 +58,8 @@ const caseStudies = [
   {
     tag: 'Digital Infrastructure',
     region: 'UK and Europe',
-    headline: 'Demand for IPv4 address space remains strong',
-    outcome: 'The secondary market for IPv4 address space is active. Buyers include network operators and internet infrastructure businesses.',
+    headline: 'Active demand for IPv4 address space',
+    outcome: 'We work with specialist partners who are active in the IPv4 market. There is consistent demand from network operators and infrastructure businesses.',
     timeframe: 'Active now',
   },
   {
@@ -97,18 +97,19 @@ export default function HomePage() {
           </p>
           <h1 className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-serif)',
-            fontSize:'clamp(3rem,9vw,7rem)',
-            lineHeight:'0.92',
-            letterSpacing:'-0.03em',
+            fontSize:'clamp(3.5rem,11vw,8.5rem)',
+            lineHeight:'0.88',
+            letterSpacing:'-0.04em',
             color:'#ffffff',
-            maxWidth:'16ch',
+            maxWidth:'14ch',
             marginBottom:'1.5rem',
-            textShadow:'0 2px 40px rgba(0,0,0,0.95)',
+            textShadow:'0 0 60px rgba(59,130,246,0.4), 0 2px 40px rgba(0,0,0,0.95)',
             fontWeight:400,
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            Private Markets Origination
+            Private Markets<br/>
+            <em style={{color:'#93c5fd',fontStyle:'italic'}}>Origination.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
@@ -226,10 +227,10 @@ export default function HomePage() {
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Prosaria works across digital infrastructure, working capital and care sector M&A. The deals we are close to tend to be off-market and time-sensitive. That suits a lean operation better than a large one.
+                  Prosaria works across digital infrastructure, working capital and care sector M&A. The deals we are close to tend to be off market and time sensitive. That suits a lean operation better than a large one.
                 </p>
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Nathan Powell started Prosaria and runs the day-to-day work. When you contact us, you speak to the person doing the work.
+                  Nathan Powell started Prosaria and runs the day to day work. When you contact us, you speak to the person doing the work.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
@@ -297,7 +298,7 @@ export default function HomePage() {
               },
               {
                 title: 'IPv4 opportunity check',
-                desc: 'Answer 4 questions. Find out if your business is likely holding internet address space worth money.',
+                desc: 'Tell us about your situation. We will let you know if there is a relevant opportunity through our partner network.',
                 href: '/digital-audit',
                 tag: 'Digital Infrastructure',
                 value: 'Instant assessment',
