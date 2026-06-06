@@ -17,7 +17,7 @@ function useReveal() {
 
 const paths = [
   { num:'01', title:'Care sector M&A', desc:'You own or operate a care business and are thinking about what comes next. Or you are a buyer looking for acquisitions.', action:'Check exit readiness', href:'/care-snapshot' },
-  { num:'02', title:'Digital infrastructure', desc:'You want to know if your business is holding IPv4 address space or other network assets that have value.', action:'Start with a free IPv4 check', href:'/digital-audit' },
+  { num:'02', title:'Digital infrastructure', desc:'You want to find out whether your organisation has IPv4 address space worth exploring.', action:'Start with a free IPv4 check', href:'/digital-audit' },
   { num:'03', title:'Working capital', desc:'Your invoices are going out on long payment terms and you want to understand what releasing that cash looks like.', action:'Get a working capital estimate', href:'/capital-assessment' },
 ]
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
             Start a conversation.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[44ch]">
-            Use one of the tools below or send us a message. We respond to everything personally.
+            Use one of the tools below to get a quick answer, or send a message directly. We respond personally.
           </p>
         </div>
       </section>

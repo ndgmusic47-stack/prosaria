@@ -97,7 +97,7 @@ export default function WorkPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            Three areas. Clear process. Real results.
+            Three areas. Clear process.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
             We work in digital infrastructure, working capital and care sector M&A. Each area is different but the approach is the same — find the right path and get it done.
@@ -170,7 +170,7 @@ export default function WorkPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[32ch]">
-              Not sure which area applies to you? Get in touch and we will tell you.
+              Not sure where to start? Get in touch and we will give you a straight answer.
             </h2>
           </div>
           <Link href="/contact" className="btn-primary reveal reveal-delay-1 flex-shrink-0">

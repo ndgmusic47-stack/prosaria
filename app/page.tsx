@@ -50,24 +50,24 @@ const lines = [
 const caseStudies = [
   {
     tag: 'Care M&A',
-    region: 'South East England',
-    headline: 'Long-established care business quiet exit',
-    outcome: 'Heads of terms in 11 weeks. Full exit completed off-market.',
-    timeframe: '4 months',
+    region: 'UK',
+    headline: 'Owner managed care businesses are selling quietly',
+    outcome: 'A growing number of care business owners are exploring exit without going to market publicly. Buyer demand is strong.',
+    timeframe: 'Active now',
   },
   {
     tag: 'Digital Infrastructure',
-    region: 'UK',
-    headline: 'Unused IPv4 holdings turned into a balance sheet gain',
-    outcome: 'Address blocks reviewed, surplus identified, buyer introduced. Deal completed.',
-    timeframe: '6 weeks',
+    region: 'UK and Europe',
+    headline: 'Demand for IPv4 address space remains strong',
+    outcome: 'The secondary market for IPv4 address space is active. Buyers include network operators and internet infrastructure businesses.',
+    timeframe: 'Active now',
   },
   {
     tag: 'Working Capital',
     region: 'UK',
-    headline: 'Manufacturing business moved to a better facility',
-    outcome: 'Existing invoice finance was underperforming. Better terms sourced and agreed.',
-    timeframe: '3 weeks',
+    headline: 'Many businesses are on the wrong facility or overpaying',
+    outcome: 'Invoice finance rates vary significantly. Businesses that have not reviewed their facility recently often find better terms are available.',
+    timeframe: 'Active now',
   },
 ]
 
@@ -81,35 +81,35 @@ export default function HomePage() {
         <HeroVideo />
 
         <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
-          <h1 className="opacity-0 animate-fade-up" style={{
-            fontFamily:'var(--font-serif)',
-            fontSize:'clamp(3.5rem,11vw,8rem)',
-            lineHeight:'0.9',
-            letterSpacing:'-0.04em',
-            color:'#ffffff',
-            maxWidth:'14ch',
-            marginBottom:'1rem',
-            textShadow:'0 2px 40px rgba(0,0,0,0.95)',
-            fontWeight:400,
+          <p className="opacity-0 animate-fade-up" style={{
+            fontFamily:'var(--font-sans)',
+            fontSize:'clamp(0.85rem,1.8vw,1rem)',
+            fontWeight:700,
+            letterSpacing:'0.2em',
+            textTransform:'uppercase',
+            color:'#93c5fd',
+            marginBottom:'0.75rem',
+            textShadow:'0 1px 10px rgba(0,0,0,0.9)',
             animationDelay:'0.1s',
             animationFillMode:'forwards',
           }}>
             Prosaria Partners
-          </h1>
-          <p className="opacity-0 animate-fade-up" style={{
-            fontFamily:'var(--font-sans)',
-            fontSize:'clamp(0.9rem,2vw,1.1rem)',
-            fontWeight:600,
-            letterSpacing:'0.16em',
-            textTransform:'uppercase',
-            color:'#93c5fd',
+          </p>
+          <h1 className="opacity-0 animate-fade-up" style={{
+            fontFamily:'var(--font-serif)',
+            fontSize:'clamp(3rem,9vw,7rem)',
+            lineHeight:'0.92',
+            letterSpacing:'-0.03em',
+            color:'#ffffff',
+            maxWidth:'16ch',
             marginBottom:'1.5rem',
-            textShadow:'0 1px 10px rgba(0,0,0,0.9)',
-            animationDelay:'0.25s',
+            textShadow:'0 2px 40px rgba(0,0,0,0.95)',
+            fontWeight:400,
+            animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
             Private Markets Origination
-          </p>
+          </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'1.05rem',
@@ -121,7 +121,7 @@ export default function HomePage() {
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
-            We help opportunities take shape across digital infrastructure, working capital and care sector M&amp;A.
+            We originate opportunities across care sector M&A, digital infrastructure and working capital.
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
@@ -171,7 +171,7 @@ export default function HomePage() {
           <div className="mb-16 reveal">
             <p className="eyebrow mb-4">What we do</p>
             <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">
-              Three areas. Clear process. No unnecessary steps.
+              Three areas. Clear process. Direct approach.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
@@ -248,7 +248,7 @@ export default function HomePage() {
             <div className="reveal">
               <p className="eyebrow mb-4">Market observations</p>
               <h2 className="font-serif text-display-md text-[#f0f4ff]">
-                Opportunities and situations<br />we are seeing in the market.
+                What we are seeing<br />in the market right now.
               </h2>
             </div>
             <Link href="/case-studies" className="btn-outline reveal">See more</Link>
@@ -280,7 +280,7 @@ export default function HomePage() {
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Free tools</p>
             <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#050d1a'}}>
-              Find out where you stand in under two minutes.
+              Find out where you stand. Takes two minutes.
             </h2>
             <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#1e3a5f'}}>
               Pick the tool that fits your situation. Answer a few questions and get a result straight away. We review every submission.

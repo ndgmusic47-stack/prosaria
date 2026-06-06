@@ -17,10 +17,26 @@ function useReveal() {
 }
 
 const values = [
-  { num:'01', title:'Direct by default', body:'You deal with the same person from start to finish. No passing you around.' },
-  { num:'02', title:'Origination first', body:'We find deals before they are on the market. That means outbound effort, sector knowledge and relationships not waiting for inbounds.' },
-  { num:'03', title:'Lean by design', body:'Being small means we move faster and make decisions without layers of approval.' },
-  { num:'04', title:'Straight about fit', body:'If something is not the right fit we will tell you. We do not drag things out.' },
+  {
+    num:'01',
+    title:'Direct outreach',
+    body:'We identify the people and businesses we want to speak to and reach out directly. We do not wait for leads to come in. Most of what we do starts with a conversation we initiated.'
+  },
+  {
+    num:'02',
+    title:'Qualifying first',
+    body:'Before making any introduction we make sure there is a genuine fit. That means understanding what each party actually needs and whether there is a realistic basis for a conversation.'
+  },
+  {
+    num:'03',
+    title:'Relationships over volume',
+    body:'We work with a small number of people and partners at any one time. That means every opportunity gets proper attention. We are not running a pipeline of hundreds of names.'
+  },
+  {
+    num:'04',
+    title:'Honest about what we can do',
+    body:'If something is outside what we work on, or the timing is not right, we say so. We would rather be clear upfront than waste time on both sides.'
+  },
 ]
 
 export default function AboutPage() {
@@ -70,7 +86,7 @@ export default function AboutPage() {
                     Nathan founded Prosaria and leads the origination work across all three practice areas. His background is in deal sourcing identifying opportunities before they are formally in market, qualifying both sides and managing the process to a conclusion.
                   </p>
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    When you work with Prosaria, you deal with Nathan directly. That is how it is set up.
+                    When you contact Prosaria, you deal with Nathan directly.
                   </p>
                 </div>
               </div>
@@ -108,7 +124,7 @@ export default function AboutPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4">How we work</p>
-            <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">Four things that do not change.</h2>
+            <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">How we actually work.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
             {values.map((v,i)=>(
