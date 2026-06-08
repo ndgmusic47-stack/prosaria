@@ -8,23 +8,23 @@
   --font-serif: 'DM Serif Display', Georgia, serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;
   --navy:       #050d1a;
-  --navy-mid:   #0a1628;
+  --navy-mid:   #0c1a2e;
   --blue:       #3b82f6;
   --blue-bright:#60a5fa;
   --silver:     #e8edf5;
-  --silver-dim: #94a3b8;
+  --silver-dim: #a8b8cc;
   --white:      #f0f4ff;
   --offwhite:   #f5f7fa;
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:var(--font-sans);font-size:1rem;line-height:1.7;color:var(--silver);background:var(--navy);overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--font-sans);font-size:1rem;line-height:1.7;color:var(--silver);background:var(--navy);overflow-x:hidden;width:100%}
 
 /* Grain */
 body::before{content:'';position:fixed;inset:-50%;width:200%;height:200%;
 background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-opacity:0.045;pointer-events:none;z-index:9998;animation:grain 8s steps(10) infinite}
+opacity:0.025;pointer-events:none;z-index:9998;animation:grain 8s steps(10) infinite}
 
 @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(3%,2%)}30%{transform:translate(-1%,4%)}40%{transform:translate(2%,-1%)}50%{transform:translate(-3%,3%)}60%{transform:translate(1%,-2%)}70%{transform:translate(-2%,1%)}80%{transform:translate(3%,-3%)}90%{transform:translate(-1%,2%)}}
 
@@ -35,8 +35,8 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:400;letter-spacing:-0.02em
   background: var(--offwhite);
   color:#0a1628;
   background-image:
-    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(59,130,246,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.07) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 .light-section h1,.light-section h2,.light-section h3,.light-section h4{color:#050d1a}
@@ -87,3 +87,8 @@ body.cursor-hover #cursor-ring{width:56px;height:56px;border-color:rgba(96,165,2
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .animate-fade-up{animation:fadeUp 0.8s ease forwards}
 .animate-fade-in{animation:fadeIn 0.5s ease forwards}
+
+/* Prevent horizontal scroll on all devices */
+*{max-width:100%}
+img,svg,video{max-width:100%;height:auto}
+section,div,header,footer,nav,main{max-width:100%;box-sizing:border-box}

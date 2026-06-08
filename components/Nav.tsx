@@ -72,7 +72,7 @@ export default function Nav() {
       </header>
 
       {/* Mobile menu */}
-      <div className={`fixed inset-0 z-40 bg-[#050d1a] flex flex-col justify-center px-8 transition-all duration-500 ${
+      <div className={`fixed inset-0 z-40 bg-[#050d1a] flex flex-col justify-center px-8 transition-all duration-500 overflow-hidden ${
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         {/* Blue glow behind menu */}
