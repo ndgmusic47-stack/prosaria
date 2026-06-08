@@ -48,8 +48,8 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:400;letter-spacing:-0.02em
 /* Buttons */
 .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;background:var(--blue);color:#fff;font-family:var(--font-sans);font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--blue);cursor:pointer;transition:all 0.2s;position:relative}
 .btn-primary:hover{background:var(--blue-bright);box-shadow:0 0 30px rgba(59,130,246,0.35);transform:translateY(-1px)}
-.btn-outline{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;background:transparent;color:var(--silver);font-family:var(--font-sans);font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(59,130,246,0.35);cursor:pointer;transition:all 0.2s}
-.btn-outline:hover{border-color:var(--blue-bright);color:var(--blue-bright);box-shadow:0 0 20px rgba(59,130,246,0.15)}
+.btn-outline{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;background:#ffffff;color:#050d1a;font-family:var(--font-sans);font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border:1px solid #ffffff;cursor:pointer;transition:all 0.2s}
+.btn-outline:hover{background:#e2e8f0;border-color:#e2e8f0;color:#050d1a;transform:translateY(-1px)}
 .btn-outline-dark{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;background:transparent;color:#0a1628;font-family:var(--font-sans);font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;border:1px solid rgba(10,22,40,0.25);cursor:pointer;transition:all 0.2s}
 .btn-outline-dark:hover{border-color:var(--blue);color:var(--blue)}
 

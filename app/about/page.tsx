@@ -66,8 +66,8 @@ export default function AboutPage() {
                 <Image src="/nathan.jpg" alt="Nathan Powell Prosaria Partners" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-[#050d1a]/15 mix-blend-multiply" />
                 <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#050d1a]/85 to-transparent">
-                  <p className="font-serif text-base text-white font-medium" style={{textShadow:"0 1px 8px rgba(0,0,0,0.9)"}}>Nathan Powell</p>
-                  <p className="text-label mt-1" style={{color:"#93c5fd",textShadow:"0 1px 8px rgba(0,0,0,0.9)"}}>Founder, Prosaria Partners</p>
+                  <p className="font-serif text-base" style={{color:"#ffffff",fontWeight:500,textShadow:"0 2px 12px rgba(0,0,0,1)"}}>Nathan Powell</p>
+                  <p className="text-label mt-1" style={{color:"#93c5fd",textShadow:"0 2px 12px rgba(0,0,0,1)"}}>Founder, Prosaria Partners</p>
                 </div>
               </div>
               <div className="mt-5 flex flex-wrap gap-3">
