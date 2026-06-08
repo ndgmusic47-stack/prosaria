@@ -12,20 +12,15 @@ export default function HeroVideo() {
     v.muted = true
     v.volume = 0
 
-    const attempt = () => {
-      v.play().catch(() => {})
-    }
+    const attempt = () => { v.play().catch(() => {}) }
 
-    // Try immediately
     attempt()
 
-    // Try again when page becomes visible (handles iOS back-navigation)
     const onVisible = () => {
       if (document.visibilityState === 'visible') attempt()
     }
     document.addEventListener('visibilitychange', onVisible)
 
-    // Try on first user touch — iOS requires this for first-load autoplay
     const onTouch = () => {
       attempt()
       document.removeEventListener('touchstart', onTouch)
@@ -34,7 +29,6 @@ export default function HeroVideo() {
     document.addEventListener('touchstart', onTouch, { passive: true })
     document.addEventListener('touchend', onTouch, { passive: true })
 
-    // Try when video has enough data
     v.addEventListener('canplay', attempt, { once: true })
 
     return () => {
@@ -59,15 +53,16 @@ export default function HeroVideo() {
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
+      {/* Minimal overlay — video at full brightness, just a fade at bottom for text */}
       <div
         className="absolute inset-0"
         style={{
           background:`linear-gradient(
             180deg,
-            rgba(5,13,26,0.55) 0%,
-            rgba(5,13,26,0.08) 40%,
-            rgba(5,13,26,0.08) 60%,
-            rgba(5,13,26,0.92) 100%
+            rgba(5,13,26,0.15) 0%,
+            rgba(5,13,26,0.0)  25%,
+            rgba(5,13,26,0.0)  65%,
+            rgba(5,13,26,0.85) 100%
           )`
         }}
       />

@@ -89,7 +89,7 @@ export default function HomePage() {
             textTransform:'uppercase',
             color:'#93c5fd',
             marginBottom:'0.75rem',
-            textShadow:'0 1px 10px rgba(0,0,0,0.9)',
+            textShadow:'0 1px 6px rgba(0,0,0,1), 0 2px 16px rgba(0,0,0,0.95)',
             animationDelay:'0.1s',
             animationFillMode:'forwards',
           }}>
