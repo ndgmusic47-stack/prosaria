@@ -32,10 +32,10 @@ const lines = [
   {
     num: '02',
     title: 'Working Capital',
-    body: 'If your customers pay on 60 or 90 day terms, cash gets tied up. Invoice finance releases it. We find the right lender and get it set up.',
+    body: 'US staffing and recruiting agencies run payroll weekly while clients pay on net 30 to 60 terms. That gap limits growth. We arrange factoring facilities built for staffing firms.',
     href: '/work#capital',
     magnet: '/capital-assessment',
-    magnetLabel: 'See how much you could release',
+    magnetLabel: 'Take the two minute diagnostic',
   },
   {
     num: '03',
@@ -304,11 +304,11 @@ export default function HomePage() {
                 value: 'Instant assessment',
               },
               {
-                title: 'Working capital estimate',
-                desc: 'Answer 4 questions. See how much cash could be freed up from your unpaid invoices.',
+                title: 'Staffing agency diagnostic',
+                desc: 'Seven questions for US staffing and recruiting firms. See your cash gap, what fits your situation, and what the fastest growing agencies do differently.',
                 href: '/capital-assessment',
                 tag: 'Working Capital',
-                value: 'Instant cash estimate',
+                value: 'Two minute diagnostic',
               },
             ].map((m, i) => (
               <div key={m.title}

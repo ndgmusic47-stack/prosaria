@@ -44,15 +44,15 @@ We are not offering free audits. We work with parties where there is a clear req
     id: 'capital',
     num: '02',
     title: 'Working Capital',
-    subtitle: 'Release cash tied up in unpaid invoices.',
-    intro: `If your customers take 30, 60 or 90 days to pay, you are covering costs from your own cash in the meantime. Invoice finance lets you draw against unpaid invoices straight away. It closes the gap.
+    subtitle: 'Factoring facilities for US staffing and recruiting agencies.',
+    intro: `Staffing agencies run payroll weekly. Clients pay on net 30, 45 or 60 terms. That gap means the agency funds its clients' operations from its own cash, and it caps how many contracts the agency can say yes to.
 
-We work with a small number of specialist funding partners. After understanding the requirement, we introduce suitable businesses to the relevant lender.`,
+Factoring closes the gap. The facility advances cash against invoices as they are raised, so payroll is never the reason to turn down work. We work with specialist funding partners who focus on staffing, with facilities up to $15m. After understanding the requirement, we handle the introduction and stay involved through to funding.`,
     whoFor: [
-      'Businesses invoicing on 30 day terms or longer with consistent customer payment',
-      'Owner-managed firms that want working capital without giving up equity',
-      'Businesses already using invoice finance but not happy with the cost or service',
-      'Growing businesses that need cash to fulfil larger contracts',
+      'US healthcare staffing agencies running weekly or bi-weekly payroll',
+      'IT and professional contract staffing firms on net 30 to 60 client terms',
+      'Agencies turning down contracts because of cash flow',
+      'Firms already factoring but unhappy with their current rate or service',
     ],
     steps: [
       { s:'01', label:'Qualify', desc:'We understand your situation and check whether there is a likely fit with our lending partners.' },
