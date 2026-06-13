@@ -1,264 +1,188 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
+import DiagnosticCockpit, { CockpitConfig, PanelState } from '@/components/cockpit/DiagnosticCockpit'
 
-const questions = [
-  {
-    id: 'revenue',
-    question: 'What is the approximate annual revenue of your care business?',
-    options: [
-      { label:'Under £500k',   value:'under-500k', score:0 },
-      { label:'£500k to £1m',  value:'500k-1m',    score:1 },
-      { label:'£1m to £3m',    value:'1m-3m',      score:2 },
-      { label:'Over £3m',      value:'over-3m',     score:2 },
-    ],
-  },
-  {
-    id: 'size',
-    question: 'How many beds or service users does the business have?',
-    type: 'text',
-    placeholder: 'e.g. 40 beds or 120 service users',
-  },
-  {
-    id: 'occupancy',
-    question: 'What is your current occupancy rate?',
-    options: [
-      { label:'Under 70%', value:'under-70', score:0 },
-      { label:'70 to 80%', value:'70-80',    score:1 },
-      { label:'80 to 90%', value:'80-90',    score:2 },
-      { label:'Over 90%',  value:'over-90',  score:2 },
-    ],
-  },
-  {
-    id: 'manager',
-    question: 'Do you have a registered manager in post?',
-    options: [
-      { label:'Yes, in post and stable', value:'yes',        score:2 },
-      { label:'In transition',           value:'transition', score:1 },
-      { label:'No',                      value:'no',         score:0 },
-    ],
-  },
-  {
-    id: 'cqc',
-    question: 'What is your most recent CQC rating?',
-    options: [
-      { label:'Outstanding',          value:'outstanding', score:3 },
-      { label:'Good',                 value:'good',        score:2 },
-      { label:'Requires improvement', value:'requires',    score:1 },
-      { label:'Inadequate',           value:'inadequate',  score:0 },
-      { label:'Not yet rated',        value:'not-rated',   score:1 },
-    ],
-  },
-  {
-    id: 'timeframe',
-    question: 'What is your rough timeframe for exit or transition?',
-    options: [
-      { label:'Under 12 months', value:'under-12m', score:0 },
-      { label:'1 to 2 years',    value:'1-2y',      score:1 },
-      { label:'2 to 5 years',    value:'2-5y',      score:2 },
-      { label:'Just exploring',  value:'exploring', score:2 },
-    ],
-  },
-  {
-    id: 'contact',
-    question: 'Where should we send a copy of your results?',
-    type: 'contact',
-  },
-]
+const ref = () => 'EXR-2026-' + Math.floor(1000 + Math.random() * 8999)
 
-function getScoreBand(score: number) {
-  if (score <= 4) return {
-    label: 'Early stage',
-    colour: 'text-blue-300',
-    summary: 'Your business has real potential but a buyer would flag a few things today. The good news is there is time to address them.',
-    points: [
-      'Occupancy and CQC rating are the first two things any buyer looks at. Improving either one moves your valuation meaningfully.',
-      'Starting a quiet conversation now, even at this stage, gives you options rather than removing them.',
-      'We can give you a clear picture of what buyers in your sector are actually focused on.',
-    ],
-  }
-  if (score <= 8) return {
-    label: 'Building readiness',
-    colour: 'text-blue-400',
-    summary: 'Your business is in reasonable shape. Focused effort in one or two areas over the next 12 months could make a meaningful difference to your exit outcome.',
-    points: [
-      'Buyers pay more for stability. A registered manager in post, consistent occupancy and a clean CQC record all move the price.',
-      'Your timeframe gives you room to prepare properly rather than rushing into a process.',
-      'The off market route is likely the right one for a business like yours.',
-    ],
-  }
-  return {
-    label: 'Exit ready',
-    colour: 'text-blue-200',
-    summary: 'Your business is in strong shape. If a sale is on your radar, there is no reason to wait.',
-    points: [
-      'Buyers are active in your size range right now. Demand is real.',
-      'You do not need a public process. The right buyer does not need to see you on a broker list.',
-      'We can make introductions to qualified buyers who are actively looking, without any open process.',
-    ],
-  }
+const SCORES: Record<string, Record<string, number>> = {
+  revenue:   { 'under-500k': 0, '500k-1m': 1, '1m-3m': 2, 'over-3m': 2 },
+  occupancy: { 'under-70': 0, '70-80': 1, '80-90': 2, 'over-90': 2 },
+  manager:   { yes: 2, transition: 1, no: 0 },
+  cqc:       { outstanding: 3, good: 2, requires: 1, inadequate: 0, 'not-rated': 1 },
+  timeframe: { 'under-12m': 0, '1-2y': 1, '2-5y': 2, exploring: 2 },
 }
 
+function careScore(a: Record<string, string>) {
+  return Object.entries(SCORES).reduce((s, [k, map]) => s + (map[a[k]] ?? 0), 0)
+}
 
+const careConfig: CockpitConfig = {
+  name: 'The Exit Readiness Cockpit',
+  kicker: 'Prosaria · Care M&A',
+  intro: 'Step into a two minute exit readiness simulator and see how a buyer may read your care business today.',
+  introSub: 'For care home, home care and supported living owners.',
+  backHref: '/work#care',
+  backLabel: 'Healthcare M&A',
+  apiPath: '/api/submit-care',
+
+  panels: [
+    { key: 'confidence', label: 'Buyer Confidence' },
+    { key: 'stability',  label: 'Operational Stability' },
+    { key: 'dependency', label: 'Owner Dependency' },
+    { key: 'timing',     label: 'Timing Runway' },
+  ],
+
+  stages: [
+    {
+      id: 'revenue', signal: 'Revenue Signal', chip: 'Revenue Signal',
+      prompt: 'Roughly what does your care business turn over each year?',
+      insight: 'Revenue sets the buyer universe. Different sizes attract very different buyers.',
+      options: [
+        { label: 'Under £500k',  value: 'under-500k' },
+        { label: '£500k to £1m', value: '500k-1m' },
+        { label: '£1m to £3m',   value: '1m-3m' },
+        { label: 'Over £3m',     value: 'over-3m' },
+      ],
+    },
+    {
+      id: 'size', signal: 'Scale Marker', chip: 'Scale Marker', type: 'text',
+      prompt: 'How many beds or service users does the business have?',
+      placeholder: 'e.g. 40 beds, or 120 service users',
+      insight: 'Scale gives buyers a quick read on the size of the operation and the team behind it.',
+    },
+    {
+      id: 'occupancy', signal: 'Occupancy Signal', chip: 'Occupancy',
+      prompt: 'What is your current occupancy or capacity level?',
+      insight: 'Occupancy gives buyers a fast signal of demand and operational health.',
+      options: [
+        { label: 'Under 70%', value: 'under-70' },
+        { label: '70 to 80%', value: '70-80' },
+        { label: '80 to 90%', value: '80-90' },
+        { label: 'Over 90%',  value: 'over-90' },
+      ],
+    },
+    {
+      id: 'manager', signal: 'Management Stability', chip: 'Management',
+      prompt: 'Do you have a registered manager in post?',
+      insight: 'A strong registered manager lowers perceived handover risk. Buyers notice this early.',
+      options: [
+        { label: 'Yes, in post and stable', value: 'yes' },
+        { label: 'In transition',           value: 'transition' },
+        { label: 'No',                      value: 'no' },
+      ],
+    },
+    {
+      id: 'cqc', signal: 'CQC Confidence', chip: 'CQC',
+      prompt: 'What is your most recent CQC rating?',
+      insight: 'CQC does not just affect compliance. It shapes buyer confidence before any numbers are discussed.',
+      options: [
+        { label: 'Outstanding',          value: 'outstanding' },
+        { label: 'Good',                 value: 'good' },
+        { label: 'Requires improvement', value: 'requires' },
+        { label: 'Inadequate',           value: 'inadequate' },
+        { label: 'Not yet rated',        value: 'not-rated' },
+      ],
+    },
+    {
+      id: 'timeframe', signal: 'Timing Runway', chip: 'Timing',
+      prompt: 'What is your rough timeframe for an exit or step back?',
+      insight: 'The best exit conversations usually start before the owner needs one. Runway gives you choices.',
+      options: [
+        { label: 'Under 12 months', value: 'under-12m' },
+        { label: '1 to 2 years',    value: '1-2y' },
+        { label: '2 to 5 years',    value: '2-5y' },
+        { label: 'Just exploring',  value: 'exploring' },
+      ],
+    },
+  ],
+
+  computePanels: (a): Record<string, PanelState> => {
+    const cqcTone = a.cqc === 'outstanding' || a.cqc === 'good' ? 'good' : a.cqc === 'requires' || a.cqc === 'not-rated' ? 'warn' : a.cqc ? 'alert' : 'idle'
+    const confVal = !a.cqc ? 'Awaiting signal' : a.cqc === 'outstanding' ? 'Strong' : a.cqc === 'good' ? 'Solid' : a.cqc === 'requires' || a.cqc === 'not-rated' ? 'Some caution' : 'Low'
+
+    const occTone = a.occupancy === 'over-90' || a.occupancy === '80-90' ? 'good' : a.occupancy === '70-80' ? 'warn' : a.occupancy ? 'alert' : 'idle'
+    const stabVal = !a.occupancy ? 'Awaiting signal' : a.occupancy === 'over-90' ? 'High demand' : a.occupancy === '80-90' ? 'Healthy' : a.occupancy === '70-80' ? 'Moderate' : 'Soft'
+
+    const depTone = a.manager === 'yes' ? 'good' : a.manager === 'transition' ? 'warn' : a.manager === 'no' ? 'alert' : 'idle'
+    const depVal = !a.manager ? 'Awaiting signal' : a.manager === 'yes' ? 'Low, manager in post' : a.manager === 'transition' ? 'Some risk' : 'High, owner led'
+
+    const timeTone = a.timeframe === '2-5y' || a.timeframe === 'exploring' ? 'good' : a.timeframe === '1-2y' ? 'warn' : a.timeframe ? 'alert' : 'idle'
+    const timeVal = !a.timeframe ? 'Awaiting signal' : a.timeframe === 'under-12m' ? 'Tight' : a.timeframe === '1-2y' ? 'Workable' : 'Comfortable'
+
+    return {
+      confidence: { value: confVal, tone: cqcTone },
+      stability:  { value: stabVal, tone: occTone },
+      dependency: { value: depVal,  tone: depTone },
+      timing:     { value: timeVal, tone: timeTone },
+    }
+  },
+
+  buildResult: (a) => {
+    const score = careScore(a)
+    const position = score <= 4 ? 'Early Stage' : score <= 8 ? 'Building Readiness' : 'Strong Position'
+
+    // strongest / weakest answer
+    const scored = Object.entries(SCORES).map(([k, map]) => ({ k, v: map[a[k]] ?? 0 }))
+    const strong = [...scored].sort((x, y) => y.v - x.v)[0]
+    const weak   = [...scored].sort((x, y) => x.v - y.v)[0]
+    const label: Record<string, string> = {
+      revenue: 'the scale of the business', occupancy: 'your occupancy level',
+      manager: 'your management stability', cqc: 'your CQC standing', timeframe: 'your exit timing',
+    }
+    const strengthBody = `Your strongest signal is ${label[strong.k]}. Buyers tend to start there and it works in your favour.`
+    const riskBody =
+      weak.k === 'manager' && a.manager !== 'yes' ? 'Owner dependency. If the business leans on you personally, buyers price in handover risk.' :
+      weak.k === 'cqc' && (a.cqc === 'requires' || a.cqc === 'inadequate') ? 'CQC standing. A rating below Good invites caution before any numbers are discussed.' :
+      weak.k === 'occupancy' ? 'Occupancy. Softer occupancy makes buyers question future earnings.' :
+      `There is room to strengthen ${label[weak.k]} before a sale process.`
+
+    const buyerQ =
+      a.manager !== 'yes' ? 'Can this business keep running smoothly after the owner steps back?' :
+      (a.cqc === 'requires' || a.cqc === 'inadequate') ? 'Would CQC create confidence or caution?' :
+      (a.occupancy === 'under-70' || a.occupancy === '70-80') ? 'Is occupancy strong enough to support confidence in future earnings?' :
+      'Is the management structure stable enough for a clean handover?'
+
+    const noticeBody =
+      position === 'Strong Position' ? 'A stable, well run business that could transfer with limited disruption.' :
+      position === 'Building Readiness' ? 'A solid business with one or two areas a buyer would want comfort on first.' :
+      'Real potential, with a few things a buyer would want addressed before moving.'
+
+    const move =
+      position === 'Strong Position' ? 'You are in a good spot to open a quiet conversation whenever you choose.' :
+      'Strengthen the weakest signal above over the next few months, then revisit. Starting early keeps your options open.'
+
+    return {
+      headline: 'Exit Readiness Diagnostic File',
+      reference: ref(),
+      rows: [
+        { label: 'Readiness position', body: position, tone: position === 'Strong Position' ? 'good' : position === 'Building Readiness' ? 'warn' : 'alert' },
+        { label: 'What buyers would notice first', body: noticeBody },
+        { label: 'Main strength', body: strengthBody, tone: 'good' },
+        { label: 'Main risk', body: riskBody, tone: 'warn' },
+        { label: 'Likely buyer question', body: `"${buyerQ}"` },
+        { label: 'Practical next move', body: move },
+      ],
+    }
+  },
+
+  buildPayload: (a, c) => {
+    const score = careScore(a)
+    const band = score <= 4 ? 'Early stage' : score <= 8 ? 'Building readiness' : 'Exit ready'
+    return {
+      name: c.name, email: c.email,
+      score, band,
+      revenue: a.revenue, size: a.size, occupancy: a.occupancy,
+      manager: a.manager, cqc: a.cqc, timeframe: a.timeframe,
+    }
+  },
+
+  cta: {
+    primary: 'Talk through your exit readiness snapshot',
+    secondary: '20 minutes. Quiet, direct, and based on your answers.',
+    trust: 'Indicative only. Not a valuation.',
+  },
+}
 
 export default function CareSnapshotPage() {
-  const [step, setStep]           = useState(0)
-  const [answers, setAnswers]     = useState<Record<string,string>>({})
-  const [textVal, setTextVal]     = useState('')
-  const [name, setName]           = useState('')
-  const [email, setEmail]         = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const q        = questions[step]
-  const progress = (step / questions.length) * 100
-
-  function calcScore() {
-    let score = 0
-    questions.forEach(q => {
-      if (q.options) {
-        const opt = q.options.find(o => o.value === answers[q.id])
-        if (opt) score += opt.score
-      }
-    })
-    return score
-  }
-
-  function handleOption(value: string) {
-    setAnswers({ ...answers, [q.id]: value })
-    setTimeout(() => setStep(step + 1), 250)
-  }
-
-  function handleText() {
-    if (!textVal.trim()) return
-    setAnswers({ ...answers, [q.id]: textVal })
-    setTextVal('')
-    setStep(step + 1)
-  }
-
-  async function handleSubmit() {
-    if (!name.trim() || !email.trim()) return
-    const score = calcScore()
-    const band  = getScoreBand(score).label
-    // Notify Prosaria silently no redirect
-    try {
-      await fetch('/api/submit-care', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, score, band, ...answers }),
-      })
-    } catch {}
-    setSubmitted(true)
-  }
-
-  if (submitted) {
-    const score = calcScore()
-    const band  = getScoreBand(score)
-    return (
-      <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
-        <div className="max-w-[680px] mx-auto px-6">
-          <Link href="/work#care" className="eyebrow text-[#94a3b8] hover:text-blue-400 transition-colors mb-8 block">
-            Back to care M&A
-          </Link>
-          <p className="eyebrow text-blue-400 mb-6">Your exit readiness result</p>
-
-          <div className="bg-[#0a1628] border border-blue-500/10 p-10 mb-8">
-            <div className="flex items-end gap-4 mb-4">
-              <span className={`font-serif text-[4rem] leading-none ${band.colour}`}>{score}</span>
-              <span className="font-serif text-[2rem] text-[#94a3b8] leading-none mb-2">/ 11</span>
-            </div>
-            <p className={`font-serif text-display-sm mb-3 ${band.colour}`}>{band.label}</p>
-            <p className="text-body-sm text-[#94a3b8]">{band.summary}</p>
-          </div>
-
-          <div className="space-y-4 mb-10">
-            {band.points.map((point, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-[#0a1628] border border-blue-500/8">
-                <span className="text-blue-400 font-serif text-lg leading-none mt-0.5">—</span>
-                <p className="text-body-sm text-[#94a3b8]">{point}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-[#0a1628] border border-blue-500/10 p-8">
-            <p className="font-serif text-display-sm text-[#f0f4ff] mb-3">Want to talk this through?</p>
-            <p className="text-body-sm text-[#94a3b8] mb-6">Get in touch directly and we will pick up from your results.</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="mailto:hello@prosaria.co.uk" className="btn-primary">Email us</a>
-              <a href="tel:02030267906" className="btn-outline">020 3026 7906</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
-      <div className="max-w-[680px] mx-auto px-6">
-        <Link href="/work#care" className="eyebrow text-[#94a3b8] hover:text-blue-400 transition-colors mb-8 block">
-          Back to care M&A
-        </Link>
-        <p className="eyebrow text-blue-400 mb-3">Care exit readiness</p>
-        <h1 className="font-serif text-display-lg text-[#f0f4ff] mb-3">Where does your care business stand?</h1>
-        <p className="text-body-sm text-[#94a3b8] mb-10">6 questions. Instant score. No obligation.</p>
-
-        <div className="w-full h-0.5 bg-[#0a1628] mb-10">
-          <div className="h-full bg-blue-500 transition-all duration-500" style={{width:`${progress}%`}} />
-        </div>
-        <p className="text-label text-[#94a3b8] mb-8">{step + 1} of {questions.length}</p>
-
-        <div key={step} className="animate-fade-in" style={{animationDuration:'0.3s'}}>
-          <h2 className="font-serif text-display-md text-[#f0f4ff] mb-8">{q.question}</h2>
-
-          {q.options && (
-            <div className="space-y-3">
-              {q.options.map(opt => (
-                <button key={opt.value} onClick={() => handleOption(opt.value)}
-                  className={`w-full text-left px-6 py-4 border text-body-sm transition-all duration-150 ${
-                    answers[q.id] === opt.value
-                      ? 'border-blue-400 bg-blue-500/10 text-[#f0f4ff]'
-                      : 'border-blue-500/15 bg-[#0a1628] text-[#94a3b8] hover:border-blue-400/50 hover:text-[#f0f4ff]'
-                  }`}>
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {q.type === 'text' && (
-            <div className="space-y-4">
-              <input type="text" value={textVal} onChange={e => setTextVal(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && handleText()}
-                className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]"
-                placeholder={q.placeholder} autoFocus />
-              <button onClick={handleText} className="btn-primary">Continue</button>
-            </div>
-          )}
-
-          {q.type === 'contact' && (
-            <div className="space-y-5">
-              <div>
-                <label className="text-label text-[#94a3b8] block mb-2">Your name</label>
-                <input type="text" value={name} onChange={e => setName(e.target.value)}
-                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]"
-                  placeholder="First and last name" />
-              </div>
-              <div>
-                <label className="text-label text-[#94a3b8] block mb-2">Email address</label>
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]"
-                  placeholder="your@email.com" />
-              </div>
-              <p className="text-label text-[#94a3b8]">Your score is shown instantly. Your details are sent to Prosaria.</p>
-              <button onClick={handleSubmit} disabled={!name.trim() || !email.trim()}
-                className="btn-primary disabled:opacity-40 w-full justify-center">
-                See my score
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  )
+  return <DiagnosticCockpit config={careConfig} />
 }
