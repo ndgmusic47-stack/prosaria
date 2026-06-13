@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const links = [
@@ -33,15 +32,8 @@ export default function Nav() {
         <div className="max-w-site mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-4 group">
-            <Image
-              src="/logo.png"
-              alt="Prosaria Partners"
-              width={56}
-              height={56}
-              className="object-contain brightness-110"
-            />
-            <span className="hidden sm:block font-serif text-[1rem] text-[#f0f4ff] tracking-wide group-hover:text-blue-400 transition-colors duration-200">
+          <Link href="/" className="flex items-center group">
+            <span className="font-serif text-[1.15rem] tracking-wide transition-colors duration-200" style={{color:'#ffffff', textShadow:'0 1px 8px rgba(0,0,0,0.6)'}}>
               Prosaria Partners
             </span>
           </Link>
@@ -51,8 +43,9 @@ export default function Nav() {
             {links.map(({ href, label }) => (
               <Link key={href} href={href}
                 className={`font-sans text-[0.78rem] tracking-[0.06em] uppercase transition-colors duration-200 ${
-                  pathname === href ? 'text-blue-400' : 'text-[#94a3b8] hover:text-[#f0f4ff]'
-                }`}>
+                  pathname === href ? 'text-blue-300' : 'text-white/85 hover:text-white'
+                }`}
+                style={{textShadow:'0 1px 6px rgba(0,0,0,0.5)'}}>
                 {label}
               </Link>
             ))}

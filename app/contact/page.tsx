@@ -73,11 +73,13 @@ export default function ContactPage() {
               Pick the area that matches what you need.
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px mb-20 max-w-3xl" style={{background:'rgba(59,130,246,0.06)'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
             {paths.map((path, i) => (
-              <div key={path.num} className={`bg-[#050d1a] p-10 flex flex-col reveal reveal-delay-${i+1} hover:bg-[#070d1c] transition-colors`}>
-                <p className="text-label text-blue-400 mb-5">{path.num}</p>
-                <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-4">{path.title}</h3>
+              <div key={path.num} className={`bg-[#0a1628] border border-blue-500/10 rounded-2xl p-8 lg:p-10 flex flex-col reveal reveal-delay-${i+1} hover:border-blue-500/25 transition-all duration-300`}>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="w-8 h-8 rounded-full bg-blue-500/15 flex items-center justify-center text-blue-400 text-sm font-semibold flex-shrink-0">{path.num}</span>
+                  <h3 className="font-serif text-display-sm text-[#f0f4ff]">{path.title}</h3>
+                </div>
                 <p className="text-body-sm text-[#94a3b8] flex-1 mb-8">{path.desc}</p>
                 <Link href={path.href} className="btn-primary block text-center">
                   {path.action}

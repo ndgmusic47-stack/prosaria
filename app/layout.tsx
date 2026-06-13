@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import CursorEffect from '@/components/CursorEffect'
 
 export const metadata: Metadata = {
   title: { default: 'Prosaria Partners — Independent Deal Origination', template: '%s | Prosaria Partners' },
@@ -20,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="antialiased" style={{overflowX:"hidden",maxWidth:"100vw"}}>
-        <CursorEffect />
         <Nav />
         <main>{children}</main>
         <Footer />
