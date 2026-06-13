@@ -85,15 +85,15 @@ export default function HomePage() {
             lineHeight:'0.88',
             letterSpacing:'-0.04em',
             color:'#ffffff',
-            maxWidth:'15ch',
+            maxWidth:'16ch',
             marginBottom:'1.5rem',
             textShadow:'0 0 60px rgba(59,130,246,0.4), 0 2px 40px rgba(0,0,0,0.95)',
             fontWeight:400,
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            Funding and deals<br/>
-            <em style={{color:'#93c5fd',fontStyle:'italic'}}>in healthcare.</em>
+            Healthcare Exits &<br/>
+            <em style={{color:'#93c5fd',fontStyle:'italic'}}>Recruitment Cash Flow.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
