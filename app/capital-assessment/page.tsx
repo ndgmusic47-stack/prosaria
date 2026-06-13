@@ -26,10 +26,10 @@ const staffingConfig: CockpitConfig = {
       prompt: 'How often does covering payroll feel tight while you wait on client invoices?',
       insight: 'This points to a timing problem, not necessarily a sales problem. The two get confused often.',
       options: [
-        { label: 'Rarely, we manage fine',            value: 'rarely',    score: 1 },
-        { label: 'Sometimes, it creates stress',      value: 'sometimes', score: 2 },
-        { label: 'Regularly, it is real pressure',    value: 'regularly', score: 3 },
-        { label: 'It is one of our biggest problems', value: 'biggest',   score: 4 },
+        { label: 'Rarely, we manage fine',            value: 'rarely' },
+        { label: 'Sometimes, it creates stress',      value: 'sometimes' },
+        { label: 'Regularly, it is real pressure',    value: 'regularly' },
+        { label: 'It is one of our biggest problems', value: 'biggest' },
       ],
     },
     {
@@ -37,10 +37,10 @@ const staffingConfig: CockpitConfig = {
       prompt: 'Roughly what is your agency turning over each year?',
       insight: 'Scale changes the options. Past a certain size, payroll funding built for staffing usually beats a standard facility.',
       options: [
-        { label: 'Under $500k',  value: 'under-500k', score: 1 },
-        { label: '$500k to $2m', value: '500k-2m',    score: 2 },
-        { label: '$2m to $10m',  value: '2m-10m',     score: 3 },
-        { label: 'Over $10m',    value: 'over-10m',   score: 4 },
+        { label: 'Under $500k',  value: 'under-500k' },
+        { label: '$500k to $2m', value: '500k-2m' },
+        { label: '$2m to $10m',  value: '2m-10m' },
+        { label: 'Over $10m',    value: 'over-10m' },
       ],
     },
     {
@@ -48,10 +48,10 @@ const staffingConfig: CockpitConfig = {
       prompt: 'What payment terms do most of your clients run on?',
       insight: 'Long client terms can make growth feel riskier than it really is. The work is good. The wait is the problem.',
       options: [
-        { label: 'Net 15 or faster', value: 'net-15', score: 1 },
-        { label: 'Net 30',           value: 'net-30', score: 2 },
-        { label: 'Net 45 to 60',     value: 'net-45', score: 3 },
-        { label: 'Net 60 or longer', value: 'net-60', score: 4 },
+        { label: 'Net 15 or faster', value: 'net-15' },
+        { label: 'Net 30',           value: 'net-30' },
+        { label: 'Net 45 to 60',     value: 'net-45' },
+        { label: 'Net 60 or longer', value: 'net-60' },
       ],
     },
     {
@@ -59,10 +59,10 @@ const staffingConfig: CockpitConfig = {
       prompt: 'How often do you run payroll for placed staff?',
       insight: 'Weekly payroll against slow invoices creates pressure before profit becomes visible. That is the squeeze.',
       options: [
-        { label: 'Weekly',                  value: 'weekly',    score: 4 },
-        { label: 'Every two weeks',         value: 'biweekly',  score: 3 },
-        { label: 'Monthly',                 value: 'monthly',   score: 2 },
-        { label: 'Permanent placement only',value: 'perm-only', score: 1 },
+        { label: 'Weekly',                  value: 'weekly' },
+        { label: 'Every two weeks',         value: 'biweekly' },
+        { label: 'Monthly',                 value: 'monthly' },
+        { label: 'Permanent placement only',value: 'perm-only' },
       ],
     },
     {
@@ -70,10 +70,10 @@ const staffingConfig: CockpitConfig = {
       prompt: 'Do you use any funding against your invoices today?',
       insight: 'A funding facility should match payroll rhythm, not just invoice value. Many are set up the wrong way round.',
       options: [
-        { label: 'No, we fund from our own cash',  value: 'none',     score: 4 },
-        { label: 'We tried it and stopped',        value: 'tried',    score: 3 },
-        { label: 'Yes, and it works well',         value: 'yes-good', score: 1 },
-        { label: 'Yes, but it could be better',    value: 'yes-poor', score: 3 },
+        { label: 'No, we fund from our own cash',  value: 'none' },
+        { label: 'We tried it and stopped',        value: 'tried' },
+        { label: 'Yes, and it works well',         value: 'yes-good' },
+        { label: 'Yes, but it could be better',    value: 'yes-poor' },
       ],
     },
     {
@@ -81,10 +81,10 @@ const staffingConfig: CockpitConfig = {
       prompt: 'Have you slowed down or turned down work because of cash flow?',
       insight: 'If cash flow limits contracts, the hidden cost is missed capacity. That is the number worth knowing.',
       options: [
-        { label: 'No, cash is not limiting us',       value: 'no',        score: 1 },
-        { label: 'Occasionally we slow down',         value: 'sometimes', score: 2 },
-        { label: 'Yes, we have turned down work',     value: 'yes',       score: 3 },
-        { label: 'It is actively holding us back',    value: 'blocking',  score: 4 },
+        { label: 'No, cash is not limiting us',       value: 'no' },
+        { label: 'Occasionally we slow down',         value: 'sometimes' },
+        { label: 'Yes, we have turned down work',     value: 'yes' },
+        { label: 'It is actively holding us back',    value: 'blocking' },
       ],
     },
     {
@@ -96,39 +96,36 @@ const staffingConfig: CockpitConfig = {
   ],
 
   computePanels: (a): Record<string, PanelState> => {
+    // PAYROLL PRESSURE (gauge)
     const payrollTone =
       (a.payroll === 'weekly' && (a.terms === 'net-45' || a.terms === 'net-60')) ? 'alert' :
       (a.pain === 'biggest' || a.pain === 'regularly') ? 'warn' :
       a.pain ? 'good' : 'idle'
-    const payrollVal =
-      !a.pain && !a.payroll ? 'Awaiting signal' :
-      payrollTone === 'alert' ? 'High' : payrollTone === 'warn' ? 'Elevated' : 'Manageable'
+    const payrollLevel =
+      a.pain === 'biggest' ? 0.95 : a.pain === 'regularly' ? 0.72 :
+      a.pain === 'sometimes' ? 0.45 : a.pain === 'rarely' ? 0.2 : 0
+    const payrollVal = !a.pain ? 'Standby' : payrollTone === 'alert' ? 'High' : payrollTone === 'warn' ? 'Elevated' : 'Manageable'
 
+    // INVOICE DELAY (bar)
+    const invoiceLevel = a.terms === 'net-60' ? 1 : a.terms === 'net-45' ? 0.72 : a.terms === 'net-30' ? 0.45 : a.terms === 'net-15' ? 0.18 : 0
     const invoiceTone = a.terms === 'net-60' ? 'alert' : a.terms === 'net-45' ? 'warn' : a.terms ? 'good' : 'idle'
-    const invoiceVal =
-      !a.terms ? 'Awaiting signal' :
-      a.terms === 'net-60' ? '8 to 10 week gap' :
-      a.terms === 'net-45' ? '6 to 8 week gap' :
-      a.terms === 'net-30' ? '4 to 5 week gap' : '2 to 3 week gap'
+    const invoiceVal = !a.terms ? 'Standby' : a.terms === 'net-60' ? '8 to 10 week gap' : a.terms === 'net-45' ? '6 to 8 week gap' : a.terms === 'net-30' ? '4 to 5 week gap' : '2 to 3 week gap'
 
+    // GROWTH CAPACITY (gauge) — higher level = more free capacity (green), low = capped
+    const growthLevel = a.growth === 'no' ? 0.95 : a.growth === 'sometimes' ? 0.6 : a.growth === 'yes' ? 0.32 : a.growth === 'blocking' ? 0.12 : 0
     const growthTone = (a.growth === 'blocking' || a.growth === 'yes') ? 'alert' : a.growth === 'sometimes' ? 'warn' : a.growth ? 'good' : 'idle'
-    const growthVal =
-      !a.growth ? 'Awaiting signal' :
-      (a.growth === 'blocking' || a.growth === 'yes') ? 'Capped by cash' :
-      a.growth === 'sometimes' ? 'Occasionally limited' : 'Running free'
+    const growthVal = !a.growth ? 'Standby' : (a.growth === 'blocking' || a.growth === 'yes') ? 'Capped by cash' : a.growth === 'sometimes' ? 'Occasionally limited' : 'Running free'
 
-    const fundingTone = a.financing === 'none' ? 'warn' : a.financing === 'yes-poor' || a.financing === 'tried' ? 'warn' : a.financing ? 'good' : 'idle'
-    const fundingVal =
-      !a.financing ? 'Not set' :
-      a.financing === 'none' ? 'Self funded' :
-      a.financing === 'yes-good' ? 'Facility in place' :
-      a.financing === 'tried' ? 'Previously tried' : 'Underperforming'
+    // FUNDING FIT (bar)
+    const fundingLevel = a.financing === 'yes-good' ? 0.95 : a.financing === 'yes-poor' ? 0.55 : a.financing === 'tried' ? 0.4 : a.financing === 'none' ? 0.25 : 0
+    const fundingTone = a.financing === 'yes-good' ? 'good' : (a.financing === 'none' || a.financing === 'yes-poor' || a.financing === 'tried') ? 'warn' : a.financing ? 'good' : 'idle'
+    const fundingVal = !a.financing ? 'Standby' : a.financing === 'none' ? 'Self funded' : a.financing === 'yes-good' ? 'Facility in place' : a.financing === 'tried' ? 'Previously tried' : 'Underperforming'
 
     return {
-      payroll: { value: payrollVal, tone: payrollTone },
-      invoice: { value: invoiceVal, tone: invoiceTone },
-      growth:  { value: growthVal,  tone: growthTone },
-      funding: { value: fundingVal, tone: fundingTone },
+      payroll: { value: payrollVal, level: payrollLevel, tone: payrollTone, kind: 'gauge' },
+      invoice: { value: invoiceVal, level: invoiceLevel, tone: invoiceTone, kind: 'bar' },
+      growth:  { value: growthVal,  level: growthLevel,  tone: growthTone,  kind: 'gauge' },
+      funding: { value: fundingVal, level: fundingLevel, tone: fundingTone, kind: 'bar' },
     }
   },
 

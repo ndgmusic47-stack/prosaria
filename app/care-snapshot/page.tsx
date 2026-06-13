@@ -97,23 +97,31 @@ const careConfig: CockpitConfig = {
   ],
 
   computePanels: (a): Record<string, PanelState> => {
-    const cqcTone = a.cqc === 'outstanding' || a.cqc === 'good' ? 'good' : a.cqc === 'requires' || a.cqc === 'not-rated' ? 'warn' : a.cqc ? 'alert' : 'idle'
-    const confVal = !a.cqc ? 'Awaiting signal' : a.cqc === 'outstanding' ? 'Strong' : a.cqc === 'good' ? 'Solid' : a.cqc === 'requires' || a.cqc === 'not-rated' ? 'Some caution' : 'Low'
+    // BUYER CONFIDENCE (gauge) — driven by CQC
+    const confLevel = a.cqc === 'outstanding' ? 0.95 : a.cqc === 'good' ? 0.75 : a.cqc === 'requires' ? 0.4 : a.cqc === 'not-rated' ? 0.45 : a.cqc === 'inadequate' ? 0.12 : 0
+    const cqcTone = (a.cqc === 'outstanding' || a.cqc === 'good') ? 'good' : (a.cqc === 'requires' || a.cqc === 'not-rated') ? 'warn' : a.cqc ? 'alert' : 'idle'
+    const confVal = !a.cqc ? 'Standby' : a.cqc === 'outstanding' ? 'Strong' : a.cqc === 'good' ? 'Solid' : (a.cqc === 'requires' || a.cqc === 'not-rated') ? 'Some caution' : 'Low'
 
-    const occTone = a.occupancy === 'over-90' || a.occupancy === '80-90' ? 'good' : a.occupancy === '70-80' ? 'warn' : a.occupancy ? 'alert' : 'idle'
-    const stabVal = !a.occupancy ? 'Awaiting signal' : a.occupancy === 'over-90' ? 'High demand' : a.occupancy === '80-90' ? 'Healthy' : a.occupancy === '70-80' ? 'Moderate' : 'Soft'
+    // OPERATIONAL STABILITY (bar) — occupancy
+    const occLevel = a.occupancy === 'over-90' ? 0.95 : a.occupancy === '80-90' ? 0.75 : a.occupancy === '70-80' ? 0.5 : a.occupancy === 'under-70' ? 0.25 : 0
+    const occTone = (a.occupancy === 'over-90' || a.occupancy === '80-90') ? 'good' : a.occupancy === '70-80' ? 'warn' : a.occupancy ? 'alert' : 'idle'
+    const stabVal = !a.occupancy ? 'Standby' : a.occupancy === 'over-90' ? 'High demand' : a.occupancy === '80-90' ? 'Healthy' : a.occupancy === '70-80' ? 'Moderate' : 'Soft'
 
+    // OWNER DEPENDENCY (gauge) — higher level = lower dependency (good)
+    const depLevel = a.manager === 'yes' ? 0.92 : a.manager === 'transition' ? 0.5 : a.manager === 'no' ? 0.15 : 0
     const depTone = a.manager === 'yes' ? 'good' : a.manager === 'transition' ? 'warn' : a.manager === 'no' ? 'alert' : 'idle'
-    const depVal = !a.manager ? 'Awaiting signal' : a.manager === 'yes' ? 'Low, manager in post' : a.manager === 'transition' ? 'Some risk' : 'High, owner led'
+    const depVal = !a.manager ? 'Standby' : a.manager === 'yes' ? 'Low, manager in post' : a.manager === 'transition' ? 'Some risk' : 'High, owner led'
 
-    const timeTone = a.timeframe === '2-5y' || a.timeframe === 'exploring' ? 'good' : a.timeframe === '1-2y' ? 'warn' : a.timeframe ? 'alert' : 'idle'
-    const timeVal = !a.timeframe ? 'Awaiting signal' : a.timeframe === 'under-12m' ? 'Tight' : a.timeframe === '1-2y' ? 'Workable' : 'Comfortable'
+    // TIMING RUNWAY (bar)
+    const timeLevel = a.timeframe === '2-5y' ? 0.92 : a.timeframe === 'exploring' ? 0.85 : a.timeframe === '1-2y' ? 0.55 : a.timeframe === 'under-12m' ? 0.2 : 0
+    const timeTone = (a.timeframe === '2-5y' || a.timeframe === 'exploring') ? 'good' : a.timeframe === '1-2y' ? 'warn' : a.timeframe ? 'alert' : 'idle'
+    const timeVal = !a.timeframe ? 'Standby' : a.timeframe === 'under-12m' ? 'Tight' : a.timeframe === '1-2y' ? 'Workable' : 'Comfortable'
 
     return {
-      confidence: { value: confVal, tone: cqcTone },
-      stability:  { value: stabVal, tone: occTone },
-      dependency: { value: depVal,  tone: depTone },
-      timing:     { value: timeVal, tone: timeTone },
+      confidence: { value: confVal, level: confLevel, tone: cqcTone,  kind: 'gauge' },
+      stability:  { value: stabVal, level: occLevel,  tone: occTone,  kind: 'bar' },
+      dependency: { value: depVal,  level: depLevel,  tone: depTone,  kind: 'gauge' },
+      timing:     { value: timeVal, level: timeLevel, tone: timeTone, kind: 'bar' },
     }
   },
 
