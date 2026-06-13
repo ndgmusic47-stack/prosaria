@@ -16,9 +16,8 @@ function useReveal() {
 }
 
 const paths = [
-  { num:'01', title:'Care sector M&A', desc:'You own or operate a care business and are thinking about what comes next. Or you are a buyer looking for acquisitions.', action:'Check exit readiness', href:'/care-snapshot' },
-  { num:'02', title:'Digital infrastructure', desc:'You are looking to acquire IPv4 address space, or you hold address space and want to explore options through our partner network.', action:'Tell us about your requirement', href:'/digital-audit' },
-  { num:'03', title:'Working capital', desc:'Your invoices are going out on long payment terms and you want to understand what releasing that cash looks like.', action:'Get a working capital estimate', href:'/capital-assessment' },
+  { num:'01', title:'Healthcare staffing funding', desc:'You run a US healthcare staffing agency and cash flow is holding you back. You pay staff weekly but wait weeks to get paid.', action:'Take the two minute check', href:'/capital-assessment' },
+  { num:'02', title:'Healthcare M&A', desc:'You own a care business and are thinking about selling. Or you are a buyer looking for the right care business to acquire.', action:'Check exit readiness', href:'/care-snapshot' },
 ]
 
 export default function ContactPage() {
@@ -74,7 +73,7 @@ export default function ContactPage() {
               Pick the area that matches what you need.
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px mb-20" style={{background:'rgba(59,130,246,0.06)'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px mb-20 max-w-3xl" style={{background:'rgba(59,130,246,0.06)'}}>
             {paths.map((path, i) => (
               <div key={path.num} className={`bg-[#050d1a] p-10 flex flex-col reveal reveal-delay-${i+1} hover:bg-[#070d1c] transition-colors`}>
                 <p className="text-label text-blue-400 mb-5">{path.num}</p>

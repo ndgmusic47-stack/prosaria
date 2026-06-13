@@ -3,12 +3,11 @@ import { getAllPosts } from '@/lib/posts'
 
 export const metadata = {
   title: 'Insight',
-  description: 'Market observations from Prosaria Partners across digital infrastructure, working capital and care sector M&A.',
+  description: 'Market observations from Prosaria Partners on healthcare staffing funding and UK care sector M&A.',
 }
 
 const categoryColours: Record<string, string> = {
   'Care Sector M&A':        'text-blue-300 border-blue-800/40',
-  'Digital Infrastructure': 'text-blue-400 border-blue-700/40',
   'Working Capital':        'text-blue-200 border-blue-900/40',
   'Insight':                'text-[#94a3b8] border-[#1e3a5f]',
 }

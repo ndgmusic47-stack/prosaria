@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-serif text-base text-[#f0f4ff] group-hover:text-blue-400 transition-colors">Prosaria Partners</span>
             </Link>
             <p className="text-sm leading-relaxed max-w-[28ch] mb-6">
-              Independent deal origination across digital infrastructure, working capital and care sector M&A.
+              Funding and deals in healthcare. We help US staffing agencies grow and help people buy and sell UK care businesses.
             </p>
             <div className="space-y-2 text-sm">
               <a href="tel:02030267906" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
@@ -50,8 +50,7 @@ export default function Footer() {
             <nav className="flex flex-col gap-3">
               {[
                 {href:'/care-snapshot',label:'Care exit snapshot'},
-                {href:'/digital-audit',label:'Infrastructure audit'},
-                {href:'/capital-assessment',label:'Capital assessment'},
+                                {href:'/capital-assessment',label:'Capital assessment'},
               ].map(({href,label})=>(
                 <Link key={href} href={href} className="text-sm hover:text-blue-400 transition-colors">{label}</Link>
               ))}

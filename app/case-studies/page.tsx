@@ -37,24 +37,6 @@ const examples = [
     status: 'Care M&A',
   },
   {
-    tag: 'Digital Infrastructure',
-    region: 'UK and Europe',
-    type: 'Buy side',
-    headline: 'Network operator with a specific IPv4 requirement',
-    situation: 'A network operator needed to acquire a specific volume of IPv4 address space within a defined timeframe. The open market options were limited and they needed an introduction to holders willing to transact directly.',
-    whatWeDo: 'We work with specialist partners who are active in the IPv4 secondary market. Where a buyer has a clear requirement, we assess whether there is a relevant opportunity through our network and facilitate introductions where there is a genuine fit.',
-    status: 'Digital Infrastructure',
-  },
-  {
-    tag: 'Digital Infrastructure',
-    region: 'UK',
-    type: 'Sell side',
-    headline: 'Business holding unused IPv4 address space exploring options',
-    situation: 'A technology business that had grown through acquisitions held IPv4 address blocks it was not using. The finance team wanted to understand whether there was any commercial value and, if so, how a transaction would work.',
-    whatWeDo: 'Through our specialist partner network, we can assess whether there is buyer interest for a specific holding and facilitate introductions where the commercial case is clear. We do not run general audits or speculative outreach.',
-    status: 'Digital Infrastructure',
-  },
-  {
     tag: 'Working Capital',
     region: 'United States',
     type: 'Funding',
@@ -76,7 +58,6 @@ const examples = [
 
 const tagColours: Record<string, string> = {
   'Care M&A':               'text-blue-400',
-  'Digital Infrastructure': 'text-blue-300',
   'Working Capital':        'text-blue-200',
 }
 
@@ -92,7 +73,7 @@ export default function CaseStudiesPage() {
             The types of situations we get involved in.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[52ch]">
-            Across care sector M&A, digital infrastructure and working capital, these are the mandates, enquiries and situations we work with.
+            These are the kinds of situations we work with across healthcare staffing funding and UK care sector M&A.
           </p>
         </div>
       </section>

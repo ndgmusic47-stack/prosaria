@@ -17,70 +17,46 @@ function useReveal() {
 
 const lines = [
   {
-    id: 'digital',
+    id: 'staffing',
     num: '01',
-    title: 'Digital Infrastructure',
-    subtitle: 'Sourcing and placing IPv4 address space.',
-    intro: `We work with specialist partners to originate and support digital infrastructure opportunities. Our focus is IPv4 address space, where we help connect buyers and sellers through our partner network.
+    title: 'Healthcare Staffing Funding',
+    subtitle: 'Cash flow funding for US healthcare staffing agencies.',
+    intro: `Staffing agencies pay their workers every week. Their clients take 30, 45 or 60 days to pay. That means the agency is funding its clients from its own pocket, and it limits how much work it can take on.
 
-We are not offering free audits. We work with parties where there is a clear requirement and a realistic path to a transaction.`,
+Factoring fixes this. It turns unpaid invoices into cash straight away, so payroll is never the reason to say no to a contract. We work with funding partners who focus on staffing, with facilities up to $15m. Once we understand your situation, we handle the introduction and stay with you through to funding.`,
     whoFor: [
-      'Organisations looking to acquire IPv4 address space',
-      'Network operators with IPv4 requirements',
-      'Internet infrastructure businesses',
-      'Technology companies needing address space',
-      'Holders of IPv4 address space who want to explore options',
+      'US healthcare staffing agencies paying staff weekly or every two weeks',
+      'Agencies whose clients pay on 30 to 60 day terms',
+      'Agencies turning down work because of cash flow',
+      'Agencies already factoring but unhappy with their rate or service',
     ],
     steps: [
-      { s:'01', label:'Source', desc:'We work with specialist partners to identify available IPv4 address space.' },
-      { s:'02', label:'Qualify', desc:'We assess whether there is a genuine fit between buyer and seller requirements.' },
-      { s:'03', label:'Connect', desc:'We make introductions and support discussions between relevant parties.' },
-    ],
-    magnet: '/contact',
-    magnetLabel: 'Get in touch about digital infrastructure',
-    note: null,
-  },
-  {
-    id: 'capital',
-    num: '02',
-    title: 'Working Capital',
-    subtitle: 'Factoring facilities for US staffing and recruiting agencies.',
-    intro: `Staffing agencies run payroll weekly. Clients pay on net 30, 45 or 60 terms. That gap means the agency funds its clients' operations from its own cash, and it caps how many contracts the agency can say yes to.
-
-Factoring closes the gap. The facility advances cash against invoices as they are raised, so payroll is never the reason to turn down work. We work with specialist funding partners who focus on staffing, with facilities up to $15m. After understanding the requirement, we handle the introduction and stay involved through to funding.`,
-    whoFor: [
-      'US healthcare staffing agencies running weekly or bi-weekly payroll',
-      'IT and professional contract staffing firms on net 30 to 60 client terms',
-      'Agencies turning down contracts because of cash flow',
-      'Firms already factoring but unhappy with their current rate or service',
-    ],
-    steps: [
-      { s:'01', label:'Qualify', desc:'We understand your situation and check whether there is a likely fit with our lending partners.' },
-      { s:'02', label:'Introduce', desc:'Where there is a fit, we introduce you to the relevant lender.' },
-      { s:'03', label:'Support', desc:'We stay involved and help move things forward where we can.' },
+      { s:'01', label:'Check', desc:'We learn about your agency and check the fit with our funding partners.' },
+      { s:'02', label:'Introduce', desc:'Where there is a fit, we put you in front of the right funder.' },
+      { s:'03', label:'Support', desc:'We stay involved and help move things through to funding.' },
     ],
     magnet: '/capital-assessment',
-    magnetLabel: 'Get a free working capital estimate',
+    magnetLabel: 'Take the two minute check',
     note: null,
   },
   {
     id: 'care',
-    num: '03',
-    title: 'Care Sector M&A',
-    subtitle: 'Buying and selling care businesses, handled quietly.',
-    intro: `We work with care business owners who want to sell and with buyers who want to acquire before businesses hit the open market. This covers care homes, domiciliary care, supported living, day care and most other care businesses.
+    num: '02',
+    title: 'Healthcare M&A',
+    subtitle: 'Buying and selling UK care businesses, handled quietly.',
+    intro: `We help care business owners who want to sell, and buyers who want to find businesses before they hit the open market. This covers care homes, home care, supported living, day care and more.
 
-The best deals in this sector happen quietly. Owners do not want their staff finding out before a deal is done. Buyers do not want to compete in open auctions. We work off market on both sides.`,
+The best deals in this sector happen quietly. Owners do not want staff finding out before a deal is done. Buyers do not want to fight in open auctions. We work off market on both sides.`,
     whoFor: [
-      'Care business owners considering exit at any stage of readiness',
-      'Founders planning succession over the next one to five years',
-      'Private equity and care groups actively acquiring in the UK',
-      'Operators looking for bolt-on acquisitions in specific regions',
+      'Care business owners thinking about selling, at any stage',
+      'Owners planning to step back over the next one to five years',
+      'Care groups and investors looking to buy in the UK',
+      'Operators looking for the right business to add on',
     ],
     steps: [
-      { s:'01', label:'Source', desc:'We identify opportunities before they are in market. Off market is the starting point.' },
-      { s:'02', label:'Qualify', desc:'We assess properly before making introductions. No wasted time on either side.' },
-      { s:'03', label:'Complete', desc:'We stay close through heads of terms and support both sides to the end.' },
+      { s:'01', label:'Find', desc:'We find opportunities before they reach the open market.' },
+      { s:'02', label:'Check', desc:'We check the fit properly before any introduction. No wasted time.' },
+      { s:'03', label:'Complete', desc:'We stay close through the deal and support both sides to the end.' },
     ],
     magnet: '/care-snapshot',
     magnetLabel: 'Check your exit readiness',
@@ -97,10 +73,10 @@ export default function WorkPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            Three areas. Clear process.
+            Two things. One sector.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            We work in digital infrastructure, working capital and care sector M&A. Each area is different but the approach is the same find the right path and get it done.
+            We work in healthcare. We fund US staffing agencies, and we help people buy and sell care businesses in the UK. Each one is different, but the approach is the same. Find the right path and get it done.
           </p>
         </div>
       </section>

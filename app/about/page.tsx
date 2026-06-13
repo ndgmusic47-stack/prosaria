@@ -71,7 +71,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="mt-5 flex flex-wrap gap-3">
-                {['GTT Authorised Partner','Care Sector M&A','Digital Infrastructure','Working Capital'].map(t=>(
+                {['Healthcare Staffing Funding','Healthcare M&A','US and UK'].map(t=>(
                   <span key={t} className="text-label text-blue-700 border border-blue-200 bg-blue-50 px-3 py-1.5">{t}</span>
                 ))}
               </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 <h2 className="font-serif text-display-md mb-6" style={{color:'#050d1a'}}>Nathan Powell</h2>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                    Nathan founded Prosaria and leads the origination work across all three practice areas. His background is in deal sourcing identifying opportunities before they are formally in market, qualifying both sides and managing the process to a conclusion.
+                    Nathan founded Prosaria and leads the work across both areas. His background is in finding deals before they reach the open market, checking both sides are a genuine fit, and seeing the process through to the end.
                   </p>
                   <p className="text-body-md" style={{color:'#1e3a5f'}}>
                     When you contact Prosaria, you deal with Nathan directly.

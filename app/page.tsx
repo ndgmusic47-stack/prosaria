@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import HeroVideo from '@/components/HeroVideo'
 
-
 function useReveal() {
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
@@ -23,24 +22,16 @@ function useReveal() {
 const lines = [
   {
     num: '01',
-    title: 'Digital Infrastructure',
-    body: 'We work with specialist partners to source and place IPv4 address space. Our role is to connect buyers and sellers where there is a genuine commercial fit.',
-    href: '/work#digital',
-    magnet: '/digital-audit',
-    magnetLabel: 'Digital infrastructure',
+    title: 'Healthcare Staffing Funding',
+    body: 'US healthcare staffing agencies pay their workers every week. But clients take 30 to 60 days to pay. That gap makes it hard to grow. We set up funding that closes the gap, so cash is never the reason to turn down work.',
+    href: '/work#staffing',
+    magnet: '/capital-assessment',
+    magnetLabel: 'Take the two minute check',
   },
   {
     num: '02',
-    title: 'Working Capital',
-    body: 'US staffing and recruiting agencies run payroll weekly while clients pay on net 30 to 60 terms. That gap limits growth. We arrange factoring facilities built for staffing firms.',
-    href: '/work#capital',
-    magnet: '/capital-assessment',
-    magnetLabel: 'Take the two minute diagnostic',
-  },
-  {
-    num: '03',
-    title: 'Care Sector M&A',
-    body: 'We work with care business owners who are thinking about selling, and with buyers looking for businesses before they are publicly listed. Both sides, handled quietly.',
+    title: 'Healthcare M&A',
+    body: 'We help people buy and sell care businesses in the UK. Care homes, home care, supported living and more. We work quietly, so staff and rivals do not find out before a deal is done.',
     href: '/work#care',
     magnet: '/care-snapshot',
     magnetLabel: 'Check your exit readiness',
@@ -49,24 +40,17 @@ const lines = [
 
 const caseStudies = [
   {
-    tag: 'Care M&A',
-    region: 'UK',
-    headline: 'Owner managed care businesses are selling quietly',
-    outcome: 'A growing number of care business owners are exploring exit without going to market publicly. Buyer demand is strong.',
+    tag: 'Healthcare Staffing',
+    region: 'United States',
+    headline: 'Agencies are turning down work they could win',
+    outcome: 'Many staffing agencies say no to good contracts because they cannot cover payroll while waiting to get paid. The right funding removes that limit.',
     timeframe: 'Active now',
   },
   {
-    tag: 'Digital Infrastructure',
-    region: 'UK and Europe',
-    headline: 'Active demand for IPv4 address space',
-    outcome: 'We work with specialist partners who are active in the IPv4 market. There is consistent demand from network operators and infrastructure businesses.',
-    timeframe: 'Active now',
-  },
-  {
-    tag: 'Working Capital',
+    tag: 'Healthcare M&A',
     region: 'UK',
-    headline: 'Many businesses are on the wrong facility or overpaying',
-    outcome: 'Invoice finance rates vary significantly. Businesses that have not reviewed their facility recently often find better terms are available.',
+    headline: 'Care owners are selling quietly',
+    outcome: 'A growing number of care business owners want to sell without going public. Buyer demand is strong and most of the best deals never reach the open market.',
     timeframe: 'Active now',
   },
 ]
@@ -101,28 +85,28 @@ export default function HomePage() {
             lineHeight:'0.88',
             letterSpacing:'-0.04em',
             color:'#ffffff',
-            maxWidth:'14ch',
+            maxWidth:'15ch',
             marginBottom:'1.5rem',
             textShadow:'0 0 60px rgba(59,130,246,0.4), 0 2px 40px rgba(0,0,0,0.95)',
             fontWeight:400,
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            Private Markets<br/>
-            <em style={{color:'#93c5fd',fontStyle:'italic'}}>Origination.</em>
+            Funding and deals<br/>
+            <em style={{color:'#93c5fd',fontStyle:'italic'}}>in healthcare.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'1.05rem',
             lineHeight:'1.65',
             color:'#e2e8f0',
-            maxWidth:'44ch',
+            maxWidth:'46ch',
             marginBottom:'3rem',
             textShadow:'0 1px 15px rgba(0,0,0,0.95)',
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
-            We originate opportunities across care sector M&A, digital infrastructure and working capital.
+            We help US healthcare staffing agencies fund their payroll and grow. And we help people buy and sell care businesses in the UK.
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
@@ -132,10 +116,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
             {[
-              { v:'Off Market',       l:'Directly sourced opportunities' },
-              { v:'Direct Access',    l:'Owners, buyers and capital' },
-              { v:'Focused',          l:'Care, Digital and Working Capital' },
-              { v:'Relationship Led', l:'Built through conversations' },
+              { v:'Healthcare Only', l:'The one sector we know best' },
+              { v:'Direct Access',   l:'Owners, buyers and funders' },
+              { v:'Off Market',      l:'Deals before they go public' },
+              { v:'Relationship Led',l:'Built through real conversations' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
@@ -172,10 +156,10 @@ export default function HomePage() {
           <div className="mb-16 reveal">
             <p className="eyebrow mb-4">What we do</p>
             <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">
-              Three areas. Clear process. Direct approach.
+              Two things. One sector. Done properly.
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
             {lines.map((line, i) => (
               <div key={line.num}
                 className={`bg-[#050d1a] p-10 lg:p-12 flex flex-col reveal reveal-delay-${i+1} group hover:bg-[#070d1c] transition-colors duration-300`}>
@@ -223,14 +207,14 @@ export default function HomePage() {
               <div className="line-accent mb-8 reveal" style={{background:'#1d4ed8'}} />
               <p className="eyebrow mb-5 reveal" style={{color:'#1d4ed8'}}>The business</p>
               <h2 className="font-serif text-display-lg mb-8 reveal reveal-delay-1" style={{color:'#050d1a'}}>
-                A small team that works in markets where timing and relationships matter most.
+                One sector. The people who matter. Deals done quietly.
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Prosaria works across digital infrastructure, working capital and care sector M&A. The deals we are close to tend to be off market and time sensitive. That suits a lean operation better than a large one.
+                  Prosaria works in healthcare. We help US staffing agencies get the funding they need to grow, and we help people buy and sell care businesses in the UK.
                 </p>
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Nathan Powell started Prosaria and runs the day to day work. When you contact us, you speak to the person doing the work.
+                  The best deals are quiet and move fast. That suits a small, focused team. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
@@ -242,7 +226,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CASE STUDIES */}
+      {/* MARKET OBSERVATIONS */}
       <section className="py-40 bg-[#020810]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
@@ -254,7 +238,7 @@ export default function HomePage() {
             </div>
             <Link href="/case-studies" className="btn-outline reveal">See more</Link>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {caseStudies.map((cs, i) => (
               <div key={cs.headline}
                 className={`border border-blue-500/10 bg-[#0a1628] p-8 flex flex-col case-card reveal reveal-delay-${i+1} hover:border-blue-500/20 transition-all duration-300`}>
@@ -266,7 +250,7 @@ export default function HomePage() {
                 <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-4 leading-snug">{cs.headline}</h3>
                 <p className="text-body-sm text-[#94a3b8] flex-1 mb-6">{cs.outcome}</p>
                 <div className="pt-5 border-t border-blue-500/8 flex justify-between">
-                  <span className="text-label text-[#94a3b8]">Timeframe</span>
+                  <span className="text-label text-[#94a3b8]">Status</span>
                   <span className="text-label text-blue-400">{cs.timeframe}</span>
                 </div>
               </div>
@@ -284,31 +268,24 @@ export default function HomePage() {
               Find out where you stand. Takes two minutes.
             </h2>
             <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#1e3a5f'}}>
-              Pick the tool that fits your situation. Answer a few questions and get a result straight away. We review every submission.
+              Pick the tool that fits you. Answer a few questions and get a result straight away. We look at every answer.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
             {[
               {
-                title: 'Care exit readiness',
-                desc: 'Answer 6 questions about your care business. Get a score and a clear summary of where you stand today.',
-                href: '/care-snapshot',
-                tag: 'Care M&A',
-                value: 'Instant score + breakdown',
-              },
-              {
-                title: 'IPv4 opportunity check',
-                desc: 'Tell us about your situation. We will let you know if there is a relevant opportunity through our partner network.',
-                href: '/digital-audit',
-                tag: 'Digital Infrastructure',
-                value: 'Instant assessment',
-              },
-              {
-                title: 'Staffing agency diagnostic',
-                desc: 'Seven questions for US staffing and recruiting firms. See your cash gap, what fits your situation, and what the fastest growing agencies do differently.',
+                title: 'Staffing agency check',
+                desc: 'Seven questions for US healthcare staffing firms. See your cash gap, what fits your situation, and what the fastest growing agencies do differently.',
                 href: '/capital-assessment',
-                tag: 'Working Capital',
-                value: 'Two minute diagnostic',
+                tag: 'Healthcare Staffing',
+                value: 'Two minute check',
+              },
+              {
+                title: 'Care exit readiness',
+                desc: 'Six questions about your care business. Get a score and a clear summary of where you stand today if you are thinking about selling.',
+                href: '/care-snapshot',
+                tag: 'Healthcare M&A',
+                value: 'Instant score',
               },
             ].map((m, i) => (
               <div key={m.title}

@@ -6,9 +6,9 @@ import CursorEffect from '@/components/CursorEffect'
 
 export const metadata: Metadata = {
   title: { default: 'Prosaria Partners — Independent Deal Origination', template: '%s | Prosaria Partners' },
-  description: 'Independent deal origination across care sector M&A, digital infrastructure and working capital for US staffing agencies. Based in London. Founder-led.',
+  description: 'Funding and deals in healthcare. We help US healthcare staffing agencies grow, and help people buy and sell UK care businesses. Based in London.',
   metadataBase: new URL('https://prosaria.co.uk'),
-  openGraph: { type:'website', locale:'en_GB', url:'https://prosaria.co.uk', siteName:'Prosaria Partners', title:'Prosaria Partners', description:'Independent deal origination across care sector M&A, digital infrastructure and working capital. Based in London.' },
+  openGraph: { type:'website', locale:'en_GB', url:'https://prosaria.co.uk', siteName:'Prosaria Partners', title:'Prosaria Partners', description:'Funding and deals in healthcare. US staffing funding and UK care sector M&A. Based in London.' },
   robots: { index:true, follow:true },
 }
 

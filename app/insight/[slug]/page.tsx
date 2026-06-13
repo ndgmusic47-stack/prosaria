@@ -21,7 +21,6 @@ async function markdownToHtml(markdown: string) {
 
 const categoryColours: Record<string, string> = {
   'Care Sector M&A':        'text-blue-300 border-blue-800/40',
-  'Digital Infrastructure': 'text-blue-400 border-blue-700/40',
   'Working Capital':        'text-blue-200 border-blue-900/40',
 }
 

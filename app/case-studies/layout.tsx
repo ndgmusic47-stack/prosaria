@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'What We Work On',
-  description: 'The types of mandates, enquiries and situations Prosaria Partners works with across care M&A, digital infrastructure and working capital.',
+  description: 'The kinds of situations Prosaria Partners works with across healthcare staffing funding and UK care sector M&A.',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
