@@ -69,12 +69,12 @@ export default function ApplyPage() {
   // CONFIRMATION
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
+      <div className="min-h-screen bg-[#F7F3EC] pt-32 pb-24">
         <div className="max-w-[640px] mx-auto px-6 text-center">
-          <p className="eyebrow text-blue-400 mb-6">Application received</p>
-          <h1 className="font-serif text-display-lg text-[#f0f4ff] mb-4">Thank you. Your mandate application is in.</h1>
-          <p className="text-body-md text-[#94a3b8] mb-3">We review every application against the current mandate lanes. If your criteria are clear, fundable, and non-conflicting, we will be in touch to arrange a mandate review.</p>
-          <p className="text-body-sm text-[#64748b] mb-10">This is not a sales call. It is a review of fit. Not every application proceeds.</p>
+          <p className="eyebrow text-[#2E5E44] mb-6">Application received</p>
+          <h1 className="font-serif text-display-lg text-[#1F3D2B] mb-4">Thank you. Your mandate application is in.</h1>
+          <p className="text-body-md text-[#5C6B5F] mb-3">We review every application against the current mandate lanes. If your criteria are clear, fundable, and non-conflicting, we will be in touch to arrange a mandate review.</p>
+          <p className="text-body-sm text-[#6E7B6F] mb-10">This is not a sales call. It is a review of fit. Not every application proceeds.</p>
           <Link href="/" className="btn-outline">Return home</Link>
         </div>
       </div>
@@ -84,14 +84,14 @@ export default function ApplyPage() {
   // INTRO
   if (step === -1) {
     return (
-      <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
+      <div className="min-h-screen bg-[#F7F3EC] pt-32 pb-24">
         <div className="max-w-[680px] mx-auto px-6">
-          <p className="eyebrow text-blue-400 mb-5">Apply for a protected mandate review</p>
-          <h1 className="font-serif text-display-xl text-[#f0f4ff] mb-5 leading-tight">This is an application, not a contact form.</h1>
-          <p className="text-body-lg text-[#94a3b8] mb-4 max-w-[48ch]">Prosaria accepts a maximum of three protected UK healthcare acquisition mandates per year. The first step is a mandate review, not a sales call.</p>
-          <p className="text-body-sm text-[#64748b] mb-10 max-w-[48ch]">If your acquisition criteria are clear, fundable, and non-conflicting, we will review whether your mandate qualifies for one of the annual seats. Vague searchers and unfunded buyers are not accepted.</p>
+          <p className="eyebrow text-[#2E5E44] mb-5">Apply for a protected mandate review</p>
+          <h1 className="font-serif text-display-xl text-[#1F3D2B] mb-5 leading-tight">This is an application, not a contact form.</h1>
+          <p className="text-body-lg text-[#5C6B5F] mb-4 max-w-[48ch]">Prosaria accepts a maximum of three protected UK healthcare acquisition mandates per year. The first step is a mandate review, not a sales call.</p>
+          <p className="text-body-sm text-[#6E7B6F] mb-10 max-w-[48ch]">If your acquisition criteria are clear, fundable, and non-conflicting, we will review whether your mandate qualifies for one of the annual seats. Vague searchers and unfunded buyers are not accepted.</p>
           <button onClick={() => setStep(0)} className="btn-primary px-10 py-4 text-base">Begin application</button>
-          <p className="text-label text-[#475569] mt-5">Eleven short questions, then your details. Two minutes.</p>
+          <p className="text-label text-[#7E8A7E] mt-5">Eleven short questions, then your details. Two minutes.</p>
         </div>
       </div>
     )
@@ -100,11 +100,11 @@ export default function ApplyPage() {
   // FINAL DETAILS
   if (step >= TOTAL) {
     return (
-      <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
+      <div className="min-h-screen bg-[#F7F3EC] pt-32 pb-24">
         <div className="max-w-[560px] mx-auto px-6">
-          <p className="eyebrow text-blue-400 mb-3">Final step</p>
-          <h2 className="font-serif text-display-md text-[#f0f4ff] mb-2">Your details.</h2>
-          <p className="text-body-sm text-[#94a3b8] mb-8">So we can review your mandate and respond directly.</p>
+          <p className="eyebrow text-[#2E5E44] mb-3">Final step</p>
+          <h2 className="font-serif text-display-md text-[#1F3D2B] mb-2">Your details.</h2>
+          <p className="text-body-sm text-[#5C6B5F] mb-8">So we can review your mandate and respond directly.</p>
           <div className="space-y-4 mb-5">
             {[
               { v: name, set: setName, label: 'Your name *', ph: 'First and last name', t: 'text' },
@@ -113,22 +113,22 @@ export default function ApplyPage() {
               { v: org, set: setOrg, label: 'Organisation (optional)', ph: 'Company or fund name', t: 'text' },
             ].map(f => (
               <div key={f.label}>
-                <label className="text-label text-[#94a3b8] block mb-2 uppercase tracking-widest">{f.label}</label>
+                <label className="text-label text-[#5C6B5F] block mb-2 uppercase tracking-widest">{f.label}</label>
                 <input type={f.t} value={f.v} onChange={e => f.set(e.target.value)} placeholder={f.ph}
-                  className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569]" />
+                  className="w-full border border-[#2E5E44]/20 bg-[#FFFFFF] text-[#1F3D2B] px-5 py-4 text-body-sm focus:outline-none focus:border-[#2E5E44] transition-colors placeholder:text-[#7E8A7E]" />
               </div>
             ))}
             <div>
-              <label className="text-label text-[#94a3b8] block mb-2 uppercase tracking-widest">What would make this valuable enough to proceed?</label>
+              <label className="text-label text-[#5C6B5F] block mb-2 uppercase tracking-widest">What would make this valuable enough to proceed?</label>
               <textarea value={value} onChange={e => setValue(e.target.value)} rows={3} placeholder="In one or two lines"
-                className="w-full border border-blue-500/15 bg-[#0a1628] text-[#f0f4ff] px-5 py-4 text-body-sm focus:outline-none focus:border-blue-400 transition-colors placeholder:text-[#475569] resize-none" />
+                className="w-full border border-[#2E5E44]/20 bg-[#FFFFFF] text-[#1F3D2B] px-5 py-4 text-body-sm focus:outline-none focus:border-[#2E5E44] transition-colors placeholder:text-[#7E8A7E] resize-none" />
             </div>
           </div>
           <button onClick={submit} disabled={loading || !name.trim() || !email.trim()}
             className="btn-primary w-full justify-center py-4 text-base disabled:opacity-40">
             {loading ? 'Submitting…' : 'Submit mandate application'}
           </button>
-          <button onClick={() => setStep(TOTAL - 1)} className="text-label text-[#64748b] hover:text-blue-400 mt-4 block mx-auto uppercase tracking-widest">← Back</button>
+          <button onClick={() => setStep(TOTAL - 1)} className="text-label text-[#6E7B6F] hover:text-[#2E5E44] mt-4 block mx-auto uppercase tracking-widest">← Back</button>
         </div>
       </div>
     )
@@ -137,29 +137,29 @@ export default function ApplyPage() {
   // QUESTION STEPS
   const s = steps[step]
   return (
-    <div className="min-h-screen bg-[#050d1a] pt-32 pb-24">
+    <div className="min-h-screen bg-[#F7F3EC] pt-32 pb-24">
       <div className="max-w-[640px] mx-auto px-6">
         <div className="flex items-center gap-2 mb-8">
           {steps.map((_, i) => (
-            <div key={i} className={`h-1 flex-1 rounded-full transition-all duration-500 ${i <= step ? 'bg-blue-400' : 'bg-[#1e3a5f]'}`} />
+            <div key={i} className={`h-1 flex-1 rounded-full transition-all duration-500 ${i <= step ? 'bg-[#2E5E44]' : 'bg-[#D8CFC0]'}`} />
           ))}
         </div>
-        <p className="text-label text-[#94a3b8] mb-3 uppercase tracking-widest">Question {step + 1} of {TOTAL}</p>
+        <p className="text-label text-[#5C6B5F] mb-3 uppercase tracking-widest">Question {step + 1} of {TOTAL}</p>
         <div key={step} className="animate-fade-in" style={{ animationDuration: '0.3s' }}>
-          <h2 className="font-serif text-display-md text-[#f0f4ff] mb-8 leading-snug">{s.label}</h2>
+          <h2 className="font-serif text-display-md text-[#1F3D2B] mb-8 leading-snug">{s.label}</h2>
           <div className="space-y-3">
             {s.options.map(opt => (
               <button key={opt} onClick={() => choose(opt)}
                 className={`w-full text-left px-6 py-4 border text-body-sm transition-all duration-150 ${
-                  answers[s.id] === opt ? 'border-blue-400 bg-blue-500/10 text-[#f0f4ff]'
-                  : 'border-blue-500/15 bg-[#0a1628] text-[#94a3b8] hover:border-blue-400/50 hover:text-[#f0f4ff]'
+                  answers[s.id] === opt ? 'border-[#2E5E44] bg-[#2E5E44]/10 text-[#1F3D2B]'
+                  : 'border-[#2E5E44]/20 bg-[#FFFFFF] text-[#5C6B5F] hover:border-[#2E5E44]/50 hover:text-[#1F3D2B]'
                 }`}>
                 {opt}
               </button>
             ))}
           </div>
           {step > 0 && (
-            <button onClick={() => setStep(step - 1)} className="text-label text-[#64748b] hover:text-blue-400 mt-6 uppercase tracking-widest">← Back</button>
+            <button onClick={() => setStep(step - 1)} className="text-label text-[#6E7B6F] hover:text-[#2E5E44] mt-6 uppercase tracking-widest">← Back</button>
           )}
         </div>
       </div>

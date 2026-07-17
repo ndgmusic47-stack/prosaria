@@ -71,9 +71,9 @@ export default function HomePage() {
             fontWeight:700,
             letterSpacing:'0.2em',
             textTransform:'uppercase',
-            color:'#93c5fd',
+            color:'#A67C4E',
             marginBottom:'0.75rem',
-            textShadow:'0 1px 6px rgba(0,0,0,1), 0 2px 16px rgba(0,0,0,0.95)',
+            textShadow:'0 1px 12px rgba(247,243,236,0.8)',
             animationDelay:'0.1s',
             animationFillMode:'forwards',
           }}>
@@ -84,7 +84,7 @@ export default function HomePage() {
             fontSize:'clamp(3.5rem,11vw,8.5rem)',
             lineHeight:'0.88',
             letterSpacing:'-0.04em',
-            color:'#ffffff',
+            color:'#1F3D2B',
             maxWidth:'16ch',
             marginBottom:'1.5rem',
             textShadow:'0 0 60px rgba(59,130,246,0.4), 0 2px 40px rgba(0,0,0,0.95)',
@@ -93,16 +93,16 @@ export default function HomePage() {
             animationFillMode:'forwards',
           }}>
             UK Healthcare M&A<br/>
-            <em style={{color:'#93c5fd',fontStyle:'italic'}}>Origination & Sale Preparation.</em>
+            <em style={{color:'#A67C4E',fontStyle:'italic'}}>Origination & Sale Preparation.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'1.05rem',
             lineHeight:'1.65',
-            color:'#e2e8f0',
+            color:'#1E3A5F',
             maxWidth:'46ch',
             marginBottom:'3rem',
-            textShadow:'0 1px 15px rgba(0,0,0,0.95)',
+            textShadow:'none',
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
@@ -114,7 +114,7 @@ export default function HomePage() {
             <Link href="/contact" className="btn-outline">For buyers and funds</Link>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-[#1F3D2B]/15">
             {[
               { v:'Care Sector',      l:'UK healthcare M&A only' },
               { v:'Direct Owners',    l:'Real relationships, not lists' },
@@ -124,7 +124,7 @@ export default function HomePage() {
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
                 <p className="font-serif text-display-sm leading-tight mb-1" style={{color:'#ffffff',textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
-                <p className="text-label uppercase tracking-widest" style={{color:'#93c5fd'}}>{s.l}</p>
+                <p className="text-label uppercase tracking-widest" style={{color:'#A67C4E'}}>{s.l}</p>
               </div>
             ))}
           </div>
@@ -132,45 +132,45 @@ export default function HomePage() {
       </section>
 
       {/* CONTACT STRIP */}
-      <section className="bg-[#020810] border-y border-blue-500/8 py-4">
+      <section className="bg-[#EFE9DE] border-y border-[#2E5E44]/12 py-4">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-wrap items-center gap-6 lg:gap-12">
-          <a href="tel:02030267906" className="flex items-center gap-2 text-sm text-[#94a3b8] hover:text-blue-400 transition-colors">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+          <a href="tel:02030267906" className="flex items-center gap-2 text-sm text-[#5C6B5F] hover:text-[#2E5E44] transition-colors">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] flex-shrink-0" />
             020 3026 7906
           </a>
-          <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#94a3b8] hover:text-blue-400 transition-colors">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+          <a href="mailto:hello@prosaria.co.uk" className="flex items-center gap-2 text-sm text-[#5C6B5F] hover:text-[#2E5E44] transition-colors">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] flex-shrink-0" />
             hello@prosaria.co.uk
           </a>
-          <span className="flex items-center gap-2 text-sm text-[#94a3b8]">
-            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+          <span className="flex items-center gap-2 text-sm text-[#5C6B5F]">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] flex-shrink-0" />
             66 Paul Street, London EC2A 4NA
           </span>
         </div>
       </section>
 
       {/* WHAT WE DO */}
-      <section className="py-40 bg-[#050d1a] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/4 rounded-full blur-[100px] pointer-events-none" />
+      <section className="py-40 bg-[#F7F3EC] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2E5E44]/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-16 reveal">
             <p className="eyebrow mb-4">What we do</p>
-            <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">
+            <h2 className="font-serif text-display-lg text-[#1F3D2B] max-w-[24ch]">
               One sector. Two sides. Done properly.
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{background:'rgba(46,94,68,0.08)'}}>
             {lines.map((line, i) => (
               <div key={line.num}
-                className={`bg-[#050d1a] p-10 lg:p-12 flex flex-col reveal reveal-delay-${i+1} group hover:bg-[#070d1c] transition-colors duration-300`}>
+                className={`bg-[#F7F3EC] p-10 lg:p-12 flex flex-col reveal reveal-delay-${i+1} group hover:bg-[#FBF8F2] transition-colors duration-300`}>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400 group-hover:shadow-[0_0_10px_rgba(96,165,250,0.8)] transition-shadow duration-300" />
-                  <p className="text-label text-blue-400">{line.num}</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] group-hover:shadow-[0_0_10px_rgba(96,165,250,0.8)] transition-shadow duration-300" />
+                  <p className="text-label text-[#2E5E44]">{line.num}</p>
                 </div>
-                <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-5">{line.title}</h3>
-                <p className="text-body-sm text-[#94a3b8] leading-relaxed flex-1 mb-8">{line.body}</p>
-                <div className="mt-auto pt-6 border-t border-blue-500/8 space-y-3">
-                  <Link href={line.href} className="text-label text-[#94a3b8] hover:text-[#94a3b8] transition-colors uppercase tracking-widest block">
+                <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-5">{line.title}</h3>
+                <p className="text-body-sm text-[#5C6B5F] leading-relaxed flex-1 mb-8">{line.body}</p>
+                <div className="mt-auto pt-6 border-t border-[#2E5E44]/12 space-y-3">
+                  <Link href={line.href} className="text-label text-[#5C6B5F] hover:text-[#5C6B5F] transition-colors uppercase tracking-widest block">
                     Learn more
                   </Link>
                   <Link href={line.magnet} className="block w-full text-center btn-primary text-[0.75rem] py-3">
@@ -189,7 +189,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="reveal order-2 lg:order-1">
               <div className="flex flex-col items-center text-center py-6">
-                <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border border-blue-200 shadow-sm">
+                <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border border-[#D8CFC0] shadow-sm">
                   <Image
                     src="/nathan.jpg"
                     alt="Nathan Powell, Prosaria Partners"
@@ -198,21 +198,21 @@ export default function HomePage() {
                     sizes="224px"
                   />
                 </div>
-                <p className="font-serif text-lg mt-5" style={{color:'#050d1a'}}>Nathan Powell</p>
-                <p className="text-label mt-1" style={{color:'#1d4ed8'}}>Founder, Prosaria Partners</p>
+                <p className="font-serif text-lg mt-5" style={{color:'#1F3D2B'}}>Nathan Powell</p>
+                <p className="text-label mt-1" style={{color:'#2E5E44'}}>Founder, Prosaria Partners</p>
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <div className="line-accent mb-8 reveal" style={{background:'#1d4ed8'}} />
-              <p className="eyebrow mb-5 reveal" style={{color:'#1d4ed8'}}>The business</p>
-              <h2 className="font-serif text-display-lg mb-8 reveal reveal-delay-1" style={{color:'#050d1a'}}>
+              <p className="eyebrow mb-5 reveal" style={{color:'#2E5E44'}}>The business</p>
+              <h2 className="font-serif text-display-lg mb-8 reveal reveal-delay-1" style={{color:'#1F3D2B'}}>
                 One sector. The people who matter. Deals done quietly.
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
-                <p className="text-body-md" style={{color:'#1e3a5f'}}>
+                <p className="text-body-md" style={{color:'#4A5B4E'}}>
                   Prosaria is intentionally focused on UK healthcare M&A, with a particular focus on care businesses, succession, sale preparation, and direct owner relationships.
                 </p>
-                <p className="text-body-md" style={{color:'#1e3a5f'}}>
+                <p className="text-body-md" style={{color:'#4A5B4E'}}>
                   The best deals are quiet and move fast. That suits a small, focused team. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
                 </p>
               </div>
@@ -226,12 +226,12 @@ export default function HomePage() {
       </section>
 
       {/* MARKET OBSERVATIONS */}
-      <section className="py-40 bg-[#020810]">
+      <section className="py-40 bg-[#EFE9DE]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
             <div className="reveal">
               <p className="eyebrow mb-4">Market observations</p>
-              <h2 className="font-serif text-display-md text-[#f0f4ff]">
+              <h2 className="font-serif text-display-md text-[#1F3D2B]">
                 What we are seeing<br />in the market right now.
               </h2>
             </div>
@@ -240,17 +240,17 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {caseStudies.map((cs, i) => (
               <div key={cs.headline}
-                className={`border border-blue-500/10 bg-[#0a1628] p-8 flex flex-col case-card reveal reveal-delay-${i+1} hover:border-blue-500/20 transition-all duration-300`}>
+                className={`border border-[#2E5E44]/15 bg-[#FFFFFF] p-8 flex flex-col case-card reveal reveal-delay-${i+1} hover:border-[#2E5E44]/25 transition-all duration-300`}>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="eyebrow text-blue-400">{cs.tag}</span>
+                  <span className="eyebrow text-[#2E5E44]">{cs.tag}</span>
                   <span className="text-blue-500/20">·</span>
-                  <span className="text-label text-[#94a3b8]">{cs.region}</span>
+                  <span className="text-label text-[#5C6B5F]">{cs.region}</span>
                 </div>
-                <h3 className="font-serif text-display-sm text-[#f0f4ff] mb-4 leading-snug">{cs.headline}</h3>
-                <p className="text-body-sm text-[#94a3b8] flex-1 mb-6">{cs.outcome}</p>
-                <div className="pt-5 border-t border-blue-500/8 flex justify-between">
-                  <span className="text-label text-[#94a3b8]">Status</span>
-                  <span className="text-label text-blue-400">{cs.timeframe}</span>
+                <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-4 leading-snug">{cs.headline}</h3>
+                <p className="text-body-sm text-[#5C6B5F] flex-1 mb-6">{cs.outcome}</p>
+                <div className="pt-5 border-t border-[#2E5E44]/12 flex justify-between">
+                  <span className="text-label text-[#5C6B5F]">Status</span>
+                  <span className="text-label text-[#2E5E44]">{cs.timeframe}</span>
                 </div>
               </div>
             ))}
@@ -262,11 +262,11 @@ export default function HomePage() {
       <section className="light-section py-40">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
-            <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Start here</p>
-            <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#050d1a'}}>
+            <p className="eyebrow mb-4" style={{color:'#2E5E44'}}>Start here</p>
+            <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#1F3D2B'}}>
               Two ways to start a conversation.
             </h2>
-            <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#1e3a5f'}}>
+            <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#4A5B4E'}}>
               Every conversation is direct, confidential, and without obligation. Choose the route that fits you.
             </p>
           </div>
@@ -288,13 +288,13 @@ export default function HomePage() {
               },
             ].map((m, i) => (
               <div key={m.title}
-                className={`bg-white border border-blue-100 p-8 flex flex-col reveal reveal-delay-${i+1} hover:border-blue-300 hover:shadow-md transition-all duration-300`}>
+                className={`bg-white border border-[#E6DFD2] p-8 flex flex-col reveal reveal-delay-${i+1} hover:border-[#C9BFA9] hover:shadow-md transition-all duration-300`}>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-label text-blue-700 border border-blue-200 bg-blue-50 px-3 py-1">{m.tag}</span>
-                  <span className="text-label text-green-600 font-medium">{m.value}</span>
+                  <span className="text-label text-[#2E5E44] border border-[#D8CFC0] bg-[#EFF4EF] px-3 py-1">{m.tag}</span>
+                  <span className="text-label text-[#A67C4E] font-medium">{m.value}</span>
                 </div>
-                <h3 className="font-serif text-display-sm mb-4" style={{color:'#050d1a'}}>{m.title}</h3>
-                <p className="text-body-sm flex-1 mb-8" style={{color:'#1e3a5f'}}>{m.desc}</p>
+                <h3 className="font-serif text-display-sm mb-4" style={{color:'#1F3D2B'}}>{m.title}</h3>
+                <p className="text-body-sm flex-1 mb-8" style={{color:'#4A5B4E'}}>{m.desc}</p>
                 <Link href={m.href} className="btn-primary w-full justify-center">
                   Get in touch
                 </Link>
@@ -305,17 +305,17 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 bg-[#050d1a] border-t border-blue-500/8 relative overflow-hidden">
+      <section className="py-24 bg-[#F7F3EC] border-t border-[#2E5E44]/12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(29,78,216,0.07)_0%,transparent_70%)]" />
         <div className="relative max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
-            <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[28ch]">
+            <h2 className="font-serif text-display-md text-[#1F3D2B] max-w-[28ch]">
               Have something worth talking about?
             </h2>
-            <p className="text-body-md text-[#94a3b8] mt-3">
-              <a href="tel:02030267906" className="hover:text-blue-400 transition-colors">020 3026 7906</a>
-              <span className="mx-3 text-[#94a3b8]">·</span>
-              <a href="mailto:hello@prosaria.co.uk" className="hover:text-blue-400 transition-colors">hello@prosaria.co.uk</a>
+            <p className="text-body-md text-[#5C6B5F] mt-3">
+              <a href="tel:02030267906" className="hover:text-[#2E5E44] transition-colors">020 3026 7906</a>
+              <span className="mx-3 text-[#5C6B5F]">·</span>
+              <a href="mailto:hello@prosaria.co.uk" className="hover:text-[#2E5E44] transition-colors">hello@prosaria.co.uk</a>
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 reveal reveal-delay-1 flex-shrink-0">

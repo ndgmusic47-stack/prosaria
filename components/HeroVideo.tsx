@@ -40,7 +40,7 @@ export default function HeroVideo() {
 
   return (
     <div className="absolute inset-0" style={{zIndex:0}}>
-      <div className="absolute inset-0 bg-[#050d1a]" />
+      <div className="absolute inset-0 bg-[#F7F3EC]" />
       <video
         ref={videoRef}
         muted
@@ -59,10 +59,10 @@ export default function HeroVideo() {
         style={{
           background:`linear-gradient(
             180deg,
-            rgba(5,13,26,0.15) 0%,
-            rgba(5,13,26,0.0)  25%,
-            rgba(5,13,26,0.0)  65%,
-            rgba(5,13,26,0.85) 100%
+            rgba(247,243,236,0.35) 0%,
+            rgba(247,243,236,0.0)  25%,
+            rgba(247,243,236,0.0)  65%,
+            rgba(247,243,236,0.92) 100%
           )`
         }}
       />

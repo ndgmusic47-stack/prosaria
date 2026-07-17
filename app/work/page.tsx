@@ -68,14 +68,13 @@ export default function WorkPage() {
   useReveal()
   return (
     <>
-      <section className="bg-[#050d1a] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage:`linear-gradient(to right,#3b82f6 1px,transparent 1px),linear-gradient(to bottom,#3b82f6 1px,transparent 1px)`,backgroundSize:'80px 80px'}} />
+      <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
-          <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
+          <h1 className="font-serif text-display-xl text-[#1F3D2B] max-w-[20ch] leading-tight mb-6">
             One sector. Two sides.
           </h1>
-          <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
+          <p className="text-body-lg text-[#5C6B5F] max-w-[48ch]">
             Prosaria works in UK healthcare M&A. We help care business owners prepare for a sale, and we help serious buyers originate opportunities through direct owner relationships. Understand the situation, map the market, build real relationships, prepare properly, and support serious conversations when timing is right.
           </p>
         </div>
@@ -85,33 +84,33 @@ export default function WorkPage() {
         <section
           key={line.id}
           id={line.id}
-          className={idx % 2 === 0 ? 'py-32 bg-[#050d1a]' : 'light-section py-32'}
+          className={idx % 2 === 0 ? 'py-32 bg-[#F7F3EC]' : 'light-section py-32'}
         >
           <div className="max-w-site mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
               <div className="lg:col-span-7 reveal">
                 <p className="eyebrow mb-4">{line.num}</p>
-                <h2 className={`font-serif text-display-lg mb-4 ${idx % 2 === 0 ? 'text-[#f0f4ff]' : ''}`} style={idx % 2 !== 0 ? {color:'#050d1a'} : {}}>
+                <h2 className={`font-serif text-display-lg mb-4 ${idx % 2 === 0 ? 'text-[#1F3D2B]' : ''}`} style={idx % 2 !== 0 ? {color:'#1F3D2B'} : {}}>
                   {line.title}
                 </h2>
-                <p className={`text-body-lg mb-6 ${idx % 2 === 0 ? 'text-[#94a3b8]' : ''}`} style={idx % 2 !== 0 ? {color:'#1e3a5f'} : {}}>
+                <p className={`text-body-lg mb-6 ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>
                   {line.subtitle}
                 </p>
                 {line.intro.split('\n\n').map((para, i) => (
-                  <p key={i} className={`text-body-md mb-4 ${idx % 2 === 0 ? 'text-[#94a3b8]' : ''}`} style={idx % 2 !== 0 ? {color:'#1e3a5f'} : {}}>
+                  <p key={i} className={`text-body-md mb-4 ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>
                     {para}
                   </p>
                 ))}
               </div>
 
               <div className="lg:col-span-5 reveal reveal-delay-1">
-                <div className={`p-8 border ${idx % 2 === 0 ? 'bg-[#0a1628] border-blue-500/10' : 'bg-white border-blue-100'}`}>
+                <div className={`p-8 border ${idx % 2 === 0 ? 'bg-[#FFFFFF] border-[#2E5E44]/15' : 'bg-white border-[#E6DFD2]'}`}>
                   <p className="eyebrow mb-5">Who this is for</p>
                   <ul className="space-y-4">
                     {line.whoFor.map((item, i) => (
                       <li key={i} className="flex gap-4">
-                        <span className="w-1 h-1 rounded-full bg-blue-400 flex-shrink-0 mt-2" />
-                        <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#94a3b8]' : ''}`} style={idx % 2 !== 0 ? {color:'#1e3a5f'} : {}}>{item}</p>
+                        <span className="w-1 h-1 rounded-full bg-[#2E5E44] flex-shrink-0 mt-2" />
+                        <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>{item}</p>
                       </li>
                     ))}
                   </ul>
@@ -124,10 +123,10 @@ export default function WorkPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{background: idx % 2 === 0 ? 'rgba(59,130,246,0.06)' : 'rgba(59,130,246,0.12)'}}>
                 {line.steps.map((s, i) => (
                   <div key={s.s}
-                    className={`p-8 reveal reveal-delay-${i+1} ${idx % 2 === 0 ? 'bg-[#050d1a]' : 'bg-[#f5f7fa]'}`}>
-                    <p className="text-label text-blue-400 mb-3">{s.s}</p>
-                    <p className={`font-serif text-display-sm mb-3 ${idx % 2 === 0 ? 'text-[#f0f4ff]' : ''}`} style={idx % 2 !== 0 ? {color:'#050d1a'} : {}}>{s.label}</p>
-                    <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#94a3b8]' : ''}`} style={idx % 2 !== 0 ? {color:'#1e3a5f'} : {}}>{s.desc}</p>
+                    className={`p-8 reveal reveal-delay-${i+1} ${idx % 2 === 0 ? 'bg-[#F7F3EC]' : 'bg-[#f5f7fa]'}`}>
+                    <p className="text-label text-[#2E5E44] mb-3">{s.s}</p>
+                    <p className={`font-serif text-display-sm mb-3 ${idx % 2 === 0 ? 'text-[#1F3D2B]' : ''}`} style={idx % 2 !== 0 ? {color:'#1F3D2B'} : {}}>{s.label}</p>
+                    <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -142,10 +141,10 @@ export default function WorkPage() {
         </section>
       ))}
 
-      <section className="py-20 bg-[#050d1a] border-t border-blue-500/8">
+      <section className="py-20 bg-[#F7F3EC] border-t border-[#2E5E44]/12">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
-            <h2 className="font-serif text-display-md text-[#f0f4ff] max-w-[32ch]">
+            <h2 className="font-serif text-display-md text-[#1F3D2B] max-w-[32ch]">
               Not sure where to start? Get in touch and we will give you a straight answer.
             </h2>
           </div>

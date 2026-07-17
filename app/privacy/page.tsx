@@ -4,11 +4,11 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="pt-40 pb-24 bg-[#050d1a]">
+    <section className="pt-40 pb-24 bg-[#F7F3EC]">
       <div className="max-w-site mx-auto px-6 lg:px-10">
         <div className="max-w-[680px]">
-          <p className="eyebrow text-blue-400 mb-6">Legal</p>
-          <h1 className="font-serif text-display-lg text-[#f0f4ff] mb-10">Privacy Policy</h1>
+          <p className="eyebrow text-[#2E5E44] mb-6">Legal</p>
+          <h1 className="font-serif text-display-lg text-[#1F3D2B] mb-10">Privacy Policy</h1>
 
           {[
             {
@@ -41,12 +41,12 @@ export default function PrivacyPage() {
             },
           ].map(({ title, body }) => (
             <div key={title} className="mb-10">
-              <h2 className="font-serif text-display-sm text-[#f0f4ff] mb-3">{title}</h2>
-              <p className="text-body-md text-[#94a3b8]">{body}</p>
+              <h2 className="font-serif text-display-sm text-[#1F3D2B] mb-3">{title}</h2>
+              <p className="text-body-md text-[#5C6B5F]">{body}</p>
             </div>
           ))}
 
-          <p className="text-label text-[#475569] mt-12">Last updated: January 2025</p>
+          <p className="text-label text-[#7E8A7E] mt-12">Last updated: January 2025</p>
         </div>
       </div>
     </section>

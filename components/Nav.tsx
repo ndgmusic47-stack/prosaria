@@ -26,13 +26,13 @@ export default function Nav() {
   return (
     <>
       <header className={`absolute lg:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'lg:bg-[#050d1a]/95 lg:backdrop-blur-sm lg:border-b lg:border-blue-500/10' : ''
+        scrolled ? 'lg:bg-[#F7F3EC]/95 lg:backdrop-blur-sm lg:border-b lg:border-[#2E5E44]/15' : ''
       }`}>
         <div className="max-w-site mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <span className="font-serif text-[1.15rem] tracking-wide transition-colors duration-200" style={{color:'#ffffff', textShadow:'0 1px 8px rgba(0,0,0,0.6)'}}>
+            <span className="font-serif text-[1.15rem] tracking-wide transition-colors duration-200" style={{color:'#1F3D2B'}}>
               Prosaria Partners
             </span>
           </Link>
@@ -42,9 +42,9 @@ export default function Nav() {
             {links.map(({ href, label }) => (
               <Link key={href} href={href}
                 className={`font-sans text-[0.78rem] tracking-[0.06em] uppercase transition-colors duration-200 ${
-                  pathname === href ? 'text-blue-300' : 'text-white/85 hover:text-white'
+                  pathname === href ? 'text-[#3E7A58]' : 'text-[#1F3D2B]/80 hover:text-[#1F3D2B]'
                 }`}
-                style={{textShadow:'0 1px 6px rgba(0,0,0,0.5)'}}>
+                style={{textShadow:'none'}}>
                 {label}
               </Link>
             ))}
@@ -64,16 +64,16 @@ export default function Nav() {
       </header>
 
       {/* Mobile menu */}
-      <div className={`fixed inset-0 z-40 bg-[#050d1a] flex flex-col justify-center px-8 transition-all duration-500 overflow-hidden ${
+      <div className={`fixed inset-0 z-40 bg-[#F7F3EC] flex flex-col justify-center px-8 transition-all duration-500 overflow-hidden ${
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         {/* Blue glow behind menu */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#2E5E44]/10 rounded-full blur-3xl pointer-events-none" />
         <nav className="flex flex-col gap-8 relative">
           {links.map(({ href, label }, i) => (
             <Link key={href} href={href}
               style={{ transitionDelay: open ? `${i * 60}ms` : '0ms' }}
-              className={`font-serif text-4xl text-[#f0f4ff] hover:text-blue-400 transition-all duration-300 ${
+              className={`font-serif text-4xl text-[#1F3D2B] hover:text-[#2E5E44] transition-all duration-300 ${
                 open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}>
               {label}
@@ -88,7 +88,7 @@ export default function Nav() {
           </Link>
         </nav>
         <div className="absolute bottom-10 left-8">
-          <p className="eyebrow text-blue-500/40">Prosaria Partners</p>
+          <p className="eyebrow text-[#2E5E44]/40">Prosaria Partners</p>
         </div>
       </div>
     </>
