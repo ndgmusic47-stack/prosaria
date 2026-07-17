@@ -5,10 +5,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/acquisition-office', label: 'Acquisition Office' },
-  { href: '/acquisition-os',     label: 'Acquisition OS' },
-  { href: '/who-its-for',        label: "Who It's For" },
-  { href: '/insight',            label: 'Insights' },
+  { href: '/work',    label: 'What We Do' },
+  { href: '/about',   label: 'About' },
+  { href: '/insight', label: 'Insights' },
 ]
 
 export default function Nav() {
@@ -49,8 +48,8 @@ export default function Nav() {
                 {label}
               </Link>
             ))}
-            <Link href="/apply" className="btn-primary text-[0.75rem] py-2.5 px-5 ml-2">
-              Apply
+            <Link href="/contact" className="btn-primary text-[0.75rem] py-2.5 px-5 ml-2">
+              Contact
             </Link>
           </nav>
 
@@ -80,12 +79,12 @@ export default function Nav() {
               {label}
             </Link>
           ))}
-          <Link href="/apply"
+          <Link href="/contact"
             style={{ transitionDelay: open ? `${links.length * 60}ms` : '0ms' }}
             className={`mt-4 btn-primary self-start transition-all duration-300 ${
               open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-            Apply
+            Contact
           </Link>
         </nav>
         <div className="absolute bottom-10 left-8">

@@ -19,46 +19,48 @@ function useReveal() {
 
 const examples = [
   {
-    tag: 'Care M&A',
-    region: 'South East England',
-    type: 'Sell side',
-    headline: 'Owner approaching retirement, no public process wanted',
-    situation: 'A care home owner with a long-established business was thinking about exit. He had spoken to two regional brokers but was not comfortable with the idea of marketing the business openly. He wanted a quiet approach to a small number of credible buyers.',
-    whatWeDo: 'We work with owners in exactly this situation. We identify buyers who are genuinely active in the market, make a direct and confidential approach, and manage the process without putting the business on any public platform.',
+    tag: 'Succession',
+    region: 'UK',
+    type: 'Owner side',
+    headline: 'Long standing care owner thinking about succession',
+    situation: 'An owner who built the business over decades is starting to think about stepping back. There is no urgency yet, but no plan either. The instinct is to wait, which quietly narrows the options.',
+    whatWeDo: 'We help owners in this position prepare early. Organising the business, understanding what buyers look for, and building readiness long before any process starts. Preparation creates choices.',
     status: 'Care M&A',
   },
   {
-    tag: 'Care M&A',
-    region: 'Midlands',
-    type: 'Buy side',
-    headline: 'Care group looking for acquisitions before they reach the market',
-    situation: 'A growing care operator wanted to expand into a specific region. They were not interested in businesses already being marketed by brokers. They wanted to identify owners who might be open to a conversation but had not yet committed to a sale process.',
-    whatWeDo: 'We map target businesses in a defined geography, make direct outreach to owners and facilitate introductions where there is genuine mutual interest. We do not approach businesses speculatively or without a clear buyer mandate.',
+    tag: 'Succession',
+    region: 'UK',
+    type: 'Owner side',
+    headline: 'Husband and wife care business with no clear next generation',
+    situation: 'A couple run the business together and the family is not taking it on. They care deeply about staff and residents, and worry about what a sale would mean for both.',
+    whatWeDo: 'We work with owners to present the business properly and support quiet conversations with buyers who respect care continuity. No open marketing, no auction pressure.',
     status: 'Care M&A',
   },
   {
-    tag: 'Working Capital',
-    region: 'United States',
-    type: 'Funding',
-    headline: 'Healthcare staffing agency covering weekly payroll on net 60 terms',
-    situation: 'A healthcare staffing agency placing nurses and locum staff was profitable but constantly stretched. Contractors were paid weekly while hospital clients paid on net 45 to 60 terms. Every new contract widened the gap, and the founders were starting to turn down placements they knew they could fill.',
-    whatWeDo: 'We work with specialist funding partners who focus on staffing, with facilities up to $15m. We qualify the situation first and, where there is a clear fit, handle the introduction and stay involved through to funding.',
-    status: 'Working Capital',
+    tag: 'Origination',
+    region: 'UK',
+    type: 'Buyer side',
+    headline: 'Buyer or fund seeking mandate fit UK care opportunities',
+    situation: 'A buyer with a clear mandate wants opportunities before they are widely marketed. Generic broker lists have not delivered. What is missing is direct owner access.',
+    whatWeDo: 'We map the market against the mandate and build direct relationships with owners over time. When timing and fit align, we support serious conversations.',
+    status: 'Care M&A',
   },
   {
-    tag: 'Working Capital',
-    region: 'United States',
-    type: 'Refinancing',
-    headline: 'IT contract staffing firm on a factoring facility it had outgrown',
-    situation: 'An IT staffing firm had been factoring for several years but the business had tripled in size since the facility was arranged. The rate and advance terms no longer reflected the quality of the client book, and the service had become slow at exactly the moments speed mattered.',
-    whatWeDo: 'We assess whether a better structure exists through our funding partners. Where it does, we handle the introduction and support the transition. We are not searching the whole market. We work within a defined partner network.',
-    status: 'Working Capital',
+    tag: 'Preparation',
+    region: 'UK',
+    type: 'Owner side',
+    headline: 'Care business that needs better preparation before buyer conversations',
+    situation: 'A good business, but the numbers, management story, and presentation are not ready for buyer scrutiny. As it stands, value would be left on the table.',
+    whatWeDo: 'We help organise and package the business so a serious buyer can quickly understand what has been built and why it holds together. Preparation before conversation.',
+    status: 'Care M&A',
   },
 ]
 
 const tagColours: Record<string, string> = {
   'Care M&A':               'text-blue-400',
-  'Working Capital':        'text-blue-200',
+  'Succession':             'text-blue-200',
+  'Origination':            'text-blue-300',
+  'Preparation':            'text-blue-200',
 }
 
 export default function CaseStudiesPage() {
@@ -73,7 +75,7 @@ export default function CaseStudiesPage() {
             The types of situations we get involved in.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[52ch]">
-            These are the kinds of situations we work with across healthcare staffing funding and UK care sector M&A.
+            These are the kinds of situations we work with across UK healthcare M&A, on both the owner side and the buyer side.
           </p>
         </div>
       </section>

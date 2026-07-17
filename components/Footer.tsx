@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-serif text-base text-[#f0f4ff] group-hover:text-blue-400 transition-colors">Prosaria Partners</span>
             </Link>
             <p className="text-sm leading-relaxed max-w-[28ch] mb-6">
-              Funding and deals in healthcare. We help US staffing agencies grow and help people buy and sell UK care businesses.
+              Prosaria is a UK healthcare M&A origination and sale preparation firm focused on care businesses, direct owner relationships, and mandate-led acquisition conversations.
             </p>
             <div className="space-y-2 text-sm">
               <a href="tel:02030267906" className="flex items-center gap-2 hover:text-blue-400 transition-colors">

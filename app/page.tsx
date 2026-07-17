@@ -22,28 +22,28 @@ function useReveal() {
 const lines = [
   {
     num: '01',
-    title: 'Healthcare Staffing Funding',
-    body: 'US healthcare staffing agencies pay their workers every week. But clients take 30 to 60 days to pay. That gap makes it hard to grow. We set up funding that closes the gap, so cash is never the reason to turn down work.',
-    href: '/work#staffing',
-    magnet: '/capital-assessment',
-    magnetLabel: 'Take the two minute check',
+    title: 'For Care Business Owners',
+    body: 'We help long standing care business owners prepare, organise, and present the company so serious buyers can understand the value of what has been built. Preparation creates choices before timing becomes urgent.',
+    href: '/work#owners',
+    magnet: '/contact',
+    magnetLabel: 'Start a quiet conversation',
   },
   {
     num: '02',
-    title: 'Healthcare M&A',
-    body: 'We help people buy and sell care businesses in the UK. Care homes, home care, supported living and more. We work quietly, so staff and rivals do not find out before a deal is done.',
-    href: '/work#care',
-    magnet: '/care-snapshot',
-    magnetLabel: 'Check your exit readiness',
+    title: 'For Buyers, Funds & Operators',
+    body: 'We support mandate led acquisition origination by identifying and building relationships with care business owners before opportunities become widely marketed. Real owner relationships, not generic market lists.',
+    href: '/work#buyers',
+    magnet: '/contact',
+    magnetLabel: 'Discuss a mandate',
   },
 ]
 
 const caseStudies = [
   {
-    tag: 'Healthcare Staffing',
-    region: 'United States',
-    headline: 'Agencies are turning down work they could win',
-    outcome: 'Many staffing agencies say no to good contracts because they cannot cover payroll while waiting to get paid. The right funding removes that limit.',
+    tag: 'Succession',
+    region: 'UK',
+    headline: 'Many care owners have no clear next generation',
+    outcome: 'A large share of long standing care businesses are owner run with no succession plan. The ones that prepare early keep control of how and when they sell.',
     timeframe: 'Active now',
   },
   {
@@ -92,8 +92,8 @@ export default function HomePage() {
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            Healthcare Exits &<br/>
-            <em style={{color:'#93c5fd',fontStyle:'italic'}}>Recruitment Cash Flow.</em>
+            UK Healthcare M&A<br/>
+            <em style={{color:'#93c5fd',fontStyle:'italic'}}>Origination & Sale Preparation.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
@@ -106,20 +106,20 @@ export default function HomePage() {
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
-            We help US healthcare staffing agencies fund their payroll and grow. And we help people buy and sell care businesses in the UK.
+            Prosaria builds direct relationships with long standing care business owners and supports serious buyers, funds, and operators with mandate led acquisition conversations.
           </p>
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
-            <Link href="/work" className="btn-primary">See what we do</Link>
-            <Link href="/contact" className="btn-outline">Get in touch</Link>
+            <Link href="/contact" className="btn-primary">For care business owners</Link>
+            <Link href="/contact" className="btn-outline">For buyers and funds</Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/8">
             {[
-              { v:'Healthcare Only', l:'The one sector we know best' },
-              { v:'Direct Access',   l:'Owners, buyers and funders' },
-              { v:'Off Market',      l:'Deals before they go public' },
-              { v:'Relationship Led',l:'Built through real conversations' },
+              { v:'Care Sector',      l:'UK healthcare M&A only' },
+              { v:'Direct Owners',    l:'Real relationships, not lists' },
+              { v:'Sale Preparation', l:'Ready before timing is urgent' },
+              { v:'Mandate Led',      l:'Serious buyers, defined criteria' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
@@ -156,7 +156,7 @@ export default function HomePage() {
           <div className="mb-16 reveal">
             <p className="eyebrow mb-4">What we do</p>
             <h2 className="font-serif text-display-lg text-[#f0f4ff] max-w-[24ch]">
-              Two things. One sector. Done properly.
+              One sector. Two sides. Done properly.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{background:'rgba(59,130,246,0.06)'}}>
@@ -211,7 +211,7 @@ export default function HomePage() {
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
-                  Prosaria works in healthcare. We help US staffing agencies get the funding they need to grow, and we help people buy and sell care businesses in the UK.
+                  Prosaria is intentionally focused on UK healthcare M&A, with a particular focus on care businesses, succession, sale preparation, and direct owner relationships.
                 </p>
                 <p className="text-body-md" style={{color:'#1e3a5f'}}>
                   The best deals are quiet and move fast. That suits a small, focused team. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
@@ -263,29 +263,29 @@ export default function HomePage() {
       <section className="light-section py-40">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
-            <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Free tools</p>
+            <p className="eyebrow mb-4" style={{color:'#1d4ed8'}}>Start here</p>
             <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#050d1a'}}>
-              Find out where you stand. Takes two minutes.
+              Two ways to start a conversation.
             </h2>
             <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#1e3a5f'}}>
-              Pick the tool that fits you. Answer a few questions and get a result straight away. We look at every answer.
+              Every conversation is direct, confidential, and without obligation. Choose the route that fits you.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
             {[
               {
-                title: 'Staffing agency check',
-                desc: 'Seven questions for US healthcare staffing firms. See your cash gap, what fits your situation, and what the fastest growing agencies do differently.',
-                href: '/capital-assessment',
-                tag: 'Healthcare Staffing',
-                value: 'Two minute check',
+                title: 'I own or run a care business',
+                desc: 'Whether a sale is years away or closer than you planned, preparation creates choices. A quiet, no obligation conversation about where you stand.',
+                href: '/contact',
+                tag: 'Owners',
+                value: 'Discreet',
               },
               {
-                title: 'Care exit readiness',
-                desc: 'Six questions about your care business. Get a score and a clear summary of where you stand today if you are thinking about selling.',
-                href: '/care-snapshot',
-                tag: 'Healthcare M&A',
-                value: 'Instant score',
+                title: 'I am a buyer, fund, or operator',
+                desc: 'Mandate led origination built on direct owner relationships. Tell us your criteria and we will discuss whether there is a fit.',
+                href: '/contact',
+                tag: 'Buyers & Funds',
+                value: 'Mandate led',
               },
             ].map((m, i) => (
               <div key={m.title}
@@ -297,7 +297,7 @@ export default function HomePage() {
                 <h3 className="font-serif text-display-sm mb-4" style={{color:'#050d1a'}}>{m.title}</h3>
                 <p className="text-body-sm flex-1 mb-8" style={{color:'#1e3a5f'}}>{m.desc}</p>
                 <Link href={m.href} className="btn-primary w-full justify-center">
-                  Start free
+                  Get in touch
                 </Link>
               </div>
             ))}
@@ -320,8 +320,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 reveal reveal-delay-1 flex-shrink-0">
-            <Link href="/work" className="btn-primary">See what we do</Link>
-            <Link href="/contact" className="btn-outline">Get in touch</Link>
+            <Link href="/contact" className="btn-primary">For care business owners</Link>
+            <Link href="/contact" className="btn-outline">For buyers and funds</Link>
           </div>
         </div>
       </section>

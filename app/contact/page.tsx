@@ -16,8 +16,8 @@ function useReveal() {
 }
 
 const paths = [
-  { num:'01', title:'Healthcare staffing funding', desc:'You run a US healthcare staffing agency and cash flow is holding you back. You pay staff weekly but wait weeks to get paid.', action:'Take the two minute check', href:'/capital-assessment' },
-  { num:'02', title:'Healthcare M&A', desc:'You own a care business and are thinking about selling. Or you are a buyer looking for the right care business to acquire.', action:'Check exit readiness', href:'/care-snapshot' },
+  { num:'01', title:'I own or run a care business', desc:'Whether a sale is years away or closer than planned, a quiet conversation about preparation costs nothing and creates choices.', action:'Send a message below', href:'#message' },
+  { num:'02', title:'I am a buyer, fund, or operator', desc:'Tell us about your mandate. Criteria, geography, size, and what a fit looks like. We will come back to you directly.', action:'Send a message below', href:'#message' },
 ]
 
 export default function ContactPage() {

@@ -71,7 +71,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="mt-5 flex flex-wrap gap-3">
-                {['Healthcare Staffing Funding','Healthcare M&A','US and UK'].map(t=>(
+                {['UK Healthcare M&A','Care Businesses','Direct Owner Relationships'].map(t=>(
                   <span key={t} className="text-label text-blue-700 border border-blue-200 bg-blue-50 px-3 py-1.5">{t}</span>
                 ))}
               </div>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'What We Do',
-  description: 'Funding for US healthcare staffing agencies, and buying and selling UK care businesses.',
+  description: 'Sale preparation for care business owners, and mandate led origination for serious buyers, funds, and operators.',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

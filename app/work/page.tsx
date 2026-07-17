@@ -17,49 +17,49 @@ function useReveal() {
 
 const lines = [
   {
-    id: 'staffing',
+    id: 'owners',
     num: '01',
-    title: 'Healthcare Staffing Funding',
-    subtitle: 'Cash flow funding for US healthcare staffing agencies.',
-    intro: `Staffing agencies pay their workers every week. Their clients take 30, 45 or 60 days to pay. That means the agency is funding its clients from its own pocket, and it limits how much work it can take on.
+    title: 'For Care Business Owners',
+    subtitle: 'Sale preparation before timing becomes urgent.',
+    intro: `We help long standing care business owners prepare, organise, and present the company so serious buyers can understand the value of what has been built.
 
-Factoring fixes this. It turns unpaid invoices into cash straight away, so payroll is never the reason to say no to a contract. We work with funding partners who focus on staffing, with facilities up to $15m. Once we understand your situation, we handle the introduction and stay with you through to funding.`,
+Most owners think about succession too late, and end up negotiating from urgency. Preparation creates choices. It does not commit you to selling. It means that when a conversation happens, it happens on your terms, quietly, and with the business shown properly.`,
     whoFor: [
-      'US healthcare staffing agencies paying staff weekly or every two weeks',
-      'Agencies whose clients pay on 30 to 60 day terms',
-      'Agencies turning down work because of cash flow',
-      'Agencies already factoring but unhappy with their rate or service',
+      'Long standing care owners thinking about succession',
+      'Husband and wife businesses with no clear next generation',
+      'Owners planning to step back over the next one to five years',
+      'Owners who want the business presented properly before any buyer conversation',
     ],
     steps: [
-      { s:'01', label:'Check', desc:'We learn about your agency and check the fit with our funding partners.' },
-      { s:'02', label:'Introduce', desc:'Where there is a fit, we put you in front of the right funder.' },
-      { s:'03', label:'Support', desc:'We stay involved and help move things through to funding.' },
+      { s:'01', label:'Understand', desc:'We understand your situation, your timing, and what matters to you.' },
+      { s:'02', label:'Prepare', desc:'We help organise and package the business so its value is clear.' },
+      { s:'03', label:'Support', desc:'When timing is right, we support serious conversations discreetly.' },
     ],
-    magnet: '/capital-assessment',
-    magnetLabel: 'Take the two minute check',
+    magnet: '/contact',
+    magnetLabel: 'Start a quiet conversation',
     note: null,
   },
   {
-    id: 'care',
+    id: 'buyers',
     num: '02',
-    title: 'Healthcare M&A',
-    subtitle: 'Buying and selling UK care businesses, handled quietly.',
-    intro: `We help care business owners who want to sell, and buyers who want to find businesses before they hit the open market. This covers care homes, home care, supported living, day care and more.
+    title: 'For Buyers, Funds & Operators',
+    subtitle: 'Mandate led origination through direct owner relationships.',
+    intro: `We support mandate led acquisition origination by identifying and building relationships with care business owners before opportunities become widely marketed.
 
-The best deals in this sector happen quietly. Owners do not want staff finding out before a deal is done. Buyers do not want to fight in open auctions. We work off market on both sides.`,
+This is not a market list. We build direct relationships with owners across the UK care sector, understand their situations over time, and connect serious buyers with genuine opportunities that fit a defined mandate.`,
     whoFor: [
-      'Care business owners thinking about selling, at any stage',
-      'Owners planning to step back over the next one to five years',
-      'Care groups and investors looking to buy in the UK',
-      'Operators looking for the right business to add on',
+      'UK care groups growing through acquisition',
+      'Funds and investors with a healthcare mandate',
+      'Operators seeking mandate fit UK care opportunities',
+      'International buyers entering the UK care market',
     ],
     steps: [
-      { s:'01', label:'Find', desc:'We find opportunities before they reach the open market.' },
-      { s:'02', label:'Check', desc:'We check the fit properly before any introduction. No wasted time.' },
-      { s:'03', label:'Complete', desc:'We stay close through the deal and support both sides to the end.' },
+      { s:'01', label:'Mandate', desc:'We understand your criteria, geography, size, and what a fit looks like.' },
+      { s:'02', label:'Originate', desc:'We map the market and build direct owner relationships against the mandate.' },
+      { s:'03', label:'Connect', desc:'We support serious conversations when the timing and fit are right.' },
     ],
-    magnet: '/care-snapshot',
-    magnetLabel: 'Check your exit readiness',
+    magnet: '/contact',
+    magnetLabel: 'Discuss a mandate',
     note: null,
   },
 ]
@@ -73,10 +73,10 @@ export default function WorkPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
           <h1 className="font-serif text-display-xl text-[#f0f4ff] max-w-[20ch] leading-tight mb-6">
-            Two things. One sector.
+            One sector. Two sides.
           </h1>
           <p className="text-body-lg text-[#94a3b8] max-w-[48ch]">
-            We work in healthcare. We fund US staffing agencies, and we help people buy and sell care businesses in the UK. Each one is different, but the approach is the same. Find the right path and get it done.
+            Prosaria works in UK healthcare M&A. We help care business owners prepare for a sale, and we help serious buyers originate opportunities through direct owner relationships. Understand the situation, map the market, build real relationships, prepare properly, and support serious conversations when timing is right.
           </p>
         </div>
       </section>
