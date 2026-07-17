@@ -62,15 +62,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
             <div className="reveal">
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <Image src="/nathan.jpg" alt="Nathan Powell Prosaria Partners" fill className="object-cover object-top" sizes="(max-width:1024px) 100vw, 50vw" />
-                <div className="absolute inset-0 bg-[#050d1a]/15 mix-blend-multiply" />
-                <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#050d1a]/85 to-transparent">
-                  <p className="font-serif text-base" style={{color:"#ffffff",fontWeight:500,textShadow:"0 2px 12px rgba(0,0,0,1)"}}>Nathan Powell</p>
-                  <p className="text-label mt-1" style={{color:"#93c5fd",textShadow:"0 2px 12px rgba(0,0,0,1)"}}>Founder, Prosaria Partners</p>
+              <div className="flex flex-col items-center text-center">
+                <div className="relative w-44 h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border border-blue-200 shadow-sm">
+                  <Image src="/nathan.jpg" alt="Nathan Powell Prosaria Partners" fill className="object-cover" sizes="208px" />
                 </div>
+                <p className="font-serif text-lg mt-5" style={{color:'#050d1a'}}>Nathan Powell</p>
+                <p className="text-label mt-1" style={{color:'#1d4ed8'}}>Founder, Prosaria Partners</p>
               </div>
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className="mt-5 flex flex-wrap gap-3 justify-center">
                 {['UK Healthcare M&A','Care Businesses','Direct Owner Relationships'].map(t=>(
                   <span key={t} className="text-label text-blue-700 border border-blue-200 bg-blue-50 px-3 py-1.5">{t}</span>
                 ))}
