@@ -20,8 +20,8 @@ async function markdownToHtml(markdown: string) {
 }
 
 const categoryColours: Record<string, string> = {
-  'Care Sector M&A':        'text-[#3E7A58] border-blue-800/40',
-  'Working Capital':        'text-[#3E7A58] border-blue-900/40',
+  'Care Sector M&A':        'text-[#2E5E44] border-[#2E5E44]/30',
+  'Succession':             'text-[#A67C4E] border-[#A67C4E]/40',
 }
 
 export default async function PostPage({ params }: { params: { slug: string } }) {
@@ -37,7 +37,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
             ← Insight
           </Link>
           <div className="flex flex-wrap items-center gap-4 mb-8">
-            <span className={`text-label border px-2.5 py-1 ${categoryColours[post.category] || 'text-[#5C6B5F] border-[#1e3a5f]'}`}>
+            <span className={`text-label border px-2.5 py-1 ${categoryColours[post.category] || 'text-[#5C6B5F] border-[#D8CFC0]'}`}>
               {post.category}
             </span>
           </div>

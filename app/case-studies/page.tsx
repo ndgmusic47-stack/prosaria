@@ -87,9 +87,9 @@ export default function CaseStudiesPage() {
                 className={`border border-[#2E5E44]/15 bg-[#FFFFFF] p-8 lg:p-10 flex flex-col reveal reveal-delay-${(i % 2) + 1} hover:border-[#2E5E44]/25 transition-all duration-300`}>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className={`eyebrow ${tagColours[ex.tag] || 'text-[#2E5E44]'}`}>{ex.tag}</span>
-                  <span className="text-blue-500/20">·</span>
+                  <span className="text-[#A67C4E]/50">·</span>
                   <span className="text-label text-[#5C6B5F]">{ex.region}</span>
-                  <span className="text-blue-500/20">·</span>
+                  <span className="text-[#A67C4E]/50">·</span>
                   <span className="text-label text-[#7E8A7E]">{ex.type}</span>
                 </div>
                 <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-5 leading-snug mt-4">{ex.headline}</h3>

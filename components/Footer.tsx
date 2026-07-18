@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow text-blue-500/30 mb-5">Navigate</p>
+            <p className="eyebrow text-[#A67C4E]/70 mb-5">Navigate</p>
             <nav className="flex flex-col gap-3">
               {[
                 {href:'/about',label:'Meet the team'},
@@ -46,17 +46,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow text-blue-500/30 mb-5">Free tools</p>
+            <p className="eyebrow text-[#A67C4E]/70 mb-5">Get in touch</p>
             <nav className="flex flex-col gap-3">
               {[
-                {href:'/care-snapshot',label:'Care exit snapshot'},
-                                {href:'/capital-assessment',label:'Capital assessment'},
+                {href:'/contact',label:'Start a conversation'},
+                {href:'/insight',label:'Insights'},
               ].map(({href,label})=>(
                 <Link key={href} href={href} className="text-sm hover:text-[#2E5E44] transition-colors">{label}</Link>
               ))}
             </nav>
             <div className="mt-8 space-y-2">
-              <p className="eyebrow text-blue-500/30 mb-3">Connect</p>
+              <p className="eyebrow text-[#A67C4E]/70 mb-3">Connect</p>
               <a href="https://www.linkedin.com/in/mrpowell22/" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#2E5E44] transition-colors block">Nathan on LinkedIn</a>
               <a href="https://www.linkedin.com/company/prosaria-partners" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#2E5E44] transition-colors block">Prosaria on LinkedIn</a>
             </div>

@@ -203,8 +203,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="line-accent mb-8 reveal" style={{background:'#1d4ed8'}} />
-              <p className="eyebrow mb-5 reveal" style={{color:'#2E5E44'}}>The business</p>
+              <div className="line-accent mb-8 reveal" style={{background:'#A67C4E'}} />
+              <p className="eyebrow mb-5 reveal" style={{color:'#A67C4E'}}>The business</p>
               <h2 className="font-serif text-display-lg mb-8 reveal reveal-delay-1" style={{color:'#1F3D2B'}}>
                 One sector. The people who matter. Deals done quietly.
               </h2>
@@ -243,7 +243,7 @@ export default function HomePage() {
                 className={`border border-[#2E5E44]/15 bg-[#FFFFFF] p-8 flex flex-col case-card reveal reveal-delay-${i+1} hover:border-[#2E5E44]/25 transition-all duration-300`}>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="eyebrow text-[#2E5E44]">{cs.tag}</span>
-                  <span className="text-blue-500/20">·</span>
+                  <span className="text-[#A67C4E]/50">·</span>
                   <span className="text-label text-[#5C6B5F]">{cs.region}</span>
                 </div>
                 <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-4 leading-snug">{cs.headline}</h3>
@@ -261,16 +261,16 @@ export default function HomePage() {
       {/* LEAD MAGNETS */}
       <section className="light-section py-40">
         <div className="max-w-site mx-auto px-6 lg:px-10">
-          <div className="mb-14 reveal">
-            <p className="eyebrow mb-4" style={{color:'#2E5E44'}}>Start here</p>
-            <h2 className="font-serif text-display-lg max-w-[28ch]" style={{color:'#1F3D2B'}}>
+          <div className="mb-14 reveal text-center">
+            <p className="eyebrow mb-4" style={{color:'#A67C4E'}}>Start here</p>
+            <h2 className="font-serif text-display-lg max-w-[28ch] mx-auto" style={{color:'#1F3D2B'}}>
               Two ways to start a conversation.
             </h2>
-            <p className="text-body-md mt-4 max-w-[48ch]" style={{color:'#4A5B4E'}}>
+            <p className="text-body-md mt-4 max-w-[48ch] mx-auto" style={{color:'#4A5B4E'}}>
               Every conversation is direct, confidential, and without obligation. Choose the route that fits you.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
               {
                 title: 'I own or run a care business',

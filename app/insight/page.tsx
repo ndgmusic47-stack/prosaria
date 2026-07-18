@@ -7,9 +7,9 @@ export const metadata = {
 }
 
 const categoryColours: Record<string, string> = {
-  'Care Sector M&A':        'text-[#3E7A58] border-blue-800/40',
-  'Working Capital':        'text-[#3E7A58] border-blue-900/40',
-  'Insight':                'text-[#5C6B5F] border-[#1e3a5f]',
+  'Care Sector M&A':        'text-[#2E5E44] border-[#2E5E44]/30',
+  'Succession':             'text-[#A67C4E] border-[#A67C4E]/40',
+  'Insight':                'text-[#5C6B5F] border-[#D8CFC0]',
 }
 
 export default function InsightPage() {
@@ -35,7 +35,7 @@ export default function InsightPage() {
               <p className="font-serif text-display-sm text-[#6E7B6F]">More coming soon.</p>
             </div>
           ) : (
-            <div className="divide-y divide-blue-500/8">
+            <div className="divide-y divide-[#2E5E44]/10">
               {posts.map((post) => (
                 <article key={post.slug} className="py-12 group">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">

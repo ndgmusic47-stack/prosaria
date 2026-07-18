@@ -58,7 +58,7 @@ export default function ContactPage() {
             Start a conversation.
           </h1>
           <p className="text-body-lg text-[#5C6B5F] max-w-[44ch]">
-            Use one of the tools below to get a quick answer, or send a message directly. We respond personally.
+            Choose the route that fits you and send a message. Every conversation is direct, confidential, and without obligation.
           </p>
         </div>
       </section>
@@ -67,9 +67,9 @@ export default function ContactPage() {
       <section className="py-24 bg-[#F7F3EC]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-12 reveal">
-            <p className="eyebrow mb-4">Quick start</p>
+            <p className="eyebrow mb-4" style={{color:'#A67C4E'}}>Choose your route</p>
             <h2 className="font-serif text-display-md text-[#1F3D2B] max-w-[28ch]">
-              Pick the area that matches what you need.
+              Two routes. One conversation.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
@@ -88,7 +88,7 @@ export default function ContactPage() {
           </div>
 
           {/* DIRECT CONTACT */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div id="message" className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start scroll-mt-28">
 
             <div className="reveal">
               <p className="eyebrow mb-6">Send a message</p>
