@@ -34,7 +34,7 @@ export default function Nav() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <span className="font-serif text-[1.15rem] tracking-wide transition-colors duration-200" style={{color:'#1F3D2B'}}>
-              Prosaria Partners
+              Prosaria
             </span>
           </Link>
 
@@ -89,7 +89,7 @@ export default function Nav() {
           </Link>
         </nav>
         <div className="absolute bottom-10 left-8">
-          <p className="eyebrow text-[#2E5E44]/40">Prosaria Partners</p>
+          <p className="eyebrow text-[#2E5E44]/40">Prosaria</p>
         </div>
       </div>
     </>

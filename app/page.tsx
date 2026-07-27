@@ -22,6 +22,8 @@ function useReveal() {
 const lines = [
   {
     num: '01',
+    img: '/img-lounge.jpg',
+    imgAlt: 'A warm care home lounge',
     title: 'For Care Business Owners',
     body: 'We help long standing care business owners prepare, organise, and present the company so serious buyers can understand the value of what has been built. Preparation creates choices before timing becomes urgent.',
     href: '/work#owners',
@@ -30,6 +32,8 @@ const lines = [
   },
   {
     num: '02',
+    img: '/img-courtyard.jpg',
+    imgAlt: 'A UK care home courtyard garden',
     title: 'For Buyers, Funds & Operators',
     body: 'We support mandate led acquisition origination by identifying and building relationships with care business owners before opportunities become widely marketed. Real owner relationships, not generic market lists.',
     href: '/work#buyers',
@@ -77,7 +81,7 @@ export default function HomePage() {
             animationDelay:'0.1s',
             animationFillMode:'forwards',
           }}>
-            Prosaria Partners
+            Prosaria
           </p>
           <h1 className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-serif)',
@@ -167,7 +171,10 @@ export default function HomePage() {
             {lines.map((line, i) => (
               <div key={line.num}
                 className={`bg-[#F7F3EC] p-10 lg:p-12 flex flex-col reveal reveal-delay-${i+1} group hover:bg-[#FBF8F2] transition-colors duration-300`}>
-                <div className="flex items-center gap-3 mb-8">
+                <div className="relative w-full aspect-[16/9] mb-8 overflow-hidden rounded-xl">
+                  <Image src={line.img} alt={line.imgAlt} fill className="object-cover group-hover:scale-[1.02] transition-transform duration-500" sizes="(max-width:1024px) 100vw, 50vw" />
+                </div>
+                <div className="flex items-center gap-3 mb-6">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] group-hover:shadow-[0_0_10px_rgba(166,124,78,0.6)] transition-shadow duration-300" />
                   <p className="text-label text-[#2E5E44]">{line.num}</p>
                 </div>
@@ -196,14 +203,14 @@ export default function HomePage() {
                 <div className="relative w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border border-[#D8CFC0] shadow-sm">
                   <Image
                     src="/nathan.jpg"
-                    alt="Nathan Powell, Prosaria Partners"
+                    alt="Nathan Powell, Prosaria"
                     fill
                     className="object-cover"
                     sizes="224px"
                   />
                 </div>
                 <p className="font-serif text-lg mt-5" style={{color:'#1F3D2B'}}>Nathan Powell</p>
-                <p className="text-label mt-1" style={{color:'#2E5E44'}}>Founder, Prosaria Partners</p>
+                <p className="text-label mt-1" style={{color:'#2E5E44'}}>Founder, Prosaria</p>
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -229,8 +236,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* IMAGE BAND */}
+      <section className="relative h-[42vh] min-h-[300px] overflow-hidden">
+        <Image src="/img-walk.jpg" alt="A quiet walk through a UK care community" fill className="object-cover" sizes="100vw" />
+        <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(247,243,236,0.25) 0%, rgba(247,243,236,0) 30%, rgba(247,243,236,0) 70%, rgba(247,243,236,0.3) 100%)'}} />
+      </section>
+
       {/* MARKET OBSERVATIONS */}
-      <section className="py-40 bg-[#EFE9DE]">
+      <section className="py-40 bg-[#F7F3EC]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
             <div className="reveal">

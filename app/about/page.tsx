@@ -63,10 +63,10 @@ export default function AboutPage() {
             <div className="reveal">
               <div className="flex flex-col items-center text-center">
                 <div className="relative w-44 h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border border-[#D8CFC0] shadow-sm">
-                  <Image src="/nathan.jpg" alt="Nathan Powell Prosaria Partners" fill className="object-cover" sizes="208px" />
+                  <Image src="/nathan.jpg" alt="Nathan Powell Prosaria" fill className="object-cover" sizes="208px" />
                 </div>
                 <p className="font-serif text-lg mt-5" style={{color:'#1F3D2B'}}>Nathan Powell</p>
-                <p className="text-label mt-1" style={{color:'#2E5E44'}}>Founder, Prosaria Partners</p>
+                <p className="text-label mt-1" style={{color:'#2E5E44'}}>Founder, Prosaria</p>
               </div>
               <div className="mt-5 flex flex-wrap gap-3 justify-center">
                 {['UK Healthcare M&A','Care Businesses','Direct Owner Relationships'].map(t=>(

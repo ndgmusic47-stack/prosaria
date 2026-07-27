@@ -4,10 +4,10 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: { default: 'Prosaria Partners — Independent Deal Origination', template: '%s | Prosaria Partners' },
+  title: { default: 'Prosaria — Independent Deal Origination', template: '%s | Prosaria' },
   description: 'UK healthcare M&A origination and sale preparation. Care businesses, direct owner relationships, and mandate led acquisition conversations. Based in London.',
   metadataBase: new URL('https://prosaria.co.uk'),
-  openGraph: { type:'website', locale:'en_GB', url:'https://prosaria.co.uk', siteName:'Prosaria Partners', title:'Prosaria Partners', description:'UK healthcare M&A origination and sale preparation. Based in London.' },
+  openGraph: { type:'website', locale:'en_GB', url:'https://prosaria.co.uk', siteName:'Prosaria', title:'Prosaria', description:'UK healthcare M&A origination and sale preparation. Based in London.' },
   robots: { index:true, follow:true },
 }
 

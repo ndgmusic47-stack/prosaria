@@ -4,14 +4,14 @@ import Image from 'next/image'
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="bg-[#EFE9DE] border-t border-[#2E5E44]/12 text-[#5C6B5F]">
+    <footer className="bg-[#FBF8F2] border-t border-[#2E5E44]/12 text-[#5C6B5F]">
       <div className="max-w-site mx-auto px-6 lg:px-10 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
 
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <Image src="/logo.png" alt="Prosaria Partners" width={40} height={40} className="object-contain" />
-              <span className="font-serif text-base text-[#1F3D2B] group-hover:text-[#2E5E44] transition-colors">Prosaria Partners</span>
+              <Image src="/logo.png" alt="Prosaria" width={64} height={64} className="object-contain" />
+              <span className="font-serif text-base text-[#1F3D2B] group-hover:text-[#2E5E44] transition-colors">Prosaria</span>
             </Link>
             <p className="text-sm leading-relaxed max-w-[28ch] mb-6">
               Prosaria is a UK healthcare M&A origination and sale preparation firm focused on care businesses, direct owner relationships, and mandate-led acquisition conversations.
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#2E5E44]/12 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-[#5C6B5F]">
-          <p>© {year} South Thames Trading Company Limited trading as Prosaria Partners. Registered in England &amp; Wales. 66 Paul Street, London EC2A 4NA.</p>
+          <p>© {year} South Thames Trading Company Limited trading as Prosaria. Registered in England &amp; Wales. 66 Paul Street, London EC2A 4NA.</p>
           <Link href="/privacy" className="hover:text-[#5C6B5F] transition-colors">Privacy policy</Link>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function PrivacyPage() {
           {[
             {
               title: 'Who we are',
-              body: 'Prosaria Partners is a trading name of South Thames Trading Company Limited, registered in England and Wales. When you submit information through this website, that information is received by Nathan Powell.',
+              body: 'Prosaria is a trading name of South Thames Trading Company Limited, registered in England and Wales. When you submit information through this website, that information is received by Nathan Powell.',
             },
             {
               title: 'What we collect',

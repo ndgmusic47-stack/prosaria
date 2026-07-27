@@ -161,7 +161,7 @@ export default function ContactPage() {
                   <p className="text-label text-[#6E7B6F] mb-3 uppercase tracking-widest">Registered business</p>
                   <p className="text-body-sm text-[#5C6B5F]">
                     South Thames Trading Company Limited<br />
-                    Trading as Prosaria Partners<br />
+                    Trading as Prosaria<br />
                     Registered in England &amp; Wales
                   </p>
                 </div>

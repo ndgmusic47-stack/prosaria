@@ -64,7 +64,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
           <div className="max-w-[680px] mt-16 pt-12 border-t border-[#2E5E44]/12">
             <p className="text-label text-[#8A948A] mb-1 uppercase tracking-widest">Published by</p>
-            <p className="text-body-sm text-[#5C6B5F]">Prosaria Partners — <a href="https://www.linkedin.com/company/prosaria-partners" className="text-[#2E5E44] hover:text-[#3E7A58] transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p className="text-body-sm text-[#5C6B5F]">Prosaria — <a href="https://www.linkedin.com/company/prosaria-partners" className="text-[#2E5E44] hover:text-[#3E7A58] transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
         </div>
       </section>
