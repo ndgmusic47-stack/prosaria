@@ -64,7 +64,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
         <HeroVideo />
 
-        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36" style={{zIndex:10}}>
+        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36 text-center" style={{zIndex:10}}>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'clamp(0.85rem,1.8vw,1rem)',
@@ -86,6 +86,8 @@ export default function HomePage() {
             letterSpacing:'-0.04em',
             color:'#3E7A58',
             maxWidth:'16ch',
+            marginLeft:'auto',
+            marginRight:'auto',
             marginBottom:'1.5rem',
             textShadow:'none',
             fontWeight:500,
@@ -101,6 +103,8 @@ export default function HomePage() {
             lineHeight:'1.65',
             color:'#2B2B26',
             maxWidth:'46ch',
+            marginLeft:'auto',
+            marginRight:'auto',
             marginBottom:'3rem',
             textShadow:'none',
             animationDelay:'0.35s',
@@ -108,7 +112,7 @@ export default function HomePage() {
           }}>
             Prosaria builds direct relationships with long standing care business owners and supports serious buyers, funds, and operators with mandate led acquisition conversations.
           </p>
-          <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up"
+          <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
             <Link href="/contact" className="btn-primary">For care business owners</Link>
             <Link href="/contact" className="btn-outline">For buyers and funds</Link>
