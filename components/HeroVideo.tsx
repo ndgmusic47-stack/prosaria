@@ -59,10 +59,10 @@ export default function HeroVideo() {
         style={{
           background:`linear-gradient(
             180deg,
-            rgba(247,243,236,0.35) 0%,
+            rgba(247,243,236,0.25) 0%,
             rgba(247,243,236,0.0)  25%,
             rgba(247,243,236,0.0)  65%,
-            rgba(247,243,236,0.92) 100%
+            rgba(247,243,236,0.85) 100%
           )`
         }}
       />

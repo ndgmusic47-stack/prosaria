@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/posts'
 
 export const metadata = {
   title: 'Insight',
-  description: 'Market observations from Prosaria Partners on healthcare staffing funding and UK care sector M&A.',
+  description: 'Market observations from Prosaria on UK healthcare M&A, succession, and sale preparation.',
 }
 
 const categoryColours: Record<string, string> = {

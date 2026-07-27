@@ -73,7 +73,7 @@ export default function HomePage() {
             textTransform:'uppercase',
             color:'#A67C4E',
             marginBottom:'0.75rem',
-            textShadow:'0 1px 12px rgba(247,243,236,0.8)',
+            textShadow:'none',
             animationDelay:'0.1s',
             animationFillMode:'forwards',
           }}>
@@ -88,18 +88,18 @@ export default function HomePage() {
             maxWidth:'16ch',
             marginBottom:'1.5rem',
             textShadow:'0 0 60px rgba(59,130,246,0.4), 0 2px 40px rgba(0,0,0,0.95)',
-            fontWeight:400,
+            fontWeight:500,
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
             UK Healthcare M&A<br/>
-            <em style={{color:'#A67C4E',fontStyle:'italic'}}>Origination & Sale Preparation.</em>
+            <em style={{color:'#A67C4E',fontStyle:'italic'}}>Through Direct Owner Relationships.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
-            fontSize:'1.05rem',
+            fontSize:'1.15rem',
             lineHeight:'1.65',
-            color:'#1E3A5F',
+            color:'#2B2B26',
             maxWidth:'46ch',
             marginBottom:'3rem',
             textShadow:'none',
