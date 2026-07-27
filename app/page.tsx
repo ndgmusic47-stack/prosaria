@@ -84,10 +84,10 @@ export default function HomePage() {
             fontSize:'clamp(3.5rem,11vw,8.5rem)',
             lineHeight:'0.88',
             letterSpacing:'-0.04em',
-            color:'#1F3D2B',
+            color:'#3E7A58',
             maxWidth:'16ch',
             marginBottom:'1.5rem',
-            textShadow:'0 0 60px rgba(59,130,246,0.4), 0 2px 40px rgba(0,0,0,0.95)',
+            textShadow:'none',
             fontWeight:500,
             animationDelay:'0.2s',
             animationFillMode:'forwards',
@@ -123,7 +123,7 @@ export default function HomePage() {
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
-                <p className="font-serif text-display-sm leading-tight mb-1" style={{color:'#ffffff',textShadow:'0 0 20px rgba(59,130,246,0.35)'}}>{s.v}</p>
+                <p className="font-serif text-display-sm leading-tight mb-1" style={{color:'#1F3D2B'}}>{s.v}</p>
                 <p className="text-label uppercase tracking-widest" style={{color:'#A67C4E'}}>{s.l}</p>
               </div>
             ))}
@@ -164,7 +164,7 @@ export default function HomePage() {
               <div key={line.num}
                 className={`bg-[#F7F3EC] p-10 lg:p-12 flex flex-col reveal reveal-delay-${i+1} group hover:bg-[#FBF8F2] transition-colors duration-300`}>
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] group-hover:shadow-[0_0_10px_rgba(96,165,250,0.8)] transition-shadow duration-300" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2E5E44] group-hover:shadow-[0_0_10px_rgba(166,124,78,0.6)] transition-shadow duration-300" />
                   <p className="text-label text-[#2E5E44]">{line.num}</p>
                 </div>
                 <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-5">{line.title}</h3>
@@ -306,7 +306,7 @@ export default function HomePage() {
 
       {/* FINAL CTA */}
       <section className="py-24 bg-[#F7F3EC] border-t border-[#2E5E44]/12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(29,78,216,0.07)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(166,124,78,0.08)_0%,transparent_70%)]" />
         <div className="relative max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md text-[#1F3D2B] max-w-[28ch]">

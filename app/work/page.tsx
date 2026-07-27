@@ -120,10 +120,10 @@ export default function WorkPage() {
 
             <div className="mb-12 reveal">
               <p className="eyebrow mb-8">How it works</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{background: idx % 2 === 0 ? 'rgba(59,130,246,0.06)' : 'rgba(59,130,246,0.12)'}}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{background:'rgba(166,124,78,0.3)'}}>
                 {line.steps.map((s, i) => (
                   <div key={s.s}
-                    className={`p-8 reveal reveal-delay-${i+1} ${idx % 2 === 0 ? 'bg-[#F7F3EC]' : 'bg-[#f5f7fa]'}`}>
+                    className={`p-8 reveal reveal-delay-${i+1} ${idx % 2 === 0 ? 'bg-[#F7F3EC]' : 'bg-[#FBF8F2]'}`}>
                     <p className="text-label text-[#2E5E44] mb-3">{s.s}</p>
                     <p className={`font-serif text-display-sm mb-3 ${idx % 2 === 0 ? 'text-[#1F3D2B]' : ''}`} style={idx % 2 !== 0 ? {color:'#1F3D2B'} : {}}>{s.label}</p>
                     <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>{s.desc}</p>
