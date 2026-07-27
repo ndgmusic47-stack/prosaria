@@ -2,143 +2,185 @@
 
 import { useState } from 'react'
 
-const CREAM   = '#F7F3EC'
-const GREEN   = '#1F3D2B'
-const GREEN2  = '#2E5E44'
-const BRONZE  = '#A67C4E'
-const BODY    = '#4A5B4E'
-const CHARCOAL= '#2B2B26'
+const GREEN='#1F3D2B', GREEN2='#2E5E44', BRONZE='#A67C4E', BODY='#4A5B4E', CHAR='#2B2B26'
+const card = { borderColor:'rgba(46,94,68,0.15)' }
+const inputStyle = { borderColor:'rgba(46,94,68,0.2)', color:CHAR }
 
-const fitQuestions = [
-  { id: 'q1', text: 'Are you actively acquiring UK healthcare businesses?',
-    options: ['Yes', 'No'] },
-  { id: 'q2', text: 'Do you have capital in place, or committed funding access?',
-    options: ['Yes', 'No'] },
-  { id: 'q3', text: 'If a genuine fit emerged, could you move to a conversation within 30 days?',
-    options: ['Yes', 'No'] },
-  { id: 'q4', text: 'Are you seeking a protected buy side mandate, rather than access to a deal list?',
-    options: ['Yes — a protected mandate', 'No — I just want deal flow'] },
+const includes = [
+  { t:'Mandate lock', d:'We agree your search focus and protect it. We do not run the same active search for another buyer while your lane is live.' },
+  { t:'100 company target map', d:'We build a researched list of 100 UK care businesses that may fit your criteria.' },
+  { t:'30 day market signal period', d:'For 30 days, we test the market. We approach selected owners and track who opens, replies, engages, declines, or asks questions.' },
+  { t:'Seller readiness scoring', d:'We assess each company for fit, timing, and how ready it may be for a buyer conversation.' },
+  { t:'Reputation safe outreach', d:'We contact owners carefully. The message protects your reputation and does not pressure the owner.' },
+  { t:'Weekly evidence pack', d:'Each week, you receive a clear summary of targets added, owners contacted, replies, next steps, and what we are learning.' },
+  { t:'Monthly market readout', d:'Each month, you receive a simple view of what the market is showing: owner timing, common objections, live interest, and opportunity signals.' },
+  { t:'Board progress pack', d:'You receive a clean update that can be shared with partners, investors, or board members.' },
+  { t:'Acquisition cockpit', d:'You receive a live dashboard showing the target map, outreach status, touchpoints, and next actions.' },
+  { t:'Owner relationship asset', d:'The owner pipeline becomes a real asset. Even if an owner is not ready today, the relationship may matter later.' },
 ]
 
-const formFields = [
-  { k: 'name',         label: 'Your name',            ph: 'First and last name',        req: true,  type: 'text' },
-  { k: 'organisation', label: 'Organisation',          ph: 'Company, fund, or group',    req: true,  type: 'text' },
-  { k: 'role',         label: 'Your role',             ph: 'e.g. Principal, Director',   req: true,  type: 'text' },
-  { k: 'email',        label: 'Email',                 ph: 'you@company.com',            req: true,  type: 'email' },
-  { k: 'phone',        label: 'Phone (optional)',      ph: '+44 or international',       req: false, type: 'tel' },
-  { k: 'subsectors',   label: 'Target subsectors',     ph: 'e.g. care homes, home care, supported living', req: true, type: 'text' },
-  { k: 'size',         label: 'Target size',           ph: 'EBITDA range or beds',       req: true,  type: 'text' },
-  { k: 'geography',    label: 'Geography',             ph: 'e.g. North West England, UK wide', req: true, type: 'text' },
-  { k: 'timeline',     label: 'Timeline',              ph: 'e.g. next 6 to 12 months',   req: true,  type: 'text' },
+const fitQs = [
+  { id:'q1', text:'Are you actively looking to acquire UK care businesses in the next 6 to 12 months?' },
+  { id:'q2', text:'Do you have funding in place, or a clear route to funding?' },
+  { id:'q3', text:'Do you have clear acquisition criteria?' },
+  { id:'q4', text:'If the 30 day Proof to Proceed period shows useful market signal, are you comfortable moving into a retained 90 day mandate?' },
+]
+
+const buyerTypes = ['Operator','Fund','Search fund','Investor group','Family office','Other']
+
+const appFields = [
+  { k:'fullName',  label:'Full name',                 ph:'First and last name', req:true,  type:'text' },
+  { k:'company',   label:'Company',                   ph:'Company or fund name', req:true, type:'text' },
+  { k:'email',     label:'Email',                     ph:'you@company.com',     req:true,  type:'email' },
+  { k:'phone',     label:'Phone (optional)',          ph:'+44 or international', req:false, type:'tel' },
+  { k:'criteria',  label:'Acquisition criteria',      ph:'e.g. care homes, 40+ beds, Good CQC', req:true, type:'text' },
+  { k:'geography', label:'Target geography',          ph:'e.g. North West England, UK wide', req:true, type:'text' },
+  { k:'size',      label:'Target business size',      ph:'EBITDA range or beds', req:true, type:'text' },
+  { k:'funding',   label:'Funding position',          ph:'e.g. capital in place, bank backed', req:true, type:'text' },
+  { k:'timeline',  label:'Timeline to acquire',       ph:'e.g. next 6 to 12 months', req:true, type:'text' },
+  { k:'experience',label:'Existing care sector experience', ph:'Briefly, if any', req:false, type:'text' },
+  { k:'exclusions',label:'Any excluded regions, company types, or conflicts', ph:'Optional', req:false, type:'text' },
+  { k:'whyNow',    label:'Why this search matters now', ph:'One or two lines', req:true, type:'text' },
 ]
 
 export default function InvitationPage() {
-  const [stage, setStage]     = useState<'door'|'about'|'fit'|'blocked'|'form'|'done'>('door')
-  const [qIdx, setQIdx]       = useState(0)
+  const [stage, setStage] = useState<'access'|'offer'|'fit'|'blocked'|'form'|'done'>('access')
+  const [firstName, setFirstName] = useState('')
+  const [companyName, setCompanyName] = useState('')
+  const [accessEmail, setAccessEmail] = useState('')
+  const [qIdx, setQIdx] = useState(0)
   const [answers, setAnswers] = useState<Record<string,string>>({})
-  const [form, setForm]       = useState<Record<string,string>>({})
-  const [notes, setNotes]     = useState('')
+  const [form, setForm] = useState<Record<string,string>>({})
+  const [buyerType, setBuyerType] = useState('')
+  const [message, setMessage] = useState('')
+  const [ack, setAck] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  function answerFit(value: string) {
-    const q = fitQuestions[qIdx]
-    const next = { ...answers, [q.id]: value }
-    setAnswers(next)
-    if (q.id === 'q4' && value.startsWith('No')) { setStage('blocked'); return }
-    if (qIdx + 1 < fitQuestions.length) setQIdx(qIdx + 1)
+  function answerFit(v:string){
+    const q = fitQs[qIdx]
+    setAnswers(p=>({...p,[q.id]:v}))
+    if(q.id==='q4' && v==='No'){ setStage('blocked'); return }
+    if(qIdx+1<fitQs.length) setQIdx(qIdx+1)
     else setStage('form')
   }
 
-  async function submit() {
-    const required = formFields.filter(f => f.req).every(f => (form[f.k] || '').trim())
-    if (!required) return
+  async function submit(){
+    const ok = appFields.filter(f=>f.req).every(f=>(form[f.k]||'').trim()) && buyerType && ack
+    if(!ok) return
     setLoading(true)
-    try {
-      await fetch('/api/submit-invitation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...answers, ...form, notes }),
-      })
-    } catch {}
-    setLoading(false)
-    setStage('done')
+    try{
+      await fetch('/api/submit-invitation',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({firstName,companyName,accessEmail,...answers,...form,buyerType,message,ack})})
+    }catch{}
+    setLoading(false); setStage('done')
   }
 
-  return (
-    <div className="min-h-screen" style={{ background: CREAM, paddingTop: '96px' }}>
-      <div className="max-w-[640px] mx-auto px-6 pb-28">
+  const Rule = () => <div className="w-10 h-[1px] mx-auto mb-10" style={{background:BRONZE}} />
 
-        {/* THE DOOR */}
-        {stage === 'door' && (
-          <div className="text-center pt-16 animate-fade-in" style={{ animationDuration: '0.6s' }}>
-            <div className="w-10 h-[1px] mx-auto mb-10" style={{ background: BRONZE }} />
-            <p className="eyebrow mb-6" style={{ color: BRONZE }}>Prosaria · Private</p>
-            <h1 className="font-serif text-display-xl leading-tight mb-6" style={{ color: GREEN }}>
-              A private introduction to Prosaria.
+  return (
+    <div className="min-h-screen" style={{background:'#F7F3EC',paddingTop:'96px'}}>
+      <div className="max-w-[680px] mx-auto px-6 pb-28">
+
+        {/* 1. PRIVATE ACCESS SCREEN */}
+        {stage==='access' && (
+          <div className="pt-12 text-center animate-fade-in" style={{animationDuration:'0.6s'}}>
+            <Rule />
+            <p className="eyebrow mb-6" style={{color:BRONZE}}>Prosaria · Private</p>
+            <h1 className="font-serif text-display-xl leading-tight mb-6" style={{color:GREEN}}>
+              Private Buyer Lane Invitation
             </h1>
-            <p className="text-body-md mb-2" style={{ color: BODY }}>
-              This page is not public.
+            <p className="text-body-md mb-10 max-w-[44ch] mx-auto" style={{color:BODY}}>
+              This invitation is for selected buyers, funds, and operators looking to acquire UK care businesses.
             </p>
-            <p className="text-body-md mb-12" style={{ color: BODY }}>
-              You have been sent here directly.
-            </p>
-            <button onClick={() => setStage('about')} className="btn-primary px-12 py-4">
-              Begin
-            </button>
+            <div className="max-w-[380px] mx-auto space-y-4 text-left">
+              {[
+                {v:firstName,set:setFirstName,label:'First name',ph:'Your first name',t:'text'},
+                {v:companyName,set:setCompanyName,label:'Company name',ph:'Company or fund',t:'text'},
+                {v:accessEmail,set:setAccessEmail,label:'Email',ph:'you@company.com',t:'email'},
+              ].map(f=>(
+                <div key={f.label}>
+                  <label className="text-label block mb-2 uppercase tracking-widest" style={{color:BODY}}>{f.label}</label>
+                  <input type={f.t} value={f.v} onChange={e=>f.set(e.target.value)} placeholder={f.ph}
+                    className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none bg-white transition-colors" style={inputStyle}
+                    onFocus={e=>(e.currentTarget.style.borderColor=GREEN2)} onBlur={e=>(e.currentTarget.style.borderColor='rgba(46,94,68,0.2)')} />
+                </div>
+              ))}
+              <button onClick={()=>firstName.trim()&&companyName.trim()&&accessEmail.trim()&&setStage('offer')}
+                disabled={!firstName.trim()||!companyName.trim()||!accessEmail.trim()}
+                className="btn-primary w-full justify-center py-4 disabled:opacity-40">
+                View my invitation
+              </button>
+            </div>
           </div>
         )}
 
-        {/* ABOUT + HOW WE WORK */}
-        {stage === 'about' && (
-          <div className="pt-8 animate-fade-in" style={{ animationDuration: '0.5s' }}>
-            <p className="eyebrow mb-6" style={{ color: BRONZE }}>What Prosaria is</p>
-            <h2 className="font-serif text-display-md mb-6 leading-snug" style={{ color: GREEN }}>
-              A private healthcare M&A origination office.
+        {/* 2-4. OFFER + INCLUDES + PROOF TO PROCEED */}
+        {stage==='offer' && (
+          <div className="pt-8 animate-fade-in" style={{animationDuration:'0.5s'}}>
+            <p className="eyebrow mb-6" style={{color:BRONZE}}>Private invitation for {firstName}</p>
+            <h2 className="font-serif text-display-md mb-6 leading-snug" style={{color:GREEN}}>
+              You are being invited to apply for a reserved buyer lane.
             </h2>
-            <p className="text-body-md mb-10 leading-relaxed" style={{ color: BODY }}>
-              We work with a small number of buyers on protected mandates. We build direct relationships with UK care business owners, long before their businesses are marketed, and we prepare serious conversations quietly.
+            <p className="text-body-md mb-4 leading-relaxed" style={{color:BODY}}>
+              A buyer lane means Prosaria builds a focused search around your acquisition criteria. We map the market, approach owners carefully, track the conversations, and show you what the market is saying.
+            </p>
+            <p className="text-body-md mb-12 leading-relaxed" style={{color:BODY}}>
+              The goal is not to send you random names. The goal is to build real owner conversations with care businesses that may fit your mandate.
             </p>
 
-            <div className="space-y-4 mb-12">
-              {[
-                { t: 'Direct owner relationships', d: 'We speak with owners directly. Not lists, not portals, not auctions.' },
-                { t: 'Protected mandates', d: 'Each mandate is exclusive within its lane. Your criteria are not shopped around.' },
-                { t: 'Quiet, prepared conversations', d: 'When a fit emerges, both sides arrive prepared. Nothing is rushed or public.' },
-              ].map((x, i) => (
-                <div key={x.t} className="bg-white rounded-2xl border p-6 animate-fade-in"
-                  style={{ borderColor: 'rgba(46,94,68,0.15)', animationDuration: '0.5s', animationDelay: `${0.1 + i * 0.12}s`, animationFillMode: 'backwards' }}>
-                  <p className="font-serif text-[1.05rem] mb-1.5" style={{ color: GREEN }}>{x.t}</p>
-                  <p className="text-body-sm" style={{ color: BODY }}>{x.d}</p>
+            <p className="eyebrow mb-6" style={{color:BRONZE}}>Your reserved buyer lane includes</p>
+            <div className="space-y-3 mb-12">
+              {includes.map((x,i)=>(
+                <div key={x.t} className="bg-white rounded-2xl border p-5 animate-fade-in"
+                  style={{...card,animationDuration:'0.4s',animationDelay:`${0.05+i*0.05}s`,animationFillMode:'backwards'}}>
+                  <p className="font-serif text-[1rem] mb-1" style={{color:GREEN}}>{x.t}</p>
+                  <p className="text-body-sm" style={{color:BODY}}>{x.d}</p>
                 </div>
               ))}
             </div>
 
-            <button onClick={() => setStage('fit')} className="btn-primary px-10 py-4 w-full justify-center">
+            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(166,124,78,0.35)'}}>
+              <p className="eyebrow mb-3" style={{color:BRONZE}}>The first 30 days</p>
+              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>Proof to Proceed</p>
+              <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
+                The first 30 days are a Proof to Proceed period. This gives both sides a chance to test the mandate, the market, and the working relationship. If the 30 day period shows useful market signal, the next step is a retained 90 day mandate.
+              </p>
+            </div>
+
+            <button onClick={()=>setStage('fit')} className="btn-primary w-full justify-center py-4">
               Continue
             </button>
           </div>
         )}
 
-        {/* FIT QUESTIONS */}
-        {stage === 'fit' && (
-          <div className="pt-8 animate-fade-in" style={{ animationDuration: '0.4s' }} key={qIdx}>
+        {/* 5. FIT QUESTIONS */}
+        {stage==='fit' && (
+          <div className="pt-8 animate-fade-in" style={{animationDuration:'0.4s'}} key={qIdx}>
             <div className="flex items-center gap-2 mb-10">
-              {fitQuestions.map((_, i) => (
+              {fitQs.map((_,i)=>(
                 <div key={i} className="h-[3px] flex-1 rounded-full transition-all duration-500"
-                  style={{ background: i <= qIdx ? GREEN2 : '#E2DACB' }} />
+                  style={{background:i<=qIdx?GREEN2:'#E2DACB'}} />
               ))}
             </div>
-            <p className="eyebrow mb-4" style={{ color: BRONZE }}>Fit · {qIdx + 1} of {fitQuestions.length}</p>
-            <h2 className="font-serif text-display-md mb-10 leading-snug" style={{ color: GREEN }}>
-              {fitQuestions[qIdx].text}
+            {qIdx===0 && (
+              <>
+                <p className="eyebrow mb-3" style={{color:BRONZE}}>A few fit questions</p>
+                <p className="text-body-sm mb-8" style={{color:BODY}}>
+                  Before you apply, we ask a few simple questions. This helps us protect each buyer lane and make sure the work is useful for both sides.
+                </p>
+              </>
+            )}
+            <p className="eyebrow mb-4" style={{color:BRONZE}}>Question {qIdx+1} of {fitQs.length}</p>
+            <h2 className="font-serif text-display-md mb-10 leading-snug" style={{color:GREEN}}>
+              {fitQs[qIdx].text}
             </h2>
             <div className="space-y-3">
-              {fitQuestions[qIdx].options.map(opt => (
-                <button key={opt} onClick={() => answerFit(opt)}
+              {['Yes','No'].map(opt=>(
+                <button key={opt} onClick={()=>answerFit(opt)}
                   className="w-full text-left px-6 py-5 rounded-xl border bg-white text-body-md transition-all duration-150"
-                  style={{ borderColor: 'rgba(46,94,68,0.2)', color: CHARCOAL }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = GREEN2; e.currentTarget.style.background = '#F1EBE0' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(46,94,68,0.2)'; e.currentTarget.style.background = '#FFFFFF' }}>
+                  style={{...inputStyle}}
+                  onMouseEnter={e=>{e.currentTarget.style.borderColor=GREEN2;e.currentTarget.style.background='#F1EBE0'}}
+                  onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(46,94,68,0.2)';e.currentTarget.style.background='#FFFFFF'}}>
                   {opt}
                 </button>
               ))}
@@ -147,71 +189,91 @@ export default function InvitationPage() {
         )}
 
         {/* Q4 BLOCK */}
-        {stage === 'blocked' && (
-          <div className="pt-16 text-center animate-fade-in" style={{ animationDuration: '0.5s' }}>
-            <div className="w-10 h-[1px] mx-auto mb-10" style={{ background: BRONZE }} />
-            <h2 className="font-serif text-display-md mb-6 leading-snug" style={{ color: GREEN }}>
-              Thank you for your honesty.
+        {stage==='blocked' && (
+          <div className="pt-16 text-center animate-fade-in" style={{animationDuration:'0.5s'}}>
+            <Rule />
+            <h2 className="font-serif text-display-md mb-6 leading-snug" style={{color:GREEN}}>
+              Thank you for your interest.
             </h2>
-            <p className="text-body-md mb-4 leading-relaxed max-w-[42ch] mx-auto" style={{ color: BODY }}>
-              Prosaria does not operate as a deal listing service. We work only through protected buy side mandates, where one buyer holds one lane.
-            </p>
-            <p className="text-body-md leading-relaxed max-w-[42ch] mx-auto" style={{ color: BODY }}>
-              If that changes for you, you are welcome to return.
+            <p className="text-body-md leading-relaxed max-w-[46ch] mx-auto" style={{color:BODY}}>
+              At this stage, this invitation is only suitable for buyers who are comfortable moving into a retained mandate if the 30 day Proof to Proceed period shows useful market signal.
             </p>
           </div>
         )}
 
-        {/* APPLICATION FORM */}
-        {stage === 'form' && (
-          <div className="pt-8 animate-fade-in" style={{ animationDuration: '0.5s' }}>
-            <p className="eyebrow mb-4" style={{ color: BRONZE }}>Mandate application</p>
-            <h2 className="font-serif text-display-md mb-3 leading-snug" style={{ color: GREEN }}>
-              Tell us about your mandate.
+        {/* 6. APPLICATION FORM */}
+        {stage==='form' && (
+          <div className="pt-8 animate-fade-in" style={{animationDuration:'0.5s'}}>
+            <p className="eyebrow mb-4" style={{color:BRONZE}}>Buyer lane application</p>
+            <h2 className="font-serif text-display-md mb-3 leading-snug" style={{color:GREEN}}>
+              Tell us about your search.
             </h2>
-            <p className="text-body-sm mb-10" style={{ color: BODY }}>
+            <p className="text-body-sm mb-10" style={{color:BODY}}>
               Nathan reviews every application personally. Nothing here is shared.
             </p>
+
             <div className="space-y-5 mb-6">
-              {formFields.map(f => (
+              <div>
+                <label className="text-label block mb-2 uppercase tracking-widest" style={{color:BODY}}>
+                  Buyer type <span style={{color:GREEN2}}>*</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {buyerTypes.map(bt=>(
+                    <button key={bt} onClick={()=>setBuyerType(bt)}
+                      className="px-4 py-2.5 rounded-full border text-body-sm transition-all duration-150"
+                      style={buyerType===bt
+                        ? {borderColor:GREEN2,background:'#EAF2EC',color:GREEN}
+                        : {borderColor:'rgba(46,94,68,0.2)',background:'#FFFFFF',color:BODY}}>
+                      {bt}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {appFields.map(f=>(
                 <div key={f.k}>
-                  <label className="text-label block mb-2 uppercase tracking-widest" style={{ color: BODY }}>
-                    {f.label} {f.req && <span style={{ color: GREEN2 }}>*</span>}
+                  <label className="text-label block mb-2 uppercase tracking-widest" style={{color:BODY}}>
+                    {f.label} {f.req && <span style={{color:GREEN2}}>*</span>}
                   </label>
-                  <input type={f.type} value={form[f.k] || ''} onChange={e => setForm({ ...form, [f.k]: e.target.value })}
+                  <input type={f.type} value={form[f.k]||''} onChange={e=>setForm({...form,[f.k]:e.target.value})}
                     placeholder={f.ph}
-                    className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none transition-colors bg-white"
-                    style={{ borderColor: 'rgba(46,94,68,0.2)', color: CHARCOAL }}
-                    onFocus={e => (e.currentTarget.style.borderColor = GREEN2)}
-                    onBlur={e => (e.currentTarget.style.borderColor = 'rgba(46,94,68,0.2)')} />
+                    className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none bg-white transition-colors" style={inputStyle}
+                    onFocus={e=>(e.currentTarget.style.borderColor=GREEN2)} onBlur={e=>(e.currentTarget.style.borderColor='rgba(46,94,68,0.2)')} />
                 </div>
               ))}
+
               <div>
-                <label className="text-label block mb-2 uppercase tracking-widest" style={{ color: BODY }}>
-                  Anything else (optional)
-                </label>
-                <textarea value={notes} onChange={e => setNotes(e.target.value)} rows={3}
-                  placeholder="Anything that helps us understand the mandate"
-                  className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none resize-none bg-white"
-                  style={{ borderColor: 'rgba(46,94,68,0.2)', color: CHARCOAL }} />
+                <label className="text-label block mb-2 uppercase tracking-widest" style={{color:BODY}}>Message (optional)</label>
+                <textarea value={message} onChange={e=>setMessage(e.target.value)} rows={3}
+                  placeholder="Anything else that helps us understand the search"
+                  className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none resize-none bg-white" style={inputStyle} />
               </div>
+
+              <label className="flex gap-3 items-start cursor-pointer bg-white rounded-xl border p-5" style={card}>
+                <input type="checkbox" checked={ack} onChange={e=>setAck(e.target.checked)}
+                  className="mt-1 w-4 h-4 accent-[#2E5E44] flex-shrink-0" />
+                <span className="text-body-sm leading-relaxed" style={{color:BODY}}>
+                  I understand that the 30 day Proof to Proceed period is designed to assess market signal and working fit, and that continuation beyond this period requires a retained 90 day mandate.
+                </span>
+              </label>
             </div>
+
             <button onClick={submit}
-              disabled={loading || !formFields.filter(f => f.req).every(f => (form[f.k] || '').trim())}
+              disabled={loading || !buyerType || !ack || !appFields.filter(f=>f.req).every(f=>(form[f.k]||'').trim())}
               className="btn-primary w-full justify-center py-4 disabled:opacity-40">
-              {loading ? 'Submitting…' : 'Submit application'}
+              {loading?'Submitting…':'Submit buyer lane application'}
             </button>
           </div>
         )}
 
-        {/* THANK YOU */}
-        {stage === 'done' && (
-          <div className="pt-16 text-center animate-fade-in" style={{ animationDuration: '0.5s' }}>
-            <div className="w-10 h-[1px] mx-auto mb-10" style={{ background: BRONZE }} />
-            <h2 className="font-serif text-display-md mb-6 leading-snug" style={{ color: GREEN }}>
+        {/* 7. THANK YOU */}
+        {stage==='done' && (
+          <div className="pt-16 text-center animate-fade-in" style={{animationDuration:'0.5s'}}>
+            <Rule />
+            <h2 className="font-serif text-display-md mb-6 leading-snug" style={{color:GREEN}}>
               Thank you. Nathan will review this personally.
             </h2>
-            <p className="text-body-md leading-relaxed max-w-[42ch] mx-auto" style={{ color: BODY }}>
+            <p className="text-body-md leading-relaxed max-w-[42ch] mx-auto" style={{color:BODY}}>
               If the mandate looks like a fit, the next step is a private review call.
             </p>
           </div>
