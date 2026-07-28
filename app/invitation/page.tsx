@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-const GREEN='#1F3D2B', GREEN2='#2E5E44', BRONZE='#A67C4E', BODY='#4A5B4E', CHAR='#2B2B26'
-const card = { borderColor:'rgba(46,94,68,0.15)' }
-const inputStyle = { borderColor:'rgba(46,94,68,0.2)', color:CHAR }
+const GREEN='#0F2E1D', GREEN2='#123524', BRONZE='#E8650D', BODY='#3C4A40', CHAR='#2B2B26'
+const card = { borderColor:'rgba(18,53,36,0.15)' }
+const inputStyle = { borderColor:'rgba(18,53,36,0.2)', color:CHAR }
 
 const includes = [
   { t:'Mandate lock', d:'We agree your search focus and protect it. We do not run the same active search for another buyer while your lane is live.' },
@@ -102,7 +102,7 @@ export default function InvitationPage() {
                   <label className="text-label block mb-2 uppercase tracking-widest" style={{color:BODY}}>{f.label}</label>
                   <input type={f.t} value={f.v} onChange={e=>f.set(e.target.value)} placeholder={f.ph}
                     className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none bg-white transition-colors" style={inputStyle}
-                    onFocus={e=>(e.currentTarget.style.borderColor=GREEN2)} onBlur={e=>(e.currentTarget.style.borderColor='rgba(46,94,68,0.2)')} />
+                    onFocus={e=>(e.currentTarget.style.borderColor=GREEN2)} onBlur={e=>(e.currentTarget.style.borderColor='rgba(18,53,36,0.2)')} />
                 </div>
               ))}
               <button onClick={()=>firstName.trim()&&companyName.trim()&&accessEmail.trim()&&setStage('offer')}
@@ -139,7 +139,7 @@ export default function InvitationPage() {
               ))}
             </div>
 
-            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(166,124,78,0.35)'}}>
+            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(232,101,13,0.35)'}}>
               <p className="eyebrow mb-3" style={{color:BRONZE}}>The first 30 days</p>
               <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>Proof to Proceed</p>
               <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
@@ -180,7 +180,7 @@ export default function InvitationPage() {
                   className="w-full text-left px-6 py-5 rounded-xl border bg-white text-body-md transition-all duration-150"
                   style={{...inputStyle}}
                   onMouseEnter={e=>{e.currentTarget.style.borderColor=GREEN2;e.currentTarget.style.background='#F1EBE0'}}
-                  onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(46,94,68,0.2)';e.currentTarget.style.background='#FFFFFF'}}>
+                  onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(18,53,36,0.2)';e.currentTarget.style.background='#FFFFFF'}}>
                   {opt}
                 </button>
               ))}
@@ -222,8 +222,8 @@ export default function InvitationPage() {
                     <button key={bt} onClick={()=>setBuyerType(bt)}
                       className="px-4 py-2.5 rounded-full border text-body-sm transition-all duration-150"
                       style={buyerType===bt
-                        ? {borderColor:GREEN2,background:'#EAF2EC',color:GREEN}
-                        : {borderColor:'rgba(46,94,68,0.2)',background:'#FFFFFF',color:BODY}}>
+                        ? {borderColor:GREEN2,background:'#E9F0EA',color:GREEN}
+                        : {borderColor:'rgba(18,53,36,0.2)',background:'#FFFFFF',color:BODY}}>
                       {bt}
                     </button>
                   ))}
@@ -238,7 +238,7 @@ export default function InvitationPage() {
                   <input type={f.type} value={form[f.k]||''} onChange={e=>setForm({...form,[f.k]:e.target.value})}
                     placeholder={f.ph}
                     className="w-full rounded-xl border px-5 py-4 text-body-sm outline-none bg-white transition-colors" style={inputStyle}
-                    onFocus={e=>(e.currentTarget.style.borderColor=GREEN2)} onBlur={e=>(e.currentTarget.style.borderColor='rgba(46,94,68,0.2)')} />
+                    onFocus={e=>(e.currentTarget.style.borderColor=GREEN2)} onBlur={e=>(e.currentTarget.style.borderColor='rgba(18,53,36,0.2)')} />
                 </div>
               ))}
 
@@ -251,7 +251,7 @@ export default function InvitationPage() {
 
               <label className="flex gap-3 items-start cursor-pointer bg-white rounded-xl border p-5" style={card}>
                 <input type="checkbox" checked={ack} onChange={e=>setAck(e.target.checked)}
-                  className="mt-1 w-4 h-4 accent-[#2E5E44] flex-shrink-0" />
+                  className="mt-1 w-4 h-4 accent-[#123524] flex-shrink-0" />
                 <span className="text-body-sm leading-relaxed" style={{color:BODY}}>
                   I understand that the 30 day Proof to Proceed period is designed to assess market signal and working fit, and that continuation beyond this period requires a retained 90 day mandate.
                 </span>

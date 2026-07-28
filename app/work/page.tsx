@@ -71,10 +71,10 @@ export default function WorkPage() {
       <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
-          <h1 className="font-serif text-display-xl text-[#1F3D2B] max-w-[20ch] leading-tight mb-6">
+          <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
             One sector. Two sides.
           </h1>
-          <p className="text-body-lg text-[#5C6B5F] max-w-[48ch]">
+          <p className="text-body-lg text-[#4A574C] max-w-[48ch]">
             Prosaria works in UK healthcare M&A. We help care business owners prepare for a sale, and we help serious buyers originate opportunities through direct owner relationships. Understand the situation, map the market, build real relationships, prepare properly, and support serious conversations when timing is right.
           </p>
         </div>
@@ -90,27 +90,27 @@ export default function WorkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
               <div className="lg:col-span-7 reveal">
                 <p className="eyebrow mb-4">{line.num}</p>
-                <h2 className={`font-serif text-display-lg mb-4 ${idx % 2 === 0 ? 'text-[#1F3D2B]' : ''}`} style={idx % 2 !== 0 ? {color:'#1F3D2B'} : {}}>
+                <h2 className={`font-serif text-display-lg mb-4 ${idx % 2 === 0 ? 'text-[#0F2E1D]' : ''}`} style={idx % 2 !== 0 ? {color:'#0F2E1D'} : {}}>
                   {line.title}
                 </h2>
-                <p className={`text-body-lg mb-6 ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>
+                <p className={`text-body-lg mb-6 ${idx % 2 === 0 ? 'text-[#4A574C]' : ''}`} style={idx % 2 !== 0 ? {color:'#3C4A40'} : {}}>
                   {line.subtitle}
                 </p>
                 {line.intro.split('\n\n').map((para, i) => (
-                  <p key={i} className={`text-body-md mb-4 ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>
+                  <p key={i} className={`text-body-md mb-4 ${idx % 2 === 0 ? 'text-[#4A574C]' : ''}`} style={idx % 2 !== 0 ? {color:'#3C4A40'} : {}}>
                     {para}
                   </p>
                 ))}
               </div>
 
               <div className="lg:col-span-5 reveal reveal-delay-1">
-                <div className={`p-8 border ${idx % 2 === 0 ? 'bg-[#FFFFFF] border-[#2E5E44]/15' : 'bg-white border-[#E6DFD2]'}`}>
+                <div className={`p-8 border ${idx % 2 === 0 ? 'bg-[#FFFFFF] border-[#123524]/15' : 'bg-white border-[#E6DFD2]'}`}>
                   <p className="eyebrow mb-5">Who this is for</p>
                   <ul className="space-y-4">
                     {line.whoFor.map((item, i) => (
                       <li key={i} className="flex gap-4">
-                        <span className="w-1 h-1 rounded-full bg-[#2E5E44] flex-shrink-0 mt-2" />
-                        <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>{item}</p>
+                        <span className="w-1 h-1 rounded-full bg-[#123524] flex-shrink-0 mt-2" />
+                        <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#4A574C]' : ''}`} style={idx % 2 !== 0 ? {color:'#3C4A40'} : {}}>{item}</p>
                       </li>
                     ))}
                   </ul>
@@ -120,13 +120,13 @@ export default function WorkPage() {
 
             <div className="mb-12 reveal">
               <p className="eyebrow mb-8">How it works</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{background:'rgba(166,124,78,0.3)'}}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{background:'rgba(232,101,13,0.3)'}}>
                 {line.steps.map((s, i) => (
                   <div key={s.s}
                     className={`p-8 reveal reveal-delay-${i+1} ${idx % 2 === 0 ? 'bg-[#F7F3EC]' : 'bg-[#FBF8F2]'}`}>
-                    <p className="text-label text-[#2E5E44] mb-3">{s.s}</p>
-                    <p className={`font-serif text-display-sm mb-3 ${idx % 2 === 0 ? 'text-[#1F3D2B]' : ''}`} style={idx % 2 !== 0 ? {color:'#1F3D2B'} : {}}>{s.label}</p>
-                    <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#5C6B5F]' : ''}`} style={idx % 2 !== 0 ? {color:'#4A5B4E'} : {}}>{s.desc}</p>
+                    <p className="text-label text-[#123524] mb-3">{s.s}</p>
+                    <p className={`font-serif text-display-sm mb-3 ${idx % 2 === 0 ? 'text-[#0F2E1D]' : ''}`} style={idx % 2 !== 0 ? {color:'#0F2E1D'} : {}}>{s.label}</p>
+                    <p className={`text-body-sm ${idx % 2 === 0 ? 'text-[#4A574C]' : ''}`} style={idx % 2 !== 0 ? {color:'#3C4A40'} : {}}>{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -141,10 +141,10 @@ export default function WorkPage() {
         </section>
       ))}
 
-      <section className="py-20 bg-[#F7F3EC] border-t border-[#2E5E44]/12">
+      <section className="py-20 bg-[#F7F3EC] border-t border-[#123524]/12">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
-            <h2 className="font-serif text-display-md text-[#1F3D2B] max-w-[32ch]">
+            <h2 className="font-serif text-display-md text-[#0F2E1D] max-w-[32ch]">
               Not sure where to start? Get in touch and we will give you a straight answer.
             </h2>
           </div>

@@ -27,13 +27,13 @@ export default function Nav() {
   return (
     <>
       <header className={`absolute lg:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'lg:bg-[#F7F3EC]/95 lg:backdrop-blur-sm lg:border-b lg:border-[#2E5E44]/15' : ''
+        scrolled ? 'lg:bg-[#F7F3EC]/95 lg:backdrop-blur-sm lg:border-b lg:border-[#123524]/15' : ''
       }`}>
         <div className="max-w-site mx-auto px-6 lg:px-10 flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <span className="font-serif text-[1.15rem] tracking-wide transition-colors duration-200" style={{color:'#1F3D2B'}}>
+            <span className="font-serif text-[1.15rem] tracking-wide transition-colors duration-200" style={{color:'#0F2E1D'}}>
               Prosaria
             </span>
           </Link>
@@ -43,7 +43,7 @@ export default function Nav() {
             {links.map(({ href, label }) => (
               <Link key={href} href={href}
                 className={`font-sans text-[0.78rem] tracking-[0.06em] uppercase transition-colors duration-200 ${
-                  pathname === href ? 'text-[#3E7A58]' : 'text-[#1F3D2B]/80 hover:text-[#1F3D2B]'
+                  pathname === href ? 'text-[#1B4D33]' : 'text-[#0F2E1D]/80 hover:text-[#0F2E1D]'
                 }`}
                 style={{textShadow:'none'}}>
                 {label}
@@ -57,9 +57,9 @@ export default function Nav() {
           {/* Mobile hamburger */}
           <button className="lg:hidden flex flex-col justify-center gap-[5px] w-8 h-8"
             onClick={() => setOpen(!open)} aria-label="Toggle menu">
-            <span className={`block h-px bg-[#e8edf5] transition-all duration-300 ${open ? 'rotate-45 translate-y-[6px]' : ''}`} />
-            <span className={`block h-px bg-[#e8edf5] transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
-            <span className={`block h-px bg-[#e8edf5] transition-all duration-300 ${open ? '-rotate-45 -translate-y-[6px]' : ''}`} />
+            <span className={`block h-px bg-[#E8650D] transition-all duration-300 ${open ? 'rotate-45 translate-y-[6px]' : ''}`} />
+            <span className={`block h-px bg-[#E8650D] transition-all duration-300 ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-px bg-[#E8650D] transition-all duration-300 ${open ? '-rotate-45 -translate-y-[6px]' : ''}`} />
           </button>
         </div>
       </header>
@@ -69,12 +69,12 @@ export default function Nav() {
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         {/* Blue glow behind menu */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#2E5E44]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#123524]/10 rounded-full blur-3xl pointer-events-none" />
         <nav className="flex flex-col gap-8 relative">
           {links.map(({ href, label }, i) => (
             <Link key={href} href={href}
               style={{ transitionDelay: open ? `${i * 60}ms` : '0ms' }}
-              className={`font-serif text-4xl text-[#1F3D2B] hover:text-[#2E5E44] transition-all duration-300 ${
+              className={`font-serif text-4xl text-[#0F2E1D] hover:text-[#123524] transition-all duration-300 ${
                 open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}>
               {label}
@@ -89,7 +89,7 @@ export default function Nav() {
           </Link>
         </nav>
         <div className="absolute bottom-10 left-8">
-          <p className="eyebrow text-[#2E5E44]/40">Prosaria</p>
+          <p className="eyebrow text-[#123524]/40">Prosaria</p>
         </div>
       </div>
     </>

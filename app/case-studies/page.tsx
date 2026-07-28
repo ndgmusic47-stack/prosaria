@@ -57,10 +57,10 @@ const examples = [
 ]
 
 const tagColours: Record<string, string> = {
-  'Care M&A':               'text-[#2E5E44]',
-  'Succession':             'text-[#3E7A58]',
-  'Origination':            'text-[#3E7A58]',
-  'Preparation':            'text-[#3E7A58]',
+  'Care M&A':               'text-[#123524]',
+  'Succession':             'text-[#1B4D33]',
+  'Origination':            'text-[#1B4D33]',
+  'Preparation':            'text-[#1B4D33]',
 }
 
 export default function CaseStudiesPage() {
@@ -70,10 +70,10 @@ export default function CaseStudiesPage() {
       <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we work on</p>
-          <h1 className="font-serif text-display-xl text-[#1F3D2B] max-w-[22ch] leading-tight mb-6">
+          <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[22ch] leading-tight mb-6">
             The types of situations we get involved in.
           </h1>
-          <p className="text-body-lg text-[#5C6B5F] max-w-[52ch]">
+          <p className="text-body-lg text-[#4A574C] max-w-[52ch]">
             These are the kinds of situations we work with across UK healthcare M&A, on both the owner side and the buyer side.
           </p>
         </div>
@@ -84,27 +84,27 @@ export default function CaseStudiesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {examples.map((ex, i) => (
               <div key={ex.headline}
-                className={`border border-[#2E5E44]/15 bg-[#FFFFFF] p-8 lg:p-10 flex flex-col reveal reveal-delay-${(i % 2) + 1} hover:border-[#2E5E44]/25 transition-all duration-300`}>
+                className={`border border-[#123524]/15 bg-[#FFFFFF] p-8 lg:p-10 flex flex-col reveal reveal-delay-${(i % 2) + 1} hover:border-[#123524]/25 transition-all duration-300`}>
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <span className={`eyebrow ${tagColours[ex.tag] || 'text-[#2E5E44]'}`}>{ex.tag}</span>
-                  <span className="text-[#A67C4E]/50">·</span>
-                  <span className="text-label text-[#5C6B5F]">{ex.region}</span>
-                  <span className="text-[#A67C4E]/50">·</span>
+                  <span className={`eyebrow ${tagColours[ex.tag] || 'text-[#123524]'}`}>{ex.tag}</span>
+                  <span className="text-[#E8650D]/50">·</span>
+                  <span className="text-label text-[#4A574C]">{ex.region}</span>
+                  <span className="text-[#E8650D]/50">·</span>
                   <span className="text-label text-[#7E8A7E]">{ex.type}</span>
                 </div>
-                <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-5 leading-snug mt-4">{ex.headline}</h3>
+                <h3 className="font-serif text-display-sm text-[#0F2E1D] mb-5 leading-snug mt-4">{ex.headline}</h3>
                 <div className="space-y-5 flex-1">
                   <div>
                     <p className="text-label text-[#7E8A7E] uppercase tracking-widest mb-2">The situation</p>
-                    <p className="text-body-sm text-[#5C6B5F]">{ex.situation}</p>
+                    <p className="text-body-sm text-[#4A574C]">{ex.situation}</p>
                   </div>
                   <div>
                     <p className="text-label text-[#7E8A7E] uppercase tracking-widest mb-2">Our role</p>
-                    <p className="text-body-sm text-[#5C6B5F]">{ex.whatWeDo}</p>
+                    <p className="text-body-sm text-[#4A574C]">{ex.whatWeDo}</p>
                   </div>
                 </div>
-                <div className="mt-6 pt-5 border-t border-[#2E5E44]/12">
-                  <span className="eyebrow text-[#2E5E44]/50">{ex.tag}</span>
+                <div className="mt-6 pt-5 border-t border-[#123524]/12">
+                  <span className="eyebrow text-[#123524]/50">{ex.tag}</span>
                 </div>
               </div>
             ))}
@@ -115,7 +115,7 @@ export default function CaseStudiesPage() {
       <section className="light-section py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
-            <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#1F3D2B'}}>
+            <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#0F2E1D'}}>
               If your situation fits any of these areas, get in touch.
             </h2>
           </div>

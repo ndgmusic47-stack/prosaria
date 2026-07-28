@@ -7,8 +7,8 @@ export default function PrivacyPage() {
     <section className="pt-40 pb-24 bg-[#F7F3EC]">
       <div className="max-w-site mx-auto px-6 lg:px-10">
         <div className="max-w-[680px]">
-          <p className="eyebrow text-[#2E5E44] mb-6">Legal</p>
-          <h1 className="font-serif text-display-lg text-[#1F3D2B] mb-10">Privacy Policy</h1>
+          <p className="eyebrow text-[#123524] mb-6">Legal</p>
+          <h1 className="font-serif text-display-lg text-[#0F2E1D] mb-10">Privacy Policy</h1>
 
           {[
             {
@@ -41,8 +41,8 @@ export default function PrivacyPage() {
             },
           ].map(({ title, body }) => (
             <div key={title} className="mb-10">
-              <h2 className="font-serif text-display-sm text-[#1F3D2B] mb-3">{title}</h2>
-              <p className="text-body-md text-[#5C6B5F]">{body}</p>
+              <h2 className="font-serif text-display-sm text-[#0F2E1D] mb-3">{title}</h2>
+              <p className="text-body-md text-[#4A574C]">{body}</p>
             </div>
           ))}
 

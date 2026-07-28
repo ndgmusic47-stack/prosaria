@@ -46,10 +46,10 @@ export default function AboutPage() {
       <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">The team</p>
-          <h1 className="font-serif text-display-xl text-[#1F3D2B] max-w-[20ch] leading-tight mb-6">
+          <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
             A small team. A simple approach.
           </h1>
-          <p className="text-body-lg text-[#5C6B5F] max-w-[48ch]">
+          <p className="text-body-lg text-[#4A574C] max-w-[48ch]">
             Prosaria operates lean by choice. The deals we work on benefit from a close, direct relationship not a large firm with many layers between you and the person doing the work.
           </p>
         </div>
@@ -65,45 +65,45 @@ export default function AboutPage() {
                 <div className="relative w-44 h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border border-[#D8CFC0] shadow-sm">
                   <Image src="/nathan.jpg" alt="Nathan Powell Prosaria" fill className="object-cover" sizes="208px" />
                 </div>
-                <p className="font-serif text-lg mt-5" style={{color:'#1F3D2B'}}>Nathan Powell</p>
-                <p className="text-label mt-1" style={{color:'#2E5E44'}}>Founder, Prosaria</p>
+                <p className="font-serif text-lg mt-5" style={{color:'#0F2E1D'}}>Nathan Powell</p>
+                <p className="text-label mt-1" style={{color:'#123524'}}>Founder, Prosaria</p>
               </div>
               <div className="mt-5 flex flex-wrap gap-3 justify-center">
                 {['UK Healthcare M&A','Care Businesses','Direct Owner Relationships'].map(t=>(
-                  <span key={t} className="text-label text-[#2E5E44] border border-[#D8CFC0] bg-[#EFF4EF] px-3 py-1.5">{t}</span>
+                  <span key={t} className="text-label text-[#123524] border border-[#D8CFC0] bg-[#EFF4EF] px-3 py-1.5">{t}</span>
                 ))}
               </div>
             </div>
 
             <div className="space-y-10">
               <div className="reveal">
-                <p className="eyebrow mb-4" style={{color:'#2E5E44'}}>Founder</p>
-                <h2 className="font-serif text-display-md mb-6" style={{color:'#1F3D2B'}}>Nathan Powell</h2>
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>Founder</p>
+                <h2 className="font-serif text-display-md mb-6" style={{color:'#0F2E1D'}}>Nathan Powell</h2>
                 <div className="space-y-4">
-                  <p className="text-body-md" style={{color:'#4A5B4E'}}>
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
                     Nathan founded Prosaria and leads the work across both areas. His background is in finding deals before they reach the open market, checking both sides are a genuine fit, and seeing the process through to the end.
                   </p>
-                  <p className="text-body-md" style={{color:'#4A5B4E'}}>
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
                     When you contact Prosaria, you deal with Nathan directly.
                   </p>
                 </div>
               </div>
 
               <div className="reveal reveal-delay-1">
-                <p className="eyebrow mb-4" style={{color:'#2E5E44'}}>Why lean works here</p>
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>Why lean works here</p>
                 <div className="space-y-4">
-                  <p className="text-body-md" style={{color:'#4A5B4E'}}>
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
                     Most of what we do is off market and time sensitive. A small team makes faster decisions and stays closer to what matters.
                   </p>
-                  <p className="text-body-md" style={{color:'#4A5B4E'}}>
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
                     We move quickly, speak plainly and have a real interest in getting the deal done.
                   </p>
                 </div>
               </div>
 
               <div className="reveal reveal-delay-2">
-                <p className="eyebrow mb-4" style={{color:'#2E5E44'}}>How we charge</p>
-                <p className="text-body-md" style={{color:'#4A5B4E'}}>
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>How we charge</p>
+                <p className="text-body-md" style={{color:'#3C4A40'}}>
                   We charge on success wherever we can. If the deal does not happen, we do not get paid.
                 </p>
               </div>
@@ -122,14 +122,14 @@ export default function AboutPage() {
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4">How we work</p>
-            <h2 className="font-serif text-display-lg text-[#1F3D2B] max-w-[24ch]">How we actually work.</h2>
+            <h2 className="font-serif text-display-lg text-[#0F2E1D] max-w-[24ch]">How we actually work.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{background:'rgba(46,94,68,0.08)'}}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{background:'rgba(18,53,36,0.08)'}}>
             {values.map((v,i)=>(
               <div key={v.num} className={`bg-[#F7F3EC] p-10 reveal reveal-delay-${(i%2)+1} hover:bg-[#FBF8F2] transition-colors`}>
-                <p className="text-label text-[#2E5E44] mb-5">{v.num}</p>
-                <h3 className="font-serif text-display-sm text-[#1F3D2B] mb-4">{v.title}</h3>
-                <p className="text-body-sm text-[#5C6B5F]">{v.body}</p>
+                <p className="text-label text-[#123524] mb-5">{v.num}</p>
+                <h3 className="font-serif text-display-sm text-[#0F2E1D] mb-4">{v.title}</h3>
+                <p className="text-body-sm text-[#4A574C]">{v.body}</p>
               </div>
             ))}
           </div>
@@ -140,10 +140,10 @@ export default function AboutPage() {
       <section className="light-section py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="reveal">
-            <p className="eyebrow mb-3" style={{color:'#2E5E44'}}>Get in touch</p>
-            <div className="flex flex-wrap gap-6 text-body-md" style={{color:'#4A5B4E'}}>
-              <a href="tel:02030267906" className="hover:text-[#2E5E44] transition-colors font-medium">020 3026 7906</a>
-              <a href="mailto:hello@prosaria.co.uk" className="hover:text-[#2E5E44] transition-colors">hello@prosaria.co.uk</a>
+            <p className="eyebrow mb-3" style={{color:'#123524'}}>Get in touch</p>
+            <div className="flex flex-wrap gap-6 text-body-md" style={{color:'#3C4A40'}}>
+              <a href="tel:02030267906" className="hover:text-[#123524] transition-colors font-medium">020 3026 7906</a>
+              <a href="mailto:hello@prosaria.co.uk" className="hover:text-[#123524] transition-colors">hello@prosaria.co.uk</a>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 reveal reveal-delay-1">

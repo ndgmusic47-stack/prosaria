@@ -54,10 +54,10 @@ export default function ContactPage() {
       <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">Work with us</p>
-          <h1 className="font-serif text-display-xl text-[#1F3D2B] max-w-[20ch] leading-tight mb-6">
+          <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
             Start a conversation.
           </h1>
-          <p className="text-body-lg text-[#5C6B5F] max-w-[44ch]">
+          <p className="text-body-lg text-[#4A574C] max-w-[44ch]">
             Choose the route that fits you and send a message. Every conversation is direct, confidential, and without obligation.
           </p>
         </div>
@@ -67,19 +67,19 @@ export default function ContactPage() {
       <section className="py-24 bg-[#F7F3EC]">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-12 reveal">
-            <p className="eyebrow mb-4" style={{color:'#A67C4E'}}>Choose your route</p>
-            <h2 className="font-serif text-display-md text-[#1F3D2B] max-w-[28ch]">
+            <p className="eyebrow mb-4" style={{color:'#E8650D'}}>Choose your route</p>
+            <h2 className="font-serif text-display-md text-[#0F2E1D] max-w-[28ch]">
               Two routes. One conversation.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
             {paths.map((path, i) => (
-              <div key={path.num} className={`bg-[#FFFFFF] border border-[#2E5E44]/15 rounded-2xl p-8 lg:p-10 flex flex-col reveal reveal-delay-${i+1} hover:border-[#2E5E44]/30 transition-all duration-300`}>
+              <div key={path.num} className={`bg-[#FFFFFF] border border-[#123524]/15 rounded-2xl p-8 lg:p-10 flex flex-col reveal reveal-delay-${i+1} hover:border-[#123524]/30 transition-all duration-300`}>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="w-8 h-8 rounded-full bg-[#2E5E44]/12 flex items-center justify-center text-[#2E5E44] text-sm font-semibold flex-shrink-0">{path.num}</span>
-                  <h3 className="font-serif text-display-sm text-[#1F3D2B]">{path.title}</h3>
+                  <span className="w-8 h-8 rounded-full bg-[#123524]/12 flex items-center justify-center text-[#123524] text-sm font-semibold flex-shrink-0">{path.num}</span>
+                  <h3 className="font-serif text-display-sm text-[#0F2E1D]">{path.title}</h3>
                 </div>
-                <p className="text-body-sm text-[#5C6B5F] flex-1 mb-8">{path.desc}</p>
+                <p className="text-body-sm text-[#4A574C] flex-1 mb-8">{path.desc}</p>
                 <Link href={path.href} className="btn-primary block text-center">
                   {path.action}
                 </Link>
@@ -93,9 +93,9 @@ export default function ContactPage() {
             <div className="reveal">
               <p className="eyebrow mb-6">Send a message</p>
               {sent ? (
-                <div className="py-12 border border-[#2E5E44]/15 bg-[#FFFFFF] px-10">
-                  <p className="font-serif text-display-sm text-[#1F3D2B] mb-3">Received.</p>
-                  <p className="text-body-sm text-[#5C6B5F]">We will come back to you directly, usually within one business day.</p>
+                <div className="py-12 border border-[#123524]/15 bg-[#FFFFFF] px-10">
+                  <p className="font-serif text-display-sm text-[#0F2E1D] mb-3">Received.</p>
+                  <p className="text-body-sm text-[#4A574C]">We will come back to you directly, usually within one business day.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -104,24 +104,24 @@ export default function ContactPage() {
                     { label:'Email', key:'email', type:'email', placeholder:'your@email.com' },
                   ].map(field => (
                     <div key={field.key}>
-                      <label className="text-label text-[#5C6B5F] block mb-2">{field.label}</label>
+                      <label className="text-label text-[#4A574C] block mb-2">{field.label}</label>
                       <input
                         type={field.type}
                         required
                         value={form[field.key as 'name'|'email']}
                         onChange={e => setForm({...form, [field.key]: e.target.value})}
-                        className="w-full border border-[#2E5E44]/20 bg-[#FFFFFF] text-[#1F3D2B] px-4 py-3 text-body-sm focus:outline-none focus:border-[#2E5E44] transition-colors"
+                        className="w-full border border-[#123524]/20 bg-[#FFFFFF] text-[#0F2E1D] px-4 py-3 text-body-sm focus:outline-none focus:border-[#123524] transition-colors"
                         placeholder={field.placeholder}
                       />
                     </div>
                   ))}
                   <div>
-                    <label className="text-label text-[#5C6B5F] block mb-2">What is this about?</label>
+                    <label className="text-label text-[#4A574C] block mb-2">What is this about?</label>
                     <textarea
                       required rows={5}
                       value={form.message}
                       onChange={e => setForm({...form, message: e.target.value})}
-                      className="w-full border border-[#2E5E44]/20 bg-[#FFFFFF] text-[#1F3D2B] px-4 py-3 text-body-sm focus:outline-none focus:border-[#2E5E44] transition-colors resize-none"
+                      className="w-full border border-[#123524]/20 bg-[#FFFFFF] text-[#0F2E1D] px-4 py-3 text-body-sm focus:outline-none focus:border-[#123524] transition-colors resize-none"
                       placeholder="Brief description of your situation"
                     />
                   </div>
@@ -137,29 +137,29 @@ export default function ContactPage() {
               <div className="space-y-8">
                 <div>
                   <p className="text-label text-[#6E7B6F] mb-2 uppercase tracking-widest">Phone</p>
-                  <a href="tel:02030267906" className="font-serif text-display-sm text-[#1F3D2B] hover:text-[#2E5E44] transition-colors">
+                  <a href="tel:02030267906" className="font-serif text-display-sm text-[#0F2E1D] hover:text-[#123524] transition-colors">
                     020 3026 7906
                   </a>
                 </div>
                 <div>
                   <p className="text-label text-[#6E7B6F] mb-2 uppercase tracking-widest">Email</p>
-                  <a href="mailto:hello@prosaria.co.uk" className="font-serif text-display-sm text-[#1F3D2B] hover:text-[#2E5E44] transition-colors">
+                  <a href="mailto:hello@prosaria.co.uk" className="font-serif text-display-sm text-[#0F2E1D] hover:text-[#123524] transition-colors">
                     hello@prosaria.co.uk
                   </a>
                 </div>
                 <div>
                   <p className="text-label text-[#6E7B6F] mb-2 uppercase tracking-widest">Address</p>
-                  <p className="text-body-sm text-[#5C6B5F]">66 Paul Street<br />London EC2A 4NA</p>
+                  <p className="text-body-sm text-[#4A574C]">66 Paul Street<br />London EC2A 4NA</p>
                 </div>
-                <div className="pt-6 border-t border-[#2E5E44]/12">
+                <div className="pt-6 border-t border-[#123524]/12">
                   <p className="text-label text-[#6E7B6F] mb-3 uppercase tracking-widest">Response time</p>
-                  <p className="text-body-sm text-[#5C6B5F]">
+                  <p className="text-body-sm text-[#4A574C]">
                     We respond to every enquiry personally, usually the same day.
                   </p>
                 </div>
                 <div>
                   <p className="text-label text-[#6E7B6F] mb-3 uppercase tracking-widest">Registered business</p>
-                  <p className="text-body-sm text-[#5C6B5F]">
+                  <p className="text-body-sm text-[#4A574C]">
                     South Thames Trading Company Limited<br />
                     Trading as Prosaria<br />
                     Registered in England &amp; Wales
