@@ -51,7 +51,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
+      <section className="marble-bg marble-bg-strong pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">Work with us</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
@@ -64,7 +64,7 @@ export default function ContactPage() {
       </section>
 
       {/* THREE PATHS */}
-      <section className="py-24 bg-[#F7F3EC]">
+      <section className="marble-bg py-24">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-12 reveal">
             <p className="eyebrow mb-4" style={{color:'#E8650D'}}>Choose your route</p>

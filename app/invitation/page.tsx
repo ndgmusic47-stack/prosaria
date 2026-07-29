@@ -78,7 +78,7 @@ export default function InvitationPage() {
   const Rule = () => <div className="w-10 h-[1px] mx-auto mb-10" style={{background:BRONZE}} />
 
   return (
-    <div className="min-h-screen" style={{background:'#F7F3EC',paddingTop:'96px'}}>
+    <div className="min-h-screen marble-bg" style={{paddingTop:'96px'}}>
       <div className="max-w-[680px] mx-auto px-6 pb-28">
 
         {/* 1. PRIVATE ACCESS SCREEN */}

@@ -67,7 +67,7 @@ export default function CaseStudiesPage() {
   useReveal()
   return (
     <>
-      <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
+      <section className="marble-bg marble-bg-strong pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we work on</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[22ch] leading-tight mb-6">
@@ -79,7 +79,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#F7F3EC]">
+      <section className="marble-bg py-24">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {examples.map((ex, i) => (
@@ -112,7 +112,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="light-section py-20">
+      <section className="light-section marble-bg py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#0F2E1D'}}>

@@ -16,7 +16,7 @@ export default function InsightPage() {
   const posts = getAllPosts()
   return (
     <>
-      <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
+      <section className="marble-bg marble-bg-strong pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">Insight</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[22ch] leading-tight mb-6">
@@ -28,7 +28,7 @@ export default function InsightPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-[#F7F3EC]">
+      <section className="marble-bg py-24">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           {posts.length === 0 ? (
             <div className="text-center py-24">
@@ -65,7 +65,7 @@ export default function InsightPage() {
         </div>
       </section>
 
-      <section className="light-section border-t border-[#E6DFD2] py-16">
+      <section className="light-section marble-bg border-t border-[#E6DFD2] py-16">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div>
             <p className="eyebrow mb-3" style={{color:'#123524'}}>Follow on LinkedIn</p>

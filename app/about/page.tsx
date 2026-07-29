@@ -43,7 +43,7 @@ export default function AboutPage() {
   useReveal()
   return (
     <>
-      <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
+      <section className="marble-bg marble-bg-strong pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">The team</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
@@ -56,7 +56,7 @@ export default function AboutPage() {
       </section>
 
       {/* NATHAN */}
-      <section className="light-section py-32">
+      <section className="light-section marble-bg py-32">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section className="py-32 bg-[#F7F3EC]">
+      <section className="marble-bg py-32">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
             <p className="eyebrow mb-4">How we work</p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="light-section py-20">
+      <section className="light-section marble-bg py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="reveal">
             <p className="eyebrow mb-3" style={{color:'#123524'}}>Get in touch</p>

@@ -31,7 +31,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   return (
     <>
-      <section className="bg-[#F7F3EC] pt-40 pb-20 lg:pt-52 lg:pb-24 relative overflow-hidden">
+      <section className="marble-bg marble-bg-strong pt-40 pb-20 lg:pt-52 lg:pb-24 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <Link href="/insight" className="eyebrow text-[#7E8A7E] hover:text-[#123524] transition-colors mb-8 block">
             ← Insight
@@ -47,7 +47,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
         </div>
       </section>
 
-      <section className="py-20 bg-[#F7F3EC]">
+      <section className="marble-bg py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="max-w-[680px]">
             <div
@@ -69,7 +69,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
         </div>
       </section>
 
-      <section className="light-section py-20">
+      <section className="light-section marble-bg py-20">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-8">
           <h2 className="font-serif text-display-md max-w-[32ch]" style={{color:'#0F2E1D'}}>
             Relevant to your situation? Let&apos;s have a conversation.

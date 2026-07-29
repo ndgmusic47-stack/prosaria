@@ -98,7 +98,7 @@ export default function HomePage() {
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            UK Healthcare M&A <em style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.52em',whiteSpace:'nowrap'}}>Through Direct Owner Relationships.</em>
+            UK Healthcare M&A <em className="block sm:inline" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.52em'}}>Through Direct Owner Relationships.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
@@ -121,7 +121,7 @@ export default function HomePage() {
             <Link href="/contact" className="btn-outline">For buyers and funds</Link>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-10 border-t border-[#0F2E1D]/15">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-10 border-t border-[#0F2E1D]/15">
             {[
               { v:'Care Sector',      l:'UK healthcare M&A only' },
               { v:'Direct Owners',    l:'Real relationships, not lists' },

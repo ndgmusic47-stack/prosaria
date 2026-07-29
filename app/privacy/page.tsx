@@ -4,7 +4,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="pt-40 pb-24 bg-[#F7F3EC]">
+    <section className="marble-bg marble-bg-strong pt-40 pb-24">
       <div className="max-w-site mx-auto px-6 lg:px-10">
         <div className="max-w-[680px]">
           <p className="eyebrow text-[#123524] mb-6">Legal</p>

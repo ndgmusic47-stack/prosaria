@@ -68,7 +68,7 @@ export default function WorkPage() {
   useReveal()
   return (
     <>
-      <section className="bg-[#F7F3EC] pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
+      <section className="marble-bg marble-bg-strong pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">What we do</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
@@ -141,7 +141,7 @@ export default function WorkPage() {
         </section>
       ))}
 
-      <section className="py-20 bg-[#F7F3EC] border-t border-[#123524]/12">
+      <section className="marble-bg py-20 border-t border-[#123524]/12">
         <div className="max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
             <h2 className="font-serif text-display-md text-[#0F2E1D] max-w-[32ch]">
