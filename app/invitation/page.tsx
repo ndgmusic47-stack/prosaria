@@ -7,16 +7,12 @@ const card = { borderColor:'rgba(18,53,36,0.15)' }
 const inputStyle = { borderColor:'rgba(18,53,36,0.2)', color:CHAR }
 
 const includes = [
-  { t:'Mandate lock', d:'We agree your search focus and protect it. We do not run the same active search for another buyer while your lane is live.' },
-  { t:'100 company target map', d:'We build a researched list of 100 UK care businesses that may fit your criteria.' },
-  { t:'7 Day Mandate Match', d:'In the first 7 days, we match your mandate against the market. We map targets, begin careful owner outreach, and show you the first real signal fast.' },
-  { t:'Seller readiness scoring', d:'We assess each company for fit, timing, and how ready it may be for a buyer conversation.' },
-  { t:'Reputation safe outreach', d:'We contact owners carefully. The message protects your reputation and does not pressure the owner.' },
-  { t:'Weekly evidence pack', d:'Each week, you receive a clear summary of targets added, owners contacted, replies, next steps, and what we are learning.' },
-  { t:'Monthly market readout', d:'Each month, you receive a simple view of what the market is showing: owner timing, common objections, live interest, and opportunity signals.' },
-  { t:'Board progress pack', d:'You receive a clean update that can be shared with partners, investors, or board members.' },
-  { t:'Acquisition cockpit', d:'You receive a live dashboard showing the target map, outreach status, touchpoints, and next actions.' },
-  { t:'Owner relationship asset', d:'The owner pipeline becomes a real asset. Even if an owner is not ready today, the relationship may matter later.' },
+  { t:'We agree the mandate first', d:'A short call before anything starts. What you want to buy, where, what size, and what to avoid. We agree what a good result looks like.' },
+  { t:'We build the target universe', d:'We identify UK care businesses that genuinely fit your criteria. Not a database export. A researched, mandate fit shortlist.' },
+  { t:'We find the owners', d:'We identify the people who actually make the decision, not switchboards or gatekeepers.' },
+  { t:'We approach the market directly', d:'We contact owners carefully and quietly. The message protects your reputation and never pressures the owner.' },
+  { t:'You see the activity', d:'You see who we approached, who replied, who engaged, and what the market said back. Real evidence, not promises.' },
+  { t:'We review together on day 7', d:'We look at the signal honestly. If there is something worth pursuing, we talk about continuing. If not, we say so.' },
 ]
 
 const fitQs = [
@@ -119,16 +115,16 @@ export default function InvitationPage() {
           <div className="pt-8 animate-fade-in" style={{animationDuration:'0.5s'}}>
             <p className="eyebrow mb-6" style={{color:BRONZE}}>Private invitation for {firstName}</p>
             <h2 className="font-serif text-display-md mb-6 leading-snug" style={{color:GREEN}}>
-              You are being invited to apply for a reserved buyer lane.
+              You are invited to apply for a 7 Day Mandate Match.
             </h2>
             <p className="text-body-md mb-4 leading-relaxed" style={{color:BODY}}>
-              A buyer lane means Prosaria builds a focused search around your acquisition criteria. We map the market, approach owners carefully, track the conversations, and show you what the market is saying.
+              You tell us what you want to buy. The care type, the location, the size. For 7 days, we work that search at our cost.
             </p>
             <p className="text-body-md mb-12 leading-relaxed" style={{color:BODY}}>
-              The goal is not to send you random names. The goal is to build real owner conversations with care businesses that may fit your mandate.
+              We find suitable care businesses, identify the owners, approach the market directly, and show you exactly what comes back. At the end of the 7 days we review the results together and decide whether it makes sense to keep going.
             </p>
 
-            <p className="eyebrow mb-6" style={{color:BRONZE}}>Your reserved buyer lane includes</p>
+            <p className="eyebrow mb-6" style={{color:BRONZE}}>What happens in the 7 days</p>
             <div className="space-y-3 mb-12">
               {includes.map((x,i)=>(
                 <div key={x.t} className="bg-white rounded-2xl border p-5 animate-fade-in"
@@ -139,22 +135,11 @@ export default function InvitationPage() {
               ))}
             </div>
 
-            <div className="bg-white rounded-2xl border p-7 mb-6" style={{borderColor:'rgba(232,101,13,0.35)'}}>
-              <p className="eyebrow mb-3" style={{color:BRONZE}}>How it starts</p>
-              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>7 Day Mandate Match</p>
+            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(232,101,13,0.35)'}}>
+              <p className="eyebrow mb-3" style={{color:BRONZE}}>After day 7</p>
+              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>No obligation either way</p>
               <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
-                Every lane starts with a 7 Day Mandate Match. In the first 7 days, we match your mandate against the market and show you the first real signal. This gives both sides a fast, honest read on the fit before anything longer term.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(18,53,36,0.25)'}}>
-              <p className="eyebrow mb-3" style={{color:BRONZE}}>The engagement</p>
-              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>Retained 90 day mandate — £2,999 per month</p>
-              <p className="text-body-sm leading-relaxed mb-3" style={{color:BODY}}>
-                If the Mandate Match shows a genuine fit, the lane moves to a retained 90 day mandate. The retainer is £2,999 per month, locked in for 90 days, paid monthly in advance.
-              </p>
-              <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
-                One buyer holds one lane. Your search focus is protected for the full term.
+                If the market does not give us enough to work with, we tell you plainly and there is nothing to continue. If the signal is real, we talk about opening a Private Buyer Lane — a protected mandate where one buyer holds one lane. We cover the terms of that on the review call.
               </p>
             </div>
 
@@ -180,6 +165,14 @@ export default function InvitationPage() {
                   Before you apply, we ask a few simple questions. This helps us protect each buyer lane and make sure the work is useful for both sides.
                 </p>
               </>
+            )}
+            {qIdx===3 && (
+              <div className="bg-white rounded-2xl border p-6 mb-8" style={{borderColor:'rgba(18,53,36,0.25)'}}>
+                <p className="eyebrow mb-2" style={{color:BRONZE}}>Before the last question</p>
+                <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
+                  So nothing is a surprise later: if the 7 days produce real signal, the next step is a Private Buyer Lane. That is a retained 90 day mandate at £2,999 per month, paid monthly in advance, with your search focus protected for the full term. The 7 days themselves cost you nothing.
+                </p>
+              </div>
             )}
             <p className="eyebrow mb-4" style={{color:BRONZE}}>Question {qIdx+1} of {fitQs.length}</p>
             <h2 className="font-serif text-display-md mb-10 leading-snug" style={{color:GREEN}}>
@@ -220,7 +213,7 @@ export default function InvitationPage() {
               Tell us about your search.
             </h2>
             <p className="text-body-sm mb-10" style={{color:BODY}}>
-              Nathan reviews every application personally. Nothing here is shared.
+              Nathan reviews every application personally. If accepted, the next step is a short call to lock the mandate before the 7 days begin. Nothing here is shared.
             </p>
 
             <div className="space-y-5 mb-6">
@@ -272,7 +265,7 @@ export default function InvitationPage() {
             <button onClick={submit}
               disabled={loading || !buyerType || !ack || !appFields.filter(f=>f.req).every(f=>(form[f.k]||'').trim())}
               className="btn-primary w-full justify-center py-4 disabled:opacity-40">
-              {loading?'Submitting…':'Submit buyer lane application'}
+              {loading?'Submitting…':'Apply for the 7 Day Mandate Match'}
             </button>
           </div>
         )}
@@ -282,10 +275,10 @@ export default function InvitationPage() {
           <div className="pt-16 text-center animate-fade-in" style={{animationDuration:'0.5s'}}>
             <Rule />
             <h2 className="font-serif text-display-md mb-6 leading-snug" style={{color:GREEN}}>
-              Thank you. Nathan will review this personally.
+              Application received.
             </h2>
             <p className="text-body-md leading-relaxed max-w-[42ch] mx-auto" style={{color:BODY}}>
-              If the mandate looks like a fit, the next step is a private review call.
+              Nathan will review your acquisition criteria and confirm whether we can take the mandate. If accepted, the next step is a short call to agree exactly what you want to buy, before the 7 days begin.
             </p>
           </div>
         )}

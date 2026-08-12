@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   try {
     const d = await req.json()
     await sendNotification(
-      `Buyer lane application: ${d.fullName || d.firstName || 'Unknown'} — ${d.buyerType || 'buyer'}`,
+      `7 Day Mandate Match application: ${d.fullName || d.firstName || 'Unknown'} — ${d.buyerType || 'buyer'}`,
       {
         'Route':               '/invitation (private link)',
         'Submitted':           new Date().toUTCString(),
