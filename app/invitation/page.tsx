@@ -9,7 +9,7 @@ const inputStyle = { borderColor:'rgba(18,53,36,0.2)', color:CHAR }
 const includes = [
   { t:'Mandate lock', d:'We agree your search focus and protect it. We do not run the same active search for another buyer while your lane is live.' },
   { t:'100 company target map', d:'We build a researched list of 100 UK care businesses that may fit your criteria.' },
-  { t:'30 day market signal period', d:'For 30 days, we test the market. We approach selected owners and track who opens, replies, engages, declines, or asks questions.' },
+  { t:'7 Day Mandate Match', d:'In the first 7 days, we match your mandate against the market. We map targets, begin careful owner outreach, and show you the first real signal fast.' },
   { t:'Seller readiness scoring', d:'We assess each company for fit, timing, and how ready it may be for a buyer conversation.' },
   { t:'Reputation safe outreach', d:'We contact owners carefully. The message protects your reputation and does not pressure the owner.' },
   { t:'Weekly evidence pack', d:'Each week, you receive a clear summary of targets added, owners contacted, replies, next steps, and what we are learning.' },
@@ -23,7 +23,7 @@ const fitQs = [
   { id:'q1', text:'Are you actively looking to acquire UK care businesses in the next 6 to 12 months?' },
   { id:'q2', text:'Do you have funding in place, or a clear route to funding?' },
   { id:'q3', text:'Do you have clear acquisition criteria?' },
-  { id:'q4', text:'If the 30 day Proof to Proceed period shows useful market signal, are you comfortable moving into a retained 90 day mandate?' },
+  { id:'q4', text:'If the 7 Day Mandate Match shows a genuine fit, are you comfortable moving into a retained 90 day mandate at £2,999 per month, paid monthly in advance?' },
 ]
 
 const buyerTypes = ['Operator','Fund','Search fund','Investor group','Family office','Other']
@@ -139,11 +139,22 @@ export default function InvitationPage() {
               ))}
             </div>
 
-            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(232,101,13,0.35)'}}>
-              <p className="eyebrow mb-3" style={{color:BRONZE}}>The first 30 days</p>
-              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>Proof to Proceed</p>
+            <div className="bg-white rounded-2xl border p-7 mb-6" style={{borderColor:'rgba(232,101,13,0.35)'}}>
+              <p className="eyebrow mb-3" style={{color:BRONZE}}>How it starts</p>
+              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>7 Day Mandate Match</p>
               <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
-                The first 30 days are a Proof to Proceed period. This gives both sides a chance to test the mandate, the market, and the working relationship. If the 30 day period shows useful market signal, the next step is a retained 90 day mandate.
+                Every lane starts with a 7 Day Mandate Match. In the first 7 days, we match your mandate against the market and show you the first real signal. This gives both sides a fast, honest read on the fit before anything longer term.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl border p-7 mb-12" style={{borderColor:'rgba(18,53,36,0.25)'}}>
+              <p className="eyebrow mb-3" style={{color:BRONZE}}>The engagement</p>
+              <p className="font-serif text-[1.15rem] mb-3" style={{color:GREEN}}>Retained 90 day mandate — £2,999 per month</p>
+              <p className="text-body-sm leading-relaxed mb-3" style={{color:BODY}}>
+                If the Mandate Match shows a genuine fit, the lane moves to a retained 90 day mandate. The retainer is £2,999 per month, locked in for 90 days, paid monthly in advance.
+              </p>
+              <p className="text-body-sm leading-relaxed" style={{color:BODY}}>
+                One buyer holds one lane. Your search focus is protected for the full term.
               </p>
             </div>
 
@@ -196,7 +207,7 @@ export default function InvitationPage() {
               Thank you for your interest.
             </h2>
             <p className="text-body-md leading-relaxed max-w-[46ch] mx-auto" style={{color:BODY}}>
-              At this stage, this invitation is only suitable for buyers who are comfortable moving into a retained mandate if the 30 day Proof to Proceed period shows useful market signal.
+              At this stage, this invitation is only suitable for buyers who are comfortable moving into a retained 90 day mandate at £2,999 per month if the 7 Day Mandate Match shows a genuine fit.
             </p>
           </div>
         )}
@@ -253,7 +264,7 @@ export default function InvitationPage() {
                 <input type="checkbox" checked={ack} onChange={e=>setAck(e.target.checked)}
                   className="mt-1 w-4 h-4 accent-[#123524] flex-shrink-0" />
                 <span className="text-body-sm leading-relaxed" style={{color:BODY}}>
-                  I understand that the 30 day Proof to Proceed period is designed to assess market signal and working fit, and that continuation beyond this period requires a retained 90 day mandate.
+                  I understand that every lane starts with a 7 Day Mandate Match, and that continuation requires a retained 90 day mandate at £2,999 per month, locked in for 90 days and paid monthly in advance.
                 </span>
               </label>
             </div>

@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
         'Fit Q1 — Active 6-12 months':      d.q1 || '-',
         'Fit Q2 — Funding in place/route':  d.q2 || '-',
         'Fit Q3 — Clear criteria':          d.q3 || '-',
-        'Fit Q4 — Retained 90-day mandate': d.q4 || '-',
+        'Fit Q4 — Retained 90-day @ £2,999/mo': d.q4 || '-',
         'Full name':           d.fullName || '-',
         'Company':             d.company || '-',
         'Email':               d.email || '-',
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
         'Exclusions / conflicts': d.exclusions || '-',
         'Why this search matters now': d.whyNow || '-',
         'Message':             d.message || '-',
-        'PtP acknowledgement': d.ack ? 'Confirmed' : 'NOT confirmed',
+        'Terms ack (7-day match + £2,999/mo x90d advance)': d.ack ? 'Confirmed' : 'NOT confirmed',
       }
     )
   } catch (err) { console.error('Invitation submission error:', err) }
