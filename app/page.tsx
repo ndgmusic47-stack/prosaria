@@ -180,6 +180,11 @@ export default function HomePage() {
                 <h3 className="font-serif text-display-sm text-[#0F2E1D] mb-5">{line.title}</h3>
                 <p className="text-body-sm text-[#4A574C] leading-relaxed flex-1 mb-8">{line.body}</p>
                 <div className="mt-auto pt-6 border-t border-[#123524]/12 space-y-3">
+                  {line.num === '01' && (
+                    <Link href="/sell-supported-living-business" className="text-body-sm underline underline-offset-4 hover:opacity-70 transition-opacity block" style={{color:'#123524'}}>
+                      Selling a supported living business
+                    </Link>
+                  )}
                   <Link href={line.href} className="text-label text-[#4A574C] hover:text-[#4A574C] transition-colors uppercase tracking-widest block">
                     Learn more
                   </Link>

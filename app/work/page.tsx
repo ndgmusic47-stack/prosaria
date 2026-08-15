@@ -24,6 +24,7 @@ const lines = [
     intro: `We help long standing care business owners prepare, organise, and present the company so serious buyers can understand the value of what has been built.
 
 Most owners think about succession too late, and end up negotiating from urgency. Preparation creates choices. It does not commit you to selling. It means that when a conversation happens, it happens on your terms, quietly, and with the business shown properly.`,
+    extraLink: { href: '/sell-supported-living-business', label: 'Selling a supported living business' },
     whoFor: [
       'Long standing care owners thinking about succession',
       'Husband and wife businesses with no clear next generation',
@@ -105,6 +106,13 @@ export default function WorkPage() {
 
               <div className="lg:col-span-5 reveal reveal-delay-1">
                 <div className={`p-8 border ${idx % 2 === 0 ? 'bg-[#FFFFFF] border-[#123524]/15' : 'bg-white border-[#E6DFD2]'}`}>
+                  {line.extraLink && (
+                    <p className="text-body-sm mb-8">
+                      <Link href={line.extraLink.href} className="underline underline-offset-4 hover:opacity-70 transition-opacity" style={{color:'#123524'}}>
+                        {line.extraLink.label}
+                      </Link>
+                    </p>
+                  )}
                   <p className="eyebrow mb-5">Who this is for</p>
                   <ul className="space-y-4">
                     {line.whoFor.map((item, i) => (
