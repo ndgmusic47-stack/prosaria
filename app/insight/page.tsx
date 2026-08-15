@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { getAllPosts } from '@/lib/posts'
 
 export const metadata = {
+  alternates: { canonical: '/insight' },
   title: 'Insight',
   description: 'Market observations from Prosaria on UK healthcare M&A, succession, and sale preparation.',
 }

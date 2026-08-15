@@ -11,7 +11,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug)
   if (!post) return {}
-  return { title: post.title, description: post.excerpt }
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/insight/${params.slug}` },
+  }
 }
 
 async function markdownToHtml(markdown: string) {
