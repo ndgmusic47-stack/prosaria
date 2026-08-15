@@ -5,10 +5,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/',        label: 'Home' },
-  { href: '/work',    label: 'What We Do' },
-  { href: '/about',   label: 'About' },
-  { href: '/insight', label: 'Insights' },
+  { href: '/',             label: 'Home' },
+  { href: '/work#owners',  label: 'For Owners' },
+  { href: '/work#buyers',  label: 'For Buyers' },
+  { href: '/about',        label: 'About' },
+  { href: '/insight',      label: 'Insights' },
 ]
 
 export default function Nav() {

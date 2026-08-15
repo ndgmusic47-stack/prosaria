@@ -104,7 +104,17 @@ export default function AboutPage() {
               <div className="reveal reveal-delay-2">
                 <p className="eyebrow mb-4" style={{color:'#123524'}}>How we charge</p>
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  We charge on success wherever we can. If the deal does not happen, we do not get paid.
+                  The structure depends on the engagement. Buyer origination, sale preparation and transaction work are agreed separately, with the scope and fees made clear before work begins.
+                </p>
+              </div>
+
+              <div className="reveal reveal-delay-3 pt-2">
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>Senior transaction support</p>
+                <h3 className="font-serif text-display-sm mb-4" style={{color:'#0F2E1D'}}>
+                  Care sector financial experience when the deal needs it.
+                </h3>
+                <p className="text-body-md" style={{color:'#3C4A40'}}>
+                  Where an opportunity progresses beyond origination, Prosaria can bring senior care sector CFO input into the financial review and deal process. This helps us test the numbers, identify the questions a serious buyer will ask and progress credible opportunities properly.
                 </p>
               </div>
 

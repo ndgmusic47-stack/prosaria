@@ -27,7 +27,7 @@ const lines = [
     title: 'For Care Business Owners',
     body: 'We help long standing care business owners prepare, organise, and present the company so serious buyers can understand the value of what has been built. Preparation creates choices before timing becomes urgent.',
     href: '/work#owners',
-    magnet: '/contact',
+    magnet: '/contact?type=seller',
     magnetLabel: 'Start a quiet conversation',
   },
   {
@@ -37,7 +37,7 @@ const lines = [
     title: 'For Buyers, Funds & Operators',
     body: 'We support mandate led acquisition origination by identifying and building relationships with care business owners before opportunities become widely marketed. Real owner relationships, not generic market lists.',
     href: '/work#buyers',
-    magnet: '/contact',
+    magnet: '/contact?type=buyer',
     magnetLabel: 'Discuss a mandate',
   },
 ]
@@ -117,8 +117,8 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
-            <Link href="/contact" className="btn-primary">For care business owners</Link>
-            <Link href="/contact" className="btn-outline">For buyers and funds</Link>
+            <Link href="/work#owners" className="btn-primary">For care business owners</Link>
+            <Link href="/work#buyers" className="btn-outline">For buyers and funds</Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-10 border-t border-[#0F2E1D]/15">
@@ -340,8 +340,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 reveal reveal-delay-1 flex-shrink-0">
-            <Link href="/contact" className="btn-primary">For care business owners</Link>
-            <Link href="/contact" className="btn-outline">For buyers and funds</Link>
+            <Link href="/work#owners" className="btn-primary">For care business owners</Link>
+            <Link href="/work#buyers" className="btn-outline">For buyers and funds</Link>
           </div>
         </div>
       </section>

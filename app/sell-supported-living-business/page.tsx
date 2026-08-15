@@ -111,7 +111,7 @@ export default function SellSupportedLivingPage() {
           <p className="text-body-md text-[#4A574C] max-w-[52ch] mb-10">
             Prosaria helps UK supported living owners prepare the business properly, review the opportunity from a buyer&rsquo;s perspective and explore confidential conversations with serious acquirers.
           </p>
-          <Link href="/contact" className="btn-primary">Start a confidential conversation</Link>
+          <Link href="/contact?type=seller&amp;sector=supported-living" className="btn-primary">Start a confidential conversation</Link>
         </div>
       </section>
 
@@ -297,7 +297,7 @@ export default function SellSupportedLivingPage() {
               You do not need to have decided anything. If you are thinking about the future of your supported living business, a quiet conversation is a sensible place to begin.
             </p>
           </div>
-          <Link href="/contact" className="btn-primary flex-shrink-0">Start a confidential conversation</Link>
+          <Link href="/contact?type=seller&amp;sector=supported-living" className="btn-primary flex-shrink-0">Start a confidential conversation</Link>
         </div>
       </section>
     </>
