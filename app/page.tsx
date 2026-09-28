@@ -23,41 +23,39 @@ const lines = [
   {
     num: '01',
     img: '/img-lounge.jpg',
-    imgAlt: 'A warm care home lounge',
-    title: 'For Care Business Owners',
-    body: 'We help long standing care business owners prepare, organise, and present the company so serious buyers can understand the value of what has been built. Preparation creates choices before timing becomes urgent.',
-    href: '/work#owners',
-    magnet: '/contact?type=seller',
-    magnetLabel: 'Start a quiet conversation',
+    imgAlt: 'An established business at work',
+    title: 'Invest',
+    body: 'We acquire and invest in established businesses with strong underlying economics and clear opportunities for improvement.',
+    href: '/what-we-invest-in',
+    magnet: '/contact',
+    magnetLabel: 'Discuss a business',
   },
   {
     num: '02',
     img: '/img-courtyard.jpg',
-    imgAlt: 'A UK care home courtyard garden',
-    title: 'For Buyers, Funds & Operators',
-    body: 'We support mandate led acquisition origination by identifying and building relationships with care business owners before opportunities become widely marketed. Real owner relationships, not generic market lists.',
-    href: '/work#buyers',
-    magnet: '/contact?type=buyer',
-    magnetLabel: 'Discuss a mandate',
+    imgAlt: 'Operational detail inside a working business',
+    title: 'Improve',
+    body: 'We focus on the things that materially change performance. Operations, people, systems, purchasing, sales, capital allocation and execution.',
+    href: '/how-we-work',
+    magnet: '/how-we-work',
+    magnetLabel: 'How we invest',
   },
 ]
 
-const caseStudies = [
-  {
-    tag: 'Succession',
-    region: 'UK',
-    headline: 'Many care owners have no clear next generation',
-    outcome: 'A large share of long standing care businesses are owner run with no succession plan. The ones that prepare early keep control of how and when they sell.',
-    timeframe: 'Active now',
-  },
-  {
-    tag: 'Healthcare M&A',
-    region: 'UK',
-    headline: 'Care owners are selling quietly',
-    outcome: 'A growing number of care business owners want to sell without going public. Buyer demand is strong and most of the best deals never reach the open market.',
-    timeframe: 'Active now',
-  },
+const buildLine = {
+  title: 'Build',
+  body: 'Our objective is not simply to acquire businesses. We want to build productive, durable companies that create lasting value for customers, employees and owners.',
+}
+
+const criteria = [
+  'Established revenue and customer demand',
+  'Positive underlying cashflow or a clear route to it',
+  'Strong customer relationships or communities',
+  'Operational improvement opportunities',
+  'Owners considering succession or a change of direction',
+  'Potential for organic growth or further acquisitions',
 ]
+
 
 export default function HomePage() {
   useReveal()
@@ -98,7 +96,7 @@ export default function HomePage() {
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            UK Healthcare M&A <em className="block sm:inline" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.52em'}}>Through Direct Owner Relationships.</em>
+            We invest in businesses <em className="block sm:inline" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.52em'}}>and help them become better businesses.</em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
@@ -113,20 +111,20 @@ export default function HomePage() {
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
-            Prosaria builds direct relationships with long standing care business owners and supports serious buyers, funds, and operators with mandate led acquisition conversations.
+            Prosaria is an independent investment company focused on acquiring and backing established businesses where better operations, patient capital and focused ownership can create long-term value.
           </p>
           <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
-            <Link href="/work#owners" className="btn-primary">For care business owners</Link>
-            <Link href="/work#buyers" className="btn-outline">For buyers and funds</Link>
+            <Link href="/contact" className="btn-primary">Discuss a business</Link>
+            <Link href="/how-we-work" className="btn-outline">How we invest</Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-10 border-t border-[#0F2E1D]/15">
             {[
-              { v:'Care Sector',      l:'UK healthcare M&A only' },
-              { v:'Direct Owners',    l:'Real relationships, not lists' },
-              { v:'Sale Preparation', l:'Ready before timing is urgent' },
-              { v:'Mandate Led',      l:'Serious buyers, defined criteria' },
+              { v:'Established',   l:'Real revenue, real customers' },
+              { v:'Operational',   l:'Improving how it actually works' },
+              { v:'Long Term',     l:'Patient capital, committed ownership' },
+              { v:'Direct',        l:'We approach owners ourselves' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
@@ -161,9 +159,9 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#123524]/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-16 reveal">
-            <p className="eyebrow mb-4">What we do</p>
+            <p className="eyebrow mb-4">Our approach</p>
             <h2 className="font-serif text-display-lg text-[#0F2E1D] max-w-[24ch]">
-              One sector. Two sides. Done properly.
+              Invest. Improve. Build.
             </h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{background:'rgba(18,53,36,0.08)'}}>
@@ -180,11 +178,6 @@ export default function HomePage() {
                 <h3 className="font-serif text-display-sm text-[#0F2E1D] mb-5">{line.title}</h3>
                 <p className="text-body-sm text-[#4A574C] leading-relaxed flex-1 mb-8">{line.body}</p>
                 <div className="mt-auto pt-6 border-t border-[#123524]/12 space-y-3">
-                  {line.num === '01' && (
-                    <Link href="/sell-supported-living-business" className="text-body-sm underline underline-offset-4 hover:opacity-70 transition-opacity block" style={{color:'#123524'}}>
-                      Selling a supported living business
-                    </Link>
-                  )}
                   <Link href={line.href} className="text-label text-[#4A574C] hover:text-[#4A574C] transition-colors uppercase tracking-widest block">
                     Learn more
                   </Link>
@@ -194,6 +187,59 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 bg-[#FBF8F2] border border-[#123524]/12 rounded-2xl p-10 lg:p-12 reveal reveal-delay-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#123524]" />
+              <p className="text-label text-[#123524]">03</p>
+            </div>
+            <h3 className="font-serif text-display-sm text-[#0F2E1D] mb-5">{buildLine.title}</h3>
+            <p className="text-body-md text-[#4A574C] leading-relaxed max-w-[62ch]">{buildLine.body}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE LOOK FOR */}
+      <section className="py-32 bg-[#FBF8F2]">
+        <div className="max-w-site mx-auto px-6 lg:px-10">
+          <div className="mb-12 reveal">
+            <p className="eyebrow mb-4">What we look for</p>
+            <h2 className="font-serif text-display-lg text-[#0F2E1D] max-w-[26ch] mb-6">
+              Flexible on sector. Disciplined on fundamentals.
+            </h2>
+            <p className="text-body-md text-[#4A574C] max-w-[52ch]">
+              We are flexible on sector where we understand the opportunity and believe we can add value.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {criteria.map((item, i) => (
+              <div key={item} className={`flex gap-4 items-start bg-white rounded-xl border border-[#123524]/12 px-6 py-5 reveal reveal-delay-${(i % 2) + 1}`}>
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#E8650D] flex-shrink-0" />
+                <p className="text-body-sm text-[#3C4A40]">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* A DIFFERENT KIND OF BUYER */}
+      <section className="marble-bg py-32">
+        <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[70ch]">
+          <p className="eyebrow mb-4 reveal">A different kind of buyer</p>
+          <h2 className="font-serif text-display-lg text-[#0F2E1D] mb-8 max-w-[24ch] reveal">
+            Built by owners. Understood as such.
+          </h2>
+          <div className="space-y-5 reveal reveal-delay-1">
+            <p className="text-body-md text-[#3C4A40]">
+              Many good businesses are built by owners who have spent years developing their customers, suppliers and reputation.
+            </p>
+            <p className="text-body-md text-[#3C4A40]">
+              We approach those situations directly and practically.
+            </p>
+            <p className="text-body-md text-[#3C4A40]">
+              Where there is a fit, we aim to understand what the owner wants, structure a sensible transaction and preserve what works while improving what does not.
+            </p>
           </div>
         </div>
       </section>
@@ -221,18 +267,18 @@ export default function HomePage() {
               <div className="line-accent mb-8 reveal" style={{background:'#E8650D'}} />
               <p className="eyebrow mb-5 reveal" style={{color:'#E8650D'}}>The business</p>
               <h2 className="font-serif text-display-lg mb-8 reveal reveal-delay-1" style={{color:'#0F2E1D'}}>
-                One sector. The people who matter. Deals done quietly.
+                Long-term thinking. Practical execution.
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  Prosaria is intentionally focused on UK healthcare M&A, with a particular focus on care businesses, succession, sale preparation, and direct owner relationships.
+                  We believe capital is most useful when combined with good operators, disciplined execution and a willingness to improve the details of how a business actually works.
                 </p>
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  The best deals are quiet and move fast. That suits a small, focused team. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
+                  That is how we approach every investment. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
-                <Link href="/about" className="btn-outline-dark">About the team</Link>
+                <Link href="/about" className="btn-outline-dark">About Prosaria</Link>
                 <Link href="/contact" className="btn-primary">Start a conversation</Link>
               </div>
             </div>
@@ -242,87 +288,8 @@ export default function HomePage() {
 
       {/* IMAGE BAND */}
       <section className="relative h-[42vh] min-h-[300px] overflow-hidden">
-        <Image src="/img-walk.jpg" alt="A quiet walk through a UK care community" fill className="object-cover" sizes="100vw" />
+        <Image src="/img-walk.jpg" alt="An established business environment" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(247,243,236,0.25) 0%, rgba(247,243,236,0) 30%, rgba(247,243,236,0) 70%, rgba(247,243,236,0.3) 100%)'}} />
-      </section>
-
-      {/* MARKET OBSERVATIONS */}
-      <section className="py-40 marble-bg marble-bg-strong">
-        <div className="max-w-site mx-auto px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-6">
-            <div className="reveal">
-              <p className="eyebrow mb-4">Market observations</p>
-              <h2 className="font-serif text-display-md text-[#0F2E1D]">
-                What we are seeing<br />in the market right now.
-              </h2>
-            </div>
-            <Link href="/case-studies" className="btn-outline reveal">See more</Link>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {caseStudies.map((cs, i) => (
-              <div key={cs.headline}
-                className={`border border-[#123524]/15 bg-[#FFFFFF] p-8 flex flex-col case-card reveal reveal-delay-${i+1} hover:border-[#123524]/25 transition-all duration-300`}>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="eyebrow text-[#123524]">{cs.tag}</span>
-                  <span className="text-[#E8650D]/50">·</span>
-                  <span className="text-label text-[#4A574C]">{cs.region}</span>
-                </div>
-                <h3 className="font-serif text-display-sm text-[#0F2E1D] mb-4 leading-snug">{cs.headline}</h3>
-                <p className="text-body-sm text-[#4A574C] flex-1 mb-6">{cs.outcome}</p>
-                <div className="pt-5 border-t border-[#123524]/12 flex justify-between">
-                  <span className="text-label text-[#4A574C]">Status</span>
-                  <span className="text-label text-[#123524]">{cs.timeframe}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LEAD MAGNETS */}
-      <section className="light-section marble-bg py-40">
-        <div className="max-w-site mx-auto px-6 lg:px-10">
-          <div className="mb-14 reveal text-center">
-            <p className="eyebrow mb-4" style={{color:'#E8650D'}}>Start here</p>
-            <h2 className="font-serif text-display-lg max-w-[28ch] mx-auto" style={{color:'#0F2E1D'}}>
-              Two ways to start a conversation.
-            </h2>
-            <p className="text-body-md mt-4 max-w-[48ch] mx-auto" style={{color:'#3C4A40'}}>
-              Every conversation is direct, confidential, and without obligation. Choose the route that fits you.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {[
-              {
-                title: 'I own or run a care business',
-                desc: 'Whether a sale is years away or closer than you planned, preparation creates choices. A quiet, no obligation conversation about where you stand.',
-                href: '/contact',
-                tag: 'Owners',
-                value: 'Discreet',
-              },
-              {
-                title: 'I am a buyer, fund, or operator',
-                desc: 'Mandate led origination built on direct owner relationships. Tell us your criteria and we will discuss whether there is a fit.',
-                href: '/contact',
-                tag: 'Buyers & Funds',
-                value: 'Mandate led',
-              },
-            ].map((m, i) => (
-              <div key={m.title}
-                className={`bg-white border border-[#E6DFD2] p-8 flex flex-col reveal reveal-delay-${i+1} hover:border-[#C9BFA9] hover:shadow-md transition-all duration-300`}>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-label text-[#123524] border border-[#D8CFC0] bg-[#EFF4EF] px-3 py-1">{m.tag}</span>
-                  <span className="text-label text-[#E8650D] font-medium">{m.value}</span>
-                </div>
-                <h3 className="font-serif text-display-sm mb-4" style={{color:'#0F2E1D'}}>{m.title}</h3>
-                <p className="text-body-sm flex-1 mb-8" style={{color:'#3C4A40'}}>{m.desc}</p>
-                <Link href={m.href} className="btn-primary w-full justify-center">
-                  Get in touch
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* FINAL CTA */}
@@ -330,18 +297,20 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(232,101,13,0.08)_0%,transparent_70%)]" />
         <div className="relative max-w-site mx-auto px-6 lg:px-10 flex flex-col lg:flex-row justify-between items-center gap-10">
           <div className="reveal">
-            <h2 className="font-serif text-display-md text-[#0F2E1D] max-w-[28ch]">
-              Have something worth talking about?
+            <h2 className="font-serif text-display-md text-[#0F2E1D] max-w-[28ch] mb-3">
+              Have a business worth discussing?
             </h2>
-            <p className="text-body-md text-[#4A574C] mt-3">
+            <p className="text-body-md text-[#3C4A40] max-w-[48ch] mb-4">
+              Whether you are considering selling, looking for a long-term partner or believe there is an opportunity we should understand, speak with us directly.
+            </p>
+            <p className="text-body-md text-[#4A574C]">
               <a href="tel:02030267906" className="hover:text-[#123524] transition-colors">020 3026 7906</a>
               <span className="mx-3 text-[#4A574C]">·</span>
               <a href="mailto:hello@prosaria.co.uk" className="hover:text-[#123524] transition-colors">hello@prosaria.co.uk</a>
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 reveal reveal-delay-1 flex-shrink-0">
-            <Link href="/work#owners" className="btn-primary">For care business owners</Link>
-            <Link href="/work#buyers" className="btn-outline">For buyers and funds</Link>
+            <Link href="/contact" className="btn-primary">Start a conversation</Link>
           </div>
         </div>
       </section>

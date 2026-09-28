@@ -3,12 +3,11 @@ import { sendNotification } from '@/lib/mailer'
 
 // Allow-lists. Anything not listed here is ignored entirely.
 const TYPE_LABEL: Record<string, string> = {
-  seller: 'Seller',
-  buyer:  'Buyer',
+  owner:       'Business owner',
+  opportunity: 'Investment opportunity',
+  partner:     'Capital / professional partner',
 }
-const SECTOR_LABEL: Record<string, string> = {
-  'supported-living': 'Supported living',
-}
+const SECTOR_LABEL: Record<string, string> = {}
 
 export async function POST(req: NextRequest) {
   try {

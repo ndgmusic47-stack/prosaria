@@ -4,11 +4,13 @@ import { getAllPosts } from '@/lib/posts'
 export const metadata = {
   alternates: { canonical: '/insight' },
   title: 'Insight',
-  description: 'Market observations from Prosaria on UK healthcare M&A, succession, and sale preparation.',
+  description: 'Thinking on acquisitions, ownership, operational improvement and building better businesses.',
 }
 
 const categoryColours: Record<string, string> = {
   'Care Sector M&A':        'text-[#123524] border-[#123524]/30',
+  'Acquisitions':           'text-[#123524] border-[#123524]/30',
+  'Ownership':              'text-[#E8650D] border-[#E8650D]/40',
   'Succession':             'text-[#E8650D] border-[#E8650D]/40',
   'Insight':                'text-[#4A574C] border-[#D8CFC0]',
 }
@@ -21,10 +23,10 @@ export default function InsightPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">Insight</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[22ch] leading-tight mb-6">
-            What is happening in the markets we work in.
+            Thinking on acquisitions and ownership.
           </h1>
           <p className="text-body-lg text-[#4A574C] max-w-[48ch]">
-            We write when there is something worth sharing. No set schedule.
+            Thinking on acquisitions, ownership, operational improvement and building better businesses. We write when there is something worth sharing.
           </p>
         </div>
       </section>

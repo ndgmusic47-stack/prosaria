@@ -19,23 +19,23 @@ function useReveal() {
 const values = [
   {
     num:'01',
-    title:'Direct outreach',
-    body:'We identify the people and businesses we want to speak to and reach out directly. We do not wait for leads to come in. Most of what we do starts with a conversation we initiated.'
+    title:'Direct approach',
+    body:'We identify the businesses we want to understand and approach owners directly. Most of what we do starts with a conversation we initiated rather than a process we were invited into.'
   },
   {
     num:'02',
-    title:'Qualifying first',
-    body:'Before making any introduction we make sure there is a genuine fit. That means understanding what each party actually needs and whether there is a realistic basis for a conversation.'
+    title:'Understand before acting',
+    body:'We take time to understand the economics, the customers and what the owner actually wants before proposing anything. Forcing a business into a standard model rarely works.'
   },
   {
     num:'03',
-    title:'Relationships over volume',
-    body:'We work with a small number of people and partners at any one time. That means every opportunity gets proper attention. We are not running a pipeline of hundreds of names.'
+    title:'Preserve what works',
+    body:'Good businesses usually have something that took years to build. We aim to keep that intact and put capital and attention where it genuinely improves performance.'
   },
   {
     num:'04',
-    title:'Honest about what we can do',
-    body:'If something is outside what we work on, or the timing is not right, we say so. We would rather be clear upfront than waste time on both sides.'
+    title:'Honest about fit',
+    body:'If a business is not right for us, or the timing is not right, we say so early. We would rather be clear than waste time on either side.'
   },
 ]
 
@@ -45,12 +45,12 @@ export default function AboutPage() {
     <>
       <section className="marble-bg marble-bg-strong pt-40 pb-24 lg:pt-52 lg:pb-28 relative overflow-hidden">
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
-          <p className="eyebrow mb-6">The team</p>
+          <p className="eyebrow mb-6">About Prosaria</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
-            A small team. A simple approach.
+            Building better businesses.
           </h1>
-          <p className="text-body-lg text-[#4A574C] max-w-[48ch]">
-            Prosaria operates lean by choice. The deals we work on benefit from a close, direct relationship not a large firm with many layers between you and the person doing the work.
+          <p className="text-body-lg text-[#3C4A40] max-w-[54ch]">
+            Prosaria was founded to acquire, invest in and build established businesses.
           </p>
         </div>
       </section>
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 <p className="text-label mt-1" style={{color:'#123524'}}>Founder, Prosaria</p>
               </div>
               <div className="mt-5 flex flex-wrap gap-3 justify-center">
-                {['UK Healthcare M&A','Care Businesses','Direct Owner Relationships'].map(t=>(
+                {['Acquisitions','Operational Improvement','Long-Term Ownership'].map(t=>(
                   <span key={t} className="text-label text-[#123524] border border-[#D8CFC0] bg-[#EFF4EF] px-3 py-1.5">{t}</span>
                 ))}
               </div>
@@ -81,7 +81,10 @@ export default function AboutPage() {
                 <h2 className="font-serif text-display-md mb-6" style={{color:'#0F2E1D'}}>Nathan Powell</h2>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    Nathan founded Prosaria and leads the work across both areas. His background is in finding deals before they reach the open market, checking both sides are a genuine fit, and seeing the process through to the end.
+                    Nathan founded Prosaria to identify and build businesses with strong underlying demand and clear opportunities for operational improvement.
+                  </p>
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
+                    His focus is on sourcing opportunities, structuring transactions, allocating capital and working with management teams and partners to improve long-term business performance.
                   </p>
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
                     When you contact Prosaria, you deal with Nathan directly.
@@ -90,31 +93,31 @@ export default function AboutPage() {
               </div>
 
               <div className="reveal reveal-delay-1">
-                <p className="eyebrow mb-4" style={{color:'#123524'}}>Why lean works here</p>
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>How we operate</p>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    Most of what we do is off market and time sensitive. A small team makes faster decisions and stays closer to what matters.
+                    We take a practical approach to investment: understand the economics, preserve what already works and focus capital and operational attention where it can materially improve the business.
                   </p>
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    We move quickly, speak plainly and have a real interest in getting the deal done.
+                    We deliberately operate with a lean structure and work with specialist advisers, operators and capital partners as required.
                   </p>
                 </div>
               </div>
 
               <div className="reveal reveal-delay-2">
-                <p className="eyebrow mb-4" style={{color:'#123524'}}>How we charge</p>
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>Structure</p>
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  The structure depends on the engagement. Buyer origination, sale preparation and transaction work are agreed separately, with the scope and fees made clear before work begins.
+                  Prosaria invests its own time and capital alongside partners. Where an engagement involves defined work for a third party, the scope and terms are agreed before anything begins.
                 </p>
               </div>
 
               <div className="reveal reveal-delay-3 pt-2">
                 <p className="eyebrow mb-4" style={{color:'#123524'}}>Senior transaction support</p>
                 <h3 className="font-serif text-display-sm mb-4" style={{color:'#0F2E1D'}}>
-                  Care sector financial experience when the deal needs it.
+                  Financial experience when the deal needs it.
                 </h3>
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  Where an opportunity progresses beyond origination, Prosaria can bring senior care sector CFO input into the financial review and deal process. This helps us test the numbers, identify the questions a serious buyer will ask and progress credible opportunities properly.
+                  Where an opportunity progresses, Prosaria can bring senior CFO input into the financial review and transaction process. This helps us test the numbers, identify the questions that matter and progress credible opportunities properly.
                 </p>
               </div>
 
@@ -131,7 +134,7 @@ export default function AboutPage() {
       <section className="marble-bg py-32">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-14 reveal">
-            <p className="eyebrow mb-4">How we work</p>
+            <p className="eyebrow mb-4">Principles</p>
             <h2 className="font-serif text-display-lg text-[#0F2E1D] max-w-[24ch]">How we actually work.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{background:'rgba(18,53,36,0.08)'}}>

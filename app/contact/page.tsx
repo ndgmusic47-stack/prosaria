@@ -17,8 +17,9 @@ function useReveal() {
 }
 
 const paths = [
-  { num:'01', title:'I own or run a care business', desc:'Whether a sale is years away or closer than planned, a quiet conversation about preparation costs nothing and creates choices.', action:'Send a message below', href:'/contact?type=seller#message' },
-  { num:'02', title:'I am a buyer, fund, or operator', desc:'Tell us about your mandate. Criteria, geography, size, and what a fit looks like. We will come back to you directly.', action:'Send a message below', href:'/contact?type=buyer#message' },
+  { num:'01', title:'Business owners', desc:'Considering selling, succession or bringing in a long-term investment partner.', action:'Send a message below', href:'/contact?type=owner#message' },
+  { num:'02', title:'Investment opportunities', desc:'A business, asset or situation you believe Prosaria should understand.', action:'Send a message below', href:'/contact?type=opportunity#message' },
+  { num:'03', title:'Capital and professional partners', desc:'Existing and prospective relationships with investors, lenders, operators and professional advisers.', action:'Send a message below', href:'/contact?type=partner#message' },
 ]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
@@ -28,8 +29,8 @@ function ContactPageInner() {
   const params = useSearchParams()
 
   // Only recognised values are honoured. Anything else falls back to generic contact.
-  const VALID_TYPES   = ['seller', 'buyer'] as const
-  const VALID_SECTORS = ['supported-living'] as const
+  const VALID_TYPES   = ['owner', 'opportunity', 'partner'] as const
+  const VALID_SECTORS = [] as const
 
   const rawType   = params.get('type')
   const rawSector = params.get('sector')
@@ -37,22 +38,22 @@ function ContactPageInner() {
   const type   = rawType   && (VALID_TYPES   as readonly string[]).includes(rawType)   ? rawType   : null
   const sector = rawSector && (VALID_SECTORS as readonly string[]).includes(rawSector) ? rawSector : null
 
-  const isSeller = type === 'seller'
-  const isBuyer  = type === 'buyer'
-  const isSupportedLiving = isSeller && sector === 'supported-living'
+  const isOwner       = type === 'owner'
+  const isOpportunity = type === 'opportunity'
+  const isPartner     = type === 'partner'
 
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState({ name:'', email:'', message:'' })
 
   const heading =
-    isSupportedLiving ? 'Tell us about your supported living business.' :
-    isSeller          ? 'Tell us about your care business.' :
-    isBuyer           ? 'Tell us about your acquisition mandate.' : null
+    isOwner       ? 'Tell us about your business.' :
+    isOpportunity ? 'Tell us about the opportunity.' :
+    isPartner     ? 'Tell us about your firm.' : null
 
   const subcopy =
-    isSupportedLiving ? 'A short confidential message is enough to start. Tell us about the business, where you operate and what you are considering.' :
-    isSeller          ? 'A short confidential message is enough to start. Tell us what you operate, where you are based and what you are thinking about.' :
-    isBuyer           ? 'Tell us the type of care business, geography, size and other criteria that define a genuine fit.' : null
+    isOwner       ? 'A short confidential message is enough to start. Tell us what the business does, where it operates and what you are thinking about.' :
+    isOpportunity ? 'Tell us what the business is, what it does and why you think it is worth understanding.' :
+    isPartner     ? 'Tell us who you are, what you do and where you think there may be a sensible overlap.' : null
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -80,7 +81,7 @@ function ContactPageInner() {
             Start a conversation.
           </h1>
           <p className="text-body-lg text-[#4A574C] max-w-[44ch]">
-            Choose the route that fits you and send a message. Every conversation is direct, confidential, and without obligation.
+            We are interested in hearing from business owners, advisers and people who come across opportunities that fit the way we invest.
           </p>
         </div>
       </section>
@@ -91,12 +92,12 @@ function ContactPageInner() {
           {!type && (
           <div>
           <div className="mb-12 reveal">
-            <p className="eyebrow mb-4" style={{color:'#E8650D'}}>Choose your route</p>
+            <p className="eyebrow mb-4" style={{color:'#E8650D'}}>Get in touch</p>
             <h2 className="font-serif text-display-md text-[#0F2E1D] max-w-[28ch]">
-              Two routes. One conversation.
+              Three ways to reach us.
             </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             {paths.map((path, i) => (
               <div key={path.num} className={`bg-[#FFFFFF] border border-[#123524]/15 rounded-2xl p-8 lg:p-10 flex flex-col reveal reveal-delay-${i+1} hover:border-[#123524]/30 transition-all duration-300`}>
                 <div className="flex items-center gap-3 mb-6">

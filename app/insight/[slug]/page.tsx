@@ -25,6 +25,8 @@ async function markdownToHtml(markdown: string) {
 
 const categoryColours: Record<string, string> = {
   'Care Sector M&A':        'text-[#123524] border-[#123524]/30',
+  'Acquisitions':           'text-[#123524] border-[#123524]/30',
+  'Ownership':              'text-[#E8650D] border-[#E8650D]/40',
   'Succession':             'text-[#E8650D] border-[#E8650D]/40',
 }
 

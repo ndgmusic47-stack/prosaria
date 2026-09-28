@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-serif text-base text-[#0F2E1D] group-hover:text-[#123524] transition-colors">Prosaria</span>
             </Link>
             <p className="text-sm leading-relaxed max-w-[28ch] mb-6">
-              Prosaria is a UK healthcare M&A origination and sale preparation firm focused on care businesses, direct owner relationships, and mandate-led acquisition conversations.
+              Prosaria is an independent investment company focused on acquiring, improving and building established businesses.
             </p>
             <div className="space-y-2 text-sm">
               <a href="tel:02030267906" className="flex items-center gap-2 hover:text-[#123524] transition-colors">
@@ -34,11 +34,12 @@ export default function Footer() {
             <p className="eyebrow text-[#E8650D]/70 mb-5">Navigate</p>
             <nav className="flex flex-col gap-3">
               {[
-                {href:'/about',label:'Meet the team'},
-                {href:'/work',label:'What we do'},
-                {href:'/case-studies',label:'What we work on'},
+                {href:'/about',label:'About'},
+                {href:'/what-we-invest-in',label:'What we invest in'},
+                {href:'/how-we-work',label:'How we work'},
+                
                 {href:'/insight',label:'Insight'},
-                {href:'/contact',label:'Work with us'},
+                {href:'/contact',label:'Contact'},
               ].map(({href,label})=>(
                 <Link key={href} href={href} className="text-sm hover:text-[#123524] transition-colors">{label}</Link>
               ))}
