@@ -83,11 +83,11 @@ export default function HomePage() {
           </p>
           <h1 className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-serif)',
-            fontSize:'clamp(3.5rem,11vw,8.5rem)',
-            lineHeight:'0.88',
-            letterSpacing:'-0.04em',
+            fontSize:'clamp(2.2rem,6.5vw,5.2rem)',
+            lineHeight:'0.95',
+            letterSpacing:'-0.03em',
             color:'#1B4D33',
-            maxWidth:'16ch',
+            maxWidth:'20ch',
             marginLeft:'auto',
             marginRight:'auto',
             marginBottom:'1.5rem',
@@ -96,7 +96,10 @@ export default function HomePage() {
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            We invest in businesses <em className="block sm:inline" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.52em'}}>and help them become better businesses.</em>
+            We invest in businesses
+            <em className="block" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.56em',marginTop:'0.3em',lineHeight:'1.15'}}>
+              and help them become better businesses.
+            </em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
