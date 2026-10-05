@@ -9,7 +9,6 @@ const links = [
   { href: '/what-we-invest-in',   label: 'What We Invest In' },
   { href: '/how-we-work',         label: 'How We Work' },
   { href: '/about',               label: 'About' },
-  { href: '/insight',             label: 'Insights' },
 ]
 
 export default function Nav() {

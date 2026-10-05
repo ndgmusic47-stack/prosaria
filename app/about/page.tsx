@@ -25,12 +25,12 @@ const values = [
   {
     num:'02',
     title:'Understand before acting',
-    body:'We take time to understand the economics, the customers and what the owner actually wants before proposing anything. Forcing a business into a standard model rarely works.'
+    body:'We take time to understand the economics, the stock and what the owner actually wants before proposing anything. Forcing a business into a standard model rarely works.'
   },
   {
     num:'03',
     title:'Preserve what works',
-    body:'Good businesses usually have something that took years to build. We aim to keep that intact and put capital and attention where it genuinely improves performance.'
+    body:'A hobby shop with loyal regulars and hard-won supplier accounts has something that took years to build. We aim to keep that intact and put capital and attention where it genuinely improves trading.'
   },
   {
     num:'04',
@@ -47,10 +47,10 @@ export default function AboutPage() {
         <div className="relative max-w-site mx-auto px-6 lg:px-10">
           <p className="eyebrow mb-6">About Prosaria</p>
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
-            Building better businesses.
+            Building a retail business.
           </h1>
           <p className="text-body-lg text-[#3C4A40] max-w-[54ch]">
-            Prosaria was founded to acquire, invest in and build established businesses.
+            Prosaria was founded to own, operate and grow specialist hobby retail: trading cards, anime figures, Gundam and Gunpla, collectibles and the games and accessories around them.
           </p>
         </div>
       </section>
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 <p className="text-label mt-1" style={{color:'#123524'}}>Founder, Prosaria</p>
               </div>
               <div className="mt-5 flex flex-wrap gap-3 justify-center">
-                {['Acquisitions','Operational Improvement','Long-Term Ownership'].map(t=>(
+                {['Sourcing & Buying','Acquisitions','Retail Operations'].map(t=>(
                   <span key={t} className="text-label text-[#123524] border border-[#D8CFC0] bg-[#EFF4EF] px-3 py-1.5">{t}</span>
                 ))}
               </div>
@@ -81,10 +81,10 @@ export default function AboutPage() {
                 <h2 className="font-serif text-display-md mb-6" style={{color:'#0F2E1D'}}>Nathan Powell</h2>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    Nathan founded Prosaria to identify and build businesses with strong underlying demand and clear opportunities for operational improvement.
+                    Nathan founded Prosaria to build a specialist hobby retail business through trading, selective acquisitions and investment.
                   </p>
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    His focus is on sourcing opportunities, structuring transactions, allocating capital and working with management teams and partners to improve long-term business performance.
+                    He leads sourcing and buying, supplier development, acquisitions, capital allocation and the day-to-day running of the business.
                   </p>
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
                     When you contact Prosaria, you deal with Nathan directly.
@@ -96,29 +96,24 @@ export default function AboutPage() {
                 <p className="eyebrow mb-4" style={{color:'#123524'}}>How we operate</p>
                 <div className="space-y-4">
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    We take a practical approach to investment: understand the economics, preserve what already works and focus capital and operational attention where it can materially improve the business.
+                    We take a practical approach: understand the economics, keep what already works and put capital and attention where it measurably improves how the business trades.
                   </p>
                   <p className="text-body-md" style={{color:'#3C4A40'}}>
-                    We deliberately operate with a lean structure and work with specialist advisers, operators and capital partners as required.
+                    Prosaria is deliberately lean. We bring in relevant specialists when a particular piece of work calls for it rather than carrying a structure the business does not need.
                   </p>
                 </div>
               </div>
 
               <div className="reveal reveal-delay-2">
-                <p className="eyebrow mb-4" style={{color:'#123524'}}>Structure</p>
-                <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  Prosaria invests its own time and capital alongside partners. Where an engagement involves defined work for a third party, the scope and terms are agreed before anything begins.
-                </p>
-              </div>
-
-              <div className="reveal reveal-delay-3 pt-2">
-                <p className="eyebrow mb-4" style={{color:'#123524'}}>Senior transaction support</p>
-                <h3 className="font-serif text-display-sm mb-4" style={{color:'#0F2E1D'}}>
-                  Financial experience when the deal needs it.
-                </h3>
-                <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  Where an opportunity progresses, Prosaria can bring senior CFO input into the financial review and transaction process. This helps us test the numbers, identify the questions that matter and progress credible opportunities properly.
-                </p>
+                <p className="eyebrow mb-4" style={{color:'#123524'}}>Prosaria and Mum Where&rsquo;s My Cards</p>
+                <div className="space-y-4">
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
+                    Prosaria is the corporate side: ownership, acquisitions and capital allocation. Mum Where&rsquo;s My Cards is the retail brand customers buy from.
+                  </p>
+                  <p className="text-body-md" style={{color:'#3C4A40'}}>
+                    The brand is building out its range and supply channels, selling through ecommerce and marketplaces, with shows and events alongside.
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-4 reveal reveal-delay-3">
@@ -160,7 +155,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex flex-wrap gap-4 reveal reveal-delay-1">
-            <Link href="/contact" className="btn-primary">Work with us</Link>
+            <Link href="/contact" className="btn-primary">Start a conversation</Link>
             <a href="https://www.linkedin.com/company/prosaria-partners" target="_blank" rel="noopener noreferrer" className="btn-outline-dark">Prosaria on LinkedIn</a>
           </div>
         </div>

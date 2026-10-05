@@ -23,9 +23,9 @@ const lines = [
   {
     num: '01',
     img: '/img-lounge.jpg',
-    imgAlt: 'An established business at work',
+    imgAlt: 'A specialist retail business at work',
     title: 'Invest',
-    body: 'We acquire and invest in established businesses with strong underlying economics and clear opportunities for improvement.',
+    body: 'We acquire and invest in established specialist hobby retailers: trading cards, anime figures, Gundam and Gunpla, collectibles, accessories and the games that sit alongside them.',
     href: '/what-we-invest-in',
     magnet: '/contact',
     magnetLabel: 'Discuss a business',
@@ -33,27 +33,27 @@ const lines = [
   {
     num: '02',
     img: '/img-courtyard.jpg',
-    imgAlt: 'Operational detail inside a working business',
+    imgAlt: 'Operational detail inside a working retail business',
     title: 'Improve',
-    body: 'We focus on the things that materially change performance. Operations, people, systems, purchasing, sales, capital allocation and execution.',
+    body: 'We work on what actually moves the numbers. Sourcing and purchasing discipline, stock turnover, margin, listing quality across ecommerce and marketplaces, supplier relationships and the daily running of the business.',
     href: '/how-we-work',
     magnet: '/how-we-work',
-    magnetLabel: 'How we invest',
+    magnetLabel: 'How we work',
   },
 ]
 
 const buildLine = {
   title: 'Build',
-  body: 'Our objective is not simply to acquire businesses. We want to build productive, durable companies that create lasting value for customers, employees and owners.',
+  body: 'The objective is a durable retail business with repeat customers and a real community around it. We are building something that trades profitably, not a collection held in the hope it appreciates.',
 }
 
 const criteria = [
-  'Established revenue and customer demand',
-  'Positive underlying cashflow or a clear route to it',
-  'Strong customer relationships or communities',
-  'Operational improvement opportunities',
-  'Owners considering succession or a change of direction',
-  'Potential for organic growth or further acquisitions',
+  'Established revenue and genuine repeat customers',
+  'Stock that turns, bought at the right price',
+  'A customer community that trusts the business',
+  'Supplier and distributor relationships worth keeping',
+  'Room to improve ecommerce, listings and fulfilment',
+  'An owner considering succession or a change of direction',
 ]
 
 
@@ -96,9 +96,9 @@ export default function HomePage() {
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            We invest in businesses
+            We own and operate
             <em className="block" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.56em',marginTop:'0.3em',lineHeight:'1.15'}}>
-              and help them become better businesses.
+              specialist hobby retail.
             </em>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
@@ -106,7 +106,7 @@ export default function HomePage() {
             fontSize:'1.15rem',
             lineHeight:'1.65',
             color:'#2B2B26',
-            maxWidth:'46ch',
+            maxWidth:'48ch',
             marginLeft:'auto',
             marginRight:'auto',
             marginBottom:'3rem',
@@ -114,20 +114,20 @@ export default function HomePage() {
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
-            Prosaria is an independent investment company focused on acquiring and backing established businesses where better operations, patient capital and focused ownership can create long-term value.
+            Prosaria is a founder-led company building a specialist hobby retail business. We run our own retail brand and look to acquire established retailers where better buying, stock control and ecommerce can improve performance.
           </p>
           <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
             <Link href="/contact" className="btn-primary">Discuss a business</Link>
-            <Link href="/how-we-work" className="btn-outline">How we invest</Link>
+            <Link href="/how-we-work" className="btn-outline">How we work</Link>
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-10 border-t border-[#0F2E1D]/15">
             {[
-              { v:'Established',   l:'Real revenue, real customers' },
-              { v:'Operational',   l:'Improving how it actually works' },
-              { v:'Long Term',     l:'Patient capital, committed ownership' },
-              { v:'Direct',        l:'We approach owners ourselves' },
+              { v:'Hobby Retail',  l:'Cards, figures, Gunpla, collectibles' },
+              { v:'Operators',     l:'We run the business ourselves' },
+              { v:'Disciplined',   l:'Buying, margin and stock turn' },
+              { v:'Long Term',     l:'Built to trade, not to flip' },
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
@@ -209,10 +209,10 @@ export default function HomePage() {
           <div className="mb-12 reveal">
             <p className="eyebrow mb-4">What we look for</p>
             <h2 className="font-serif text-display-lg text-[#0F2E1D] max-w-[26ch] mb-6">
-              Flexible on sector. Disciplined on fundamentals.
+              One market. Disciplined on fundamentals.
             </h2>
-            <p className="text-body-md text-[#4A574C] max-w-[52ch]">
-              We are flexible on sector where we understand the opportunity and believe we can add value.
+            <p className="text-body-md text-[#4A574C] max-w-[54ch]">
+              We look at specialist hobby retail and the businesses that supply or support it. Within that market, the fundamentals matter more than the category.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
@@ -226,8 +226,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* A DIFFERENT KIND OF BUYER */}
+      {/* RETAIL BRAND */}
       <section className="marble-bg py-32">
+        <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[70ch]">
+          <p className="eyebrow mb-4 reveal">Our retail brand</p>
+          <h2 className="font-serif text-display-lg text-[#0F2E1D] mb-8 max-w-[24ch] reveal">
+            Mum Where&rsquo;s My Cards.
+          </h2>
+          <div className="space-y-5 reveal reveal-delay-1">
+            <p className="text-body-md text-[#3C4A40]">
+              Prosaria is the corporate side of the business. It owns and operates, allocates capital and handles acquisitions.
+            </p>
+            <p className="text-body-md text-[#3C4A40]">
+              Mum Where&rsquo;s My Cards is the brand customers buy from: trading cards, anime figures, Gundam and Gunpla kits, collectibles, accessories and related board games.
+            </p>
+            <p className="text-body-md text-[#3C4A40]">
+              The brand is building out its retail range and supply channels, selling through ecommerce and marketplaces, with shows and events alongside.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* A DIFFERENT KIND OF BUYER */}
+      <section className="py-32 bg-[#FBF8F2]">
         <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[70ch]">
           <p className="eyebrow mb-4 reveal">A different kind of buyer</p>
           <h2 className="font-serif text-display-lg text-[#0F2E1D] mb-8 max-w-[24ch] reveal">
@@ -235,13 +256,13 @@ export default function HomePage() {
           </h2>
           <div className="space-y-5 reveal reveal-delay-1">
             <p className="text-body-md text-[#3C4A40]">
-              Many good businesses are built by owners who have spent years developing their customers, suppliers and reputation.
+              Most good hobby shops were built by someone who knew the product, looked after their regulars and earned their supplier relationships the slow way.
             </p>
             <p className="text-body-md text-[#3C4A40]">
-              We approach those situations directly and practically.
+              We approach those situations directly and practically, as people who intend to run the business rather than resell it.
             </p>
             <p className="text-body-md text-[#3C4A40]">
-              Where there is a fit, we aim to understand what the owner wants, structure a sensible transaction and preserve what works while improving what does not.
+              Where there is a fit, we aim to understand what the owner wants, agree a sensible transaction and keep what works while improving what does not.
             </p>
           </div>
         </div>
@@ -274,10 +295,10 @@ export default function HomePage() {
               </h2>
               <div className="space-y-5 reveal reveal-delay-2">
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  We believe capital is most useful when combined with good operators, disciplined execution and a willingness to improve the details of how a business actually works.
+                  Retail rewards the unglamorous things: buying well, holding the right stock, turning it, listing it properly and looking after the customers who come back.
                 </p>
                 <p className="text-body-md" style={{color:'#3C4A40'}}>
-                  That is how we approach every investment. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
+                  That is where we put our capital and our attention. Nathan Powell runs Prosaria. When you get in touch, you speak to the person doing the work.
                 </p>
               </div>
               <div className="mt-10 flex flex-wrap gap-4 reveal reveal-delay-3">
@@ -291,7 +312,7 @@ export default function HomePage() {
 
       {/* IMAGE BAND */}
       <section className="relative h-[42vh] min-h-[300px] overflow-hidden">
-        <Image src="/img-walk.jpg" alt="An established business environment" fill className="object-cover" sizes="100vw" />
+        <Image src="/img-walk.jpg" alt="An established retail environment" fill className="object-cover" sizes="100vw" />
         <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(247,243,236,0.25) 0%, rgba(247,243,236,0) 30%, rgba(247,243,236,0) 70%, rgba(247,243,236,0.3) 100%)'}} />
       </section>
 
@@ -304,7 +325,7 @@ export default function HomePage() {
               Have a business worth discussing?
             </h2>
             <p className="text-body-md text-[#3C4A40] max-w-[48ch] mb-4">
-              Whether you are considering selling, looking for a long-term partner or believe there is an opportunity we should understand, speak with us directly.
+              Whether you are thinking about selling, winding down or handing over a hobby retail business, or you supply this market and want to talk, speak with us directly.
             </p>
             <p className="text-body-md text-[#4A574C]">
               <a href="tel:02030267906" className="hover:text-[#123524] transition-colors">020 3026 7906</a>

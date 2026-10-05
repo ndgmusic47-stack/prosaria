@@ -20,23 +20,23 @@ function useReveal() {
 const steps = [
   {
     num: '01',
-    title: 'Understand',
-    body: 'We start with the business itself. Its customers, economics, people, suppliers and the owner’s objectives.',
+    title: 'Understand the economics',
+    body: 'What the business sells, what it buys and at what margin. Which lines turn and which sit. Who the regular customers are and what keeps them coming back. We want the real picture, not a tidied one.',
   },
   {
     num: '02',
-    title: 'Invest',
-    body: 'We structure transactions around the circumstances of the business and the people involved rather than forcing every opportunity into the same model.',
+    title: 'Assess stock and working capital',
+    body: 'In retail, most of the value and most of the risk sits in the stock. We look carefully at what is on the shelves, how it was bought, what it is genuinely worth and how much working capital the business needs to trade properly.',
   },
   {
     num: '03',
-    title: 'Improve',
-    body: 'After investment, we focus on practical improvements to operations, systems, staffing, purchasing, sales and capital allocation.',
+    title: 'Agree a transaction that suits the situation',
+    body: 'We shape the deal around the business and the owner rather than forcing every opportunity into one model. Timing, handover and what happens to staff are part of that conversation, not an afterthought.',
   },
   {
     num: '04',
-    title: 'Build',
-    body: 'We reinvest behind businesses that have the potential to grow, expand into new markets or become platforms for further acquisitions.',
+    title: 'Support the transition, then improve',
+    body: 'We take on the running of the business and keep what works: supplier accounts, regulars, the people who know the product. Then we work on buying, stock turn, listings, fulfilment and the systems underneath.',
   },
 ]
 
@@ -51,7 +51,7 @@ export default function HowWeWorkPage() {
             How we work
           </h1>
           <p className="text-body-lg text-[#3C4A40] max-w-[56ch]">
-            Our approach is straightforward: understand the business, determine what is worth preserving, identify where value can be added and structure the right transaction.
+            We buy businesses to run them. Understand the economics, look properly at the stock, agree a transaction that suits the situation, support the handover and then improve how the business trades.
           </p>
         </div>
       </section>
@@ -75,13 +75,35 @@ export default function HowWeWorkPage() {
 
       <section className="py-24 bg-[#FBF8F2]">
         <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[64ch]">
-          <p className="eyebrow mb-4 reveal">What we do not do</p>
-          <h2 className="font-serif text-display-md text-[#0F2E1D] mb-6 max-w-[24ch] reveal">
-            Not brokers. Not consultants.
+          <p className="eyebrow mb-4 reveal">Our operating approach</p>
+          <h2 className="font-serif text-display-md text-[#0F2E1D] mb-6 max-w-[26ch] reveal">
+            We own the businesses we buy.
           </h2>
-          <p className="text-body-md text-[#3C4A40] reveal reveal-delay-1">
-            We are not business brokers and we are not short-term consultants. We invest behind businesses where we believe committed ownership can create long-term value.
-          </p>
+          <div className="space-y-5 reveal reveal-delay-1">
+            <p className="text-body-md text-[#3C4A40]">
+              When we acquire a business we take responsibility for running it. That means the buying decisions, the stock, the pricing, the listings, the fulfilment and the people.
+            </p>
+            <p className="text-body-md text-[#3C4A40]">
+              Our interest in a business continues long after completion, because the returns come from how well it trades rather than from the transaction itself.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="marble-bg py-24">
+        <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[64ch]">
+          <p className="eyebrow mb-4 reveal">Funding an acquisition</p>
+          <h2 className="font-serif text-display-md text-[#0F2E1D] mb-6 max-w-[26ch] reveal">
+            Structured deal by deal.
+          </h2>
+          <div className="space-y-5 reveal reveal-delay-1">
+            <p className="text-body-md text-[#3C4A40]">
+              Acquisition capital may combine founder and company capital, investment partners and appropriate financing, depending on the business and the terms agreed.
+            </p>
+            <p className="text-body-md text-[#3C4A40]">
+              Prosaria is not a fund and does not hold committed capital allocated to every opportunity. Each transaction is assessed and funded on its own terms, and we will say plainly where we are in that process.
+            </p>
+          </div>
         </div>
       </section>
 

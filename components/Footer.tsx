@@ -13,8 +13,8 @@ export default function Footer() {
               <Image src="/logo.png" alt="Prosaria" width={64} height={64} className="object-contain" />
               <span className="font-serif text-base text-[#0F2E1D] group-hover:text-[#123524] transition-colors">Prosaria</span>
             </Link>
-            <p className="text-sm leading-relaxed max-w-[28ch] mb-6">
-              Prosaria is an independent investment company focused on acquiring, improving and building established businesses.
+            <p className="text-sm leading-relaxed max-w-[30ch] mb-6">
+              Prosaria is a founder-led company building a specialist hobby retail business through operations, selective acquisitions and investment.
             </p>
             <div className="space-y-2 text-sm">
               <a href="tel:02030267906" className="flex items-center gap-2 hover:text-[#123524] transition-colors">
@@ -37,8 +37,6 @@ export default function Footer() {
                 {href:'/about',label:'About'},
                 {href:'/what-we-invest-in',label:'What we invest in'},
                 {href:'/how-we-work',label:'How we work'},
-                
-                {href:'/insight',label:'Insight'},
                 {href:'/contact',label:'Contact'},
               ].map(({href,label})=>(
                 <Link key={href} href={href} className="text-sm hover:text-[#123524] transition-colors">{label}</Link>
@@ -51,7 +49,7 @@ export default function Footer() {
             <nav className="flex flex-col gap-3">
               {[
                 {href:'/contact',label:'Start a conversation'},
-                {href:'/insight',label:'Insights'},
+                {href:'/what-we-invest-in',label:'Discuss a business'},
               ].map(({href,label})=>(
                 <Link key={href} href={href} className="text-sm hover:text-[#123524] transition-colors">{label}</Link>
               ))}

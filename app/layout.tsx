@@ -4,10 +4,10 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: { default: 'Prosaria | Investing in and Building Businesses', template: '%s | Prosaria' },
-  description: 'Prosaria is an independent investment company focused on acquiring, improving and building established businesses.',
+  title: { default: 'Prosaria | Specialist Hobby Retail, Owned and Operated', template: '%s | Prosaria' },
+  description: 'Prosaria is a founder-led company building a specialist hobby retail business through operations, selective acquisitions and investment.',
   metadataBase: new URL('https://www.prosaria.co.uk'),
-  openGraph: { type:'website', locale:'en_GB', url:'https://www.prosaria.co.uk', siteName:'Prosaria', title:'Prosaria', description:'Prosaria is an independent investment company focused on acquiring, improving and building established businesses.' },
+  openGraph: { type:'website', locale:'en_GB', url:'https://www.prosaria.co.uk', siteName:'Prosaria', title:'Prosaria', description:'Prosaria is a founder-led company building a specialist hobby retail business through operations, selective acquisitions and investment.' },
   alternates: { canonical: '/' },
   robots: { index:true, follow:true },
 }

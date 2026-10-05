@@ -4,8 +4,8 @@ import { sendNotification } from '@/lib/mailer'
 // Allow-lists. Anything not listed here is ignored entirely.
 const TYPE_LABEL: Record<string, string> = {
   owner:       'Business owner',
-  opportunity: 'Investment opportunity',
-  partner:     'Capital / professional partner',
+  opportunity: 'Supplier / distributor',
+  partner:     'Capital / professional contact',
 }
 const SECTOR_LABEL: Record<string, string> = {}
 

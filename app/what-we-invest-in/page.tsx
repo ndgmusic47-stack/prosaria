@@ -20,33 +20,33 @@ function useReveal() {
 const areas = [
   {
     num: '01',
-    title: 'Owner-operated businesses',
-    body: 'Strong businesses often become constrained by the amount of time, capital or operational capacity available to their owners. We are interested in businesses where new ownership can provide the resources for the next stage.',
+    title: 'Specialist hobby retailers',
+    body: 'Established shops and online retailers selling trading cards, anime figures, Gundam and Gunpla kits, collectibles, accessories and related board games. Physical stores, ecommerce, marketplace sellers or a mix of all three.',
   },
   {
     num: '02',
     title: 'Succession',
-    body: 'We work with owners considering retirement, a change of direction or a gradual transition away from day-to-day operations.',
+    body: 'Owners thinking about retirement, a change of direction or a gradual step back from running the shop day to day. We are comfortable with a handover that takes time.',
   },
   {
     num: '03',
-    title: 'Operational improvement',
-    body: 'We are particularly interested in businesses with good underlying demand but opportunities to improve systems, staffing, purchasing, sales, technology or execution.',
+    title: 'Established customer communities',
+    body: 'Regulars who come back, a mailing list that opens, an events night that fills up, a following built over years. That relationship is usually the hardest part of the business to rebuild and the part we most want to keep.',
   },
   {
     num: '04',
-    title: 'Customer and community-led businesses',
-    body: 'We value businesses that have built strong relationships, repeat customers, communities or trusted positions within their markets.',
+    title: 'Supplier and distributor relationships',
+    body: 'Accounts and allocations that took time to earn are worth preserving. We want to understand what a business buys, from whom and on what terms before anything else.',
   },
   {
     num: '05',
-    title: 'Buy-and-build',
-    body: 'Where the economics support it, an initial investment can become a platform for further acquisitions and expansion.',
+    title: 'Ecommerce expansion',
+    body: 'Good shops frequently sell far less online than they could. Listings, photography, stock accuracy, fulfilment and marketplace presence are usually where the quickest practical gains sit.',
   },
   {
     num: '06',
-    title: 'Flexible sector approach',
-    body: 'We are not restricted to a single industry. We focus on understanding the underlying economics, customers, competitive position and opportunity.',
+    title: 'Operational improvement',
+    body: 'Buying discipline, stock turnover, pricing, margin, shrinkage and the systems behind them. Steady demand with untidy operations is the situation we are most interested in.',
   },
 ]
 
@@ -61,7 +61,7 @@ export default function WhatWeInvestInPage() {
             What we invest in
           </h1>
           <p className="text-body-lg text-[#3C4A40] max-w-[54ch]">
-            We look for established businesses where there is something worth preserving and a clear opportunity to create more value through better ownership, operations and investment.
+            We look at established specialist hobby retailers and the businesses that supply or support them. We are interested where there is something worth preserving and a clear opportunity to improve how the business trades.
           </p>
         </div>
       </section>

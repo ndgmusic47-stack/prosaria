@@ -18,27 +18,27 @@ export default function PrivacyPage() {
             },
             {
               title: 'What we collect',
-              body: 'When you complete a lead magnet form or contact form on this site, we collect your name, email address and the answers you provide. We do not collect any other personal data automatically.',
+              body: 'The contact form on this site asks for your name, your email address and your message. That is the only personal data this website collects, and you only provide it if you choose to send us a message.',
             },
             {
               title: 'How we use it',
-              body: 'The information you provide is used solely to respond to your enquiry or review your lead magnet submission. We do not add you to any marketing list without your explicit consent. We do not sell your data to anyone.',
+              body: 'Your details are used solely to read and respond to your enquiry. We do not add you to a marketing list, and we do not sell or share your data with third parties.',
             },
             {
-              title: 'How we store it',
-              body: 'Submissions are stored securely. We retain your information for as long as is necessary to respond to your enquiry and for a reasonable period thereafter for legitimate business purposes.',
+              title: 'How we handle it',
+              body: 'When you submit the form, its contents are sent to us by email at hello@prosaria.co.uk and held in that mailbox. We keep correspondence for as long as is reasonably necessary to deal with your enquiry and for a sensible period afterwards for ordinary business record-keeping.',
             },
             {
               title: 'Your rights',
-              body: 'You have the right to request access to the data we hold about you, to ask us to correct it, or to ask us to delete it. To exercise any of these rights, email nathan@prosaria.co.uk.',
+              body: 'You have the right to ask what personal data we hold about you, to ask us to correct it, and to ask us to delete it. To exercise any of these rights, email hello@prosaria.co.uk and we will respond.',
             },
             {
               title: 'Cookies',
-              body: 'This site uses minimal cookies for analytics purposes only. We do not use advertising cookies or track you across other websites.',
+              body: 'This website does not set advertising or tracking cookies, and we do not run analytics that follow you across other websites.',
             },
             {
               title: 'Contact',
-              body: 'For any privacy-related queries, contact nathan@prosaria.co.uk.',
+              body: 'For any privacy-related query, email hello@prosaria.co.uk.',
             },
           ].map(({ title, body }) => (
             <div key={title} className="mb-10">
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
             </div>
           ))}
 
-          <p className="text-label text-[#7E8A7E] mt-12">Last updated: January 2025</p>
+          <p className="text-label text-[#7E8A7E] mt-12">Last updated: October 2026</p>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'How We Work',
-  description: 'Understand the business, invest around its circumstances, improve how it operates and build for the long term. How Prosaria approaches every investment.',
+  description: 'Understand the economics, assess stock and working capital, agree a transaction that suits the situation, support the handover and improve how the business trades.',
   alternates: { canonical: '/how-we-work' },
 }
 

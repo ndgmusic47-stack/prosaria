@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'What We Invest In',
-  description: 'Prosaria looks for established businesses where better ownership, operations and investment can create more value. Owner-operated, succession, buy-and-build.',
+  description: 'Prosaria acquires established specialist hobby retailers: trading cards, anime figures, Gunpla, collectibles and related games. Succession, customer communities and ecommerce expansion.',
   alternates: { canonical: '/what-we-invest-in' },
 }
 

@@ -17,9 +17,9 @@ function useReveal() {
 }
 
 const paths = [
-  { num:'01', title:'Business owners', desc:'Considering selling, succession or bringing in a long-term investment partner.', action:'Send a message below', href:'/contact?type=owner#message' },
-  { num:'02', title:'Investment opportunities', desc:'A business, asset or situation you believe Prosaria should understand.', action:'Send a message below', href:'/contact?type=opportunity#message' },
-  { num:'03', title:'Capital and professional partners', desc:'Existing and prospective relationships with investors, lenders, operators and professional advisers.', action:'Send a message below', href:'/contact?type=partner#message' },
+  { num:'01', title:'Business owners', desc:'Running a hobby shop, card store or online retailer and thinking about selling, succession or stepping back.', action:'Send a message below', href:'/contact?type=owner#message' },
+  { num:'02', title:'Suppliers and distributors', desc:'Distributors, wholesalers and brands supplying trading cards, figures, Gunpla, collectibles and related games.', action:'Send a message below', href:'/contact?type=opportunity#message' },
+  { num:'03', title:'Capital and professional contacts', desc:'Investment partners, lenders and professional contacts who work with retail businesses.', action:'Send a message below', href:'/contact?type=partner#message' },
 ]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
@@ -47,12 +47,12 @@ function ContactPageInner() {
 
   const heading =
     isOwner       ? 'Tell us about your business.' :
-    isOpportunity ? 'Tell us about the opportunity.' :
-    isPartner     ? 'Tell us about your firm.' : null
+    isOpportunity ? 'Tell us what you supply.' :
+    isPartner     ? 'Tell us who you are.' : null
 
   const subcopy =
-    isOwner       ? 'A short confidential message is enough to start. Tell us what the business does, where it operates and what you are thinking about.' :
-    isOpportunity ? 'Tell us what the business is, what it does and why you think it is worth understanding.' :
+    isOwner       ? 'A short confidential message is enough to start. Tell us what the business sells, where it trades and what you are thinking about.' :
+    isOpportunity ? 'Tell us what you distribute or produce, which brands you carry and how you normally work with retailers.' :
     isPartner     ? 'Tell us who you are, what you do and where you think there may be a sensible overlap.' : null
 
   async function handleSubmit(e: React.FormEvent) {
@@ -80,8 +80,8 @@ function ContactPageInner() {
           <h1 className="font-serif text-display-xl text-[#0F2E1D] max-w-[20ch] leading-tight mb-6">
             Start a conversation.
           </h1>
-          <p className="text-body-lg text-[#4A574C] max-w-[44ch]">
-            We are interested in hearing from business owners, advisers and people who come across opportunities that fit the way we invest.
+          <p className="text-body-lg text-[#4A574C] max-w-[48ch]">
+            We are interested in hearing from hobby retail owners, suppliers and distributors, capital partners and professional contacts who work with businesses like ours.
           </p>
         </div>
       </section>
