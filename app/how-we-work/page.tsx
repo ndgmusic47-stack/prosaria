@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function useReveal() {
   useEffect(() => {
@@ -73,7 +74,42 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
+      {/* FULFILMENT */}
       <section className="py-24 bg-[#FBF8F2]">
+        <div className="max-w-site mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative w-full overflow-hidden rounded-2xl reveal"
+              style={{aspectRatio:'16 / 9'}}>
+              <Image
+                src="/packing-bench.jpg"
+                alt="A packing bench with a label printer, barcode scanner, mailers and boxes being packed for despatch"
+                fill
+                sizes="(max-width:1024px) 100vw, 600px"
+                className="object-cover"
+                style={{objectPosition:'65% 50%'}}
+                loading="lazy"
+              />
+            </div>
+            <div className="reveal reveal-delay-1">
+              <p className="eyebrow mb-4">Execution</p>
+              <h2 className="font-serif text-display-md text-[#0F2E1D] mb-5 max-w-[22ch]">
+                Most of the gain is in the unglamorous part.
+              </h2>
+              <div className="space-y-4">
+                <p className="text-body-md text-[#4A574C]">
+                  Accurate stock, decent photography, listings that actually surface in search, orders out the same day and packaging that protects what is inside.
+                </p>
+                <p className="text-body-md text-[#4A574C]">
+                  None of it is glamorous and all of it compounds. A shop selling well in person but poorly online is usually the clearest opportunity we see.
+                </p>
+              </div>
+              <p className="text-label text-[#7E8A7E] mt-6">Illustrative imagery</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="marble-bg py-24">
         <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[64ch]">
           <p className="eyebrow mb-4 reveal">Our operating approach</p>
           <h2 className="font-serif text-display-md text-[#0F2E1D] mb-6 max-w-[26ch] reveal">
@@ -90,7 +126,7 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      <section className="marble-bg py-24">
+      <section className="py-24 bg-[#FBF8F2]">
         <div className="max-w-site mx-auto px-6 lg:px-10 max-w-[64ch]">
           <p className="eyebrow mb-4 reveal">Funding an acquisition</p>
           <h2 className="font-serif text-display-md text-[#0F2E1D] mb-6 max-w-[26ch] reveal">

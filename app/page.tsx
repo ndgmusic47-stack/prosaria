@@ -22,8 +22,8 @@ function useReveal() {
 const lines = [
   {
     num: '01',
-    img: '/img-lounge.jpg',
-    imgAlt: 'A specialist retail business at work',
+    img: '/shop-counter.jpg',
+    imgAlt: 'Shelves of model kits, trading card boxes and a miniatures cabinet behind an independent hobby shop counter',
     title: 'Invest',
     body: 'We acquire and invest in established specialist hobby retailers: trading cards, anime figures, Gundam and Gunpla, collectibles, accessories and the games that sit alongside them.',
     href: '/what-we-invest-in',
@@ -32,8 +32,8 @@ const lines = [
   },
   {
     num: '02',
-    img: '/img-courtyard.jpg',
-    imgAlt: 'Operational detail inside a working retail business',
+    img: '/cards-binder.jpg',
+    imgAlt: 'Hands turning the pages of a binder of sleeved trading cards beside a deck box and toploaders',
     title: 'Improve',
     body: 'We work on what actually moves the numbers. Sourcing and purchasing discipline, stock turnover, margin, listing quality across ecommerce and marketplaces, supplier relationships and the daily running of the business.',
     href: '/how-we-work',
@@ -63,10 +63,10 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-end pb-20 lg:pb-32 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-end pb-14 lg:pb-32 overflow-hidden">
         <HeroVideo />
 
-        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-36 text-center" style={{zIndex:10}}>
+        <div className="relative max-w-site mx-auto px-6 lg:px-10 w-full pt-24 lg:pt-36 text-center" style={{zIndex:10}}>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
             fontSize:'clamp(1rem,2.2vw,1.3rem)',
@@ -82,39 +82,33 @@ export default function HomePage() {
             Prosaria
           </p>
           <h1 className="opacity-0 animate-fade-up" style={{
-            fontFamily:'var(--font-serif)',
-            fontSize:'clamp(2.2rem,6.5vw,5.2rem)',
-            lineHeight:'0.95',
-            letterSpacing:'-0.03em',
-            color:'#1B4D33',
-            maxWidth:'20ch',
+            fontFamily:'var(--font-display)',
+            fontSize:'clamp(2.75rem,7.5vw,6.5rem)',
+            maxWidth:'1150px',
             marginLeft:'auto',
             marginRight:'auto',
             marginBottom:'1.5rem',
             textShadow:'none',
-            fontWeight:500,
             animationDelay:'0.2s',
             animationFillMode:'forwards',
           }}>
-            We own and operate
-            <em className="block" style={{color:'#E8650D',fontStyle:'italic',fontSize:'0.56em',marginTop:'0.3em',lineHeight:'1.15'}}>
-              specialist hobby retail.
-            </em>
+            <span className="hero-line" style={{color:'#1B4D33'}}>Built for the hobby.</span>
+            <span className="hero-line" style={{color:'#E8650D'}}>Run as a business.</span>
           </h1>
           <p className="opacity-0 animate-fade-up" style={{
             fontFamily:'var(--font-sans)',
-            fontSize:'1.15rem',
+            fontSize:'1.125rem',
             lineHeight:'1.65',
             color:'#2B2B26',
-            maxWidth:'48ch',
+            maxWidth:'50ch',
             marginLeft:'auto',
             marginRight:'auto',
-            marginBottom:'3rem',
+            marginBottom:'2.75rem',
             textShadow:'none',
             animationDelay:'0.35s',
             animationFillMode:'forwards',
           }}>
-            Prosaria is a founder-led company building a specialist hobby retail business. We run our own retail brand and look to acquire established retailers where better buying, stock control and ecommerce can improve performance.
+            Prosaria builds and operates specialist hobby retail businesses, combining community knowledge with disciplined buying, stock control and ecommerce.
           </p>
           <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-up"
             style={{animationDelay:'0.5s',animationFillMode:'forwards'}}>
@@ -122,7 +116,7 @@ export default function HomePage() {
             <Link href="/how-we-work" className="btn-outline">How we work</Link>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-16 sm:mt-20 pt-10 border-t border-[#0F2E1D]/15">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-20 pt-10 border-t border-[#0F2E1D]/15">
             {[
               { v:'Hobby Retail',  l:'Cards, figures, Gunpla, collectibles' },
               { v:'Operators',     l:'We run the business ourselves' },
@@ -131,7 +125,14 @@ export default function HomePage() {
             ].map((s, i) => (
               <div key={s.l} className="opacity-0 animate-fade-up"
                 style={{animationDelay:`${0.6+i*0.1}s`,animationFillMode:'forwards'}}>
-                <p className="font-serif text-display-sm leading-tight mb-1" style={{color:'#0F2E1D'}}>{s.v}</p>
+                <p className="mb-1.5" style={{
+                  fontFamily:'var(--font-display)',
+                  fontWeight:800,
+                  textTransform:'uppercase',
+                  fontSize:'clamp(1.3rem,2.4vw,1.85rem)',
+                  lineHeight:'1.05',
+                  color:'#0F2E1D',
+                }}>{s.v}</p>
                 <p className="text-label uppercase tracking-widest" style={{color:'#E8650D'}}>{s.l}</p>
               </div>
             ))}
@@ -157,8 +158,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* THE MARKET */}
+      <section className="pt-20 pb-24 lg:pt-28 lg:pb-32 bg-[#F7F3EC]">
+        <div className="max-w-site mx-auto px-6 lg:px-10">
+          <div className="max-w-[60ch] mb-10 reveal">
+            <p className="eyebrow mb-4">The market</p>
+            <h2 className="font-serif text-display-lg text-[#0F2E1D] mb-5">
+              Specialist hobby retail.
+            </h2>
+            <p className="text-body-md text-[#4A574C]">
+              Trading cards, anime figures, Gundam and Gunpla kits, collectibles, accessories and the games that sit alongside them. Sold in shops, online and at events, to customers who know exactly what they are looking at.
+            </p>
+          </div>
+          {/* Container is narrower than the source, so object-cover crops the
+              dead wall on the left and holds the shelving in frame. */}
+          <div className="relative w-full overflow-hidden rounded-2xl reveal reveal-delay-1"
+            style={{aspectRatio:'3 / 2'}}>
+            <Image
+              src="/shop-wide.jpg"
+              alt="A specialist hobby shop interior with shelves of trading card products, collectibles and model kits"
+              fill
+              sizes="(max-width:1024px) 100vw, 1200px"
+              className="object-cover"
+              style={{objectPosition:'72% 50%'}}
+              priority={false}
+            />
+          </div>
+          <p className="text-label text-[#7E8A7E] mt-3">Illustrative imagery</p>
+        </div>
+      </section>
+
       {/* WHAT WE DO */}
-      <section className="py-40 bg-[#F7F3EC] relative overflow-hidden">
+      <section className="pb-40 bg-[#F7F3EC] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#123524]/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="mb-16 reveal">
@@ -308,12 +339,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* IMAGE BAND */}
-      <section className="relative h-[42vh] min-h-[300px] overflow-hidden">
-        <Image src="/img-walk.jpg" alt="An established retail environment" fill className="object-cover" sizes="100vw" />
-        <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(247,243,236,0.25) 0%, rgba(247,243,236,0) 30%, rgba(247,243,236,0) 70%, rgba(247,243,236,0.3) 100%)'}} />
       </section>
 
       {/* FINAL CTA */}

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function useReveal() {
   useEffect(() => {
@@ -66,6 +67,40 @@ export default function WhatWeInvestInPage() {
         </div>
       </section>
 
+      {/* ESTABLISHED SHOPS */}
+      <section className="py-24 bg-[#FBF8F2]">
+        <div className="max-w-site mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative w-full overflow-hidden rounded-2xl reveal"
+              style={{aspectRatio:'4 / 3'}}>
+              <Image
+                src="/shop-interior.jpg"
+                alt="An independent hobby shop interior with board games, painted miniatures in a display cabinet and a gaming table"
+                fill
+                sizes="(max-width:1024px) 100vw, 600px"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="reveal reveal-delay-1">
+              <p className="eyebrow mb-4">Established shops</p>
+              <h2 className="font-serif text-display-md text-[#0F2E1D] mb-5 max-w-[20ch]">
+                Years of trading already in the walls.
+              </h2>
+              <div className="space-y-4">
+                <p className="text-body-md text-[#4A574C]">
+                  A shop that has been running for a decade carries things a new one cannot buy: supplier accounts, allocations, a reputation locally and customers who turn up on the same night every week.
+                </p>
+                <p className="text-body-md text-[#4A574C]">
+                  Where an owner is thinking about stepping back, we would rather take that on and keep it running than see it wound down.
+                </p>
+              </div>
+              <p className="text-label text-[#7E8A7E] mt-6">Illustrative imagery</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="marble-bg py-24">
         <div className="max-w-site mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-6">
@@ -79,6 +114,40 @@ export default function WhatWeInvestInPage() {
                 <p className="text-body-sm text-[#4A574C] leading-relaxed">{a.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCT FOCUS */}
+      <section className="py-24 bg-[#FBF8F2]">
+        <div className="max-w-site mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1 reveal">
+              <p className="eyebrow mb-4">Product focus</p>
+              <h2 className="font-serif text-display-md text-[#0F2E1D] mb-5 max-w-[20ch]">
+                Categories that reward knowing the detail.
+              </h2>
+              <div className="space-y-4">
+                <p className="text-body-md text-[#4A574C]">
+                  Gunpla and model kits, trading cards, anime figures and collectibles are not commodity retail. Grades, print runs, regional releases and condition all move the price.
+                </p>
+                <p className="text-body-md text-[#4A574C]">
+                  That detail is where margin is won or lost, and it is why we treat buying as the most important job in the business.
+                </p>
+              </div>
+              <p className="text-label text-[#7E8A7E] mt-6">Illustrative imagery</p>
+            </div>
+            <div className="order-1 lg:order-2 relative w-full overflow-hidden rounded-2xl reveal reveal-delay-1"
+              style={{aspectRatio:'4 / 3'}}>
+              <Image
+                src="/model-kit.jpg"
+                alt="Hands assembling a robot model kit at a workbench with runners, nippers and a cutting mat"
+                fill
+                sizes="(max-width:1024px) 100vw, 600px"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -2,10 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap');
+/* Self-hosted. Only the four weights the site actually uses, served from
+   our own origin so there is no third-party request blocking first paint. */
+@font-face{
+  font-family:'Barlow Condensed';
+  src:url('/fonts/barlow-condensed-latin-800-normal.woff2') format('woff2');
+  font-weight:800;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Barlow Condensed';
+  src:url('/fonts/barlow-condensed-latin-600-normal.woff2') format('woff2');
+  font-weight:600;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'DM Sans';
+  src:url('/fonts/dm-sans-latin-400-normal.woff2') format('woff2');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'DM Sans';
+  src:url('/fonts/dm-sans-latin-500-normal.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap;
+}
 
 :root {
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  /* Display face. Kept under the --font-serif name so every existing
+     font-serif class and var(--font-serif) reference switches with it. */
+  --font-serif:   'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;
   --navy:       #F7F3EC;
   --navy-mid:   #FFFFFF;
@@ -28,7 +52,20 @@ opacity:0.025;pointer-events:none;z-index:9998;animation:grain 8s steps(10) infi
 
 @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(3%,2%)}30%{transform:translate(-1%,4%)}40%{transform:translate(2%,-1%)}50%{transform:translate(-3%,3%)}60%{transform:translate(1%,-2%)}70%{transform:translate(-2%,1%)}80%{transform:translate(3%,-3%)}90%{transform:translate(-1%,2%)}}
 
-h1,h2,h3,h4{font-family:var(--font-serif);font-weight:400;letter-spacing:-0.02em;color:var(--white)}
+/* Display headings. Barlow Condensed is already narrow, so the heavy
+   negative tracking the old serif needed would close the counters up. */
+h1,h2,h3,h4{font-family:var(--font-serif);font-weight:800;letter-spacing:-0.005em;color:var(--white)}
+h3,h4{font-weight:600}
+
+/* font-serif is applied to non-heading elements too (the wordmark, names,
+   phone numbers). Give those a weight so condensed does not render thin. */
+.font-serif{font-weight:600}
+h1.font-serif,h2.font-serif{font-weight:800}
+h3.font-serif,h4.font-serif{font-weight:600}
+
+/* Hero statement lines: two equally weighted blocks, no italic. */
+.hero-line{display:block;font-family:var(--font-display);font-weight:800;
+  text-transform:uppercase;letter-spacing:0.002em;line-height:0.92}
 
 /* Light sections — subtle grid texture (Blimp editorial rawness) */
 .light-section{

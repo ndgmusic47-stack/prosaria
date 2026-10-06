@@ -25,15 +25,18 @@ const config: Config = {
         sans:  ['var(--font-sans)','system-ui','sans-serif'],
       },
       fontSize: {
-        'display-2xl': ['clamp(2.5rem,8vw,6rem)',   {lineHeight:'1.0', letterSpacing:'-0.03em'}],
-        'display-xl':  ['clamp(2rem,5vw,4rem)',      {lineHeight:'1.05',letterSpacing:'-0.025em'}],
-        'display-lg':  ['clamp(1.75rem,4vw,3rem)',   {lineHeight:'1.1', letterSpacing:'-0.02em'}],
-        'display-md':  ['clamp(1.4rem,3vw,2.25rem)', {lineHeight:'1.2', letterSpacing:'-0.015em'}],
-        'display-sm':  ['clamp(1.2rem,2vw,1.6rem)',  {lineHeight:'1.3', letterSpacing:'-0.01em'}],
-        'body-lg':     ['clamp(1rem,2vw,1.125rem)',  {lineHeight:'1.75'}],
-        'body-md':     ['1rem',                      {lineHeight:'1.7'}],
-        'body-sm':     ['0.9375rem',                 {lineHeight:'1.65'}],
-        'label':       ['0.75rem',                   {lineHeight:'1.4',letterSpacing:'0.08em'}],
+        // Display scale, retuned for a condensed face: larger sizes, tighter
+        // leading, far less negative tracking than the previous serif needed.
+        'display-2xl': ['clamp(2.75rem,7.5vw,6.5rem)', {lineHeight:'0.92',letterSpacing:'0'}],
+        'display-xl':  ['clamp(2.25rem,5.5vw,4.5rem)', {lineHeight:'0.98',letterSpacing:'0'}],
+        'display-lg':  ['clamp(2rem,4.5vw,3.5rem)',    {lineHeight:'1.02',letterSpacing:'0'}],
+        'display-md':  ['clamp(1.6rem,3.2vw,2.5rem)',  {lineHeight:'1.08',letterSpacing:'0'}],
+        'display-sm':  ['clamp(1.25rem,2.2vw,1.75rem)',{lineHeight:'1.2', letterSpacing:'0'}],
+        // Body: calm and readable at 17-18px with comfortable leading.
+        'body-lg':     ['clamp(1.125rem,2vw,1.3125rem)',{lineHeight:'1.65'}],
+        'body-md':     ['1.125rem',                     {lineHeight:'1.7'}],
+        'body-sm':     ['1.0625rem',                    {lineHeight:'1.65'}],
+        'label':       ['0.75rem',                      {lineHeight:'1.4',letterSpacing:'0.08em'}],
       },
       maxWidth: { site:'1280px' },
       spacing: { section:'7.5rem','section-sm':'4rem' },
